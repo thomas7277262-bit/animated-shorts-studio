@@ -383,11 +383,22 @@ function factory(seed) {
   return { group: g, light: { sun: '#fff0dc', sunI: 2.2, hemiSky: '#d6dde6', hemiGround: '#55595e', hemiI: 1.2, dir: [9, 14, 7] }, fog: ['#cfc9bf', 30, 150] };
 }
 
-export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory };
+// Neutral backdrop for character reference sheets (pastel cyclorama).
+function studio(seed) {
+  const g = new THREE.Group();
+  g.add(sky('#bfe3ff', '#f4f8ff', '#f4f8ff'));
+  const floor = mesh(new THREE.CircleGeometry(30, 48), new THREE.MeshStandardMaterial({ color: '#eef3f8', roughness: 1 }), { rx: -Math.PI / 2, cast: false });
+  g.add(floor);
+  const wall = mesh(new THREE.CylinderGeometry(24, 24, 30, 48, 1, true, Math.PI * 0.6, Math.PI * 0.8), new THREE.MeshStandardMaterial({ color: '#dfeefa', roughness: 1, side: THREE.BackSide }), { y: 15, cast: false });
+  g.add(wall);
+  return { group: g, light: { sun: '#ffffff', sunI: 2.2, hemiSky: '#ffffff', hemiGround: '#cfd8e0', hemiI: 1.6, dir: [6, 12, 10] }, fog: ['#eef3f8', 60, 200] };
+}
+
+export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio };
 export const ENVIRONMENT_LABELS = {
   castle: 'Medieval castle', village: 'Medieval village', battlefield: 'Battlefield',
   school: 'School', house: 'House (living room)', city: 'Modern city',
-  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory',
+  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop',
 };
 
 export function buildEnvironment(name, seed = 7, opts = {}) {

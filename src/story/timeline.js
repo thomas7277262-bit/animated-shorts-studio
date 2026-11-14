@@ -105,7 +105,7 @@ export function buildTimeline(storyboard, opts = {}) {
       const at = (f) => b0 + (f ?? 0) * info.dur;
       for (const a of b.actions || []) {
         const seg = {
-          t0: at(a.at), t1: at(a.end ?? 1), action: a.action || 'idle', expr: a.expr, params: a.params, face: a.face, prop: a.prop,
+          t0: at(a.at), t1: at(a.end ?? 1), action: a.action || 'idle', expr: a.expr, params: a.params, face: a.face, prop: a.prop, glasses: a.glasses,
         };
         if (a.move) seg.move = { to: a.move, ease: a.ease };
         (scene.tracks[a.char] ||= []).push(seg);

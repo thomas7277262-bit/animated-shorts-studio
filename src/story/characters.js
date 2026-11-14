@@ -125,3 +125,54 @@ export const CREATURE_LIBRARY = {
 };
 
 Object.assign(CHARACTER_LIBRARY, BLOCKY_CHARACTERS, CREATURE_LIBRARY);
+
+// ---------------------------------------------------------------------------
+// "Patch, the Dog Nobody Picked" – original cast. Each spec is the single
+// source of truth for that character's look in every shot.
+export const PATCH_CAST = {
+  patch: {
+    id: 'patch', name: 'Patch', role: 'hero dog', kind: 'animal', model: 'dog', scale: 1,
+    fur: '#f2e6cf', patches: 5, patchColor: '#8a5a34', patchSeed: 7, eyePatch: '#8a5a34',
+    muzzle: '#f8f0e2', paws: '#f8f0e2', ears: 'oneFloppy', missingLeg: 'FL',
+    collar: '#b8473b', tag: '#c9a227', eyeStyle: 'round', brows: 'normal', accent: '#b8473b',
+    personality: 'scruffy, hopeful, brave; three legs, one floppy ear',
+  },
+  duchess: {
+    id: 'duchess', name: 'Duchess', role: 'designer puppy', kind: 'animal', model: 'dog', scale: 0.62,
+    fur: '#ffffff', fluffy: true, ears: 'floppy', bow: '#ff7eb6', collar: '#ff7eb6', tag: '#ffc21a',
+    muzzle: '#ffffff', faceFur: '#ffffff', eyeStyle: 'lashes', brows: 'thin', accent: '#ff7eb6',
+    personality: 'tiny, fluffy, pampered',
+  },
+  owen: {
+    id: 'owen', name: 'Owen', role: 'hero kid', style: 'blocky', height: 0.86,
+    skin: '#f2c8a4', freckles: true, hair: '#c2502a', hairStyle: 'messy',
+    shirt: '#4caf50', shirtDetail: 'hoodie', shirtAccent: '#ffffff', sleeves: 'long', hood: true,
+    pants: '#3b5b8c', shoes: '#e94b3c', collarProp: '#d93a3a', accent: '#4caf50',
+    eyeStyle: 'round', brows: 'normal', cheeks: false, personality: 'quiet, kind, always picked last',
+  },
+  vivian: {
+    id: 'vivian', name: 'Mrs. Vandermeer', role: 'rich mom', style: 'blocky', height: 1.05,
+    skin: '#f5d3b8', hair: '#f3d27a', hairStyle: 'updo', sunglasses: true, pearls: true, handbag: '#d4af37',
+    shirt: '#fbfbf7', shirtDetail: 'blouse', shirtAccent: '#d4af37', sleeves: 'long', pants: '#f2eee5', shoes: '#d4af37',
+    accent: '#d4af37', eyeStyle: 'lashes', brows: 'thin', cheeks: false, personality: 'snobby, learns to be kind',
+  },
+  preston: {
+    id: 'preston', name: 'Mr. Vandermeer', role: 'rich dad', style: 'blocky', height: 1.1,
+    skin: '#e9c2a0', hair: '#2b2b2b', hairStyle: 'slick', sunglasses: true, watch: '#d4af37',
+    shirt: '#f6f4ee', shirtDetail: 'suit', shirtAccent: '#d4af37', sleeves: 'long', pants: '#efece4', shoes: '#8b6b3a',
+    accent: '#d4af37', eyeStyle: 'round', brows: 'thick', cheeks: false, personality: 'proud, mostly on his phone',
+  },
+  sloane: {
+    id: 'sloane', name: 'Sloane Vandermeer', role: 'rich kid', style: 'blocky', height: 0.8,
+    skin: '#f5d3b8', hair: '#f3d27a', hairStyle: 'pigtails', bowColor: '#ff7eb6', sunglasses: true,
+    shirt: '#fff8fb', shirtDetail: 'dress', shirtAccent: '#ff9ec7', pants: '#fff8fb', shoes: '#ff9ec7',
+    accent: '#ff9ec7', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'spoiled, wants a perfect puppy',
+  },
+  reyes: {
+    id: 'reyes', name: 'Ms. Reyes', role: 'shelter worker', style: 'blocky', height: 1.0,
+    skin: '#b07a52', hair: '#2a1a12', hairStyle: 'bun',
+    shirt: '#2bb3a3', shirtDetail: 'paw', shirtAccent: '#ffffff', pants: '#3a4a5c', shoes: '#ffffff', lanyard: '#ff9f1c',
+    accent: '#2bb3a3', eyeStyle: 'round', brows: 'normal', cheeks: true, personality: 'warm, patient, believes in every dog',
+  },
+};
+Object.assign(CHARACTER_LIBRARY, PATCH_CAST);

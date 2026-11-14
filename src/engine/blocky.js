@@ -35,6 +35,11 @@ function seg(w, h, d, material) {
 }
 
 // Shirt texture: simple printed detail so outfits read as clothing.
+function shade(hex, pct) {
+  const c = new THREE.Color(hex); c.offsetHSL(0, 0, pct / 100);
+  return '#' + c.getHexString();
+}
+
 function shirtTexture(color, detail, accent) {
   const c = document.createElement('canvas');
   c.width = 256; c.height = 256;
@@ -55,6 +60,25 @@ function shirtTexture(color, detail, accent) {
     }
     case 'tie': g.fillRect(0, 0, 256, 26); g.beginPath(); g.moveTo(118, 26); g.lineTo(138, 26); g.lineTo(146, 190); g.lineTo(128, 215); g.lineTo(110, 190); g.fill(); break;
     case 'overalls': g.fillRect(40, 120, 176, 136); g.fillRect(50, 0, 26, 130); g.fillRect(180, 0, 26, 130); break;
+    case 'hoodie':
+      g.fillStyle = 'rgba(0,0,0,0.13)'; g.fillRect(56, 150, 144, 70); // kangaroo pocket
+      g.fillStyle = accent; g.fillRect(96, 0, 10, 110); g.fillRect(150, 0, 10, 96); // drawstrings
+      g.beginPath(); g.arc(101, 112, 9, 0, 7); g.arc(155, 98, 9, 0, 7); g.fill(); break;
+    case 'paw':
+      g.fillStyle = accent; g.beginPath(); g.ellipse(170, 80, 26, 22, 0, 0, 7); g.fill();
+      for (const [x, y] of [[140, 46], [160, 34], [182, 34], [202, 46]]) { g.beginPath(); g.ellipse(x, y, 9, 11, 0, 0, 7); g.fill(); }
+      g.fillRect(0, 0, 256, 14); break;
+    case 'suit':
+      g.fillStyle = shade(color, -18); g.beginPath(); g.moveTo(80, 0); g.lineTo(128, 120); g.lineTo(176, 0); g.fill();
+      g.fillStyle = '#ffffff'; g.beginPath(); g.moveTo(104, 0); g.lineTo(128, 70); g.lineTo(152, 0); g.fill();
+      g.fillStyle = accent; g.beginPath(); g.moveTo(120, 8); g.lineTo(136, 8); g.lineTo(132, 90); g.lineTo(124, 90); g.fill();
+      g.fillStyle = shade(color, -30); for (const y of [150, 195]) { g.beginPath(); g.arc(128, y, 6, 0, 7); g.fill(); } break;
+    case 'blouse':
+      g.fillStyle = shade(color, -10); g.beginPath(); g.moveTo(96, 0); g.lineTo(128, 60); g.lineTo(160, 0); g.fill();
+      g.fillStyle = accent; g.fillRect(0, 196, 256, 18); break;
+    case 'dress':
+      g.fillStyle = accent; g.fillRect(0, 150, 256, 20);
+      g.beginPath(); for (let i = 0; i < 6; i++) { g.moveTo(20 + i * 44, 210); g.arc(20 + i * 44, 210, 10, 0, 7); } g.fill(); break;
     case 'armor': g.fillStyle = '#c9d1da'; g.fillRect(20, 0, 216, 256); g.fillStyle = accent; g.fillRect(110, 20, 36, 200); g.fillRect(50, 90, 156, 30); break;
     default: break;
   }
@@ -161,6 +185,7 @@ export class BlockCharacter {
     }
     this.props = {};
     this.buildProps(S);
+    this.buildAccessories(spec, hs);
     this._faceKey = '';
   }
 
@@ -208,11 +233,81 @@ export class BlockCharacter {
         }
         break;
       }
+      case 'messy': {
+        acc.add(at(block(hs * 1.14, hs * 0.26, hs * 1.1, hair, 0.05), 0, top, -hs * 0.01));
+        acc.add(at(block(hs * 1.14, hs * 0.45, hs * 0.22, hair, 0.04), 0, top - hs * 0.22, -hs * 0.47));
+        for (const [x, z, r] of [[-0.32, 0.3, 0.5], [0.05, 0.38, -0.3], [0.36, 0.25, 0.7], [-0.1, 0.0, 0.2], [0.25, -0.2, -0.6]]) {
+          const tuft = at(block(hs * 0.3, hs * 0.18, hs * 0.28, hair, 0.04), x * hs, top + hs * 0.12, z * hs);
+          tuft.rotation.set(0.3, r, 0.25 * Math.sign(r)); acc.add(tuft);
+        }
+        for (const sx of [-1, 1]) acc.add(at(block(hs * 0.12, hs * 0.4, hs * 0.5, hair, 0.03), sx * hs * 0.56, top - hs * 0.2, -hs * 0.2));
+        break;
+      }
+      case 'updo': {
+        acc.add(at(block(hs * 1.13, hs * 0.24, hs * 1.08, hair, 0.05), 0, top, 0));
+        acc.add(at(block(hs * 1.13, hs * 0.55, hs * 0.2, hair, 0.04), 0, top - hs * 0.27, -hs * 0.48));
+        // rounded beehive
+        const hive = at(new THREE.Mesh(new THREE.SphereGeometry(hs * 0.52, 16, 12), hair), 0, top + hs * 0.3, -hs * 0.06);
+        hive.scale.set(1.0, 0.85, 0.95); hive.castShadow = true; acc.add(hive);
+        const swoop = at(block(hs * 0.9, hs * 0.16, hs * 0.3, hair, 0.07), hs * 0.05, top + hs * 0.06, hs * 0.38); swoop.rotation.z = -0.15; acc.add(swoop);
+        break;
+      }
+      case 'slick': {
+        acc.add(at(block(hs * 1.12, hs * 0.2, hs * 1.08, hair, 0.08), 0, top, -hs * 0.03));
+        acc.add(at(block(hs * 1.12, hs * 0.5, hs * 0.18, hair, 0.04), 0, top - hs * 0.25, -hs * 0.49));
+        const wave = at(block(hs * 0.8, hs * 0.16, hs * 0.4, hair, 0.06), -hs * 0.1, top + hs * 0.1, hs * 0.3); wave.rotation.z = 0.12; acc.add(wave);
+        break;
+      }
+      case 'bun': {
+        acc.add(at(block(hs * 1.14, hs * 0.26, hs * 1.1, hair, 0.06), 0, top, 0));
+        acc.add(at(block(hs * 1.14, hs * 0.6, hs * 0.22, hair, 0.05), 0, top - hs * 0.27, -hs * 0.47));
+        for (let i = 0; i < 7; i++) { // curly bun
+          const a = (i / 7) * Math.PI * 2;
+          acc.add(at(new THREE.Mesh(new THREE.IcosahedronGeometry(hs * 0.17, 0), hair), Math.cos(a) * hs * 0.17, top + hs * 0.3 + (i % 2) * hs * 0.08, -hs * 0.35 + Math.sin(a) * hs * 0.17));
+        }
+        break;
+      }
+      case 'pigtails': {
+        acc.add(at(block(hs * 1.13, hs * 0.24, hs * 1.08, hair, 0.05), 0, top, 0));
+        acc.add(at(block(hs * 1.13, hs * 0.5, hs * 0.2, hair, 0.04), 0, top - hs * 0.25, -hs * 0.48));
+        for (const sx of [-1, 1]) {
+          const tail = at(block(hs * 0.22, hs * 0.6, hs * 0.22, hair, 0.06), sx * hs * 0.66, top - hs * 0.35, -hs * 0.2); tail.rotation.z = sx * 0.25; acc.add(tail);
+          const bm = mat(spec.bowColor || '#ff6fae');
+          acc.add(at(block(hs * 0.3, hs * 0.14, hs * 0.1, bm, 0.03), sx * hs * 0.62, top - hs * 0.04, -hs * 0.2));
+        }
+        break;
+      }
       case 'bald': break;
       default:
         acc.add(at(block(hs * 1.13, hs * 0.24, hs * 1.08, hair, 0.05), 0, top, -hs * 0.02));
         acc.add(at(block(hs * 1.13, hs * 0.5, hs * 0.2, hair, 0.04), 0, top - hs * 0.25, -hs * 0.48));
     }
+  }
+
+  buildAccessories(spec, hs) {
+    const top = hs / 2;
+    if (spec.sunglasses) {
+      const g = mat('#151515', { roughness: 0.25, metalness: 0.3 });
+      for (const sx of [-1, 1]) this.head.add(at(block(hs * 0.36, hs * 0.2, hs * 0.04, g, 0.03), sx * hs * 0.24, hs * 0.08, hs * 0.52));
+      this.head.add(at(block(hs * 0.2, hs * 0.04, hs * 0.04, g, 0.01), 0, hs * 0.12, hs * 0.52));
+      this.sunglasses = this.head.children.slice(-3);
+    }
+    if (spec.pearls) {
+      const pm = mat('#fbf6ec', { roughness: 0.2, metalness: 0.1 });
+      for (let i = 0; i < 11; i++) {
+        const a = -0.9 + (i / 10) * 1.8;
+        this.chest.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.035, 8, 6), pm), Math.sin(a) * 0.3, -0.06 - Math.cos(a) * 0.08 + 0.08, 0.2 + Math.cos(a) * 0.02));
+      }
+    }
+    if (spec.lanyard) {
+      const lm = mat(spec.lanyard);
+      for (const sx of [-1, 1]) { const st = at(block(0.04, 0.42, 0.02, lm, 0.01), sx * 0.12, -0.2, 0.215); st.rotation.z = -sx * 0.28; this.chest.add(st); }
+      this.chest.add(at(block(0.16, 0.2, 0.02, mat('#ffffff'), 0.01), 0, -0.48, 0.22));
+    }
+    if (spec.watch) this.arms.L.hand.add(at(block(0.4, 0.08, 0.4, mat(spec.watch, { metalness: 0.8, roughness: 0.25 }), 0.02), 0, 0.06, 0));
+    if (spec.hood) this.chest.add(at(block(0.62, 0.22, 0.3, mat(spec.shirt, { roughness: 0.8 }), 0.06), 0, 0.02, -0.2));
+    if (spec.handbag) { const bag = at(block(0.28, 0.2, 0.1, mat(spec.handbag, { metalness: 0.4, roughness: 0.4 }), 0.03), 0, -0.2, 0); bag.userData.persistent = true; this.arms.R.hand.add(bag); this.props.handbag = bag; }
+    if (spec.collarProp) { const c = at(block(0.3, 0.06, 0.06, mat(spec.collarProp), 0.02), 0, -0.1, 0.12); c.visible = false; this.arms.R.hand.add(c); this.props.collar = c; }
   }
 
   buildProps(S) {
@@ -240,7 +335,9 @@ export class BlockCharacter {
     this.props = { sword, flashlight, phone, wand };
   }
 
-  setProp(name) { for (const [k, p] of Object.entries(this.props)) p.visible = k === name; }
+  setGlasses(on) { if (this.sunglasses) for (const m of this.sunglasses) m.visible = on; }
+
+  setProp(name) { for (const [k, p] of Object.entries(this.props)) if (!p.userData.persistent) p.visible = k === name; }
 
   applyPose(p) {
     this.body.position.y = p.bodyY || 0;

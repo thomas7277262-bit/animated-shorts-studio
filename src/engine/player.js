@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { Character } from './character.js';
 import { BlockCharacter } from './blocky.js';
 import { Creature, evalCreatureAction, blendCreaturePose } from './creature.js';
+import { Dog, evalDogAction, blendDogPose } from './dog.js';
 import { applyLighting, Weather } from './atmosphere.js';
 import { buildProp } from './environments/props.js';
 import { evalAction, blendPose } from './poses.js';
@@ -73,7 +74,7 @@ export class StoryPlayer {
 
     this.characters = {};
     for (const [id, spec] of Object.entries(timeline.characters)) {
-      const c = spec.kind === 'creature' ? new Creature(spec) : spec.style === 'blocky' ? new BlockCharacter(spec) : new Character(spec);
+      const c = spec.kind === 'creature' ? new Creature(spec) : spec.kind === 'animal' ? new Dog(spec) : spec.style === 'blocky' ? new BlockCharacter(spec) : new Character(spec);
       c.root.visible = false;
       this.characters[id] = c;
       this.scene.add(c.root);
@@ -188,10 +189,14 @@ export class StoryPlayer {
   }
 
   act(id, name, t, d, params) {
-    return this.characters[id].kind === 'creature' ? evalCreatureAction(name, t, d, params) : evalAction(name, t, d, params);
+    const c = this.characters[id];
+    if (c.kind === 'animal') return evalDogAction(name, t, d, params, c.spec);
+    return c.kind === 'creature' ? evalCreatureAction(name, t, d, params) : evalAction(name, t, d, params);
   }
   blend(id, a, b, w) {
-    return this.characters[id].kind === 'creature' ? blendCreaturePose(a, b, w) : blendPose(a, b, w);
+    const k = this.characters[id].kind;
+    if (k === 'animal') return blendDogPose(a, b, w);
+    return k === 'creature' ? blendCreaturePose(a, b, w) : blendPose(a, b, w);
   }
 
   evalCharacter(s, id, t) {
@@ -242,7 +247,8 @@ export class StoryPlayer {
       const d = t - bt;
       if (d >= 0 && d < 0.16) { blink = Math.sin((d / 0.16) * Math.PI); break; }
     }
-    return { pos, facing, pose, face: { expr, blink, mouth, lookX: 0, lookY: 0 }, prop };
+    const glasses = idx >= 0 ? segs[idx].glasses !== false : true;
+    return { pos, facing, pose, face: { expr, blink, mouth, lookX: 0, lookY: 0 }, prop, glasses };
   }
 
   headWorld(id) {
@@ -284,6 +290,7 @@ export class StoryPlayer {
       c.applyPose(st.pose, t);
       c.setFace(st.face);
       c.setProp(st.prop);
+      c.setGlasses?.(st.glasses);
     }
     this.scene.updateMatrixWorld(true);
 

@@ -25,7 +25,7 @@ export function createFaceCanvas() {
 
 // state: { expr, blink (0 open..1 closed), mouth (0..1 talk openness), lookX, lookY }
 export function faceKey(spec, s) {
-  return `${spec.skin || ''}|${s.expr}|${Math.round(s.blink * 4)}|${Math.round(s.mouth * 6)}|${Math.round(s.lookX * 4)}|${Math.round(s.lookY * 4)}`;
+  return `${spec.skin || ''}|${spec.eyePatch || ''}|${spec.freckles ? 'f' : ''}|${s.expr}|${Math.round(s.blink * 4)}|${Math.round(s.mouth * 6)}|${Math.round(s.lookX * 4)}|${Math.round(s.lookY * 4)}`;
 }
 
 export function drawFace(canvas, spec, s) {
@@ -50,6 +50,20 @@ export function drawFace(canvas, spec, s) {
     }
   }
 
+  // --- fur patch around one eye (dogs) ---
+  if (spec.eyePatch) {
+    g.fillStyle = spec.eyePatch;
+    const [px, py] = P(0.3, 0.15);
+    g.beginPath(); g.ellipse(px, py, 0.2 * S, 0.24 * S, 0.3, 0, Math.PI * 2); g.fill();
+  }
+  // --- freckles ---
+  if (spec.freckles) {
+    g.fillStyle = 'rgba(160,80,40,0.55)';
+    for (const sx of [-1, 1]) for (const [fx, fy] of [[0.38, -0.02], [0.46, 0.0], [0.42, -0.08], [0.5, -0.06], [0.34, -0.07]]) {
+      const [x, y] = P(sx * fx, fy);
+      g.beginPath(); g.arc(x, y, 0.014 * S, 0, Math.PI * 2); g.fill();
+    }
+  }
   // --- eyes ---
   for (const sx of [-1, 1]) {
     const [ex, ey] = P(sx * eyeX, eyeY);
@@ -77,8 +91,8 @@ export function drawFace(canvas, spec, s) {
     }
   }
 
-  // --- mouth ---
-  drawMouth(g, expr, Math.min(1, Math.max(0, s.mouth || 0)), ink, lw);
+  // --- mouth (dogs use a 3D jaw instead) ---
+  if (!spec.dogFace) drawMouth(g, expr, Math.min(1, Math.max(0, s.mouth || 0)), ink, lw);
 
   // --- extras ---
   if (expr === 'cry' || expr === 'sad') {

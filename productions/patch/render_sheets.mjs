@@ -13,9 +13,9 @@ const OUT = path.resolve(process.argv[2] || 'output/patch-sheets');
 fs.mkdirSync(OUT, { recursive: true });
 const distDir = path.join(ROOT, 'dist');
 
-const HUMANS = ['owen', 'reyes', 'vivian', 'preston', 'sloane'];
+const HUMANS = ['owen', 'reyes', 'vivian', 'preston'];
 const DOGS = ['patch', 'duchess'];
-const ALL = ['reyes', 'owen', 'patch', 'duchess', 'sloane', 'vivian', 'preston'];
+const ALL = ['reyes', 'owen', 'patch', 'duchess', 'vivian', 'preston'];
 
 // approximate standing heights (world units) for framing
 const H = (id) => {
@@ -65,7 +65,7 @@ function save(buf, name) { const f = path.join(OUT, name); fs.writeFileSync(f, b
 
 // 1) Line-up (landscape)
 {
-  const xs = [-5.4, -3.4, -1.5, 0.2, 1.8, 3.6, 5.6];
+  const xs = [-4.6, -2.6, -0.8, 0.8, 2.6, 4.7];
   const cast = ALL.map((id, i) => ({ id, at: [xs[i], id === 'patch' || id === 'duchess' ? 0.6 : 0], face: id === 'patch' ? 20 : id === 'duchess' ? -15 : 0, action: id === 'patch' ? 'wag' : 'idle', expr: id === 'vivian' ? 'smug' : 'happy' }));
   const [img] = await stills([scene({ cast, camera: { type: 'medium', target: [0.1, 1.15, 0], from: { angle: 0, dist: 12.5, height: 0.6, lookY: 0, fov: 34 }, to: { angle: 0, dist: 12.5, height: 0.6, lookY: 0, fov: 34 }, scale: false } })], 2560, 1280, 'lineup');
   save(img, '1-lineup.jpg');
@@ -82,8 +82,8 @@ function save(buf, name) { const f = path.join(OUT, name); fs.writeFileSync(f, b
     tile(fs4, 4, row, `${CHARACTER_LIBRARY[id].name}  ·  front / three-quarter / side / back`);
     files.push(row);
   }
-  tile(files.slice(0, 4), 1, path.join(OUT, '2-turnarounds-a.jpg'));
-  tile(files.slice(4), 1, path.join(OUT, '3-turnarounds-b.jpg'));
+  tile(files.slice(0, 3), 1, path.join(OUT, '2-turnarounds-a.jpg'));
+  tile(files.slice(3), 1, path.join(OUT, '3-turnarounds-b.jpg'));
 }
 
 // 3) Expressions (face close-ups)

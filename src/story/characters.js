@@ -162,12 +162,6 @@ export const PATCH_CAST = {
     shirt: '#f6f4ee', shirtDetail: 'suit', shirtAccent: '#d4af37', sleeves: 'long', pants: '#efece4', shoes: '#8b6b3a',
     accent: '#d4af37', eyeStyle: 'round', brows: 'thick', cheeks: false, personality: 'proud, mostly on his phone',
   },
-  sloane: {
-    id: 'sloane', name: 'Sloane Vandermeer', role: 'rich kid', style: 'blocky', height: 0.8,
-    skin: '#f5d3b8', hair: '#f3d27a', hairStyle: 'pigtails', bowColor: '#ff7eb6', sunglasses: true,
-    shirt: '#fff8fb', shirtDetail: 'dress', shirtAccent: '#ff9ec7', pants: '#fff8fb', shoes: '#ff9ec7',
-    accent: '#ff9ec7', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'spoiled, wants a perfect puppy',
-  },
   reyes: {
     id: 'reyes', name: 'Ms. Reyes', role: 'shelter worker', style: 'blocky', height: 1.0,
     skin: '#b07a52', hair: '#2a1a12', hairStyle: 'bun',

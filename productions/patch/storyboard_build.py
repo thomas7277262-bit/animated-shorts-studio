@@ -5,82 +5,93 @@
 import re, json
 script = open('productions/patch/SCRIPT.md').read()
 LINES = {int(n): re.sub(r'\[[^\]]*\]\s*', '', t).strip() for n, t in re.findall(r'^\| L(\d+) \| (.*) \|$', script, re.M)}
-WPS = 3.2
-PAUSE = {4: .4, 9: .4, 12: .3, 18: .6, 20: .3, 22: .3, 27: .6, 32: .3, 33: .8}
+WPS = 250 / 60          # target speaking pace: 250 words per minute
+# short pauses only at emotional turns (seconds after the line)
+PAUSE = {9: .35, 11: .35, 12: .25, 22: .3, 24: .3, 31: .4, 44: .6}
 
 # (line, weight, shot type, location, characters, action / expression, sfx)
 S = [
- (1, 1, 'Aerial establishing, slow push', 'Maple Street (day)', '–', 'Pastel houses, bubble trees, sunny morning; cars and kids moving below', 'birds, light street ambience'),
- (1, 1, 'Street-level wide', 'Shelter exterior', 'Families, extras', '"ADOPTION DAY" banner; families walk in; loose fence board visible at right', 'door chime'),
- (2, 1, 'Interior wide, eye level', 'Shelter kennels', 'Dogs (extras)', 'Row of kennels, dogs wagging and jumping at the bars', 'happy barks'),
- (2, 1.3, 'Slow dolly down the row', 'Shelter kennels', 'Patch', 'Camera glides to the last cage in the corner, a small shape inside', 'music drops to soft piano'),
- (3, 1, 'Face close-up (reveal)', 'Patch cage', 'Patch', 'Patch lifts his head, tilts it, one ear flops', 'soft "boop" accent'),
- (4, 1, 'Insert, side medium', 'Patch cage', 'Patch', 'Floppy ear flicks; patchwork coat shown as he turns', '–'),
- (4, 1.2, 'Low wide', 'Patch cage', 'Patch', 'Patch stands and hops forward on three legs, tail wagging hopefully', 'paw taps'),
- (5, 1, 'Medium tracking', 'Shelter kennels', 'Family A, Family B', 'Families stroll in smiling, pointing at dogs', 'chatter'),
- (6, 1, 'POV through bars (from inside the cage)', 'Patch cage', 'Family A, Patch', 'Family stops, glances in… and walks on; Patch\'s tail slows and stops', 'footsteps fading'),
- (7, 1, 'Medium close-up, slight low angle', 'Shelter kennels', 'Dad extra', '"Too scruffy" – scoffs, shakes head', '–'),
- (7, 1, 'Medium close-up', 'Shelter kennels', 'Grandma extra', '"Too slow" – frowns, waves hand', '–'),
- (8, 1, 'Medium, eye level', 'Patch cage', 'Ms. Reyes, Patch', 'Ms. Reyes kneels and slides a treat through the bars', 'treat bag rustle'),
- (8, 1, 'Face close-up', 'Patch cage', 'Ms. Reyes', 'Warm whisper "Your family is coming, buddy"; Patch\'s ears lift', '–'),
- (9, 1, 'Wide, static', 'Shelter kennels (closing time)', 'Patch', 'Lights click off row by row; every cage empty except Patch\'s', 'light switch clicks'),
- (10, 1, 'Medium, door backlight', 'Shelter entrance', 'Owen', 'Door opens; Owen steps in, hands in hoodie pocket', 'door creak'),
- (11, 1, 'Wide, park (cutaway)', 'Maple Park', 'Owen, kids (extras)', 'Kids picking teams; Owen left standing alone', 'kids laughing, distant'),
- (11, 1, 'Face close-up', 'Maple Park', 'Owen', 'Sad, looks at his shoes', '–'),
- (12, 1, 'Medium, eye level', 'Patch cage', 'Owen, Patch', 'Owen sits cross-legged by the cage; Patch presses his nose to the bars', '–'),
- (12, 1, 'Two-shot through bars', 'Patch cage', 'Owen, Patch', 'Both smile; Owen\'s finger and Patch\'s nose touch', 'music: gentle lift'),
- (13, 1, 'Street-level low angle', 'Shelter exterior', 'Vandermeers', 'Shiny white car rolls up; white shoes step out', 'car door, music: snooty pizzicato'),
- (14, 1, 'Low-angle power shot', 'Shelter entrance', 'Mr & Mrs Vandermeer, Sloane', 'All three in white, sunglasses on, chins up', 'sparkle "ding"'),
- (15, 1, 'Medium', 'Shelter kennels', 'Sloane, Mrs Vandermeer', 'Sloane points demandingly along the cages', '–'),
- (16, 1, 'Over-shoulder (Mrs V → Patch)', 'Patch cage', 'Mrs Vandermeer, Patch', 'She lowers her sunglasses; Patch wags and hops toward her', '–'),
- (16, 1.3, 'Face close-up, low angle', 'Patch cage', 'Mrs Vandermeer', 'Laughs, nose wrinkled: "Ew. That one\'s broken."', 'record-scratch-light sting'),
- (17, 1, 'Close-up insert', 'Shelter kennels', 'Duchess', 'Tiny fluffy white puppy with a pink bow – sparkles', 'twinkle'),
- (17, 1.2, 'Wide from doorway', 'Shelter exterior', 'Vandermeers, Duchess, Owen, Ms. Reyes', 'The family carries Duchess to the car and drives off; Owen and Ms. Reyes watch', 'car drives away'),
- (18, 1, 'Medium, top-down slightly', 'Patch cage', 'Patch', 'Patch lies down; his tail stops', 'music fades to one piano note'),
- (18, 1.2, 'Face close-up', 'Patch cage', 'Patch', 'Sad droopy eyes, a single tear', '–'),
- (19, 1, 'Night establishing, wide', 'Maple Street (storm)', '–', 'Dark navy sky, lightning flash over the houses, heavy rain', 'thunder, rain bed; music: storm drums'),
- (19, 1, 'Medium through window', 'Shelter kennels (night)', 'Patch', 'Rain streaks the window; Patch lifts his head at the thunder', 'rain on glass'),
- (20, 1, 'Wide, static', 'Maple Street (storm)', '–', 'Streetlights and windows go dark one after another', 'power-down hum'),
- (21, 1, 'Low-angle wide', 'Vandermeer mansion (night)', '–', 'White-and-gold mansion lit by lightning', 'thunder'),
- (21, 1.2, 'Close-up insert', 'Vandermeer gate (night)', '–', 'Golden gate latch snaps; the gate swings open in the wind', 'metal creak + bang'),
- (22, 1, 'Face close-up, lit by flashlight', 'Mansion doorway (night)', 'Mrs Vandermeer', 'Shocked: Duchess\'s bed is empty', 'gasp'),
- (23, 1, 'High aerial', 'Flooded street (storm)', 'Duchess', 'Water rushing down the gutter toward a storm drain; tiny white dot in it', 'rushing water'),
- (23, 1.3, 'Low close-up at water level', 'Storm drain', 'Duchess', 'Duchess clinging to the drain grate, terrified, water splashing', 'whimpers under rain'),
- (24, 1, 'Wide, static', 'Maple Street (storm)', '–', 'Dark houses, nobody outside, only rain', 'rain loud'),
- (24, 1, 'Face close-up', 'Shelter kennels (night)', 'Patch', 'Ears snap up; determined eyes', 'music hits: urgent strings'),
- (25, 1, 'Medium low angle', 'Shelter fence (night)', 'Patch', 'Patch shoves through the loose fence board', 'wood clatter'),
- (25, 1.4, 'Low tracking shot alongside', 'Flooded street (storm)', 'Patch', 'Patch runs through the rain on three legs, full speed, splashing puddles', 'splashes, panting'),
- (26, 1, 'Close-up', 'Storm drain', 'Patch, Duchess', 'Patch grabs Duchess by the collar', 'water surge'),
- (26, 1.2, 'Medium wide', 'Flooded street (storm)', 'Patch, Duchess', 'He pulls her up onto the sidewalk; both collapse, safe', 'thud, relieved whimper'),
- (27, 1, 'Low-angle hero shot', 'Sidewalk (storm)', 'Patch, Duchess', 'Patch barks again and again; lightning behind him', 'barks ×3'),
- (27, 1.3, 'Wide', 'Maple Street (storm)', 'Neighbours, Vandermeers, Owen, Ms. Reyes', 'Porch lights snap on one by one; neighbours run out with umbrellas and flashlights', 'doors opening, voices'),
- (28, 1, 'Wide, sunny morning', 'Maple Street (morning)', 'Crowd, Patch', 'Puddles shining, rainbow, crowd gathered around Patch', 'birds return; music: warm theme'),
- (29, 1, 'Medium', 'Maple Street (morning)', 'Mrs Vandermeer, Duchess, Patch', 'Mrs V kneels holding Duchess; Duchess licks Patch\'s nose', '–'),
- (29, 1.2, 'Face close-up', 'Maple Street (morning)', 'Mrs Vandermeer', 'Tears in her eyes: "I was wrong about you."', '–'),
- (30, 1, 'Face close-up', 'Maple Street (morning)', 'Ms. Reyes', 'Big smile: "Patch, somebody\'s here for you."', '–'),
- (31, 1, 'Medium, crowd parts', 'Maple Street (morning)', 'Owen, Patch', 'Owen steps forward holding a brand new red collar', 'crowd "aww"'),
- (31, 1, 'Close-up insert', 'Maple Street (morning)', 'Owen, Patch', 'The new collar with a gold tag that says "PATCH"', 'tag jingle'),
- (32, 1, 'Medium close-up', 'Maple Street (morning)', 'Owen, Patch', 'Owen hugs Patch; Patch\'s tail wags like crazy', 'happy bark'),
- (32, 1, 'Wide, tracking behind', 'Maple Street (morning)', 'Owen, Patch', 'They walk home together down the pastel street, Patch hopping happily', 'music swells'),
- (33, 2.2, 'LONG HOLD – slow pull-out', 'Owen\'s porch (sunset)', 'Owen, Patch', 'Porch swing at sunset; Owen and Patch asleep side by side', 'music resolves, final soft chord'),
+ (1, 1, 'Aerial establishing, slow push', 'Maple Street (day)', '–', 'Pastel houses, bubble trees, sunny Saturday', 'birds, street ambience; music: light, curious'),
+ (1, 1, 'Street-level wide', 'Shelter exterior', 'Families (extras)', '"ADOPTION DAY" banner and balloons; families walking in', 'door chime'),
+ (2, 1, 'Interior wide, eye level', 'Shelter kennels', 'Shelter dogs (extras)', 'Row of kennels, dogs wagging at the bars', 'happy barks'),
+ (2, 1.2, 'Slow dolly down the row', 'Shelter kennels', 'Patch', 'Camera glides to the very last cage in the corner', 'music softens'),
+ (3, 1, 'Face close-up (reveal)', 'Patch\'s cage', 'Patch', 'Patch lifts his head and tilts it; floppy ear drops', 'soft accent'),
+ (4, 1, 'Insert, side medium', 'Patch\'s cage', 'Patch', 'Floppy ear flicks; patchy brown coat as he turns', '–'),
+ (4, 1.1, 'Low wide', 'Patch\'s cage', 'Patch', 'Stands and hops forward on three legs, tail hopeful', 'paw taps'),
+ (5, 1, 'Medium tracking', 'Shelter kennels', 'Families (extras)', 'Families stroll in smiling, pointing', 'chatter'),
+ (6, 1, 'POV through bars (from inside the cage)', 'Patch\'s cage', 'Family (extras), Patch', 'A family glances in… and walks on', 'footsteps fading'),
+ (7, 1, 'Medium close-up, slight low angle', 'Shelter kennels', 'Dad (extra)', '"Too scruffy" – scoffs, shakes head', '–'),
+ (7, 1, 'Medium close-up', 'Shelter kennels', 'Grandma (extra)', '"Too slow" – frowns, waves hand', '–'),
+ (8, 1, 'Wide, quick montage feel', 'Shelter entrance', 'Families, dogs (extras)', 'Dog after dog leaves through the door with a new family', 'door chime ×3'),
+ (9, 1, 'Wide, static, held', 'Shelter kennels', 'Patch', 'Every cage empty except Patch\'s', 'silence beat'),
+ (10, 1, 'Face close-up', 'Patch\'s cage', 'Ms. Reyes, Patch', 'Ms. Reyes kneels and whispers warmly; Patch\'s ears lift', '–'),
+ (11, 1, 'Wide, static', 'Shelter kennels (closing time)', 'Patch', 'Lights click off row by row; Patch alone', 'light switch clicks; music: one piano note'),
+ (12, 1, 'Medium, door backlight', 'Shelter entrance', 'Owen', 'The door opens; Owen steps in, hands in hoodie pocket', 'door creak; music: gentle'),
+ (13, 1, 'Wide (cutaway)', 'Maple Park', 'Owen, kids (extras)', 'Kids pick teams; Owen left standing alone', 'distant laughter'),
+ (13, 1, 'Face close-up', 'Maple Park', 'Owen', 'Sad, looks down at his shoes', '–'),
+ (14, 1, 'Medium, eye level', 'Patch\'s cage', 'Owen, Patch', 'Owen sits cross-legged by the last cage, talking', '–'),
+ (14, 1, 'Two-shot through bars', 'Patch\'s cage', 'Owen, Patch', 'Owen tells his story with big hand gestures; Patch listens, head tilted', '–'),
+ (15, 1, 'Close-up', 'Patch\'s cage', 'Patch', 'Patch wags so hard his whole body wiggles', 'happy yips'),
+ (16, 1, 'Two-shot, warm light', 'Patch\'s cage', 'Owen, Patch', 'Owen\'s finger and Patch\'s nose touch through the bars; both smile', 'music: warm lift'),
+ (17, 1, 'Medium, top-down slightly', 'Owen\'s house (living room)', 'Owen', 'Owen shakes an almost-empty piggy bank; two coins fall out', 'coin clink'),
+ (18, 1, 'Street-level low angle', 'Shelter exterior', 'Mr & Mrs Vandermeer', 'A shiny white car rolls up; white shoes step out', 'car door; music: snooty pizzicato'),
+ (19, 1, 'Low-angle power shot', 'Shelter entrance', 'Mr & Mrs Vandermeer', 'Both in white, sunglasses on, chins up', 'sparkle ding'),
+ (20, 1, 'Insert', 'Shelter kennels', 'Mrs Vandermeer', 'A gold clipboard: "THE PERFECT PUPPY" checklist', 'pen click'),
+ (20, 1, 'Medium', 'Shelter kennels', 'Mr Vandermeer', 'Mr V checks his gold watch, bored', '–'),
+ (21, 1, 'Over-shoulder (Mrs V → Patch)', 'Patch\'s cage', 'Mrs Vandermeer, Patch', 'She lowers her sunglasses; Patch hops toward her, wagging', '–'),
+ (21, 1.2, 'Face close-up, low angle', 'Patch\'s cage', 'Mrs Vandermeer', 'Laughs, nose wrinkled: "Ew. That one\'s broken."', 'comic sting'),
+ (22, 1, 'Insert close-up', 'Patch\'s cage', 'Patch', 'His tail slows… and stops', 'music drops out'),
+ (23, 1, 'Close-up insert', 'Shelter kennels', 'Duchess', 'Fluffy white puppy with a pink bow, sparkles', 'twinkle'),
+ (23, 1.1, 'Wide from the doorway', 'Shelter exterior', 'Vandermeers, Duchess, Owen, Ms. Reyes', 'They drive off; Owen and Ms. Reyes watch from the door', 'car drives away'),
+ (24, 1, 'Face close-up', 'Patch\'s cage (night)', 'Patch', 'Lying beside a full food bowl, sad eyes, one tear', 'soft piano'),
+ (25, 1, 'Night establishing, wide', 'Maple Street (storm)', '–', 'Lightning over the houses, heavy rain', 'thunder; music: storm drums'),
+ (26, 1, 'Wide, static', 'Maple Street (storm)', '–', 'Thunder flash, then streetlights and windows go dark one after another', 'thunder crack, power-down hum'),
+ (27, 1, 'Low-angle wide', 'Vandermeer mansion (night)', '–', 'White-and-gold mansion lit by lightning', 'thunder'),
+ (27, 1, 'Close-up insert', 'Vandermeer gate (night)', '–', 'The golden gate bursts open in the wind', 'metal clang'),
+ (28, 1, 'Low tracking', 'Vandermeer gate (night)', 'Duchess', 'Duchess scampers through the open gate into the rain', 'tiny paw splashes'),
+ (29, 1, 'High aerial', 'Flooded street (storm)', 'Duchess', 'Water rushing down the street; a tiny white dot swept along', 'rushing water'),
+ (29, 1, 'Water-level medium', 'Storm drain', 'Duchess', 'Duchess tumbles toward the storm drain', 'water surge'),
+ (30, 1, 'Low close-up', 'Storm drain', 'Duchess', 'Clinging to the grate, crying', 'whimpers under rain'),
+ (30, 1, 'Wide, static', 'Maple Street (storm)', '–', 'Dark houses, nobody outside', 'rain loud'),
+ (31, 1, 'Face close-up', 'Shelter kennels (night)', 'Patch', 'Ears snap up; determined eyes', 'music hits: urgent strings'),
+ (32, 1, 'Medium, flashlight light', 'Shelter kennels (night)', 'Ms. Reyes', 'Ms. Reyes checks the kennels with a flashlight', 'flashlight click'),
+ (32, 1, 'Low medium', 'Shelter kennels (night)', 'Patch, Ms. Reyes', 'Patch bolts past her legs', 'whoosh'),
+ (32, 1, 'Wide from outside', 'Shelter exterior (storm)', 'Patch', 'He bursts out the door into the rain', 'door bang, rain'),
+ (33, 1, 'Low tracking alongside', 'Flooded street (storm)', 'Patch', 'Three legs, full speed, through the rain', 'splashes, panting'),
+ (34, 1, 'Low medium, slow-motion feel', 'Flooded street (storm)', 'Patch', 'He splashes through the freezing water', 'big splash'),
+ (34, 1, 'Close-up', 'Storm drain', 'Patch, Duchess', 'He grabs Duchess by the collar and pulls', 'strain, water surge'),
+ (35, 1, 'Medium wide', 'Sidewalk (storm)', 'Patch, Duchess', 'He drags her onto the sidewalk; both collapse, safe', 'thud, relieved whimper'),
+ (36, 1, 'Low-angle hero shot', 'Sidewalk (storm)', 'Patch, Duchess', 'Patch barks and barks; lightning behind him', 'barks ×3'),
+ (36, 1, 'Wide', 'Maple Street (storm)', 'Neighbours, Vandermeers, Owen, Ms. Reyes', 'Porch lights flick on; neighbours run out with umbrellas', 'doors opening, voices'),
+ (37, 1, 'Wide, sunny morning', 'Maple Street (morning)', 'Crowd, Patch', 'Puddles shining, a rainbow, the crowd around Patch', 'birds; music: warm theme'),
+ (38, 1, 'Medium', 'Maple Street (morning)', 'Mrs Vandermeer, Duchess, Patch', 'She kneels, no sunglasses, tears in her eyes', '–'),
+ (39, 1, 'Face close-up', 'Maple Street (morning)', 'Mrs Vandermeer', '"I called you broken… you were the bravest one of all."', '–'),
+ (39, 1, 'Close-up', 'Maple Street (morning)', 'Duchess, Patch', 'Duchess licks Patch\'s nose; his tail starts wagging again', 'happy yip'),
+ (40, 1, 'Medium', 'Shelter exterior (morning)', 'Mr Vandermeer, Ms. Reyes', 'Mr V hands Ms. Reyes a giant gold check', 'cash-register ding'),
+ (40, 1, 'Wide', 'Shelter exterior (morning)', 'Families, dogs (extras)', 'Banner "ALL ADOPTIONS FREE TODAY"; dogs leave with happy families', 'cheering'),
+ (41, 1, 'Face close-up', 'Shelter exterior (morning)', 'Ms. Reyes', 'Big smile: "Patch, somebody\'s here for you."', '–'),
+ (42, 1, 'Medium, slow push to the collar', 'Shelter exterior (morning)', 'Owen, Patch', 'The crowd parts; Owen steps forward holding a new red collar with a gold "PATCH" tag', 'crowd "aww", tag jingle'),
+ (43, 1, 'Medium close-up', 'Shelter exterior (morning)', 'Owen, Patch', 'Patch hops into Owen\'s arms; tail wagging like crazy', 'happy bark; music swells'),
+ (43, 1, 'Wide, tracking behind', 'Maple Street (morning)', 'Owen, Patch', 'They walk home together, Patch hopping happily', '–'),
+ (44, 1, 'LONG HOLD – slow pull-out', 'Owen\'s porch (sunset)', 'Owen, Patch', 'Porch swing at sunset, Owen and Patch asleep side by side', 'music resolves'),
 ]
 
 t = 0.3
 rows = []
 for ln in sorted(LINES):
     words = len(LINES[ln].split())
-    dur = words / WPS + PAUSE.get(ln, 0.15)
+    dur = words / WPS + PAUSE.get(ln, 0.04)
     shots = [s for s in S if s[0] == ln]
     tw = sum(s[1] for s in shots)
     for s in shots:
         d = dur * s[1] / tw
         rows.append((t, d) + s)
         t += d
-total = t + 0.4
+total = t + 0.5
 long_ = [r for r in rows if r[1] > 2.4]
 print(f"{len(rows)} shots, est total {total:.1f}s, median {sorted(r[1] for r in rows)[len(rows)//2]:.2f}s, within 1.2–2.2s: {sum(1.15<=r[1]<=2.25 for r in rows)}, long holds: {[(i+1, round(r[1],1)) for i,r in enumerate(rows) if r[1]>2.4]}")
-out = ["# \"Patch, the Dog Nobody Picked\" – Storyboard v1", "",
-       f"**{len(rows)} shots · estimated {total:.0f} s.** Timings are estimates from the script; the final ElevenLabs narration will re-time every shot. Captions: one white lowercase word at a time, centred at 58% height.", "",
+out = ["# \"Patch, the Dog Nobody Picked\" – Storyboard v2 (250 wpm)", "",
+       f"**{len(rows)} shots · estimated {total:.0f} s.** Timings are estimates at 250 wpm; the final narration's real word timings will re-time every shot and caption. Captions: one white lowercase word at a time, centred at 58% height.", "",
        "| # | Time | Dur | Narration (line) | Shot | Location | Characters | Action / expression | SFX / music |", "|---|---|---|---|---|---|---|---|---|"]
 for i, (st, d, ln, w, shot, loc, ch, act, sfx) in enumerate(rows, 1):
     out.append(f"| {i} | {int(st//60)}:{st%60:05.2f} | {d:.1f}s | L{ln}: {LINES[ln][:60]}{'…' if len(LINES[ln])>60 else ''} | {shot} | {loc} | {ch} | {act} | {sfx} |")

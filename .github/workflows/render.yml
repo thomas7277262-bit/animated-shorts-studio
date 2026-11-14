@@ -1,0 +1,105 @@
+# Cloud renderer. Started from the dashboard's "Render video" button (or the
+# GitHub "Actions" tab -> "Render video" -> "Run workflow").
+# Output: a GitHub Release named render-<id> holding the MP4 (direct download).
+name: Render video
+run-name: "Render ${{ inputs.render_id || github.run_id }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      storyboard_b64:
+        description: "Storyboard JSON, base64 (leave empty to use idea / demo)"
+        required: false
+        default: ""
+      idea:
+        description: "Story idea (used when no storyboard is given)"
+        required: false
+        default: ""
+      duration:
+        description: "Duration in seconds (15-60)"
+        required: false
+        default: "15"
+      resolution:
+        description: "Resolution"
+        type: choice
+        options: ["1080p", "1440p", "4k"]
+        default: "1080p"
+      fps:
+        description: "Frames per second"
+        type: choice
+        options: ["30", "60"]
+        default: "30"
+      demo:
+        description: "Render the built-in 15 s demo story"
+        type: boolean
+        default: false
+      render_id:
+        description: "ID (set by the dashboard)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-${{ inputs.render_id || github.run_id }}
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install FFmpeg and eSpeak NG
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg espeak-ng
+
+      - name: Install packages and headless Chromium
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Render
+        env:
+          SB: ${{ inputs.storyboard_b64 }}
+          IDEA: ${{ inputs.idea }}
+          DURATION: ${{ inputs.duration }}
+          RES: ${{ inputs.resolution }}
+          FPS: ${{ inputs.fps }}
+          DEMO: ${{ inputs.demo }}
+        run: |
+          ARGS=(--out output/video.mp4 --res "$RES" --fps "$FPS" --workers 4)
+          if [ -n "$SB" ]; then ARGS+=(--storyboard-b64 "$SB")
+          elif [ "$DEMO" = "true" ]; then ARGS+=(--demo)
+          else ARGS+=(--idea "$IDEA" --duration "$DURATION"); fi
+          node render/cli.js "${ARGS[@]}"
+
+      - name: Upload as workflow artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ inputs.render_id || github.run_id }}
+          path: |
+            output/video.mp4
+            output/video.jpg
+            output/video.report.json
+            output/video_work/timeline.json
+            output/video_work/storyboard.json
+          if-no-files-found: warn
+
+      - name: Publish as a release (direct MP4 download link)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ID: ${{ inputs.render_id || github.run_id }}
+        run: |
+          TITLE=$(node -e "console.log(require('./output/video_work/storyboard.json').title || 'Animated short')")
+          SUMMARY=$(node -e "const r=require('./output/video.report.json');console.log(r.checks.map(c=>(c.pass?'✅ ':'❌ ')+c.name+': '+c.detail).join('\n'))")
+          gh release create "render-$ID" output/video.mp4 output/video.jpg output/video.report.json \
+            --title "$TITLE" --notes "$SUMMARY" --target "$GITHUB_SHA"

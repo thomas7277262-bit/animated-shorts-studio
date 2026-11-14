@@ -12,9 +12,10 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { DEMO_STORYBOARD } from '../src/story/demo.js';
+import { DEMO_GIANT } from '../src/story/demo-giant.js';
 import { generateStory } from '../src/story/generator.js';
 import { buildTimeline, collectLines } from '../src/story/timeline.js';
-import { generateMusic, sfx as makeSfx, mix, encodeWav, SR } from '../src/audio/synth.js';
+import { generateMusic, sfx as makeSfx, mix, encodeWav, ambience, SR } from '../src/audio/synth.js';
 import { synthLine } from './tts.js';
 import { buildAss } from './subtitles.js';
 import { renderVideo } from './frames.js';
@@ -26,6 +27,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { values: opt } = parseArgs({
   options: {
     demo: { type: 'boolean' },
+    'demo-name': { type: 'string', default: 'giant' },
+    'sfx-volume': { type: 'string' },
+    captions: { type: 'string' },
     storyboard: { type: 'string' },
     'storyboard-b64': { type: 'string' },
     idea: { type: 'string' },
@@ -43,6 +47,7 @@ const { values: opt } = parseArgs({
     'no-subs': { type: 'boolean' },
     seed: { type: 'string' },
     'skip-build': { type: 'boolean' },
+    'audio-only': { type: 'boolean' },
   },
 });
 
@@ -61,13 +66,17 @@ async function main() {
   let sb;
   if (opt.storyboard) sb = JSON.parse(fs.readFileSync(opt.storyboard, 'utf8'));
   else if (opt['storyboard-b64']) sb = JSON.parse(Buffer.from(opt['storyboard-b64'], 'base64').toString('utf8'));
-  else if (opt.demo) sb = structuredClone(DEMO_STORYBOARD);
+  else if (opt.demo) sb = structuredClone(opt['demo-name'] === 'stickman' ? DEMO_STORYBOARD : DEMO_GIANT);
   else sb = generateStory({ idea: opt.idea || '', characters: opt.characters ? opt.characters.split(',') : undefined, duration: Number(opt.duration || 30), seed: Number(opt.seed || Date.now() % 100000) });
   if (opt.duration) sb.targetDuration = Number(opt.duration);
   if (opt.voice) sb.narratorVoice = opt.voice;
   if (opt.mood) sb.mood = opt.mood;
   if (opt['music-volume']) sb.musicVolume = Number(opt['music-volume']);
-  const voiceVolume = Number(opt['voice-volume'] || 1);
+  if (opt['voice-volume']) sb.voiceVolume = Number(opt['voice-volume']);
+  if (opt['sfx-volume']) sb.sfxVolume = Number(opt['sfx-volume']);
+  if (opt.captions) sb.captionStyle = opt.captions;
+  const voiceVolume = sb.voiceVolume ?? 1;
+  const sfxVolume = sb.sfxVolume ?? 1;
   fs.writeFileSync(path.join(workDir, 'storyboard.json'), JSON.stringify(sb, null, 2));
   log(`Story: "${sb.title}" – ${sb.scenes.length} scenes, target ${sb.targetDuration || 'auto'}s, ${width}x${height} @ ${fps}fps`);
 
@@ -97,13 +106,33 @@ async function main() {
   fs.writeFileSync(path.join(workDir, 'timeline.json'), JSON.stringify(lean, null, 1));
 
   // 4. audio mix
-  const music = opt['no-music'] ? null : generateMusic(timeline.duration + 0.5, timeline.music.mood, timeline.seed);
+  let music = null;
+  if (!opt['no-music']) {
+    // music follows the mood of each scene (consecutive scenes share one piece)
+    music = new Float32Array(Math.floor((timeline.duration + 0.5) * SR));
+    const segs = [];
+    for (const s of timeline.scenes) {
+      const mood = s.music || timeline.music.mood;
+      if (segs.length && segs.at(-1).mood === mood) segs.at(-1).end = s.end; else segs.push({ mood, start: s.start, end: s.end });
+    }
+    segs.forEach((g, i) => {
+      const last = i === segs.length - 1;
+      const pcm = generateMusic(g.end - g.start + (last ? 0.5 : 0.8), g.mood, timeline.seed + i);
+      const off = Math.floor(g.start * SR);
+      for (let j = 0; j < pcm.length && off + j < music.length; j++) music[off + j] += pcm[j];
+    });
+  }
   const clips = [];
-  for (const line of timeline.lines) clips.push({ pcm: timings[line.id].pcm, at: line.start, gain: 0.95 * voiceVolume });
-  for (const s of timeline.sfx) clips.push({ pcm: makeSfx(s.name), at: s.t, gain: (s.gain ?? 0.8) * 0.55 });
-  const audio = mix({ duration: timeline.duration, music, musicGain: timeline.music.gain, clips, speech: timeline.lines });
+  for (const line of timeline.lines) clips.push({ pcm: timings[line.id].pcm, at: line.start, gain: 0.95 * voiceVolume, voice: true });
+  for (const s of timeline.sfx) clips.push({ pcm: makeSfx(s.name), at: s.t, gain: (s.gain ?? 0.8) * 0.55 * sfxVolume, duck: true });
+  for (const s of timeline.scenes) if (s.ambience) clips.push({ pcm: ambience(s.ambience, s.end - s.start + 0.6, SR, s.index + 1), at: Math.max(0, s.start - 0.3), gain: 0.25 * sfxVolume, duck: true });
+  const mixStats = {};
+  const audio = mix({ duration: timeline.duration, music, musicGain: timeline.music.gain, clips, speech: timeline.lines, stats: mixStats });
+  const voiceStem = new Float32Array(Math.floor(timeline.duration * SR));
+  for (const line of timeline.lines) { const p = timings[line.id].pcm, o = Math.round(line.start * SR); for (let i = 0; i < p.length && o + i < voiceStem.length; i++) voiceStem[o + i] += p[i]; }
   const audioFile = path.join(workDir, 'audio.wav');
   fs.writeFileSync(audioFile, encodeWav(audio, SR));
+  if (opt['audio-only']) { log(`Audio-only: voice is ${mixStats.voiceOverBackgroundDb.toFixed(1)} dB above music+effects during speech → ${audioFile}`); return; }
   log(`Audio: music "${timeline.music.mood}", ${timeline.sfx.length} sound effects, ${timeline.lines.length} voice clips`);
 
   // 5. subtitles
@@ -118,7 +147,7 @@ async function main() {
 
   // 7. final encode: burn subtitles + add audio
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  fs.copyFileSync(path.join(ROOT, 'assets/fonts/Inter-ExtraBold.otf'), path.join(workDir, 'Inter-ExtraBold.otf'));
+  for (const f of fs.readdirSync(path.join(ROOT, 'assets/fonts'))) if (/\.(otf|ttf)$/.test(f)) fs.copyFileSync(path.join(ROOT, 'assets/fonts', f), path.join(workDir, f));
   const vf = opt['no-subs'] ? 'null' : 'ass=subs.ass:fontsdir=.';
   run('ffmpeg', ['-y', '-v', 'error', '-i', 'video.mp4', '-i', 'audio.wav', '-vf', vf,
     '-c:v', 'libx264', '-preset', 'medium', '-crf', height > 2000 ? '20' : '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-r', String(fps),
@@ -128,7 +157,9 @@ async function main() {
 
   // 8. verify
   const speechPcm = Object.fromEntries(Object.entries(timings).map(([k, v]) => [k, v.pcm]));
-  const report = verifyVideo(outFile, timeline, { width, height, fps, speechPcm });
+  const report = verifyVideo(outFile, timeline, { width, height, fps, speechPcm, voiceStem, master: audio });
+  report.checks.push({ name: 'narration clearly louder than music + effects (>= 6 dB)', pass: mixStats.voiceOverBackgroundDb >= 6, detail: `voice is ${mixStats.voiceOverBackgroundDb.toFixed(1)} dB above the background during speech` });
+  report.pass = report.checks.every((c) => c.pass);
   report.timeline = { duration: timeline.duration, scenes: timeline.scenes.length, lines: timeline.lines.length, sfx: timeline.sfx.length };
   report.render = { width, height, fps, workers, frameSeconds: rv.seconds };
   fs.writeFileSync(outFile.replace(/\.mp4$/, '.report.json'), JSON.stringify(report, null, 2));

@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { buildTimeline } from '../src/story/timeline.js';
 import { DEMO_STORYBOARD } from '../src/story/demo.js';
+import { DEMO_GIANT } from '../src/story/demo-giant.js';
 const dist = new URL('../dist', import.meta.url).pathname;
 const out = process.argv[2];
 const times = process.argv.slice(3).map(Number);
@@ -15,7 +16,8 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 const srv = http.createServer((q, r) => { const f = path.join(dist, decodeURIComponent(q.url.split('?')[0])); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': types[path.extname(f)] || 'application/octet-stream' }); r.end(d); }); }).listen(0);
 const port = srv.address().port;
 const W = 540, H = 960;
-const tl = buildTimeline(DEMO_STORYBOARD, { width: W, height: H });
+const tl = buildTimeline(process.env.DEMO === 'stickman' ? DEMO_STORYBOARD : DEMO_GIANT, { width: W, height: H });
+console.log('duration', tl.duration.toFixed(2), 'scenes', tl.scenes.map((s) => s.start.toFixed(2)).join(' '));
 const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const p = await b.newPage({ viewport: { width: W, height: H } });
 p.on('console', (m) => console.log('[page]', m.text()));

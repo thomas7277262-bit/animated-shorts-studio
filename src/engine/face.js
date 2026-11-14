@@ -25,12 +25,12 @@ export function createFaceCanvas() {
 
 // state: { expr, blink (0 open..1 closed), mouth (0..1 talk openness), lookX, lookY }
 export function faceKey(spec, s) {
-  return `${s.expr}|${Math.round(s.blink * 4)}|${Math.round(s.mouth * 6)}|${Math.round(s.lookX * 4)}|${Math.round(s.lookY * 4)}`;
+  return `${spec.skin || ''}|${s.expr}|${Math.round(s.blink * 4)}|${Math.round(s.mouth * 6)}|${Math.round(s.lookX * 4)}|${Math.round(s.lookY * 4)}`;
 }
 
 export function drawFace(canvas, spec, s) {
   const g = canvas.getContext('2d');
-  g.fillStyle = '#ffffff';
+  g.fillStyle = spec.skin || '#ffffff';
   g.fillRect(0, 0, W, H);
   g.lineCap = 'round';
   g.lineJoin = 'round';

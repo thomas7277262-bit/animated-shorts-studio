@@ -26,7 +26,47 @@ export function chunkWords(words, max = 3) {
   return chunks;
 }
 
-export function buildAss(timeline, { width, height, font = 'Inter ExtraBold' }) {
+export function buildAss(timeline, opts) {
+  return (opts.style || timeline.captionStyle || 'yellow') === 'classic' ? buildAssClassic(timeline, opts) : buildAssYellow(timeline, opts);
+}
+
+/**
+ * Story-channel style (matches the reference videos' caption rules, not their
+ * content): ONE word on screen at a time, exactly while it is spoken; heavy
+ * rounded font, bright yellow, black outline + soft shadow, lower-middle.
+ */
+export function buildAssYellow(timeline, { width, height, font = 'Fredoka' }) {
+  const size = Math.round(height * 0.09);
+  const outline = Math.max(3, Math.round(height * 0.0075));
+  const shadow = Math.max(2, Math.round(height * 0.006));
+  const marginV = Math.round(height * 0.255);
+  const header = `[Script Info]
+ScriptType: v4.00+
+PlayResX: ${width}
+PlayResY: ${height}
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,${font},${size},&H002EFFF2&,&H002EFFF2&,&H00000000&,&H80000000&,-1,0,0,0,100,100,0,0,1,${outline},${shadow},2,${Math.round(width * 0.05)},${Math.round(width * 0.05)},${marginV},1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+`;
+  const events = [];
+  for (const line of timeline.lines) {
+    line.words.forEach((w, i) => {
+      const next = line.words[i + 1];
+      const end = next ? next.start : Math.min(line.end + 0.25, w.end + 0.45);
+      const word = esc(w.w.toLowerCase().replace(/[^\p{L}\p{N}'’-]/gu, '')) || esc(w.w);
+      events.push(`Dialogue: 0,${assTime(w.start)},${assTime(Math.max(end, w.start + 0.08))},Caption,,0,0,0,,{\\fscx88\\fscy88\\t(0,80,\\fscx100\\fscy100)}${word}`);
+    });
+  }
+  return header + events.join('\n') + '\n';
+}
+
+export function buildAssClassic(timeline, { width, height, font = 'Inter ExtraBold' }) {
   const size = Math.round(height * 0.052);
   const outline = Math.max(2, Math.round(height * 0.0055));
   const marginV = Math.round(height * 0.19);

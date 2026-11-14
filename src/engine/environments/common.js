@@ -208,6 +208,7 @@ export function animateEnvironment(group, t) {
       o.geometry.attributes.position.needsUpdate = true;
     }
     if (o.userData.spin) o.rotation.y = t * o.userData.spin;
+    if (o.userData.spinZ) o.rotation.z = t * o.userData.spinZ;
     if (o.userData.bob) o.position.y = o.userData.bobBase + Math.sin(t * 2 + o.userData.bob) * 0.1;
     if (o.userData.drive) {
       const d = o.userData.drive;

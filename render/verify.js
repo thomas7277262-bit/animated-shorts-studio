@@ -10,7 +10,7 @@ function probe(file) {
   return JSON.parse(r.stdout);
 }
 
-export function verifyVideo(file, timeline, { width, height, fps, speechPcm } = {}) {
+export function verifyVideo(file, timeline, { width, height, fps, speechPcm, voiceStem, master } = {}) {
   const checks = [];
   const ok = (name, pass, detail) => checks.push({ name, pass: !!pass, detail });
   const info = probe(file);
@@ -36,44 +36,49 @@ export function verifyVideo(file, timeline, { width, height, fps, speechPcm } = 
   const dec = spawnSync('ffmpeg', ['-v', 'error', '-i', file, '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 28 });
   ok('decodes without errors', dec.status === 0 && !dec.stderr.trim(), dec.stderr.trim().slice(0, 300) || 'clean');
 
-  // audio sync: find the narration onset of each line in the final file's audio
+  // audio sync, proven in two independent steps:
+  //  (1) every voice clip sits at its timeline time in the voice-only stem
+  //  (2) the final MP4's audio matches the master mix with no time shift
+  //      (so encoding / muxing did not move anything)
   if (a) {
     const pcm = decodeAudio(file, 48000);
-    const sr = 48000;
-    const offsets = [];
-    for (const line of timeline.lines) {
-      // expected: the line's own speech onset is at line.start
-      // measure: cross-correlate the line's clip energy envelope against the mix around line.start
-      const clip = speechPcm?.[line.id];
-      if (!clip) continue;
-      const win = Math.floor(sr * 0.005);
-      const envOf = (buf, from, len) => {
-        const out = [];
-        for (let i = 0; i < len; i++) {
-          let s = 0;
-          for (let j = 0; j < win; j++) { const x = buf[from + i * win + j] || 0; s += x * x; }
-          out.push(Math.sqrt(s / win));
-        }
-        return out;
-      };
-      const clipLen = Math.min(Math.floor(clip.length / win), 200);
-      const ce = envOf(clip, 0, clipLen);
-      const search = 60; // +-300 ms
-      let best = -Infinity, bestLag = 0;
+    const sr = 48000, win = Math.floor(sr * 0.005);
+    const envOf = (buf, from, len) => {
+      const out = new Float32Array(len);
+      for (let i = 0; i < len; i++) { let s2 = 0; for (let j = 0; j < win; j++) { const x = buf[from + i * win + j] || 0; s2 += x * x; } out[i] = Math.sqrt(s2 / win); }
+      return out;
+    };
+    const bestLag = (ref, refFrom, sig, sigCenter, len, search = 60) => {
+      const re = envOf(ref, refFrom, len);
+      let best = -Infinity, lagBest = 0;
       for (let lag = -search; lag <= search; lag++) {
-        const from = Math.floor(line.start * sr) + lag * win;
+        const from = sigCenter + lag * win;
         if (from < 0) continue;
-        const me = envOf(pcm, from, clipLen);
+        const me = envOf(sig, from, len);
         let dot = 0, n1 = 0, n2 = 0;
-        for (let i = 0; i < clipLen; i++) { dot += ce[i] * me[i]; n1 += ce[i] ** 2; n2 += me[i] ** 2; }
+        for (let i = 0; i < len; i++) { dot += re[i] * me[i]; n1 += re[i] ** 2; n2 += me[i] ** 2; }
         const c = dot / Math.sqrt(n1 * n2 + 1e-12);
-        if (c > best) { best = c; bestLag = lag; }
+        if (c > best) { best = c; lagBest = lag; }
       }
-      offsets.push({ line: line.id, offsetMs: bestLag * 5, correlation: +best.toFixed(3) });
+      return { ms: lagBest * 5, r: +best.toFixed(3) };
+    };
+    if (voiceStem && speechPcm) {
+      const res = timeline.lines.filter((l) => speechPcm[l.id]).map((l) => {
+        const clip = speechPcm[l.id];
+        const len = Math.min(Math.floor(clip.length / win), 200);
+        return { id: l.id, ...bestLag(clip, 0, voiceStem, Math.floor(l.start * sr), len) };
+      });
+      const worst = Math.max(...res.map((o) => Math.abs(o.ms)));
+      ok('voice lines placed at their timeline times (|offset| <= 10 ms)', worst <= 10 && res.every((o) => o.r > 0.95), res.map((o) => `${o.id}:${o.ms}ms(r=${o.r})`).join(' '));
     }
-    if (offsets.length) {
-      const worst = Math.max(...offsets.map((o) => Math.abs(o.offsetMs)));
-      ok('narration in sync with timeline (|offset| <= 40 ms)', worst <= 40, offsets.map((o) => `${o.line}:${o.offsetMs}ms(r=${o.correlation})`).join(' '));
+    if (master) {
+      const probes = [];
+      const step = Math.max(1, timeline.duration / 6);
+      for (let t = 0.5; t < timeline.duration - 1.5; t += step) probes.push(t);
+      for (const l of timeline.lines) probes.push(l.start);
+      const res = probes.map((t) => ({ t: +t.toFixed(2), ...bestLag(master, Math.floor(t * sr), pcm, Math.floor(t * sr), 200, 40) }));
+      const worst = Math.max(...res.map((o) => Math.abs(o.ms)));
+      ok('final MP4 audio matches the master mix, no drift (|offset| <= 20 ms)', worst <= 20 && res.every((o) => o.r > 0.9), `max offset ${worst}ms, min r=${Math.min(...res.map((o) => o.r))} over ${res.length} probes`);
     }
     // subtitles use the same line/word times, so they are in sync by construction
     let peak = 0, sum = 0;

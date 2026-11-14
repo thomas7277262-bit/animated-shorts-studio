@@ -19,6 +19,11 @@ export const SHOT_PRESETS = {
   crane:     { from: { angle: 0, dist: 8, height: 7, lookY: 0.5, fov: 48 }, to: { angle: 0, dist: 8, height: 0.8, lookY: 0.5, fov: 48 } },
   lowAngle:  { from: { angle: -15, dist: 6.2, height: -1.0, lookY: 0.3, fov: 50 }, to: { angle: 15, dist: 5.6, height: -0.9, lookY: 0.3, fov: 50 } },
   overShoulder: { from: { angle: 150, dist: 4.5, height: 0.6, lookY: 0.2, fov: 42 }, to: { angle: 160, dist: 4.0, height: 0.6, lookY: 0.2, fov: 42 } },
+  track:     { from: { angle: 75, dist: 6.5, height: 0.4, lookY: 0.3, fov: 55 }, to: { angle: 65, dist: 6, height: 0.4, lookY: 0.3, fov: 55 } },
+  frontTrack:{ from: { angle: 0, dist: 4.8, height: 0.2, lookY: 0.2, fov: 62 }, to: { angle: 8, dist: 4.4, height: 0.25, lookY: 0.2, fov: 62 } },
+  groundLow: { from: { angle: -8, dist: 6, height: -1.15, lookY: 1.6, fov: 74 }, to: { angle: 6, dist: 5.2, height: -1.15, lookY: 1.8, fov: 74 } },
+  faceClose: { from: { angle: 0, dist: 2.3, height: 0.05, lookY: 0.0, fov: 45 }, to: { angle: 0, dist: 1.9, height: 0.05, lookY: 0.0, fov: 45 } },
+  reveal:    { from: { angle: 0, dist: 6, height: 0.6, lookY: 0.8, fov: 55 }, to: { angle: 0, dist: 14, height: 3.5, lookY: 5, fov: 62 } },
   follow:    { from: { angle: 25, dist: 7, height: 1.0, lookY: 0.4, fov: 45 }, to: { angle: 25, dist: 7, height: 1.0, lookY: 0.4, fov: 45 } },
 };
 

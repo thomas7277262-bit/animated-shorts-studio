@@ -1,11 +1,19 @@
 import * as THREE from 'three';
 import { Character } from './character.js';
+import { BlockCharacter } from './blocky.js';
+import { Creature, evalCreatureAction, blendCreaturePose } from './creature.js';
+import { applyLighting, Weather } from './atmosphere.js';
+import { buildProp } from './environments/props.js';
 import { evalAction, blendPose } from './poses.js';
 import { buildEnvironment } from './environments/index.js';
 import { animateEnvironment } from './environments/common.js';
 import { ParticleSystem, SpriteLayer, TransitionOverlay } from './effects.js';
 import { shotState, placeCamera } from './camera.js';
 import { Rng, clamp, easeInOut, hashString } from './rng.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 
 const BLEND = 0.25;
 const FACE_BLEND = 0.3;
@@ -22,7 +30,7 @@ function angleLerp(a, b, t) {
  * cloud renderer capture frames one by one at any resolution.
  */
 export class StoryPlayer {
-  constructor(canvas, timeline, { width, height, pixelRatio = 1, preserveDrawingBuffer = false } = {}) {
+  constructor(canvas, timeline, { width, height, pixelRatio = 1, preserveDrawingBuffer = false, bloom } = {}) {
     this.timeline = timeline;
     this.width = width || timeline.width;
     this.height = height || timeline.height;
@@ -51,9 +59,21 @@ export class StoryPlayer {
     this.fill.position.set(0, 5, 3);
     this.scene.add(this.hemi, this.sun, this.sun.target, this.fill);
 
+    // bloom makes lamps, windows, eyes and magic glow (cinematic look)
+    this.useBloom = bloom ?? timeline.bloom ?? true;
+    if (this.useBloom) {
+      this.composer = new EffectComposer(this.renderer);
+      this.composer.setPixelRatio(pixelRatio);
+      this.composer.setSize(this.width, this.height);
+      this.composer.addPass(new RenderPass(this.scene, this.camera));
+      this.bloomPass = new UnrealBloomPass(new THREE.Vector2(this.width, this.height), 0.45, 0.5, 0.82);
+      this.composer.addPass(this.bloomPass);
+      this.composer.addPass(new OutputPass());
+    }
+
     this.characters = {};
     for (const [id, spec] of Object.entries(timeline.characters)) {
-      const c = new Character(spec);
+      const c = spec.kind === 'creature' ? new Creature(spec) : spec.style === 'blocky' ? new BlockCharacter(spec) : new Character(spec);
       c.root.visible = false;
       this.characters[id] = c;
       this.scene.add(c.root);
@@ -63,6 +83,10 @@ export class StoryPlayer {
     this.particles = new ParticleSystem(this.scene);
     this.sprites = new SpriteLayer(this.scene);
     this.overlay = new TransitionOverlay();
+    this.weather = new Weather(this.scene);
+    this.propCache = new Map();
+    this.activeProps = null;
+    this.lightKey = '';
     this._fxPosCache = new Map();
     this.blinkTimes = {};
     for (const id of Object.keys(this.characters)) {
@@ -76,6 +100,7 @@ export class StoryPlayer {
   setSize(w, h) {
     this.width = w; this.height = h;
     this.renderer.setSize(w, h, false);
+    this.composer?.setSize(w, h);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
   }
@@ -87,17 +112,18 @@ export class StoryPlayer {
   }
 
   activateEnvironment(s) {
-    const key = s.environment + ':' + (s.envSeed || 7);
+    const key = s.environment + ':' + (s.envSeed || 7) + ':' + JSON.stringify(s.envOptions || {});
     if (this.activeEnv && this.activeEnv.key === key) return this.activeEnv;
     if (this.activeEnv) this.activeEnv.group.visible = false;
     let env = this.envCache.get(key);
     if (!env) {
-      env = buildEnvironment(s.environment, s.envSeed || 7);
+      env = buildEnvironment(s.environment, s.envSeed || 7, s.envOptions || {});
       env.key = key;
       this.envCache.set(key, env);
       this.scene.add(env.group);
     }
     env.group.visible = true;
+    this.lightKey = '';
     const L = env.light;
     this.hemi.color.set(L.hemiSky); this.hemi.groundColor.set(L.hemiGround); this.hemi.intensity = L.hemiI;
     this.sun.color.set(L.sun); this.sun.intensity = L.sunI;
@@ -161,6 +187,13 @@ export class StoryPlayer {
     return def;
   }
 
+  act(id, name, t, d, params) {
+    return this.characters[id].kind === 'creature' ? evalCreatureAction(name, t, d, params) : evalAction(name, t, d, params);
+  }
+  blend(id, a, b, w) {
+    return this.characters[id].kind === 'creature' ? blendCreaturePose(a, b, w) : blendPose(a, b, w);
+  }
+
   evalCharacter(s, id, t) {
     const segs = this.segments(s, id);
     let idx = -1;
@@ -168,20 +201,20 @@ export class StoryPlayer {
     const pos = this.positionAt(s, id, t);
     let pose, expr = 'neutral', prop = null;
     if (idx < 0) {
-      pose = evalAction('idle', t - s.start, 0, {});
+      pose = this.act(id, 'idle', t - s.start, 0, {});
     } else {
       const seg = segs[idx];
       const action = seg.move && t < seg.t1 ? (seg.action === 'run' || seg.action === 'sneak' ? seg.action : 'walk') : seg.action;
-      pose = evalAction(action, t - seg.t0, seg.t1 - seg.t0, seg.params || {});
+      pose = this.act(id, action, t - seg.t0, seg.t1 - seg.t0, seg.params || {});
       // after a move finishes, fall back to idle-ish action if the segment action was walk
-      if (seg.move && t >= seg.t1 && (seg.action === 'walk' || seg.action === 'run')) pose = evalAction('idle', t, 0, {});
+      if (seg.move && t >= seg.t1 && (seg.action === 'walk' || seg.action === 'run')) pose = this.act(id, 'idle', t, 0, {});
       expr = seg.expr || 'neutral';
       prop = seg.prop ?? null;
       if (idx > 0 && t - seg.t0 < BLEND) {
         const prev = segs[idx - 1];
         const prevAction = prev.move && seg.t0 < prev.t1 ? 'walk' : prev.action;
-        const prevPose = evalAction(prevAction, t - prev.t0, prev.t1 - prev.t0, prev.params || {});
-        pose = blendPose(prevPose, pose, easeInOut((t - seg.t0) / BLEND));
+        const prevPose = this.act(id, prevAction, t - prev.t0, prev.t1 - prev.t0, prev.params || {});
+        pose = this.blend(id, prevPose, pose, easeInOut((t - seg.t0) / BLEND));
         if (prop === null && prev.prop && t - seg.t0 < 0.1) prop = prev.prop;
       }
     }
@@ -225,7 +258,7 @@ export class StoryPlayer {
     if (this._fxPosCache.has(key)) return this._fxPosCache.get(key);
     const p = this.positionAt(s, ev.at, ev.t);
     const c = this.characters[ev.at];
-    const h = ev.height === 'head' ? c.height - c.dims.headR : ev.height === 'hand' ? 1.4 : ev.height ?? 0.1;
+    const h = ev.height === 'head' ? c.height - c.dims.headR : ev.height === 'hand' ? (c.kind === 'creature' ? c.height * 0.5 : 1.4) : ev.height ?? 0.1;
     const v = [p.x + (ev.dx || 0), h, p.z + (ev.dz || 0) + 0.2];
     this._fxPosCache.set(key, v);
     return v;
@@ -236,6 +269,10 @@ export class StoryPlayer {
     const s = this.sceneAt(t);
     const env = this.activateEnvironment(s);
     animateEnvironment(env.group, t);
+    const lk = env.key + '|' + (s.lighting || 'day');
+    if (lk !== this.lightKey) { applyLighting(this, env, s.lighting || 'day'); this.lightKey = lk; }
+    this.lightning(s, t);
+    this.updateProps(s, t);
 
     const castIds = new Set(s.cast.map((c) => c.id));
     for (const [id, c] of Object.entries(this.characters)) {
@@ -254,6 +291,9 @@ export class StoryPlayer {
     const shot = (s.shots || []).find((sh) => t >= sh.t0 && t < sh.t1) || (s.shots || [])[s.shots.length - 1] || { type: 'wide', t0: s.start, t1: s.end };
     const st = shotState(shot, t);
     const target = this.shotTarget(s, shot, t);
+    const tIds = shot.target ? [].concat(shot.target) : [];
+    const big = tIds.length === 1 && this.characters[tIds[0]]?.kind === 'creature' ? this.characters[tIds[0]].height / 2.2 : 1;
+    if (big !== 1 && shot.scale !== false) { st.dist *= big * 0.75; st.height *= big * 0.6; st.lookY *= big * 0.6; }
     let shake = 0;
     for (const ev of s.fx || []) if (ev.shake && t >= ev.t && t < ev.t + 0.45) shake += ev.shake * (1 - (t - ev.t) / 0.45);
     placeCamera(this.camera, st, target, shake, t);
@@ -275,15 +315,49 @@ export class StoryPlayer {
       sprites.push({ kind: 'comic', key: cm.text, color: cm.color, pos: p, age: t - cm.t0, life: cm.t1 - cm.t0, size: cm.size || 1.1 });
     }
     this.sprites.update(sprites);
+    this.weather.update(s.weather, t, this.camera);
 
     // draw
     this.renderer.clear();
-    this.renderer.render(this.scene, this.camera);
+    if (this.composer) {
+      this.bloomPass.strength = s.lighting === 'night' || s.lighting === 'storm' || s.lighting === 'dusk' ? 0.75 : 0.35;
+      this.composer.render();
+    } else this.renderer.render(this.scene, this.camera);
     const tr = this.transitionAt(t);
     if (tr && this.overlay.set(tr.type, tr.p, this.width / this.height)) {
       this.renderer.clearDepth();
       this.renderer.render(this.overlay.scene, this.overlay.camera);
     }
+  }
+
+  updateProps(s, t) {
+    if (this.activeProps && this.activeProps.sid !== s.id) { this.activeProps.group.visible = false; this.activeProps = null; }
+    if (!s.props || !s.props.length) return;
+    let entry = this.propCache.get(s.id);
+    if (!entry) {
+      const group = new THREE.Group();
+      const items = s.props.map((p) => { const o = buildProp(p); group.add(o); return { spec: p, obj: o }; });
+      entry = { sid: s.id, group, items };
+      this.scene.add(group);
+      this.propCache.set(s.id, entry);
+    }
+    entry.group.visible = true;
+    this.activeProps = entry;
+    animateEnvironment(entry.group, t);
+    for (const { spec, obj } of entry.items) {
+      if (spec.collapseT === undefined) continue;
+      const u = clamp((t - spec.collapseT) / 1.1, 0, 1);
+      const e = u * u;
+      obj.userData.pivot.rotation.x = (spec.fallDir ?? -1) * e * 1.5;
+      obj.userData.pivot.position.y = -e * 0.6;
+      obj.userData.pivot.scale.y = 1 - e * 0.25;
+    }
+  }
+
+  lightning(s, t) {
+    let f = 0;
+    for (const lt of s.lightningTimes || []) { const d = t - lt; if (d >= 0 && d < 0.35) f = Math.max(f, d < 0.06 ? 1 : d < 0.12 ? 0.3 : d < 0.18 ? 0.8 : (0.35 - d) / 0.17 * 0.5); }
+    this.renderer.toneMappingExposure = (this.baseExposure || 1.05) * (1 + f * 1.8);
   }
 
   shotTarget(s, shot, t) {
@@ -297,7 +371,15 @@ export class StoryPlayer {
       v.x += p.x; v.z += p.z; n++;
     }
     if (n) v.divideScalar(n);
-    const focus = ids.length === 1 && this.characters[ids[0]] ? this.characters[ids[0]].height - 0.45 : 1.25;
+    const one = ids.length === 1 ? this.characters[ids[0]] : null;
+    if (one && one.kind === 'creature') {
+      const hp = new THREE.Vector3();
+      one.head.getWorldPosition(hp);
+      v.set(hp.x, hp.y * 0.85, hp.z);
+      if (shot.offset) { v.x += shot.offset[0]; v.y += shot.offset[1]; v.z += shot.offset[2]; }
+      return v;
+    }
+    const focus = one ? (one.kind === 'creature' ? one.height * 0.62 : one.height - 0.45) : 1.25;
     v.y = focus;
     if (shot.offset) { v.x += shot.offset[0]; v.y += shot.offset[1]; v.z += shot.offset[2]; }
     return v;

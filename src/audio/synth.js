@@ -121,8 +121,115 @@ function makeSfx(name, sr = SR, seed = 1) {
       for (let i = 0; i < out.length; i++) { const n = noise(); hp = 0.8 * (hp + n - prev); prev = n; out[i] = hp * Math.exp(-i / (sr * 0.015)) * 0.9; }
       break;
     }
+    case 'stomp': { // giant footstep: sub boom + debris rattle
+      out = buf(1.3); let ph = 0, lp = 0;
+      for (let i = 0; i < out.length; i++) {
+        const t = i / sr; const f = 32 + 55 * Math.exp(-t * 9);
+        ph += (2 * Math.PI * f) / sr; lp += (noise() - lp) * 0.03;
+        out[i] = Math.sin(ph) * Math.exp(-t * 3.2) * 1.0 + lp * 2.2 * Math.exp(-t * 5) + (t < 0.01 ? noise() * 0.6 : 0);
+      }
+      for (let k = 0; k < 10; k++) { const st = Math.floor(rng.float(0.05, 0.6) * sr); for (let i = 0; i < 600 && st + i < out.length; i++) out[st + i] += noise() * 0.12 * Math.exp(-i / 150); }
+      break;
+    }
+    case 'roar': { // creature roar: detuned saw bank + growl noise through a moving formant
+      const len = 2.2; out = buf(len); const fs = [62, 93, 124, 187]; const ph = fs.map(() => 0);
+      let lp = 0, bp = 0, n2 = 0;
+      for (let i = 0; i < out.length; i++) {
+        const t = i / sr, u = t / len;
+        const envl = Math.min(1, t / 0.25) * Math.min(1, (len - t) / 0.6);
+        const vib = 1 + Math.sin(t * 34) * 0.06 + Math.sin(t * 7) * 0.04;
+        let v = 0;
+        fs.forEach((f, k) => { ph[k] += (2 * Math.PI * f * vib * (1 + u * 0.15)) / sr; v += (((ph[k] / Math.PI) % 2) - 1) / (k + 1.5); });
+        n2 += (noise() - n2) * 0.25;
+        const src = v * 0.8 + n2 * 0.9;
+        const c = 0.08 + 0.12 * Math.sin(u * Math.PI);
+        lp += (src - lp) * c; bp += (lp - bp) * 0.05;
+        out[i] = (lp - bp) * 2.4 * envl * (1 + 0.3 * Math.sin(t * 15));
+      }
+      break;
+    }
+    case 'crash': { // wood + brick collapse
+      out = buf(1.6); let lp = 0;
+      for (let i = 0; i < out.length; i++) { const t = i / sr; lp += (noise() - lp) * 0.2; out[i] = lp * Math.exp(-t * 2.5) * 1.4 + Math.sin(2 * Math.PI * 55 * t) * Math.exp(-t * 6) * 0.8; }
+      for (let k = 0; k < 26; k++) {
+        const st = Math.floor(rng.float(0, 1.2) * sr), f = rng.float(180, 900);
+        for (let i = 0; i < 2500 && st + i < out.length; i++) out[st + i] += (Math.sin(2 * Math.PI * f * i / sr) * 0.5 + noise() * 0.6) * 0.35 * Math.exp(-i / 400);
+      }
+      break;
+    }
+    case 'thunder': {
+      out = buf(3.2); let lp = 0, lp2 = 0;
+      for (let i = 0; i < out.length; i++) {
+        const t = i / sr; lp += (noise() - lp) * 0.02; lp2 += (lp - lp2) * 0.1;
+        const crack = t < 0.15 ? noise() * (1 - t / 0.15) * 0.9 : 0;
+        out[i] = lp2 * 9 * Math.exp(-t * 0.9) * (0.7 + 0.3 * Math.sin(t * 9)) + crack;
+      }
+      break;
+    }
+    case 'rumble': {
+      out = buf(2.8); let lp = 0;
+      for (let i = 0; i < out.length; i++) { const t = i / sr; lp += (noise() - lp) * 0.008; out[i] = (lp * 14 + Math.sin(2 * Math.PI * 38 * t) * 0.3) * Math.sin((t / 2.8) * Math.PI); }
+      break;
+    }
+    case 'sting': { // dramatic orchestral-style hit: low cluster + timpani + cymbal swell
+      out = buf(3.0);
+      const notes = [33, 40, 45, 48, 52];
+      for (const m of notes) { const f = midiHz(m); let ph = 0; for (let i = 0; i < out.length; i++) { const t = i / sr; ph += (2 * Math.PI * f * (1 + Math.sin(t * 5 + m) * 0.003)) / sr; out[i] += (((ph / Math.PI) % 2) - 1) * 0.09 * Math.exp(-t * 0.9) * Math.min(1, t * 60); } }
+      let tp = 0; for (let i = 0; i < out.length; i++) { const t = i / sr; tp += (2 * Math.PI * (55 + 30 * Math.exp(-t * 20))) / sr; out[i] += Math.sin(tp) * Math.exp(-t * 2.5) * 0.7; }
+      let hp = 0, prev = 0; for (let i = 0; i < out.length; i++) { const t = i / sr; const n = noise(); hp = 0.9 * (hp + n - prev); prev = n; out[i] += hp * 0.1 * Math.exp(-t * 1.2); }
+      break;
+    }
+    case 'gasp': {
+      out = buf(0.45); let bp = 0, lp = 0;
+      for (let i = 0; i < out.length; i++) { const t = i / sr; lp += (noise() - lp) * 0.35; bp += (lp - bp) * 0.12; out[i] = (lp - bp) * 1.4 * Math.sin((t / 0.45) * Math.PI) ** 0.7; }
+      break;
+    }
+    case 'heartbeat': {
+      out = buf(0.9);
+      for (const st of [0, 0.28]) { const s0 = Math.floor(st * sr); for (let i = 0; i < 0.2 * sr; i++) { const t = i / sr; out[s0 + i] += Math.sin(2 * Math.PI * (60 - t * 80) * t) * Math.exp(-t * 18) * (st ? 0.7 : 1); } }
+      break;
+    }
     default: out = buf(0.05);
   }
+  return out;
+}
+
+/** Looping background sounds for a scene (birds, wind, rain, night, city). */
+export function ambience(name, duration, sr = SR, seed = 3) {
+  const rng = new Rng(seed * 101 + name.length);
+  const n = Math.floor(duration * sr);
+  const out = new Float32Array(n);
+  let lp = 0, lp2 = 0;
+  if (name === 'wind' || name === 'storm' || name === 'rain' || name === 'night' || name === 'city') {
+    for (let i = 0; i < n; i++) {
+      const t = i / sr;
+      const nz = rng.float(-1, 1);
+      lp += (nz - lp) * (name === 'rain' || name === 'storm' ? 0.35 : 0.02);
+      lp2 += (lp - lp2) * 0.5;
+      const amt = name === 'wind' ? 0.6 * (0.6 + 0.4 * Math.sin(t * 0.7) * Math.sin(t * 0.23 + 1)) : name === 'city' ? 0.25 : name === 'night' ? 0.08 : 0.35;
+      out[i] = (name === 'rain' || name === 'storm' ? lp - lp2 * 0.8 : lp * 3) * amt;
+    }
+  }
+  if (name === 'rain' || name === 'storm') for (let k = 0; k < duration * 40; k++) { const st = Math.floor(rng.float(0, duration) * sr); for (let i = 0; i < 200 && st + i < n; i++) out[st + i] += rng.float(-1, 1) * 0.15 * Math.exp(-i / 30); }
+  if (name === 'birds') {
+    for (let t = rng.float(0, 0.5); t < duration; t += rng.float(0.5, 1.6)) {
+      const f0 = rng.float(2500, 4200), notes = rng.int(2, 5);
+      for (let k = 0; k < notes; k++) {
+        const s0 = Math.floor((t + k * 0.11) * sr), len = Math.floor(0.08 * sr);
+        for (let i = 0; i < len && s0 + i < n; i++) { const u = i / len; out[s0 + i] += Math.sin(2 * Math.PI * (f0 + Math.sin(u * Math.PI) * 900) * i / sr) * Math.sin(u * Math.PI) * 0.12; }
+      }
+    }
+    for (let i = 0; i < n; i++) { lp += (rng.float(-1, 1) - lp) * 0.01; out[i] += lp * 0.6; } // soft breeze bed
+  }
+  if (name === 'night') {
+    for (let t = 0; t < duration; t += rng.float(0.3, 0.9)) {
+      const s0 = Math.floor(t * sr);
+      for (let k = 0; k < 3; k++) for (let i = 0; i < 0.03 * sr; i++) { const j = s0 + k * Math.floor(0.05 * sr) + i; if (j < n) out[j] += Math.sin(2 * Math.PI * 4800 * i / sr) * 0.05 * Math.sin((i / (0.03 * sr)) * Math.PI); }
+    }
+  }
+  if (name === 'city') for (let t = 0; t < duration; t += rng.float(1.5, 4)) { const s0 = Math.floor(t * sr), f = rng.float(300, 500); for (let i = 0; i < 0.3 * sr && s0 + i < n; i++) out[s0 + i] += Math.sin(2 * Math.PI * f * i / sr) * 0.04 * Math.sin((i / (0.3 * sr)) * Math.PI); }
+  const fade = Math.floor(0.3 * sr);
+  for (let i = 0; i < fade && i < n; i++) { out[i] *= i / fade; out[n - 1 - i] *= i / fade; }
   return out;
 }
 
@@ -132,7 +239,8 @@ export function sfx(name, sr = SR) {
   if (!sfxCache.has(k)) sfxCache.set(k, makeSfx(name, sr, name.length * 7919));
   return sfxCache.get(k);
 }
-export const SFX_NAMES = ['step', 'boing', 'thud', 'whoosh', 'swoosh', 'bonk', 'sparkle', 'magic', 'party', 'poof', 'pop', 'ding', 'boop', 'grr', 'fire', 'slap'];
+export const SFX_NAMES = ['step', 'boing', 'thud', 'whoosh', 'swoosh', 'bonk', 'sparkle', 'magic', 'party', 'poof', 'pop', 'ding', 'boop', 'grr', 'fire', 'slap', 'stomp', 'roar', 'crash', 'thunder', 'rumble', 'sting', 'gasp', 'heartbeat'];
+export const AMBIENCES = ['birds', 'wind', 'rain', 'storm', 'night', 'city'];
 
 // ---------------- music ----------------
 export const MOODS = {
@@ -141,6 +249,7 @@ export const MOODS = {
   comedy:    { bpm: 132, root: 53, scale: [0, 2, 4, 5, 7, 9, 11], prog: [0, 3, 4, 0], lead: 'pizz', drums: true },
   city:      { bpm: 112, root: 48, scale: [0, 2, 4, 5, 7, 9, 11], prog: [5, 3, 0, 4], lead: 'pluck', drums: true },
   tense:     { bpm: 96, root: 45, scale: [0, 2, 3, 5, 7, 8, 10], prog: [0, 5, 6, 4], lead: 'pizz', drums: true },
+  suspense:  { bpm: 88, root: 40, scale: [0, 1, 3, 5, 7, 8, 10], prog: [0, 0, 5, 6], lead: 'pizz', drums: true },
   calm:      { bpm: 84, root: 52, scale: [0, 2, 4, 5, 7, 9, 11], prog: [0, 4, 5, 3], lead: 'lute', drums: false },
 };
 
@@ -240,23 +349,35 @@ export function generateMusic(duration, moodName = 'adventure', seed = 1, sr = S
  * clips: [{ pcm: Float32Array, at: seconds, gain }]
  * speech: [{ start, end }] – used to duck the music under the voice.
  */
-export function mix({ duration, music, musicGain = 0.35, clips = [], speech = [], duck = 0.4, sr = SR }) {
+export function mix({ duration, music, musicGain = 0.35, clips = [], speech = [], duck = 0.25, fxDuck = 0.25, sr = SR, stats = null }) {
   const n = Math.floor(duration * sr);
   const out = new Float32Array(n);
-  if (music) {
-    // ducking envelope
-    const g = new Float32Array(n).fill(1);
-    for (const s of speech) {
-      const a = Math.floor((s.start - 0.15) * sr), b = Math.floor((s.end + 0.2) * sr);
-      for (let i = Math.max(0, a); i < Math.min(n, b); i++) g[i] = duck;
-    }
-    // smooth the envelope (one-pole, ~80 ms)
-    const k = 1 - Math.exp(-1 / (0.08 * sr));
-    let v = 1;
-    for (let i = 0; i < n; i++) { v += (g[i] - v) * k; g[i] = v; }
-    for (let i = 0; i < n && i < music.length; i++) out[i] += music[i] * musicGain * g[i];
+  // speech mask, smoothed (one-pole, ~80 ms): 1 = no speech, 0 = speech
+  const mask = new Float32Array(n).fill(1);
+  for (const s of speech) {
+    const a = Math.floor((s.start - 0.15) * sr), b = Math.floor((s.end + 0.2) * sr);
+    for (let i = Math.max(0, a); i < Math.min(n, b); i++) mask[i] = 0;
   }
-  for (const c of clips) add(out, c.pcm, c.at * sr, c.gain ?? 1);
+  const k = 1 - Math.exp(-1 / (0.08 * sr));
+  let v = 1;
+  for (let i = 0; i < n; i++) { v += (mask[i] - v) * k; mask[i] = v; }
+  const voice = new Float32Array(n), bg = new Float32Array(n);
+  if (music) for (let i = 0; i < n && i < music.length; i++) bg[i] += music[i] * musicGain * (duck + (1 - duck) * mask[i]);
+  for (const c of clips) {
+    if (c.duck) {
+      const tmp = new Float32Array(n);
+      add(tmp, c.pcm, c.at * sr, c.gain ?? 1);
+      for (let i = 0; i < n; i++) if (tmp[i]) bg[i] += tmp[i] * (fxDuck + (1 - fxDuck) * mask[i]);
+    } else if (c.voice) add(voice, c.pcm, c.at * sr, c.gain ?? 1);
+    else add(bg, c.pcm, c.at * sr, c.gain ?? 1);
+  }
+  for (let i = 0; i < n; i++) out[i] = voice[i] + bg[i];
+  if (stats) {
+    // loudness of the voice vs everything else, inside the speech windows
+    let sv = 0, sb = 0;
+    for (const s of speech) for (let i = Math.max(0, Math.floor(s.start * sr)); i < Math.min(n, Math.floor(s.end * sr)); i++) { sv += voice[i] ** 2; sb += bg[i] ** 2; }
+    stats.voiceOverBackgroundDb = 10 * Math.log10((sv + 1e-12) / (sb + 1e-12));
+  }
   // soft limiter + peak normalisation to about -1 dBFS
   let peak = 0;
   for (let i = 0; i < n; i++) { out[i] = Math.tanh(out[i] * 1.1); peak = Math.max(peak, Math.abs(out[i])); }

@@ -75,3 +75,53 @@ export function getCharacter(id) {
   if (!c) throw new Error(`Unknown character "${id}"`);
   return c;
 }
+
+// ---------------------------------------------------------------------------
+// Blocky (game-avatar style) cast. Original designs: every character has a
+// fixed outfit, hair and voice so they look identical in every scene.
+export const BLOCKY_CHARACTERS = {
+  noah: {
+    id: 'noah', name: 'Noah', role: 'hero', style: 'blocky', height: 1.0,
+    skin: '#eab48b', shirt: '#2f80ed', shirtDetail: 'stripe', shirtAccent: '#ffffff', pants: '#26334d', shoes: '#f2f2f2',
+    hair: '#5a3311', hairStyle: 'spiky', accent: '#2f80ed', eyeStyle: 'round', brows: 'normal', cheeks: false,
+    voice: { espeak: 'en-us+m7', pitch: 62, speed: 170 }, personality: 'curious, brave when it counts',
+  },
+  mia: {
+    id: 'mia', name: 'Mia', role: 'friend', style: 'blocky', height: 0.96,
+    skin: '#c68a5e', shirt: '#ff5fa2', shirtDetail: 'star', shirtAccent: '#ffe14a', pants: '#3d2e6b', shoes: '#ffffff',
+    hair: '#1d1209', hairStyle: 'long', accent: '#ff5fa2', eyeStyle: 'lashes', brows: 'thin', cheeks: true,
+    voice: { espeak: 'en-us+f3', pitch: 72, speed: 172 }, personality: 'quick thinker, sarcastic',
+  },
+  pete: {
+    id: 'pete', name: 'Old Pete', role: 'elder', style: 'blocky', height: 0.98,
+    skin: '#f1c7a0', shirt: '#c97b3c', shirtDetail: 'overalls', shirtAccent: '#3a5fa0', pants: '#3a5fa0', shoes: '#4a2e18',
+    hair: '#e8e8e8', hairStyle: 'default', accent: '#c97b3c', eyeStyle: 'sleepy', brows: 'bushy', cheeks: false,
+    voice: { espeak: 'en-gb+m1', pitch: 30, speed: 145 }, personality: 'farmer who has seen everything',
+  },
+  rook: {
+    id: 'rook', name: 'Captain Rook', role: 'guard', style: 'blocky', height: 1.08,
+    skin: '#d9a679', shirt: '#7d8794', shirtDetail: 'armor', shirtAccent: '#c0392b', pants: '#4a4f57', shoes: '#2b2b2b',
+    hairStyle: 'helmet', accent: '#c0392b', eyeStyle: 'determined', brows: 'thick', cheeks: false,
+    voice: { espeak: 'en-gb+m4', pitch: 38, speed: 158 }, personality: 'loud, brave, bad at plans',
+  },
+  mayor: {
+    id: 'mayor', name: 'Mayor Bricks', role: 'mayor', style: 'blocky', height: 1.02,
+    skin: '#f0c296', shirt: '#2d2d3a', shirtDetail: 'tie', shirtAccent: '#e74c3c', pants: '#2d2d3a', shoes: '#111',
+    hair: '#9a9a9a', hairStyle: 'crown', accent: '#ffc21a', eyeStyle: 'round', brows: 'thick', cheeks: true,
+    voice: { espeak: 'en-us+m1', pitch: 35, speed: 150 }, personality: 'proud and easily panicked',
+  },
+  zed: {
+    id: 'zed', name: 'Zed', role: 'prankster', style: 'blocky', height: 0.9,
+    skin: '#8d5a3b', shirt: '#27ae60', shirtDetail: 'zip', shirtAccent: '#1e8449', pants: '#1f2a36', shoes: '#e74c3c',
+    hairStyle: 'cap', hatColor: '#e74c3c', accent: '#27ae60', eyeStyle: 'round', brows: 'normal', cheeks: false,
+    voice: { espeak: 'en-us+m3', pitch: 70, speed: 180 }, personality: 'mischievous, always filming',
+  },
+};
+
+// Giant creatures (original designs). scale 1 is about 3.5x a character's height.
+export const CREATURE_LIBRARY = {
+  rex: { id: 'rex', name: 'Gronk', kind: 'creature', model: 'beast', scale: 1, color: '#5f9e3a', belly: '#e8c66a', spikes: '#e2622b', accent: '#5f9e3a', personality: 'huge, loud, secretly a coward' },
+  titan: { id: 'titan', name: 'The Shadow Titan', kind: 'creature', model: 'beast', scale: 3.2, color: '#1e1b29', belly: '#2c2838', spikes: '#3a3150', glow: '#ff2a2a', accent: '#ff2a2a', personality: 'unknown' },
+};
+
+Object.assign(CHARACTER_LIBRARY, BLOCKY_CHARACTERS, CREATURE_LIBRARY);

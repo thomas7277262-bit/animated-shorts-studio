@@ -17,11 +17,12 @@ const SETTING_KEYWORDS = {
 const DEFAULT_CAST = {
   castle: ['king', 'knight', 'bob'], village: ['bob', 'lily', 'wizard'], battlefield: ['knight', 'dragon', 'bob'],
   school: ['teacher', 'max', 'lily'], house: ['bob', 'max', 'lily'], city: ['bob', 'lily', 'max'],
+  forest: ['noah', 'mia', 'pete'], mountains: ['noah', 'rook', 'mia'], factory: ['zed', 'noah', 'mayor'],
 };
 
-const SECOND_SETTING = { castle: 'village', village: 'castle', battlefield: 'castle', school: 'house', house: 'city', city: 'house' };
+const SECOND_SETTING = { castle: 'village', village: 'castle', battlefield: 'castle', school: 'house', house: 'city', city: 'house', forest: 'village', mountains: 'forest', factory: 'city' };
 
-const MOOD = { castle: 'medieval', village: 'medieval', battlefield: 'adventure', school: 'comedy', house: 'comedy', city: 'city' };
+const MOOD = { castle: 'medieval', village: 'medieval', battlefield: 'adventure', school: 'comedy', house: 'comedy', city: 'city', forest: 'adventure', mountains: 'adventure', factory: 'city' };
 
 const POOLS = {
   medieval: {

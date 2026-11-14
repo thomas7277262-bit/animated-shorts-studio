@@ -3,6 +3,7 @@
 // all share. This single source of truth is what keeps picture, voice,
 // sound effects and subtitles in sync.
 import { CHARACTER_LIBRARY } from './characters.js';
+import { Rng } from '../engine/rng.js';
 
 export const LEAD_IN = 0.15;   // silence before a line inside its beat
 export const PAD_AFTER = 0.3;  // breathing room after a line
@@ -45,8 +46,11 @@ const AUTO_SFX = {
   cast: [{ name: 'sparkle', at: 0.1 }],
   cheer: [{ name: 'pop', at: 0.0 }],
   facepalm: [{ name: 'slap', at: 0.3 }],
+  roar: [{ name: 'roar', at: 0.2 }],
+  stomp: [{ name: 'stomp', at: 0.5 }],
+  scared: [{ name: 'gasp', at: 0.05 }],
 };
-const FX_SFX = { impact: 'bonk', stars: 'bonk', sparkle: 'sparkle', magic: 'magic', confetti: 'party', smoke: 'poof', dust: 'poof', hearts: 'pop', fire: 'fire' };
+const FX_SFX = { debris: 'crash', impact: 'bonk', stars: 'bonk', sparkle: 'sparkle', magic: 'magic', confetti: 'party', smoke: 'poof', dust: 'poof', hearts: 'pop', fire: 'fire' };
 const EMOTE_SFX = { '!': 'ding', '?': 'boop', '!?': 'ding', heart: 'pop', anger: 'grr', sweat: 'boop', idea: 'ding' };
 
 export function buildTimeline(storyboard, opts = {}) {
@@ -89,6 +93,9 @@ export function buildTimeline(storyboard, opts = {}) {
       cast: sc.cast.map((c) => ({ id: c.id, start: c.at || [0, 0], face: c.face ?? 0 })),
       tracks: {}, shots: [], fx: [], emotes: [], comic: [],
       transitionIn: si === 0 ? null : { type: sc.transition || 'fade', dur: sc.transitionDur || 0.5 },
+      envOptions: sc.envOptions, lighting: sc.lighting || 'day', weather: sc.weather || null, ambience: sc.ambience || null, music: sc.music || null,
+      props: (sc.props || []).map((p, i) => ({ id: p.id || `p${i}`, ...p })),
+      lightningTimes: [],
     };
     if (si > 0 && scene.transitionIn.type !== 'cut') sfx.push({ t: clock - 0.12, name: 'swoosh', gain: 0.5 });
     for (const c of sc.cast) scene.tracks[c.id] = [];
@@ -106,7 +113,16 @@ export function buildTimeline(storyboard, opts = {}) {
           const reps = seg.action === 'swordSwing' ? Math.max(1, Math.floor((seg.t1 - seg.t0) / 0.9)) : 1;
           for (let r = 0; r < reps; r++) sfx.push({ t: seg.t0 + s.at + r * 0.9, name: s.name, gain: 0.8 });
         }
-        if (seg.move && (seg.action === 'walk' || seg.action === 'run' || seg.action === 'sneak')) {
+        const isCreature = CHARACTER_LIBRARY[a.char]?.kind === 'creature';
+        if (seg.move && isCreature) {
+          const sp = (seg.action === 'run' ? 1.8 : 1) * (a.params?.speed || 1);
+          const step = 1 / (0.75 * 2 * sp);
+          const big = CHARACTER_LIBRARY[a.char].scale || 1;
+          for (let t = seg.t0 + step * 0.5; t < seg.t1; t += step) {
+            sfx.push({ t, name: 'stomp', gain: 0.6 });
+            scene.fx.push({ type: 'bigdust', at: a.char, t, shake: (a.shake ?? 0.45) * Math.min(2, big) });
+          }
+        } else if (seg.move && (seg.action === 'walk' || seg.action === 'run' || seg.action === 'sneak')) {
           const step = seg.action === 'run' ? 0.17 : 0.29;
           for (let t = seg.t0 + 0.1; t < seg.t1 - 0.05; t += step) sfx.push({ t, name: 'step', gain: seg.action === 'sneak' ? 0.2 : 0.35 });
         }
@@ -128,6 +144,14 @@ export function buildTimeline(storyboard, opts = {}) {
         sfx.push({ t: at(c.when), name: 'pop', gain: 0.7 });
       }
       for (const s of b.sfx || []) sfx.push({ t: at(s.when), name: s.name, gain: s.gain ?? 0.8 });
+      for (const d of b.destroy || []) {
+        const prop = scene.props.find((p) => p.id === d.prop);
+        if (!prop) continue;
+        prop.collapseT = at(d.when); prop.fallDir = d.dir ?? -1;
+        scene.fx.push({ type: 'debris', at: [prop.at[0], 1.5, prop.at[1]], t: prop.collapseT, shake: d.shake ?? 1.2 });
+        scene.fx.push({ type: 'bigdust', at: [prop.at[0], 0.5, prop.at[1]], t: prop.collapseT + 0.3 });
+        sfx.push({ t: prop.collapseT, name: 'crash', gain: 1 });
+      }
 
       if (info.timing) {
         const start = b0 + LEAD_IN;
@@ -142,6 +166,13 @@ export function buildTimeline(storyboard, opts = {}) {
       clock = b1;
     });
     scene.end = clock;
+    if (scene.weather === 'storm' || sc.lightning) {
+      const rng = new Rng((storyboard.seed || 7) * 13 + si);
+      for (let t = scene.start + (sc.lightningStart ?? 0.6); t < scene.end - 0.3; t += rng.float(2.2, 3.6)) {
+        scene.lightningTimes.push(+t.toFixed(3));
+        sfx.push({ t: t + 0.25, name: 'thunder', gain: 0.9 });
+      }
+    }
     for (const id of Object.keys(scene.tracks)) scene.tracks[id].sort((a, b) => a.t0 - b.t0);
     if (!scene.shots.length) scene.shots.push({ type: 'wide', t0: scene.start, t1: scene.end });
     scenes.push(scene);
@@ -152,6 +183,8 @@ export function buildTimeline(storyboard, opts = {}) {
     version: 1, title: storyboard.title, seed: storyboard.seed || 7, fps, width, height,
     duration: clock, characters, scenes, lines, sfx: sfx.filter((s) => s.t >= 0 && s.t < clock),
     music: { mood: storyboard.mood || 'adventure', gain: storyboard.musicVolume ?? 0.35, bpm: storyboard.bpm },
+    volumes: { narration: storyboard.voiceVolume ?? 1, music: storyboard.musicVolume ?? 0.35, effects: storyboard.sfxVolume ?? 1 },
+    captionStyle: storyboard.captionStyle || 'yellow',
     narratorVoice: storyboard.narratorVoice || 'storyteller',
   };
 }

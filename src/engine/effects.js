@@ -11,6 +11,10 @@ const FX_TYPES = {
   smoke:    { count: 16, life: 1.6, speed: [0.3, 0.9], up: [0.6, 1.4], gravity: 0.3, size: [0.25, 0.45], colors: ['#9e9e9e', '#bdbdbd', '#8a8a8a'], shape: 'ico', spread: 1, fadeGrow: 2.2 },
   impact:   { count: 14, life: 0.5, speed: [2.5, 4.5], up: [0.5, 2], gravity: -2, size: [0.07, 0.12], colors: ['#ffffff', '#ffe082'], shape: 'octa', spread: 1, emissive: true },
   hearts:   { count: 10, life: 1.6, speed: [0.2, 0.6], up: [0.8, 1.4], gravity: 0.1, size: [0.1, 0.16], colors: ['#ff4d6d', '#ff85a1'], shape: 'octa', spread: 0.6 },
+  debris:   { count: 46, life: 1.6, speed: [2, 5], up: [3, 7], gravity: -9, size: [0.12, 0.32], colors: ['#8b5a2b', '#c0392b', '#a8a29a', '#6b4a2c', '#e8dcc0'], shape: 'box', spread: 1, spin: true },
+  bigdust:  { count: 30, life: 2.2, speed: [1.5, 3.5], up: [0.5, 1.8], gravity: -0.4, size: [0.5, 0.9], colors: ['#cbb89a', '#b8a888', '#ddd0b8'], shape: 'ico', spread: 1, fadeGrow: 2.5 },
+  fireflies:{ count: 60, life: 5.0, speed: [0.1, 0.5], up: [0.05, 0.4], gravity: 0.02, size: [0.03, 0.07], colors: ['#fff3a0', '#ffd84a', '#fffbe0'], shape: 'octa', spread: 4, emissive: true },
+  embers:   { count: 50, life: 2.5, speed: [0.3, 1.2], up: [0.8, 2.0], gravity: 0.3, size: [0.03, 0.07], colors: ['#ffb347', '#ff6b00', '#ffe082'], shape: 'octa', spread: 2, emissive: true },
   fire:     { count: 30, life: 0.8, speed: [0.8, 1.6], up: [0.1, 0.5], gravity: 1.5, size: [0.1, 0.22], colors: ['#ff6b00', '#ffb300', '#ff3d00', '#ffe082'], shape: 'ico', spread: 0.4, emissive: true, fadeGrow: 0.4, directional: true },
 };
 
@@ -58,7 +62,7 @@ export class ParticleSystem {
         const x = ev.pos[0] + vx * lt;
         const y = ev.pos[1] + vy * lt + 0.5 * cfg.gravity * lt * lt;
         const z = ev.pos[2] + vz * lt;
-        let s = size * (cfg.fadeGrow ? 1 + k * cfg.fadeGrow : 1) * (1 - Math.pow(k, 3));
+        let s = size * (cfg.fadeGrow ? 1 + k * cfg.fadeGrow : 1) * (cfg.life > 3 ? Math.min(1, (1 - k) * 4, k * 8) : 1 - Math.pow(k, 3));
         if (y < 0.02 && cfg.gravity < 0) s *= 0.5;
         const idx = counts[cfg.shape]++;
         if (idx >= MAX) continue;

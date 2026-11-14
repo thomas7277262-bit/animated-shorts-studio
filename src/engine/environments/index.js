@@ -69,7 +69,7 @@ function castle(seed) {
   return { group: g, light: { sun: '#fff4d6', sunI: 2.6, hemiSky: '#bfe3ff', hemiGround: '#6d8f4e', hemiI: 1.1, dir: [8, 14, 9] }, fog: ['#cfe9ff', 40, 160] };
 }
 
-function village(seed) {
+function village(seed, opts = {}) {
   const rng = new Rng(seed);
   const g = new THREE.Group();
   g.add(sky('#5fb4ff', '#ffe8c4', '#fff4e0'));
@@ -78,7 +78,7 @@ function village(seed) {
   addClouds(g, rng);
   g.add(box(4, 0.04, 30, '#d9c49c', { y: 0.02, z: -6, cast: false }));
   const spots = [[-5.5, -5], [5.5, -5.5], [-6.5, -11], [6.5, -12], [-2.5, -14], [3, -16], [-9, -2], [9, -1.5]];
-  spots.forEach(([x, z], i) => g.add(house(rng, { x, z, ry: x < 0 ? 0.35 : -0.35, s: rng.float(1.0, 1.25), floors: i % 3 === 0 ? 2 : 1 })));
+  spots.forEach(([x, z], i) => (opts.clearRoad && Math.abs(x) < 4 && z < -6) ? null : g.add(house(rng, { x, z, ry: x < 0 ? 0.35 : -0.35, s: rng.float(1.0, 1.25), floors: i % 3 === 0 ? 2 : 1 })));
   // well
   const well = new THREE.Group();
   well.add(mesh(new THREE.CylinderGeometry(0.8, 0.85, 0.8, 10), mat('#a9a196'), { y: 0.4 }));
@@ -288,14 +288,110 @@ function city(seed) {
   return { group: g, light: { sun: '#ffd1a1', sunI: 2.3, hemiSky: '#ffd0e0', hemiGround: '#6b6b7a', hemiI: 1.2, dir: [6, 10, 12] }, fog: ['#ffc9a6', 40, 170] };
 }
 
-export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city };
+function forest(seed) {
+  const rng = new Rng(seed);
+  const g = new THREE.Group();
+  g.add(sky('#4fa3ff', '#d4f0ff', '#e8f8ff'));
+  g.add(ground('#4f9a3c', 220, seed, { flatRadius: 7, bumps: 0.3 }));
+  g.add(mountains(rng, { color: '#6f86a0' }));
+  addClouds(g, rng, 5);
+  // winding dirt path
+  for (let i = 0; i < 14; i++) g.add(box(2.6, 0.04, 2.2, '#9c7a4f', { x: Math.sin(i * 0.5) * 1.5, y: 0.02, z: 4 - i * 2, ry: Math.sin(i * 0.5) * 0.3, cast: false }));
+  // dense trees with a clearing in the middle
+  for (let i = 0; i < 90; i++) {
+    const x = rng.float(-30, 30), z = rng.float(-45, 6);
+    if (Math.abs(x - Math.sin((4 - z) / 4) * 1.5) < 3.5 && z > -18) continue;
+    g.add(tree(rng, { x, z, s: rng.float(1.2, 2.3), kind: rng.chance(0.55) ? 'pine' : 'round' }));
+  }
+  // logs, stumps, mushrooms, rocks, bushes
+  for (let i = 0; i < 4; i++) g.add(mesh(new THREE.CylinderGeometry(0.3, 0.3, 2.4, 8), mat('#7a4a26'), { x: rng.pick([-1, 1]) * rng.float(3, 6), y: 0.3, z: rng.float(-8, 2), rz: Math.PI / 2, ry: rng.float(0, 3) }));
+  for (let i = 0; i < 12; i++) {
+    const m = new THREE.Group();
+    m.add(mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.3, 6), mat('#f3ead8'), { y: 0.15 }));
+    m.add(mesh(new THREE.SphereGeometry(0.2, 8, 5, 0, Math.PI * 2, 0, Math.PI / 2), mat(rng.pick(['#e74c3c', '#ff7f50'])), { y: 0.28 }));
+    m.position.set(rng.float(-7, 7), 0, rng.float(-6, 3));
+    if (Math.abs(m.position.x) > 2.5) g.add(m);
+  }
+  for (let i = 0; i < 14; i++) g.add(rock(rng, { x: rng.float(-9, 9), z: rng.float(-10, 4), s: rng.float(0.3, 0.9), color: '#8d949a' }));
+  for (let i = 0; i < 16; i++) { const x = rng.float(-9, 9); if (Math.abs(x) > 2.8) g.add(bush(rng, { x, z: rng.float(-8, 4), s: rng.float(0.7, 1.2) })); }
+  return { group: g, light: { sun: '#fff1cf', sunI: 2.4, hemiSky: '#bfe3ff', hemiGround: '#3f6b35', hemiI: 1.0, dir: [7, 13, 6] }, fog: ['#cfe8f0', 25, 120] };
+}
+
+function mountainPass(seed) {
+  const rng = new Rng(seed);
+  const g = new THREE.Group();
+  g.add(sky('#2f86ff', '#cfe8ff', '#eef7ff'));
+  g.add(ground('#7fae5a', 240, seed, { flatRadius: 8, bumps: 0.4 }));
+  // close, huge peaks with snow caps
+  for (let i = 0; i < 9; i++) {
+    const x = -50 + i * 12.5 + rng.float(-3, 3), z = rng.float(-60, -32), h = rng.float(26, 44), r = rng.float(10, 16);
+    g.add(mesh(new THREE.ConeGeometry(r, h, 6), mat(rng.pick(['#7b8796', '#6d7889', '#8a94a3'])), { x, y: h / 2 - 1, z, ry: rng.float(0, 3), cast: false }));
+    g.add(mesh(new THREE.ConeGeometry(r * 0.36, h * 0.36, 6), mat('#f6faff'), { x, y: h - 1 - h * 0.18 + 0.1, z, cast: false }));
+  }
+  // cliffs and boulders beside the trail
+  for (const sx of [-1, 1]) for (let i = 0; i < 5; i++) g.add(mesh(new THREE.DodecahedronGeometry(rng.float(2, 4), 0), mat('#8f8a80'), { x: sx * rng.float(8, 14), y: rng.float(0.5, 2), z: rng.float(-20, 2), ry: rng.float(0, 3) }));
+  for (let i = 0; i < 20; i++) g.add(rock(rng, { x: rng.float(-8, 8), z: rng.float(-10, 5), s: rng.float(0.3, 0.9) }));
+  for (let i = 0; i < 40; i++) { const x = rng.float(-40, 40); if (Math.abs(x) > 7) g.add(tree(rng, { x, z: rng.float(-30, 4), s: rng.float(1.2, 2), kind: 'pine' })); }
+  g.add(box(3, 0.04, 30, '#a68d68', { y: 0.02, z: -6, cast: false }));
+  // rope bridge posts + waterfall
+  const fall = mesh(new THREE.BoxGeometry(3, 22, 0.3), mat('#bfe7ff', { emissive: '#7fc8ff', emissiveIntensity: 0.3 }), { x: 14, y: 11, z: -30, cast: false });
+  g.add(fall);
+  addClouds(g, rng, 6);
+  return { group: g, light: { sun: '#ffffff', sunI: 2.7, hemiSky: '#cfe6ff', hemiGround: '#6a7a5a', hemiI: 1.1, dir: [10, 16, 8] }, fog: ['#dbeeff', 40, 180] };
+}
+
+function factory(seed) {
+  const rng = new Rng(seed);
+  const g = new THREE.Group();
+  g.add(sky('#8aa0b8', '#d8d2c8', '#e0dad0'));
+  g.add(ground('#6f7377', 240, seed, { flatRadius: 50, bumps: 0, variation: 0.04 }));
+  g.add(box(30, 0.03, 6, '#3b3f44', { y: 0.02, z: 0, cast: false }));
+  for (let i = -6; i <= 6; i++) g.add(box(1.4, 0.01, 0.16, '#ffd200', { x: i * 2.5, y: 0.04, z: 0, cast: false }));
+  // main factory halls with saw-tooth roofs
+  for (let k = 0; k < 3; k++) {
+    const hall = new THREE.Group();
+    const w = 10, h = 7, d = 9;
+    hall.add(box(w, h, d, rng.pick(['#b5544a', '#9a6a4a', '#7d8a96']), { base: true }));
+    for (let r = 0; r < 4; r++) hall.add(mesh(new THREE.CylinderGeometry(0.01, 1.3, 2.4, 3), mat('#5e6670'), { x: -w / 2 + 1.25 + r * 2.5, y: h + 1.0, rz: Math.PI / 2, ry: Math.PI / 2, s: [1, 1, 3.4] }));
+    for (let c = 0; c < 4; c++) hall.add(box(1.4, 1.6, 0.08, '#ffd27a', { x: -3.6 + c * 2.4, y: 4.6, z: d / 2 + 0.03, cast: false }).translateZ(0));
+    hall.add(box(3.4, 4, 0.1, '#4a5056', { base: true, z: d / 2 + 0.05 }));
+    hall.position.set(-12 + k * 12, 0, -12 - (k % 2) * 3);
+    g.add(hall);
+  }
+  // chimneys with animated smoke
+  for (let i = 0; i < 4; i++) {
+    const x = -15 + i * 9, z = -20;
+    g.add(mesh(new THREE.CylinderGeometry(0.8, 1.1, 16, 10), mat('#8c4a3c'), { x, y: 8, z }));
+    for (const y of [14.8, 15.6]) g.add(mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.3, 10), mat('#f2f2f2'), { x, y, z }));
+    for (let j = 0; j < 5; j++) {
+      const puff = mesh(new THREE.IcosahedronGeometry(1 + j * 0.4, 0), mat('#9a9a9a', { transparent: true, opacity: 0.55 - j * 0.09 }), { x: x + j * 0.6, y: 17 + j * 1.6, z, cast: false });
+      puff.userData.bob = i * 2 + j; puff.userData.bobBase = puff.position.y;
+      g.add(puff);
+    }
+  }
+  // pipes, tanks, crates, barrels
+  for (let i = 0; i < 3; i++) {
+    g.add(mesh(new THREE.CylinderGeometry(2, 2, 5, 14), mat('#c6ccd2', { metalness: 0.5, roughness: 0.4 }), { x: 10 + i * 4.5, y: 2.5, z: -6 }));
+    g.add(mesh(new THREE.SphereGeometry(2, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat('#c6ccd2', { metalness: 0.5, roughness: 0.4 }), { x: 10 + i * 4.5, y: 5, z: -6 }));
+  }
+  g.add(mesh(new THREE.CylinderGeometry(0.35, 0.35, 30, 8), mat('#d35400'), { x: 0, y: 6, z: -7.6, rz: Math.PI / 2 }));
+  g.add(mesh(new THREE.CylinderGeometry(0.25, 0.25, 30, 8), mat('#2980b9'), { x: 0, y: 5, z: -7.6, rz: Math.PI / 2 }));
+  for (let i = 0; i < 10; i++) g.add(box(0.9, 0.9, 0.9, '#b07a3c', { x: rng.float(-9, 9), y: 0.45 + (i % 3 === 0 ? 0.9 : 0), z: rng.float(-5, -3), ry: rng.float(-0.3, 0.3) }));
+  for (let i = 0; i < 8; i++) g.add(mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.9, 10), mat(rng.pick(['#2e86de', '#e74c3c', '#f1c40f'])), { x: rng.float(-8, 8), y: 0.45, z: rng.float(2.5, 5) }));
+  // warning lamps
+  for (let i = -2; i <= 2; i++) g.add(lamp({ x: i * 6, z: 3.5, h: 3.6 }));
+  return { group: g, light: { sun: '#fff0dc', sunI: 2.2, hemiSky: '#d6dde6', hemiGround: '#55595e', hemiI: 1.2, dir: [9, 14, 7] }, fog: ['#cfc9bf', 30, 150] };
+}
+
+export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory };
 export const ENVIRONMENT_LABELS = {
   castle: 'Medieval castle', village: 'Medieval village', battlefield: 'Battlefield',
   school: 'School', house: 'House (living room)', city: 'Modern city',
+  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory',
 };
 
-export function buildEnvironment(name, seed = 7) {
+export function buildEnvironment(name, seed = 7, opts = {}) {
   const fn = ENVIRONMENTS[name];
   if (!fn) throw new Error(`Unknown environment "${name}"`);
-  return fn(seed);
+  return fn(seed, opts);
 }

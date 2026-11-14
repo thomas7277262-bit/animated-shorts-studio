@@ -148,9 +148,9 @@ async function main() {
   // 7. final encode: burn subtitles + add audio
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   for (const f of fs.readdirSync(path.join(ROOT, 'assets/fonts'))) if (/\.(otf|ttf)$/.test(f)) fs.copyFileSync(path.join(ROOT, 'assets/fonts', f), path.join(workDir, f));
-  const vf = opt['no-subs'] ? 'null' : 'ass=subs.ass:fontsdir=.';
+  const vf = (opt['no-subs'] ? '' : 'ass=subs.ass:fontsdir=.,') + 'scale=out_range=tv,format=yuv420p';
   run('ffmpeg', ['-y', '-v', 'error', '-i', 'video.mp4', '-i', 'audio.wav', '-vf', vf,
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', height > 2000 ? '20' : '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-r', String(fps),
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', height > 2000 ? '20' : '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-color_range', 'tv', '-r', String(fps),
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2', '-t', timeline.duration.toFixed(3), '-movflags', '+faststart', outFile], { cwd: workDir });
   // poster image (middle of the video)
   run('ffmpeg', ['-y', '-v', 'error', '-ss', (timeline.duration * 0.6).toFixed(2), '-i', outFile, '-frames:v', '1', '-vf', 'scale=540:-2', outFile.replace(/\.mp4$/, '.jpg')]);

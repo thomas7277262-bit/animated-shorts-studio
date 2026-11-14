@@ -48,6 +48,8 @@ function write(stream, buf) {
 async function renderSegment({ url, timeline, width, height, fps, from, to, outFile, crf, quality, onFrame }) {
   const { browser, page, errors } = await openPage(url, timeline, width, height);
   const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
+    // JPEG frames are full-range; convert to standard TV-range yuv420p so every player shows correct contrast
+    '-vf', 'scale=in_range=pc:out_range=tv,format=yuv420p', '-color_range', 'tv',
     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', String(crf), '-pix_fmt', 'yuv420p', '-r', String(fps), outFile], { stdio: ['pipe', 'inherit', 'pipe'] });
   let ffErr = '';
   ff.stdin.on('error', (e) => { ffErr += e.message; });

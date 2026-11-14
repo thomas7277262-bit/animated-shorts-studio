@@ -1,0 +1,38 @@
+// Opens the built dashboard on an emulated Android phone, generates a story,
+// plays the preview and takes screenshots. Usage: node scripts/check-dashboard.mjs out-dir
+import { chromium, devices } from 'playwright';
+import fs from 'node:fs';
+import { serveDir, CHROME_ARGS } from '../render/frames.js';
+const out = process.argv[2] || 'output/dashboard-check';
+fs.mkdirSync(out, { recursive: true });
+const srv = await serveDir(new URL('../dist', import.meta.url).pathname);
+const b = await chromium.launch({ args: CHROME_ARGS });
+const ctx = await b.newContext({ ...devices['Pixel 7'] });
+const p = await ctx.newPage();
+const errors = [];
+p.on('pageerror', (e) => errors.push(e.message));
+p.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+await p.goto(`http://127.0.0.1:${srv.address().port}/index.html`);
+await p.waitForSelector('h1');
+await p.screenshot({ path: `${out}/1-top.png` });
+await p.fill('textarea', 'a wizard who sneezes magic');
+await p.click('text=Lily');
+await p.click('text=Old Zib');
+await p.click('text=30s');
+await p.click('text=Generate story');
+await p.waitForTimeout(500);
+const title = await p.textContent('h3.title');
+const lines = await p.$$eval('.line input', (els) => els.map((e) => e.value));
+await p.locator('.preview').scrollIntoViewIfNeeded();
+await p.click('.controls .btn');
+await p.waitForTimeout(2500);
+await p.locator('.preview').screenshot({ path: `${out}/2-preview.png` });
+const t = await p.textContent('.time');
+await p.click('.scene >> nth=2');
+await p.waitForTimeout(300);
+await p.locator('.preview').screenshot({ path: `${out}/3-scene3.png` });
+await p.locator('text=Render video in the cloud').scrollIntoViewIfNeeded();
+await p.screenshot({ path: `${out}/4-render.png` });
+console.log(JSON.stringify({ title, lines: lines.length, firstLine: lines[0], previewTime: t, errors }, null, 1));
+await b.close(); srv.close();
+if (errors.length) process.exit(1);

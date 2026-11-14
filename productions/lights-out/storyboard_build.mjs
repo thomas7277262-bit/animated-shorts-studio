@@ -81,7 +81,7 @@ shot({ cue: ['L5', 4], ...TOWN, env: { power: false, beam: 'on', sea: 0.2 }, mus
   camera: camF(['leo'], 1.0, [-25, 4.6, 0.2, 0.3, 50], [25, 4.6, 0.2, 0.3, 50]) });
 shot({ cue: ['L6', 0], ...SCHOOL, music: 'calm', note: 'At school they laugh: "CALCULATOR!"',
   c: [['leo', [0, 0.6], 0, 'idle', 'sad'], ['noah', [-1.5, -0.4], 30, 'point', 'laugh'], ['mia', [1.5, -0.4], -30, 'laugh', 'laugh'], ['zed', [0.5, -1.4], -10, 'laugh', 'laugh']],
-  comic: [['CALCULATOR!', '#ffd23f', ['L6', 7], [0, 3.0, 0], 1.0]],
+  comic: [['CALCULATOR!', '#ffd23f', ['L6', 7], [0, 3.0, 0], 0.62]],
   camera: cam([0, 1.3, -0.2], [0, 6.6, 0.3, 0.4, 52], [0, 6.0, 0.3, 0.4, 52]) });
 shot({ cue: ['L7', 0], ...TOWN, env: { power: false, beam: 'on', sea: 0.2 }, music: 'calm',
   note: 'Only one light stays on after nine: the lighthouse on the rocks', c: [],

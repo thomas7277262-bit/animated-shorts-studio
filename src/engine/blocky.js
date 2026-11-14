@@ -139,7 +139,7 @@ export class BlockCharacter {
     this.faceTex.offset.set((W * 0.25 - span * P) / W, 1 - (H * 0.5 + span * P) / H);
     const faceMat = new THREE.MeshStandardMaterial({ map: this.faceTex, roughness: 0.55 });
     const hs = d.headR * 2;
-    const headMesh = block(hs * 1.08, hs, hs, [skin, skin, skin, skin, faceMat, skin], hs * 0.18);
+    const headMesh = block(hs * 1.08, hs, hs, [skin, skin, skin, skin, faceMat, skin], hs * 0.24);
     this.head.add(headMesh);
     this.headMesh = headMesh;
     this.buildHair(spec, hs);
@@ -275,6 +275,16 @@ export class BlockCharacter {
           const bm = mat(spec.bowColor || '#ff6fae');
           acc.add(at(block(hs * 0.3, hs * 0.14, hs * 0.1, bm, 0.03), sx * hs * 0.62, top - hs * 0.04, -hs * 0.2));
         }
+        break;
+      }
+      case 'swept': { // layered fringe of soft rounded tufts
+        acc.add(at(block(hs * 1.13, hs * 0.26, hs * 1.08, hair, 0.08), 0, top, -hs * 0.02));
+        acc.add(at(block(hs * 1.13, hs * 0.55, hs * 0.22, hair, 0.06), 0, top - hs * 0.26, -hs * 0.48));
+        for (let i = 0; i < 6; i++) { // fringe pieces across the forehead, angled like swept hair
+          const tuft = at(block(hs * 0.24, hs * 0.2, hs * 0.2, hair, 0.06), (-0.45 + i * 0.18) * hs, top - hs * 0.06, hs * 0.48);
+          tuft.rotation.set(0.35, 0, -0.35); acc.add(tuft);
+        }
+        for (const sx of [-1, 1]) acc.add(at(block(hs * 0.12, hs * 0.42, hs * 0.55, hair, 0.04), sx * hs * 0.57, top - hs * 0.2, -hs * 0.15));
         break;
       }
       case 'bald': break;

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { suburb } from './suburb.js';
 import { Rng } from '../rng.js';
 import {
   mat, mesh, box, sky, ground, tree, rock, bush, cloud, mountains, house, fence, flag, lamp,
@@ -396,11 +397,11 @@ function studio(seed) {
   return { group: g, light: { sun: '#ffffff', sunI: 2.2, hemiSky: '#ffffff', hemiGround: '#cfd8e0', hemiI: 1.6, dir: [6, 12, 10] }, fog: ['#eef3f8', 60, 200] };
 }
 
-export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio };
+export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio, suburb };
 export const ENVIRONMENT_LABELS = {
   castle: 'Medieval castle', village: 'Medieval village', battlefield: 'Battlefield',
   school: 'School', house: 'House (living room)', city: 'Modern city',
-  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop',
+  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop', suburb: 'Bright suburb',
 };
 
 export function buildEnvironment(name, seed = 7, opts = {}) {

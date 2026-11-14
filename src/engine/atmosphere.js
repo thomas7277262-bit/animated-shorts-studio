@@ -28,7 +28,7 @@ export function applyLighting(player, env, preset) {
     player.sun.color.set(L.sun); player.sun.intensity = L.sunI; player.sun.position.set(...L.dir);
     player.scene.fog = new THREE.Fog(env.fog[0], env.fog[1], env.fog[2]);
     if (sky) ['top', 'horizon', 'bottom'].forEach((k, i) => sky.material.uniforms[k].value.copy(env.skyBase[i]));
-    player.baseExposure = 1.05;
+    player.baseExposure = player.brightStyle ? 1.0 : 1.05;
   } else {
     player.hemi.color.set(p.hemi[0]); player.hemi.groundColor.set(p.hemi[1]); player.hemi.intensity = p.hemi[2];
     player.sun.color.set(p.sun); player.sun.intensity = p.sunI; player.sun.position.set(...p.dir);

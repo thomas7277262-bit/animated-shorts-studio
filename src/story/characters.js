@@ -176,7 +176,7 @@ Object.assign(CHARACTER_LIBRARY, PATCH_CAST);
 export const WEAKEST_PET_CAST = {
   maxkid: {
     id: 'maxkid', name: 'Max', role: 'hero kid', style: 'blocky', height: 0.88,
-    skin: '#f0c9a0', hair: '#2b1d14', hairStyle: 'spiky', cheeks: true,
+    skin: '#f3cfa8', hair: '#4a2c17', hairStyle: 'swept', cheeks: true,
     shirt: '#ff8c2a', shirtDetail: 'zip', shirtAccent: '#ffffff', sleeves: 'long', hood: true,
     pants: '#4a5b6e', shoes: '#2fd0c8', accent: '#ff8c2a', eyeStyle: 'round', brows: 'normal',
     personality: 'kind, stubborn, never gives up on Nugget',

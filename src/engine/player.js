@@ -39,8 +39,10 @@ export class StoryPlayer {
     this.renderer.setPixelRatio(pixelRatio);
     this.renderer.setSize(this.width, this.height, false);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.05;
+    // 'bright' style keeps colours saturated (clean HD game look); default stays cinematic ACES
+    this.brightStyle = timeline.style === 'bright';
+    this.renderer.toneMapping = this.brightStyle ? THREE.NeutralToneMapping : THREE.ACESFilmicToneMapping;
+    this.renderer.toneMappingExposure = this.brightStyle ? 1.0 : 1.05;
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.autoClear = false;
@@ -62,6 +64,7 @@ export class StoryPlayer {
 
     // bloom makes lamps, windows, eyes and magic glow (cinematic look)
     this.useBloom = bloom ?? timeline.bloom ?? true;
+    this.bloomDayOff = this.brightStyle; // no glow haze in bright daytime shots
     if (this.useBloom) {
       this.composer = new EffectComposer(this.renderer);
       this.composer.setPixelRatio(pixelRatio);
@@ -344,7 +347,7 @@ export class StoryPlayer {
     // draw
     this.renderer.clear();
     if (this.composer) {
-      this.bloomPass.strength = ['night', 'storm', 'dusk', 'purple'].includes(s.lighting) ? 0.75 : 0.35;
+      this.bloomPass.strength = ['night', 'storm', 'dusk', 'purple'].includes(s.lighting) ? 0.75 : this.bloomDayOff ? 0 : 0.35;
       this.composer.render();
     } else this.renderer.render(this.scene, this.camera);
     const tr = this.transitionAt(t);

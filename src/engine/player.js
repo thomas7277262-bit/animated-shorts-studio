@@ -321,13 +321,30 @@ export class StoryPlayer {
       else p = this.headWorld(cm.at).add(new THREE.Vector3(0, 1.0, 0.3));
       sprites.push({ kind: 'comic', key: cm.text, color: cm.color, pos: p, age: t - cm.t0, life: cm.t1 - cm.t0, size: cm.size || 1.1 });
     }
+    for (const lb of s.labels || []) {
+      if (t < lb.t0 || t > lb.t1) continue;
+      const c = this.characters[lb.char]; if (!c || !c.root.visible) continue;
+      const hp = this.headWorld(lb.char);
+      const sc = c.kind === 'animal' ? Math.min(2.6, Math.max(0.55, (c.spec.scale || 1) * 0.55)) : 0.6;
+      // a glitching number flickers between its values
+      const text = lb.glitch ? lb.glitch[Math.floor(t * 14) % lb.glitch.length] : lb.text;
+      sprites.push({ kind: 'label', key: text, color: lb.color || '#ffe14a', pos: hp.add(new THREE.Vector3(0, c.dims.headR * 1.6 + 0.35 * sc + (lb.dy || 0), 0)), age: t - lb.t0, life: lb.t1 - lb.t0, size: sc });
+    }
+    for (const pp of s.pops || []) {
+      if (t < pp.t0 || t > pp.t1) continue;
+      // pops sit in front of the camera, centred in the upper part of the frame
+      const dir = new THREE.Vector3(); this.camera.getWorldDirection(dir);
+      const up = new THREE.Vector3(0, 1, 0).applyQuaternion(this.camera.quaternion);
+      const pos = this.camera.position.clone().add(dir.multiplyScalar(4)).add(up.multiplyScalar(pp.y ?? 0.75));
+      sprites.push({ kind: 'pop', key: pp.text, color: pp.color, pos, age: t - pp.t0, life: pp.t1 - pp.t0, size: pp.size || 0.95 });
+    }
     this.sprites.update(sprites);
     this.weather.update(s.weather, t, this.camera);
 
     // draw
     this.renderer.clear();
     if (this.composer) {
-      this.bloomPass.strength = s.lighting === 'night' || s.lighting === 'storm' || s.lighting === 'dusk' ? 0.75 : 0.35;
+      this.bloomPass.strength = ['night', 'storm', 'dusk', 'purple'].includes(s.lighting) ? 0.75 : 0.35;
       this.composer.render();
     } else this.renderer.render(this.scene, this.camera);
     const tr = this.transitionAt(t);

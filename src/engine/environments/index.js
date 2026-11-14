@@ -236,7 +236,7 @@ function houseInterior(seed) {
   return { group: g, light: { sun: '#fff1d6', sunI: 2.0, hemiSky: '#fff2dc', hemiGround: '#b08a66', hemiI: 1.5, dir: [5, 10, 8] }, fog: ['#ffe9cc', 30, 80], interior: true };
 }
 
-function city(seed) {
+function city(seed, opts = {}) {
   const rng = new Rng(seed);
   const g = new THREE.Group();
   g.add(sky('#ff7eb3', '#ffc58f', '#ffd9b0', new THREE.Vector3(0.2, 0.12, -1)));
@@ -267,7 +267,8 @@ function city(seed) {
     }
   }
   // street lamps, cars, trees in planters
-  for (let i = -4; i <= 4; i++) g.add(lamp({ x: i * 6, z: 0.6 }));
+  // clearStage keeps the acting area (|x| < 5) free of lamps and planters
+  for (let i = -4; i <= 4; i++) if (!(opts.clearStage && Math.abs(i * 6) < 5)) g.add(lamp({ x: i * 6, z: 0.6 }));
   const carColors = ['#e63946', '#2d6cdf', '#ffd166', '#06d6a0', '#ffffff'];
   for (let i = 0; i < 5; i++) {
     const car = new THREE.Group();
@@ -282,6 +283,7 @@ function city(seed) {
     g.add(car);
   }
   for (let i = -3; i <= 3; i++) {
+    if (opts.clearStage && Math.abs(i * 6 + 3) < 5) continue;
     g.add(box(1.2, 0.5, 1.2, '#8d6e63', { x: i * 6 + 3, y: 0.35, z: 2.6 }));
     g.add(tree(rng, { x: i * 6 + 3, z: 2.6, s: 0.8, kind: 'round' }).translateY(0.5));
   }

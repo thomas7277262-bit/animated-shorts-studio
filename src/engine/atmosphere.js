@@ -7,6 +7,7 @@ export const LIGHTING = {
   sunset: { sky: ['#3d4c99', '#ff9a5a', '#ffc59a'], sun: '#ffaa66', sunI: 2.2, dir: [-12, 6, 4], hemi: ['#ffb38a', '#5a4a6a', 0.95], fog: ['#f2a27c', 35, 150], exposure: 1.05 },
   night: { sky: ['#050a1d', '#1a2850', '#1a2850'], sun: '#9db4ff', sunI: 0.9, dir: [6, 14, -6], hemi: ['#3a4a85', '#121225', 0.55], fog: ['#141c38', 25, 120], exposure: 1.15 },
   storm: { sky: ['#272c35', '#4e5764', '#59626e'], sun: '#c3cbdb', sunI: 0.9, dir: [5, 14, 6], hemi: ['#7c8696', '#2c3036', 0.85], fog: ['#535b67', 25, 190], exposure: 1.0 },
+  purple: { sky: ['#14042b', '#5b1a8c', '#8a35c9'], sun: '#c9a2ff', sunI: 1.1, dir: [6, 12, 8], hemi: ['#8a5ad0', '#1a0a2a', 0.85], fog: ['#3a1660', 30, 220], exposure: 1.12 },
   dusk: { sky: ['#2a1f4f', '#c4527a', '#e88a6a'], sun: '#ff7a5c', sunI: 1.4, dir: [-10, 4, -2], hemi: ['#a36a9a', '#2a2040', 0.8], fog: ['#7a4a6a', 25, 140], exposure: 1.1 },
 };
 
@@ -37,7 +38,7 @@ export function applyLighting(player, env, preset) {
   }
   player.renderer.toneMappingExposure = player.baseExposure;
   // lit windows/lamps glow more at night
-  const glow = preset === 'night' || preset === 'storm' || preset === 'dusk';
+  const glow = preset === 'night' || preset === 'storm' || preset === 'dusk' || preset === 'purple';
   env.group.traverse((o) => {
     if (o.material && o.material.emissive && o.material.emissiveIntensity > 0 && !o.material.userData.baseEI) o.material.userData.baseEI = o.material.emissiveIntensity;
     if (o.material && o.material.userData.baseEI) o.material.emissiveIntensity = o.material.userData.baseEI * (glow ? 3 : 1);

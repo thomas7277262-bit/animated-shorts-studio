@@ -170,3 +170,57 @@ export const PATCH_CAST = {
   },
 };
 Object.assign(CHARACTER_LIBRARY, PATCH_CAST);
+
+// ---------------------------------------------------------------------------
+// "The Weakest Pet in the World" – original cast.
+export const WEAKEST_PET_CAST = {
+  maxkid: {
+    id: 'maxkid', name: 'Max', role: 'hero kid', style: 'blocky', height: 0.88,
+    skin: '#f0c9a0', hair: '#2b1d14', hairStyle: 'spiky', cheeks: true,
+    shirt: '#ff8c2a', shirtDetail: 'zip', shirtAccent: '#ffffff', sleeves: 'long', hood: true,
+    pants: '#4a5b6e', shoes: '#2fd0c8', accent: '#ff8c2a', eyeStyle: 'round', brows: 'normal',
+    personality: 'kind, stubborn, never gives up on Nugget',
+  },
+  brax: {
+    id: 'brax', name: 'Brax', role: 'bully', style: 'blocky', height: 1.1,
+    skin: '#e9b98f', hairStyle: 'cap', hatColor: '#d62828',
+    shirt: '#26262e', shirtDetail: 'stripe', shirtAccent: '#d62828', sleeves: 'short',
+    pants: '#2a2a33', shoes: '#111111', accent: '#d62828', eyeStyle: 'determined', brows: 'thick',
+    personality: 'loud, proud, secretly scared',
+  },
+  nugget: {
+    id: 'nugget', name: 'Nugget', role: 'hero hamster', kind: 'animal', model: 'dog', scale: 0.5,
+    fur: '#eea95c', belly: '#fff1dc', muzzle: '#fff1dc', faceFur: '#f3b673', ears: 'round', earColor: '#f6b8b0',
+    body: [1.35, 1.3, 0.75], round: true, legScale: 0.4, headScale: 1.25, tail: 'stub', snout: 'small',
+    cheeks: true, eyeStyle: 'round', brows: 'normal', accent: '#eea95c', personality: 'tiny, brave, power level 0',
+  },
+  nuggetGold: {
+    id: 'nuggetGold', name: 'Golden Nugget', role: 'giant form', kind: 'animal', model: 'dog', scale: 9,
+    fur: '#ffc928', belly: '#fff3b0', muzzle: '#fff3b0', faceFur: '#ffd451', ears: 'round', earColor: '#ffe08a',
+    body: [1.35, 1.3, 0.75], round: true, legScale: 0.4, headScale: 1.25, tail: 'stub', snout: 'small',
+    cheeks: true, eyeStyle: 'determined', brows: 'thick', glow: 0.55, accent: '#ffc928', personality: 'power level 9,999,999,999',
+  },
+  tiger: {
+    id: 'tiger', name: "Brax's tiger", role: 'bully pet', kind: 'animal', model: 'dog', scale: 1.35,
+    fur: '#f08a24', stripes: '#2a1a10', belly: '#fff6ea', muzzle: '#fff6ea', faceFur: '#f39a3a',
+    ears: 'round', earColor: '#e07a1c', earSize: 0.6, body: [1.3, 1.15, 1.1], legScale: 0.85, headScale: 1.2, round: true,
+    tail: 'long', tailTip: '#2a1a10', eyeStyle: 'determined', brows: 'thick', accent: '#f08a24',
+  },
+  lion: {
+    id: 'lion', name: 'Lion', role: 'pet', kind: 'animal', model: 'dog', scale: 1.4,
+    fur: '#e3b04b', mane: '#a8652a', muzzle: '#f5deb3', faceFur: '#e8bb5d', ears: 'pointed', earColor: '#c98f3a',
+    tail: 'long', tailTip: '#a8652a', eyeStyle: 'round', brows: 'normal', accent: '#e3b04b',
+  },
+  petdragon: {
+    id: 'petdragon', name: 'Dragon', role: 'pet', kind: 'animal', model: 'dog', scale: 1.3,
+    fur: '#4cc36a', belly: '#e9f7b0', muzzle: '#6fd486', faceFur: '#55c973', wings: '#2f9e57', horns: '#fff2c2',
+    ears: 'pointed', earColor: '#2f9e57', tail: 'long', tailTip: '#2f9e57', eyeStyle: 'determined', brows: 'normal', accent: '#4cc36a',
+  },
+  shadowbeast: {
+    id: 'shadowbeast', name: 'Shadow Monster', kind: 'creature', model: 'beast', scale: 3.4,
+    color: '#2a1840', belly: '#3a2458', spikes: '#6c2bd9', glow: '#d14dff', accent: '#d14dff',
+  },
+};
+// ids used in timelines
+for (const [k, v] of Object.entries(WEAKEST_PET_CAST)) v.id = k;
+Object.assign(CHARACTER_LIBRARY, WEAKEST_PET_CAST);

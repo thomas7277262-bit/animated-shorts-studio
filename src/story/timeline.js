@@ -95,6 +95,7 @@ export function buildTimeline(storyboard, opts = {}) {
       transitionIn: si === 0 ? null : { type: sc.transition || 'fade', dur: sc.transitionDur || 0.5 },
       envOptions: sc.envOptions, lighting: sc.lighting || 'day', weather: sc.weather || null, ambience: sc.ambience || null, music: sc.music || null,
       props: (sc.props || []).map((p, i) => ({ id: p.id || `p${i}`, ...p })),
+      labels: [], pops: [],
       lightningTimes: [],
     };
     if (si > 0 && scene.transitionIn.type !== 'cut') sfx.push({ t: clock - 0.12, name: 'swoosh', gain: 0.5 });
@@ -144,6 +145,8 @@ export function buildTimeline(storyboard, opts = {}) {
         sfx.push({ t: at(c.when), name: 'pop', gain: 0.7 });
       }
       for (const s of b.sfx || []) sfx.push({ t: at(s.when), name: s.name, gain: s.gain ?? 0.8 });
+      for (const l of b.labels || []) scene.labels.push({ ...l, t0: at(l.when), t1: at(l.end ?? 1) });
+      for (const p of b.pops || []) { scene.pops.push({ ...p, t0: at(p.when), t1: at(p.when) + (p.dur || 0.9) }); sfx.push({ t: at(p.when), name: p.sfx || 'pop', gain: 0.7 }); }
       for (const d of b.destroy || []) {
         const prop = scene.props.find((p) => p.id === d.prop);
         if (!prop) continue;

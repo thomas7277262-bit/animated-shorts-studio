@@ -25,12 +25,19 @@ function block(w, h, d, m, r = 0.04) {
 const at = (m, x, y, z) => { m.position.set(x, y, z); return m; };
 
 /** Fur texture with irregular patches (deterministic per spec). */
-function furTexture(base, patches, patchColor, seed = 3) {
+function furTexture(base, patches, patchColor, seed = 3, stripes = null) {
   const c = document.createElement('canvas'); c.width = c.height = 256;
   const g = c.getContext('2d');
   g.fillStyle = base; g.fillRect(0, 0, 256, 256);
   let s = seed;
   const r = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+  if (stripes) {
+    g.fillStyle = stripes;
+    for (let i = 0; i < 9; i++) {
+      const x = 12 + i * 28;
+      g.beginPath(); g.moveTo(x, 0); g.lineTo(x + 14, 0); g.lineTo(x + 6 + (i % 2) * 8, 150); g.lineTo(x + 2, 150); g.fill();
+    }
+  }
   g.fillStyle = patchColor;
   for (let i = 0; i < patches; i++) {
     const x = r() * 256, y = r() * 256, rad = 30 + r() * 50;
@@ -51,10 +58,11 @@ export class Dog {
     this.spec = spec;
     this.kind = 'animal';
     const k = spec.scale || 1;
-    const fur = spec.patches
-      ? new THREE.MeshStandardMaterial({ map: furTexture(spec.fur, spec.patches, spec.patchColor, spec.patchSeed), roughness: 0.8 })
-      : mat(spec.fur, { roughness: 0.85 });
-    const furPlain = mat(spec.fur, { roughness: 0.85 });
+    const glow = spec.glow ? { emissive: spec.fur, emissiveIntensity: spec.glow, metalness: 0.35, roughness: 0.35 } : {};
+    const fur = (spec.patches || spec.stripes)
+      ? new THREE.MeshStandardMaterial({ map: furTexture(spec.fur, spec.patches || 0, spec.patchColor, spec.patchSeed, spec.stripes), roughness: 0.8, ...glow })
+      : mat(spec.fur, { roughness: 0.85, ...glow });
+    const furPlain = mat(spec.fur, { roughness: 0.85, ...glow });
     const dark = mat(spec.patchColor || spec.fur, { roughness: 0.8 });
     const nose = mat('#1d1712', { roughness: 0.35 });
 
@@ -64,13 +72,15 @@ export class Dog {
     this.body.scale.setScalar(k);
     this.root.add(this.body);
 
+    const B = spec.body || [1, 1, 1];          // torso width, height, length multipliers
+    const LS = spec.legScale ?? 1;              // leg length multiplier
     this.legLen = 0.36;
-    this.hipBase = this.legLen + 0.2;
+    this.hipBase = 0.12 * B[1] + 0.42 * LS + 0.02;
     this.torso = new THREE.Group();
     this.torso.position.y = this.hipBase;
     this.body.add(this.torso);
-    this.torso.add(block(0.46, 0.4, 0.86, fur, 0.1));
-    if (spec.belly) this.torso.add(at(block(0.36, 0.08, 0.6, mat(spec.belly)), 0, -0.18, 0.04));
+    this.torso.add(block(0.46 * B[0], 0.4 * B[1], 0.86 * B[2], fur, spec.round ? 0.18 : 0.1));
+    if (spec.belly) this.torso.add(at(block(0.36 * B[0], 0.08, 0.6 * B[2], mat(spec.belly, glow)), 0, -0.18 * B[1], 0.04));
     if (spec.fluffy) {
       const fm = mat(spec.fur, { roughness: 1 });
       for (let i = 0; i < 9; i++) {
@@ -83,7 +93,7 @@ export class Dog {
 
     // neck + head
     this.neck = new THREE.Group();
-    this.neck.position.set(0, 0.16, 0.4);
+    this.neck.position.set(0, 0.16 * B[1], 0.4 * B[2]);
     this.torso.add(this.neck);
     this.head = new THREE.Group();
     this.head.position.set(0, 0.22, 0.12);
@@ -94,8 +104,9 @@ export class Dog {
     const W = 2048, H = 1024, P = W / (Math.PI * 2), span = 0.62;
     this.faceTex.repeat.set((2 * span * P) / W, (2 * span * P) / H);
     this.faceTex.offset.set((W * 0.25 - span * P) / W, 1 - (H * 0.5 + span * P) / H);
-    const faceMat = new THREE.MeshStandardMaterial({ map: this.faceTex, roughness: 0.7 });
+    const faceMat = new THREE.MeshStandardMaterial({ map: this.faceTex, roughness: 0.7, ...(spec.glow ? { emissive: 0xffffff, emissiveMap: this.faceTex, emissiveIntensity: spec.glow * 0.8 } : {}) });
     const hs = 0.46;
+    if (spec.headScale) this.head.scale.setScalar(spec.headScale);
     this.head.add(block(hs, hs * 0.92, hs * 0.9, [furPlain, furPlain, furPlain, furPlain, faceMat, furPlain], 0.08));
     if (spec.fluffy) {
       const fm = mat(spec.fur, { roughness: 1 });
@@ -104,9 +115,15 @@ export class Dog {
     // snout with nose and an opening jaw
     const snout = at(block(0.24, 0.15, 0.2, mat(spec.muzzle || spec.fur)), 0, -0.1, hs * 0.5 + 0.06);
     this.head.add(snout);
-    this.head.add(at(block(0.1, 0.07, 0.06, nose, 0.03), 0, -0.05, hs * 0.5 + 0.17));
+    const noseMesh = at(block(0.1, 0.07, 0.06, nose, 0.03), 0, -0.05, hs * 0.5 + 0.17);
+    this.head.add(noseMesh);
+    if (spec.snout === 'small') { // rodents: tiny muzzle and button nose close to the face
+      snout.scale.set(0.7, 0.6, 0.35); snout.position.z = hs * 0.5 + 0.02;
+      noseMesh.scale.setScalar(0.6); noseMesh.position.set(0, -0.06, hs * 0.5 + 0.06);
+    }
     this.jaw = new THREE.Group();
     this.jaw.position.set(0, -0.17, hs * 0.5 - 0.02);
+    if (spec.snout === 'small') { this.jaw.scale.set(0.6, 0.6, 0.4); this.jaw.position.set(0, -0.13, hs * 0.5 - 0.03); }
     this.head.add(this.jaw);
     this.jaw.add(at(block(0.2, 0.05, 0.18, mat(spec.muzzle || spec.fur)), 0, -0.02, 0.09));
     this.jaw.add(at(block(0.1, 0.02, 0.1, mat('#e86a7a')), 0, 0.01, 0.1)); // tongue
@@ -117,7 +134,10 @@ export class Dog {
       const ear = new THREE.Group();
       ear.position.set(side * 0.19, 0.2, -0.02);
       this.head.add(ear);
-      const earMesh = floppy ? at(block(0.1, 0.24, 0.14, dark, 0.04), side * 0.03, -0.1, 0) : at(new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.2, 4), dark), 0, 0.09, 0);
+      const earMesh = spec.ears === 'round'
+        ? at(new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.04, 14), mat(spec.earColor || spec.fur, glow)), 0, 0.06, 0)
+        : floppy ? at(block(0.1, 0.24, 0.14, dark, 0.04), side * 0.03, -0.1, 0) : at(new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.2, 4), mat(spec.earColor || spec.patchColor || spec.fur, glow)), 0, 0.09, 0);
+      if (spec.ears === 'round') { earMesh.rotation.x = Math.PI / 2; earMesh.scale.setScalar(spec.earSize || 1); earMesh.position.y = 0.06 * (spec.earSize || 1); }
       earMesh.castShadow = true;
       ear.add(earMesh);
       if (floppy) ear.rotation.z = side * 0.35;
@@ -140,12 +160,32 @@ export class Dog {
     this.tail = new THREE.Group();
     this.tail.position.set(0, 0.12, -0.42);
     this.torso.add(this.tail);
-    this.tail.add(spec.fluffy ? at(new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 8), mat(spec.fur)), 0, 0.12, 0) : at(block(0.07, 0.3, 0.07, dark, 0.03), 0, 0.14, 0));
+    this.tail.position.z = -0.42 * B[2];
+    if (spec.tail === 'stub') this.tail.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.06, 10, 8), furPlain), 0, 0.02, 0));
+    else if (spec.tail === 'long') {
+      this.tail.add(at(block(0.07, 0.55, 0.07, fur, 0.03), 0, 0.26, 0));
+      this.tail.add(at(block(0.09, 0.12, 0.09, mat(spec.tailTip || spec.stripes || spec.fur), 0.03), 0, 0.55, 0));
+    } else this.tail.add(spec.fluffy ? at(new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 8), mat(spec.fur)), 0, 0.12, 0) : at(block(0.07, 0.3, 0.07, dark, 0.03), 0, 0.14, 0));
+    // lion mane, dragon wings and horns
+    if (spec.mane) {
+      const mm = mat(spec.mane, { roughness: 1 });
+      for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; this.head.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.11, 8, 6), mm), Math.cos(a) * 0.27, Math.sin(a) * 0.25 + 0.02, -0.12)); }
+    }
+    if (spec.wings) {
+      const wm = mat(spec.wings, { side: THREE.DoubleSide, ...glow });
+      for (const sx of [-1, 1]) {
+        const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.lineTo(sx * 0.6, 0.35); sh.lineTo(sx * 0.5, 0.05); sh.lineTo(sx * 0.65, -0.12); sh.lineTo(0, -0.18);
+        const w = new THREE.Mesh(new THREE.ShapeGeometry(sh), wm); w.position.set(sx * 0.15, 0.2 * B[1], 0.05); w.rotation.set(-0.3, 0, sx * 0.25); w.castShadow = true;
+        this.torso.add(w); (this.wings ||= []).push({ w, sx });
+      }
+    }
+    if (spec.horns) for (const sx of [-1, 1]) { const h = at(new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.18, 6), mat(spec.horns)), sx * 0.12, 0.3, -0.02); h.rotation.z = -sx * 0.3; this.head.add(h); }
     // legs: FL FR BL BR
     this.legs = {};
     for (const [name, x, z] of [['FL', 0.15, 0.3], ['FR', -0.15, 0.3], ['BL', 0.15, -0.3], ['BR', -0.15, -0.3]]) {
       const hip = new THREE.Group();
-      hip.position.set(x, -0.12, z);
+      hip.position.set(x * B[0], -0.12 * B[1], z * B[2]);
+      hip.scale.set(1, LS, 1);
       this.torso.add(hip);
       if (spec.missingLeg === name) { hip.add(at(block(0.12, 0.1, 0.12, furPlain), 0, -0.04, 0)); continue; }
       hip.add(at(block(0.12, 0.22, 0.13, furPlain), 0, -0.1, 0));
@@ -156,10 +196,10 @@ export class Dog {
     }
     this.dims = { headR: 0.25 * k };
     this._faceKey = '';
-    this.faceSpec = { ...spec, skin: spec.faceFur || spec.fur, cheeks: false };
+    this.faceSpec = { ...spec, skin: spec.faceFur || spec.fur, cheeks: !!spec.cheeks };
   }
 
-  get height() { return (this.hipBase + 0.6) * (this.spec.scale || 1); }
+  get height() { return (this.hipBase + 0.2 * (this.spec.body?.[1] || 1) + 0.45 * (this.spec.headScale || 1)) * (this.spec.scale || 1); }
   setProp() {}
 
   setFace(state) {
@@ -181,6 +221,7 @@ export class Dog {
     this.head.rotation.set((p.headPitch || 0) * DEG, 0, (p.headTilt || 0) * DEG);
     this.jaw.rotation.x = (p.jaw || 0) * DEG;
     this.tail.rotation.set((-(p.tailUp ?? 30)) * DEG, 0, (p.tailWag || 0) * DEG);
+    if (this.wings) for (const { w, sx } of this.wings) w.rotation.z = sx * (0.25 + Math.sin(t * 7) * 0.3);
     for (const e of this.ears) {
       if (e.floppy) e.ear.rotation.set((p.earFlap || 0) * DEG, 0, e.side * (0.35 + (p.earDroop || 0) * 0.4));
       else e.ear.rotation.set(-(p.earBack || 0) * DEG, 0, e.side * -0.15);

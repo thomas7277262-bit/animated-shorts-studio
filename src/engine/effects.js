@@ -156,6 +156,31 @@ function drawComic(text, color) {
   return c;
 }
 
+// Floating power-level tag above a pet (glowing pill with a big number).
+function drawLabel(text, color) {
+  const c = canvas(512, 160), g = c.getContext('2d');
+  let fs = 104; g.font = `900 ${fs}px sans-serif`;
+  while (g.measureText(text).width > 440 && fs > 40) { fs -= 4; g.font = `900 ${fs}px sans-serif`; }
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  const w = Math.min(500, g.measureText(text).width + 70);
+  g.fillStyle = 'rgba(10,10,30,0.72)';
+  g.beginPath(); g.roundRect((512 - w) / 2, 14, w, 132, 60); g.fill();
+  g.lineWidth = 6; g.strokeStyle = color; g.stroke();
+  g.lineWidth = 14; g.strokeStyle = '#000'; g.strokeText(text, 256, 84);
+  g.shadowColor = color; g.shadowBlur = 24; g.fillStyle = color; g.fillText(text, 256, 84);
+  return c;
+}
+// Big pop-up number / word in the middle of the action (sample-video style).
+function drawPop(text, color) {
+  const c = canvas(1024, 320), g = c.getContext('2d');
+  let size = 230; g.font = `900 ${size}px sans-serif`;
+  while (g.measureText(text).width > 980 && size > 60) { size -= 10; g.font = `900 ${size}px sans-serif`; }
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.lineWidth = size * 0.16; g.lineJoin = 'round'; g.strokeStyle = '#111'; g.strokeText(text, 512, 170);
+  g.fillStyle = color || '#ffe14a'; g.fillText(text, 512, 170);
+  return c;
+}
+
 export class SpriteLayer {
   constructor(scene) {
     this.scene = scene;
@@ -181,16 +206,20 @@ export class SpriteLayer {
       const it = items[i];
       if (!it) { s.visible = false; return; }
       s.visible = true;
-      const tex = it.kind === 'emote' ? this.texture('e:' + it.key, () => drawEmote(it.key)) : this.texture('c:' + it.key + it.color, () => drawComic(it.key, it.color));
+      const tex = it.kind === 'emote' ? this.texture('e:' + it.key, () => drawEmote(it.key))
+        : it.kind === 'label' ? this.texture('l:' + it.key + it.color, () => drawLabel(it.key, it.color))
+        : it.kind === 'pop' ? this.texture('p:' + it.key + it.color, () => drawPop(it.key, it.color))
+        : this.texture('c:' + it.key + it.color, () => drawComic(it.key, it.color));
       if (s.material.map !== tex) { s.material.map = tex; s.material.needsUpdate = true; }
-      const pop = easeOutBack(clamp(it.age / 0.25, 0, 1));
-      const out = clamp((it.life - it.age) / 0.2, 0, 1);
+      const pop = it.kind === 'label' ? 1 : easeOutBack(clamp(it.age / 0.25, 0, 1));
+      const out = it.kind === 'label' ? 1 : clamp((it.life - it.age) / 0.2, 0, 1);
       const sc = it.size * pop * out;
-      const aspect = it.kind === 'comic' ? 1024 / 384 : 1;
+      const aspect = it.kind === 'comic' ? 1024 / 384 : it.kind === 'label' ? 512 / 160 : it.kind === 'pop' ? 1024 / 320 : 1;
       s.scale.set(sc * aspect, sc, 1);
       s.position.copy(it.pos);
       s.position.y += Math.sin(it.age * 5) * 0.03;
-      s.material.rotation = it.kind === 'comic' ? -0.12 + Math.sin(it.age * 20) * 0.02 * out : Math.sin(it.age * 6) * 0.08;
+      s.material.rotation = it.kind === 'comic' ? -0.12 + Math.sin(it.age * 20) * 0.02 * out : it.kind === 'label' || it.kind === 'pop' ? 0 : Math.sin(it.age * 6) * 0.08;
+      s.material.depthTest = !(it.kind === 'pop' || it.kind === 'label');
     });
   }
 }

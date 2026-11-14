@@ -90,6 +90,17 @@ export const ACTIONS = {
     });
   },
 
+  hug: (t) => pose({
+    ...breathe(t, 0.6), lean: 6, headTilt: 10, sway: sin(t * 1.4) * 3,
+    armL: { raise: 35, fwd: 80, elbow: 85, elbowOut: -25 }, armR: { raise: 35, fwd: 80, elbow: 85, elbowOut: -25 },
+  }),
+  feel: (t) => pose({ // reaching forward blindly in the dark
+    ...breathe(t, 0.5), lean: 4, headNod: -4, headTurn: sin(t * 1.3) * 25,
+    armL: { raise: 20, fwd: 75 + sin(t * 2.1) * 12, elbow: 15 }, armR: { raise: 20, fwd: 70 + sin(t * 2.1 + 1.5) * 12, elbow: 15 },
+  }),
+  holdMatch: (t) => pose({ ...breathe(t, 0.4), headNod: 12, armR: { raise: 18, fwd: 70, elbow: 65 }, armL: { raise: 18, fwd: 55, elbow: 80, elbowOut: -15 } }),
+  climb: (t, d, p = {}) => { const w = walkCycle(t, 0.75 * (p.speed || 1), 0.9); return pose({ ...w, lean: 12, armR: { raise: 45, fwd: 40, elbow: 40 } }); },
+  lookUp: (t) => pose({ ...breathe(t), headNod: -28, lean: -4, armL: { raise: 12, fwd: 10, elbow: 15 }, armR: { raise: 12, fwd: 10, elbow: 15 } }),
   wave: (t) => pose({
     ...breathe(t), headTilt: 8,
     armR: { raise: 140, fwd: 10, elbow: 30 + sin(t * 9) * 25, elbowOut: sin(t * 9) * 20 },

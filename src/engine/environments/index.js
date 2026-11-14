@@ -1,3 +1,4 @@
+import { harbortown, lighthouseStairs, lampRoom } from './coast.js';
 import * as THREE from 'three';
 import { suburb } from './suburb.js';
 import { Rng } from '../rng.js';
@@ -397,11 +398,11 @@ function studio(seed) {
   return { group: g, light: { sun: '#ffffff', sunI: 2.2, hemiSky: '#ffffff', hemiGround: '#cfd8e0', hemiI: 1.6, dir: [6, 12, 10] }, fog: ['#eef3f8', 60, 200] };
 }
 
-export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio, suburb };
+export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio, suburb, harbortown, lighthouseStairs, lampRoom };
 export const ENVIRONMENT_LABELS = {
   castle: 'Medieval castle', village: 'Medieval village', battlefield: 'Battlefield',
   school: 'School', house: 'House (living room)', city: 'Modern city',
-  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop', suburb: 'Bright suburb',
+  forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop', suburb: 'Bright suburb', harbortown: 'Harbour town at night', lighthouseStairs: 'Lighthouse stairs', lampRoom: 'Lighthouse lamp room',
 };
 
 export function buildEnvironment(name, seed = 7, opts = {}) {

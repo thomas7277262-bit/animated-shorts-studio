@@ -1,0 +1,1883 @@
+{
+ "title": "The Town Where the Lights Go Out at 9 (preview)",
+ "seed": 9,
+ "style": "bright",
+ "captionStyle": "yellow",
+ "mood": "calm",
+ "narration": {
+  "audio": "productions/lights-out/audio/narration_james_215wpm.mp3",
+  "alignment": "productions/lights-out/timing/alignment.json",
+  "offset": 0
+ },
+ "musicVolume": 0.28,
+ "sfxVolume": 0.85,
+ "voiceVolume": 1,
+ "animSpeed": 0.85,
+ "characters": [
+  "noah",
+  "mia",
+  "zed",
+  "leo",
+  "grandpa",
+  "mum",
+  "dad"
+ ],
+ "scenes": [
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": true,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 4.45,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        6,
+        2,
+        -8
+       ],
+       "scale": false,
+       "from": {
+        "angle": -21.80140948635181,
+        "dist": 32.31098884280703,
+        "height": 14,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": -21.80140948635181,
+        "dist": 26.925824035672523,
+        "height": 11,
+        "lookY": 0,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [
+      {
+       "text": "9:00",
+       "color": "#ffcf6b",
+       "when": 0.7528089887640449,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.8
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": [
+      {
+       "key": "power",
+       "value": false,
+       "when": 0.8314606741573034
+      }
+     ]
+    }
+   ],
+   "note": "The harbour town at night, every window lit… then at \"nine o'clock\" every light goes out at once",
+   "cue": [
+    "L1",
+    0
+   ],
+   "t0": 0,
+   "t1": 4.45
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": true,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      8.6,
+      0.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.36,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        8,
+        2.6,
+        -0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": 17.417970792202834,
+        "dist": 5.345091205957108,
+        "height": -1.4000000000000001,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": 17.417970792202834,
+        "dist": 5.345091205957108,
+        "height": -1.4000000000000001,
+        "lookY": 0,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "lookUp",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": [
+      {
+       "key": "power",
+       "value": false,
+       "when": 0.4264705882352943
+      }
+     ]
+    }
+   ],
+   "note": "Not one streetlight (a lamp clicks off over a kid)",
+   "cue": [
+    "L2",
+    0
+   ],
+   "t0": 4.45,
+   "t1": 5.81
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": true,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.54,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -5.2,
+        1.6,
+        -6.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": [
+      {
+       "key": "power",
+       "value": false,
+       "when": 0.41558441558441594
+      }
+     ]
+    }
+   ],
+   "note": "Not one TV (a family window goes dark)",
+   "cue": [
+    "L2",
+    3
+   ],
+   "t0": 5.81,
+   "t1": 7.35
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.27,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        10,
+        4,
+        -20
+       ],
+       "scale": false,
+       "from": {
+        "angle": -15.524110996754258,
+        "dist": 37.36308338453881,
+        "height": 5,
+        "lookY": 0,
+        "fov": 58
+       },
+       "to": {
+        "angle": -13.62699485989154,
+        "dist": 33.95585369269929,
+        "height": 4,
+        "lookY": 1,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Total darkness: only the lighthouse beam sweeps over the roofs",
+   "cue": [
+    "L2",
+    6
+   ],
+   "t0": 7.35,
+   "t1": 8.62
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      -3,
+      1
+     ],
+     "face": 90
+    },
+    {
+     "id": "mia",
+     "at": [
+      -4.4,
+      1.8
+     ],
+     "face": 90
+    },
+    {
+     "id": "zed",
+     "at": [
+      2.5,
+      0.6
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 3.81,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.8,
+        1.2,
+        1.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 7.5,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6.5,
+        "height": 0.5,
+        "lookY": 0.2,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "walk",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.5,
+        1
+       ],
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "walk",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -1,
+        1.8
+       ],
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "walk",
+       "expr": "determined",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -0.5,
+        0.6
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Kids walk home in the dark, counting under their breath",
+   "cue": [
+    "L3",
+    0
+   ],
+   "t0": 8.62,
+   "t1": 12.43
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "mia",
+     "at": [
+      -2.5,
+      1.2
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.72,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "mia"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -20,
+        "dist": 4.2,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 20,
+        "dist": 4.2,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "focusY": 1.2,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "mia",
+       "action": "walk",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.5,
+        1.2
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "300",
+       "color": "#ffffff",
+       "when": 0.764705882352941,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.8
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Most kids count the big ones: 300 to the bakery…",
+   "cue": [
+    "L4",
+    0
+   ],
+   "t0": 12.43,
+   "t1": 15.15
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "zed",
+     "at": [
+      2.5,
+      0.8
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.18,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "zed"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 15,
+        "dist": 4.4,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 15,
+        "dist": 4.4,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "focusY": 1.2,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zed",
+       "action": "walk",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -1,
+        0.8
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "600",
+       "color": "#ffffff",
+       "when": 0,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.8
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…600 to school",
+   "cue": [
+    "L4",
+    10
+   ],
+   "t0": 15.15,
+   "t1": 17.33
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      0,
+      0.8
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.19,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0.8
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.1,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "talk",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Leo: \"But I count everything.\"",
+   "cue": [
+    "L5",
+    0
+   ],
+   "t0": 17.33,
+   "t1": 18.52
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      -3,
+      1.1
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 3.31,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "leo"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -25,
+        "dist": 4.6,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "to": {
+        "angle": 25,
+        "dist": 4.6,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "focusY": 1,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "walk",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.6,
+        1.1
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "18",
+       "color": "#ffffff",
+       "when": 0,
+       "dur": 0.6,
+       "y": 0.8,
+       "size": 0.8
+      },
+      {
+       "text": "37",
+       "color": "#ffffff",
+       "when": 0.1963746223564962,
+       "dur": 0.6,
+       "y": 0.8,
+       "size": 0.8
+      },
+      {
+       "text": "204",
+       "color": "#ffffff",
+       "when": 0.401812688821753,
+       "dur": 0.8,
+       "y": 0.8,
+       "size": 0.8
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Stairs. Fence posts. Cracks in the sidewalk. Out loud. (numbers pop as he walks)",
+   "cue": [
+    "L5",
+    4
+   ],
+   "t0": 18.52,
+   "t1": 21.83
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      0,
+      0.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "noah",
+     "at": [
+      -1.5,
+      -0.4
+     ],
+     "face": 30
+    },
+    {
+     "id": "mia",
+     "at": [
+      1.5,
+      -0.4
+     ],
+     "face": -30
+    },
+    {
+     "id": "zed",
+     "at": [
+      0.5,
+      -1.4
+     ],
+     "face": -10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.63,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        -0.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6.6,
+        "height": 0.3,
+        "lookY": 0.4,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6,
+        "height": 0.3,
+        "lookY": 0.4,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "idle",
+       "expr": "sad",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "point",
+       "expr": "laugh",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": -30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "CALCULATOR!",
+       "color": "#ffd23f",
+       "at": [
+        0,
+        3,
+        0
+       ],
+       "size": 1,
+       "when": 0.6425855513307983,
+       "dur": 1.1
+      }
+     ],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "At school they laugh: \"CALCULATOR!\"",
+   "cue": [
+    "L6",
+    0
+   ],
+   "t0": 21.83,
+   "t1": 24.46
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.2
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 4.01,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        20,
+        8,
+        -40
+       ],
+       "scale": false,
+       "from": {
+        "angle": -19.17900802581072,
+        "dist": 48.703182647543684,
+        "height": -5,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": -18.43494882292201,
+        "dist": 37.94733192202055,
+        "height": -5,
+        "lookY": 0.5,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Only one light stays on after nine: the lighthouse on the rocks",
+   "cue": [
+    "L7",
+    0
+   ],
+   "t0": 24.46,
+   "t1": 28.47
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.25
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      22,
+      -43.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 3.84,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        22,
+        3.4,
+        -43.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 18.66691427422022,
+        "dist": 7.810889834071403,
+        "height": 0.6000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 15.52411099675426,
+        "dist": 5.60446250768082,
+        "height": 0.30000000000000027,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "idle",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 1.4
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "40 YEARS",
+       "color": "#ffe14a",
+       "when": 0.8645833333333326,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.62
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Grandpa at the lighthouse door: forty years",
+   "cue": [
+    "L7",
+    15
+   ],
+   "t0": 28.47,
+   "t1": 32.31
+  },
+  {
+   "environment": "harbortown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "power": false,
+    "beam": "on",
+    "sea": 0.25
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      22,
+      -43.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.36,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        22,
+        3.35,
+        -43.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 5.194428907734781,
+        "dist": 2.2090722034374553,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 42
+       },
+       "to": {
+        "angle": 5.042451069170857,
+        "dist": 1.706604816587604,
+        "height": 0.06999999999999984,
+        "lookY": 0,
+        "fov": 42
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "idle",
+       "expr": "sad",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 1.4
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "But Grandpa's eyes are getting worse",
+   "cue": [
+    "L8",
+    0
+   ],
+   "t0": 32.31,
+   "t1": 34.67
+  },
+  {
+   "environment": "lighthouseStairs",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      1.2635175037823911,
+      -1.9218541874022375
+     ],
+     "face": -123.32280444650925
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.97,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1.2635175037823911,
+        3.6900000000000004,
+        -1.9218541874022375
+       ],
+       "scale": false,
+       "from": {
+        "angle": -138.52847991513752,
+        "dist": 2.6035996543470876,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 58
+       },
+       "to": {
+        "angle": -138.52847991513752,
+        "dist": 2.6035996543470876,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "climb",
+       "expr": "sad",
+       "face": -123.32280444650925,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 2.39,
+        "speed": 0.4
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "He holds the rail with both hands",
+   "cue": [
+    "L8",
+    6
+   ],
+   "t0": 34.67,
+   "t1": 36.64
+  },
+  {
+   "environment": "lighthouseStairs",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      -2.2381736614178998,
+      -0.5296967635687349
+     ],
+     "face": -13.314907781391177
+    },
+    {
+     "id": "grandpa",
+     "at": [
+      -0.8497142046522973,
+      -2.1372846722914836
+     ],
+     "face": -68.31885611395023
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.87,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -1.4788971067239902,
+        4.73,
+        -1.7614946345996658
+       ],
+       "scale": false,
+       "from": {
+        "angle": -52.313761265417426,
+        "dist": 3.0575017856453144,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 64
+       },
+       "to": {
+        "angle": -52.313761265417426,
+        "dist": 3.0575017856453144,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 64
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "climb",
+       "expr": "happy",
+       "face": -13.314907781391177,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 3.95,
+        "speed": 0.5
+       },
+       "glasses": false
+      },
+      {
+       "char": "grandpa",
+       "action": "climb",
+       "expr": "happy",
+       "face": -68.31885611395023,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 3.1700000000000004,
+        "speed": 0.4
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Every evening I climb with him",
+   "cue": [
+    "L9",
+    0
+   ],
+   "t0": 36.64,
+   "t1": 38.51
+  },
+  {
+   "environment": "lighthouseStairs",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.55,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        12,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 21.80140948635181,
+        "dist": 3.2310988842807022,
+        "height": -10.7,
+        "lookY": 0,
+        "fov": 72
+       },
+       "to": {
+        "angle": 21.80140948635181,
+        "dist": 3.2310988842807022,
+        "height": -10.4,
+        "lookY": 1,
+        "fov": 72
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [
+      {
+       "text": "214",
+       "color": "#ffe14a",
+       "when": 0.39354838709677276,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.8
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Looking up the spiral: 214 steps",
+   "cue": [
+    "L9",
+    7
+   ],
+   "t0": 38.51,
+   "t1": 40.06
+  },
+  {
+   "environment": "lighthouseStairs",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      -0.40095159681285314,
+      -2.264782068326492
+     ],
+     "face": -19.960516674409746
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.4,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.40095159681285314,
+        9.410000000000002,
+        -2.264782068326492
+       ],
+       "scale": false,
+       "from": {
+        "angle": -88.44126032039715,
+        "dist": 2.8286183260227715,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": -88.44126032039715,
+        "dist": 2.8286183260227715,
+        "height": 1.0999999999999996,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "idle",
+       "expr": "laugh",
+       "face": -19.960516674409746,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 8.110000000000001
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I've counted them a thousand times",
+   "cue": [
+    "L9",
+    14
+   ],
+   "t0": 40.06,
+   "t1": 42.46
+  },
+  {
+   "environment": "lampRoom",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "lamp": "off",
+    "sea": 0.3
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      0.8,
+      1.6
+     ],
+     "face": 40
+    },
+    {
+     "id": "leo",
+     "at": [
+      2.3,
+      1.7
+     ],
+     "face": -40
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.39,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1.5,
+        1.4,
+        1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 20,
+        "dist": 2.6,
+        "height": 0.3,
+        "lookY": 0,
+        "fov": 62
+       },
+       "to": {
+        "angle": 15,
+        "dist": 2.3,
+        "height": 0.3,
+        "lookY": 0,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "point",
+       "expr": "happy",
+       "face": 40,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "idle",
+       "expr": "surprised",
+       "face": -40,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Up top, Grandpa shows him the old oil lamp",
+   "cue": [
+    "L10",
+    0
+   ],
+   "t0": 42.46,
+   "t1": 44.85
+  },
+  {
+   "environment": "lampRoom",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "lamp": "off",
+    "sea": 0.3
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      0.8,
+      1.6
+     ],
+     "face": 25
+    }
+   ],
+   "beats": [
+    {
+     "duration": 3.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.8,
+        2,
+        1.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 20,
+        "dist": 2.2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 20,
+        "dist": 2.2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "talk",
+       "expr": "determined",
+       "face": 25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "\"If the generator ever dies… this keeps the boats safe.\"",
+   "cue": [
+    "L10",
+    9
+   ],
+   "t0": 44.85,
+   "t1": 48.68
+  },
+  {
+   "environment": "lampRoom",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "lamp": "off",
+    "sea": 0.3
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      0.9,
+      1.6
+     ],
+     "face": 50
+    },
+    {
+     "id": "leo",
+     "at": [
+      2.1,
+      1.8
+     ],
+     "face": -50
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.32,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1.5,
+        1.6,
+        1.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 2.4,
+        "height": 0.2,
+        "lookY": 0,
+        "fov": 60
+       },
+       "to": {
+        "angle": 10,
+        "dist": 2.4,
+        "height": 0.2,
+        "lookY": 0,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "idle",
+       "expr": "happy",
+       "face": 50,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "talk",
+       "expr": "happy",
+       "face": -50,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "When I counted, Grandpa just smiled",
+   "cue": [
+    "L11",
+    0
+   ],
+   "t0": 48.68,
+   "t1": 51
+  },
+  {
+   "environment": "lampRoom",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "lamp": "off",
+    "sea": 0.3
+   },
+   "music": "calm",
+   "transition": "cut",
+   "lightning": false,
+   "lightningStart": 0.3,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandpa",
+     "at": [
+      0.9,
+      1.6
+     ],
+     "face": 20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.78,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.9,
+        2,
+        1.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 8,
+        "dist": 1.8,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandpa",
+       "action": "talk",
+       "expr": "happy",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "\"Lighthouse keepers count too.\"",
+   "cue": [
+    "L11",
+    7
+   ],
+   "t0": 51,
+   "t1": 52.78
+  }
+ ]
+}

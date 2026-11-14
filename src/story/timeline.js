@@ -96,6 +96,7 @@ export function buildTimeline(storyboard, opts = {}) {
       envOptions: sc.envOptions, lighting: sc.lighting || 'day', weather: sc.weather || null, ambience: sc.ambience || null, music: sc.music || null,
       props: (sc.props || []).map((p, i) => ({ id: p.id || `p${i}`, ...p })),
       labels: [], pops: [],
+      envState: { defaults: sc.env || {}, events: [] },
       lightningTimes: [],
     };
     if (si > 0 && scene.transitionIn.type !== 'cut') sfx.push({ t: clock - 0.12, name: 'swoosh', gain: 0.5 });
@@ -147,6 +148,7 @@ export function buildTimeline(storyboard, opts = {}) {
       for (const s of b.sfx || []) sfx.push({ t: at(s.when), name: s.name, gain: s.gain ?? 0.8 });
       for (const l of b.labels || []) scene.labels.push({ ...l, t0: at(l.when), t1: at(l.end ?? 1) });
       for (const p of b.pops || []) { scene.pops.push({ ...p, t0: at(p.when), t1: at(p.when) + (p.dur || 0.9) }); sfx.push({ t: at(p.when), name: p.sfx || 'pop', gain: 0.7 }); }
+      for (const e of b.envEvents || []) scene.envState.events.push({ key: e.key, value: e.value, t: at(e.when ?? 0) });
       for (const m of b.propMoves || []) {
         const prop = scene.props.find((p) => p.id === m.prop);
         if (prop) (prop.moves ||= []).push({ to: m.to, y: m.y, spin: m.spin, ease: m.ease, t0: at(m.when ?? 0), t1: at(m.end ?? 1) });

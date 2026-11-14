@@ -302,6 +302,11 @@ export class BlockCharacter {
       this.head.add(at(block(hs * 0.2, hs * 0.04, hs * 0.04, g, 0.01), 0, hs * 0.12, hs * 0.52));
       this.sunglasses = this.head.children.slice(-3);
     }
+    if (spec.beard) {
+      const bm = mat(spec.beard, { roughness: 0.9 });
+      this.head.add(at(block(hs * 1.12, hs * 0.3, hs * 0.26, bm, 0.08), 0, -hs * 0.42, hs * 0.44));
+      for (const sx of [-1, 1]) this.head.add(at(block(hs * 0.2, hs * 0.07, hs * 0.06, bm, 0.02), sx * hs * 0.12, -hs * 0.2, hs * 0.55));
+    }
     if (spec.pearls) {
       const pm = mat('#fbf6ec', { roughness: 0.2, metalness: 0.1 });
       for (let i = 0; i < 11; i++) {
@@ -342,7 +347,20 @@ export class BlockCharacter {
     wand.add(at(block(0.1, 0.1, 0.1, flat('#ffe24a', { emissive: '#ffaa00', emissiveIntensity: 0.8 }), 0.02), 0, 0.47, 0));
     wand.rotation.x = Math.PI / 2; wand.visible = false;
     this.arms.R.hand.add(wand);
-    this.props = { sword, flashlight, phone, wand };
+    // a lit match (stick + small glowing flame) and a storm lantern
+    const match = new THREE.Group();
+    match.add(at(block(0.03, 0.22, 0.03, flat('#e8d2a0'), 0.005), 0, 0.11, 0));
+    match.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 8), new THREE.MeshBasicMaterial({ color: '#ffb52e' })), 0, 0.26, 0));
+    match.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.03, 8, 6), new THREE.MeshBasicMaterial({ color: '#fff2b0' })), 0, 0.25, 0.02));
+    match.rotation.x = -Math.PI / 2; match.position.set(0, 0, 0.06); match.visible = false;
+    this.arms.R.hand.add(match);
+    const lantern = new THREE.Group();
+    lantern.add(at(block(0.2, 0.26, 0.2, flat('#fff1b8', { emissive: '#ffbf40', emissiveIntensity: 1.6 }), 0.03), 0, -0.2, 0));
+    lantern.add(at(block(0.24, 0.04, 0.24, flat('#333'), 0.01), 0, -0.05, 0));
+    lantern.add(at(block(0.24, 0.04, 0.24, flat('#333'), 0.01), 0, -0.35, 0));
+    lantern.visible = false;
+    this.arms.R.hand.add(lantern);
+    this.props = { sword, flashlight, phone, wand, match, lantern };
   }
 
   setGlasses(on) { if (this.sunglasses) for (const m of this.sunglasses) m.visible = on; }

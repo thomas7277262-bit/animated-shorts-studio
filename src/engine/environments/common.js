@@ -210,6 +210,7 @@ export function animateEnvironment(group, t) {
     if (o.userData.spin) o.rotation.y = t * o.userData.spin;
     if (o.userData.spinZ) o.rotation.z = t * o.userData.spinZ;
     if (o.userData.bob) o.position.y = o.userData.bobBase + Math.sin(t * 2 + o.userData.bob) * 0.1;
+    if (o.userData.rock) { o.rotation.z = Math.sin(t * 1.7 + o.userData.rock) * (o.userData.rockAmp || 0.08); o.rotation.x = Math.sin(t * 1.3 + o.userData.rock * 2) * (o.userData.rockAmp || 0.08) * 0.6; }
     if (o.userData.drive) {
       const d = o.userData.drive;
       o.position.x = ((d.offset + t * d.speed) % d.range) - d.range / 2;

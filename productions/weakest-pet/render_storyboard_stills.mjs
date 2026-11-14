@@ -10,7 +10,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const OUT = path.resolve(process.argv[2] || 'output/weakest-pet-board');
 const W = Number(process.argv[3] || 540), H = Math.round(W * 16 / 9);
 fs.mkdirSync(OUT, { recursive: true });
-const sb = JSON.parse(fs.readFileSync(path.join(ROOT, 'productions/weakest-pet/storyboard.json'), 'utf8'));
+const sb = JSON.parse(fs.readFileSync(path.join(ROOT, process.env.SB || 'productions/weakest-pet/storyboard.json'), 'utf8'));
 const al = JSON.parse(fs.readFileSync(path.join(ROOT, sb.narration.alignment), 'utf8'));
 const tl = buildTimeline(sb, { narration: { lines: al.lines }, width: W, height: H });
 let [a, b] = (process.argv[4] || `1-${tl.scenes.length}`).split('-').map(Number); b ||= a;

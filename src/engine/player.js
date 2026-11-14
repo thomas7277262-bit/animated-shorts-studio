@@ -290,6 +290,12 @@ export class StoryPlayer {
     const s = this.sceneAt(t);
     const env = this.activateEnvironment(s);
     animateEnvironment(env.group, t);
+    if (env.update) {
+      const es = s.envState || { defaults: {}, events: [] };
+      const st = { ...es.defaults };
+      for (const ev of es.events) if (ev.t <= t) st[ev.key] = ev.value;
+      env.update(t, st);
+    }
     const lk = env.key + '|' + (s.lighting || 'day');
     if (lk !== this.lightKey) { applyLighting(this, env, s.lighting || 'day'); this.lightKey = lk; }
     this.lightning(s, t);

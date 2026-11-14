@@ -7,7 +7,7 @@ import numpy as np
 from pocketsphinx import Decoder
 
 SR = 16000
-EXTRA = {"brax": "B R AE K S", "brax's": "B R AE K S IH Z", "glitching": "G L IH CH IH NG"}
+EXTRA = {"streetlight": "S T R IY T L AY T", "brax": "B R AE K S", "brax's": "B R AE K S IH Z", "glitching": "G L IH CH IH NG"}
 
 def norm(tok):
     """display token -> list of dictionary words it is spoken as"""

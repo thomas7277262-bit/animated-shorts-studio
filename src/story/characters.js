@@ -269,3 +269,35 @@ export const WEAKEST_PET_CAST = {
 // ids used in timelines
 for (const [k, v] of Object.entries(WEAKEST_PET_CAST)) v.id = k;
 Object.assign(CHARACTER_LIBRARY, WEAKEST_PET_CAST);
+
+// ---------------------------------------------------------------------------
+// "The Town Where the Lights Go Out at 9" – original cast.
+export const LIGHTS_CAST = {
+  leo: {
+    name: 'Leo', role: 'hero kid', style: 'blocky', height: 0.86,
+    skin: '#e8b48a', hair: '#3b2416', hairStyle: 'messy', cheeks: true,
+    shirt: '#2f6fd6', shirtDetail: 'hoodie', shirtAccent: '#ffd23f', sleeves: 'long', hood: true,
+    pants: '#7a6a55', shoes: '#e94b3c', accent: '#2f6fd6', eyeStyle: 'round', brows: 'normal',
+    personality: 'counts everything out loud; calm, brave, a bit shy',
+  },
+  grandpa: {
+    name: 'Grandpa', role: 'lighthouse keeper', style: 'blocky', height: 0.98,
+    skin: '#efc6a2', hairStyle: 'cap', hatColor: '#1f2f4f', beard: '#f1f1f1',
+    shirt: '#2a3d63', shirtDetail: 'zip', shirtAccent: '#c9a227', sleeves: 'long', pants: '#3b3b44', shoes: '#4a2e18',
+    accent: '#c9a227', eyeStyle: 'sleepy', brows: 'bushy', cheeks: true, personality: 'gentle, proud, losing his sight',
+  },
+  dad: {
+    name: 'Dad', role: 'fisherman', style: 'blocky', height: 1.08,
+    skin: '#e3ae84', hair: '#3b2416', hairStyle: 'cap', hatColor: '#f6c026',
+    shirt: '#f6c026', shirtDetail: 'zip', shirtAccent: '#d9a400', sleeves: 'long', pants: '#2c3e50', shoes: '#222222',
+    accent: '#f6c026', eyeStyle: 'round', brows: 'thick', cheeks: false, personality: 'warm, tired, always home before nine',
+  },
+  mum: {
+    name: 'Mum', role: 'mum', style: 'blocky', height: 1.0,
+    skin: '#e8b48a', hair: '#5a3311', hairStyle: 'long',
+    shirt: '#b0553f', shirtDetail: 'blouse', shirtAccent: '#ffffff', sleeves: 'long', pants: '#3d4a5c', shoes: '#6b4a2e',
+    accent: '#b0553f', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'worried, strong',
+  },
+};
+for (const [k, v] of Object.entries(LIGHTS_CAST)) v.id = k;
+Object.assign(CHARACTER_LIBRARY, LIGHTS_CAST);

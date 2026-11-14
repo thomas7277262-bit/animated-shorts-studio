@@ -76,6 +76,21 @@ export function buildProp(p) {
       obj.add(mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.9, 5), mat('#2e8a36'), { y: 0.45 }));
       break;
     }
+    case 'boat': {
+      // small fishing boat: red hull, white cabin, mast with a lamp (bobs and rocks)
+      obj = new THREE.Group();
+      const hull = new THREE.Shape(); hull.moveTo(-2.2, 0.6); hull.lineTo(2.6, 0.6); hull.lineTo(1.8, -0.4); hull.lineTo(-1.8, -0.4); hull.closePath();
+      const hg = new THREE.ExtrudeGeometry(hull, { depth: 1.8, bevelEnabled: false }); hg.translate(0, 0, -0.9);
+      obj.add(mesh(hg, mat('#c0392b')));
+      obj.add(box(4.6, 0.12, 1.9, '#f2efe6', { y: 0.62 }));
+      obj.add(box(1.4, 1.1, 1.3, '#f4f1ea', { x: -0.5, y: 1.2 }));
+      obj.add(box(1.0, 0.4, 0.05, '#9fd8ff', { x: -0.5, y: 1.35, z: 0.66 }));
+      obj.add(mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.6, 6), mat('#5d4037'), { x: 0.9, y: 1.9 }));
+      obj.add(mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshBasicMaterial({ color: '#fff3a0' }), { x: 0.9, y: 3.2 }));
+      obj.userData.rock = 1; obj.userData.rockAmp = p.rockAmp ?? 0.12;
+      obj.userData.bob = 1; obj.userData.bobBase = 0;
+      break;
+    }
     case 'seed': obj = mesh(new THREE.SphereGeometry(0.06, 10, 8), mat('#3b3027'), { y: 0.06, s: [0.6, 1, 1.3] }); break;
     case 'homework': obj = box(0.35, 0.03, 0.26, '#fffdf2', { y: 0.02 }); break;
     default: obj = box(1, 1, 1, '#ff00ff', { y: 0.5 });

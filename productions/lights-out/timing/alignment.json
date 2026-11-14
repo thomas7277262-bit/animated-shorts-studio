@@ -1,0 +1,2323 @@
+{
+ "report": {
+  "method": "pocketsphinx forced alignment",
+  "audio_s": 116.091,
+  "words": 416,
+  "speech_start": 0.0,
+  "speech_end": 115.8
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "text": "In my town, the power shuts off every night at exactly nine o'clock.",
+   "start": 0.0,
+   "end": 4.34,
+   "words": [
+    {
+     "w": "In",
+     "start": 0.0,
+     "end": 0.16
+    },
+    {
+     "w": "my",
+     "start": 0.16,
+     "end": 0.39
+    },
+    {
+     "w": "town,",
+     "start": 0.39,
+     "end": 0.78
+    },
+    {
+     "w": "the",
+     "start": 0.86,
+     "end": 0.95
+    },
+    {
+     "w": "power",
+     "start": 0.95,
+     "end": 1.31
+    },
+    {
+     "w": "shuts",
+     "start": 1.31,
+     "end": 1.64
+    },
+    {
+     "w": "off",
+     "start": 1.64,
+     "end": 1.85
+    },
+    {
+     "w": "every",
+     "start": 1.85,
+     "end": 2.24
+    },
+    {
+     "w": "night",
+     "start": 2.24,
+     "end": 2.65
+    },
+    {
+     "w": "at",
+     "start": 2.65,
+     "end": 2.79
+    },
+    {
+     "w": "exactly",
+     "start": 2.79,
+     "end": 3.35
+    },
+    {
+     "w": "nine",
+     "start": 3.35,
+     "end": 3.7
+    },
+    {
+     "w": "o'clock.",
+     "start": 3.7,
+     "end": 4.34
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "Not one streetlight. Not one TV. Total darkness.",
+   "start": 4.45,
+   "end": 8.47,
+   "words": [
+    {
+     "w": "Not",
+     "start": 4.45,
+     "end": 4.75
+    },
+    {
+     "w": "one",
+     "start": 4.75,
+     "end": 5.03
+    },
+    {
+     "w": "streetlight.",
+     "start": 5.03,
+     "end": 5.67
+    },
+    {
+     "w": "Not",
+     "start": 5.81,
+     "end": 6.09
+    },
+    {
+     "w": "one",
+     "start": 6.09,
+     "end": 6.45
+    },
+    {
+     "w": "TV.",
+     "start": 6.45,
+     "end": 7.16
+    },
+    {
+     "w": "Total",
+     "start": 7.35,
+     "end": 7.72
+    },
+    {
+     "w": "darkness.",
+     "start": 7.72,
+     "end": 8.47
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "So every kid here learns to walk home in the dark by counting steps.",
+   "start": 8.62,
+   "end": 12.24,
+   "words": [
+    {
+     "w": "So",
+     "start": 8.62,
+     "end": 8.78
+    },
+    {
+     "w": "every",
+     "start": 8.78,
+     "end": 9.08
+    },
+    {
+     "w": "kid",
+     "start": 9.08,
+     "end": 9.35
+    },
+    {
+     "w": "here",
+     "start": 9.35,
+     "end": 9.59
+    },
+    {
+     "w": "learns",
+     "start": 9.59,
+     "end": 9.92
+    },
+    {
+     "w": "to",
+     "start": 9.92,
+     "end": 10.02
+    },
+    {
+     "w": "walk",
+     "start": 10.02,
+     "end": 10.35
+    },
+    {
+     "w": "home",
+     "start": 10.35,
+     "end": 10.6
+    },
+    {
+     "w": "in",
+     "start": 10.6,
+     "end": 10.69
+    },
+    {
+     "w": "the",
+     "start": 10.69,
+     "end": 10.78
+    },
+    {
+     "w": "dark",
+     "start": 10.78,
+     "end": 11.14
+    },
+    {
+     "w": "by",
+     "start": 11.14,
+     "end": 11.27
+    },
+    {
+     "w": "counting",
+     "start": 11.27,
+     "end": 11.62
+    },
+    {
+     "w": "steps.",
+     "start": 11.62,
+     "end": 12.24
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "Most kids only count the big ones. Three hundred to the bakery. Six hundred to school.",
+   "start": 12.43,
+   "end": 17.22,
+   "words": [
+    {
+     "w": "Most",
+     "start": 12.43,
+     "end": 12.73
+    },
+    {
+     "w": "kids",
+     "start": 12.73,
+     "end": 13.08
+    },
+    {
+     "w": "only",
+     "start": 13.08,
+     "end": 13.29
+    },
+    {
+     "w": "count",
+     "start": 13.29,
+     "end": 13.56
+    },
+    {
+     "w": "the",
+     "start": 13.56,
+     "end": 13.65
+    },
+    {
+     "w": "big",
+     "start": 13.65,
+     "end": 13.89
+    },
+    {
+     "w": "ones.",
+     "start": 13.89,
+     "end": 14.37
+    },
+    {
+     "w": "Three",
+     "start": 14.51,
+     "end": 14.68
+    },
+    {
+     "w": "hundred",
+     "start": 14.68,
+     "end": 15.04
+    },
+    {
+     "w": "to",
+     "start": 15.04,
+     "end": 15.15
+    },
+    {
+     "w": "the",
+     "start": 15.15,
+     "end": 15.25
+    },
+    {
+     "w": "bakery.",
+     "start": 15.25,
+     "end": 15.88
+    },
+    {
+     "w": "Six",
+     "start": 16.02,
+     "end": 16.35
+    },
+    {
+     "w": "hundred",
+     "start": 16.35,
+     "end": 16.66
+    },
+    {
+     "w": "to",
+     "start": 16.66,
+     "end": 16.73
+    },
+    {
+     "w": "school.",
+     "start": 16.73,
+     "end": 17.22
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "But I count everything. Stairs. Fence posts. Cracks in the sidewalk. Out loud.",
+   "start": 17.33,
+   "end": 21.76,
+   "words": [
+    {
+     "w": "But",
+     "start": 17.33,
+     "end": 17.46
+    },
+    {
+     "w": "I",
+     "start": 17.46,
+     "end": 17.54
+    },
+    {
+     "w": "count",
+     "start": 17.54,
+     "end": 17.83
+    },
+    {
+     "w": "everything.",
+     "start": 17.83,
+     "end": 18.36
+    },
+    {
+     "w": "Stairs.",
+     "start": 18.52,
+     "end": 19.08
+    },
+    {
+     "w": "Fence",
+     "start": 19.17,
+     "end": 19.46
+    },
+    {
+     "w": "posts.",
+     "start": 19.46,
+     "end": 19.85
+    },
+    {
+     "w": "Cracks",
+     "start": 19.85,
+     "end": 20.23
+    },
+    {
+     "w": "in",
+     "start": 20.23,
+     "end": 20.33
+    },
+    {
+     "w": "the",
+     "start": 20.33,
+     "end": 20.4
+    },
+    {
+     "w": "sidewalk.",
+     "start": 20.4,
+     "end": 21.07
+    },
+    {
+     "w": "Out",
+     "start": 21.07,
+     "end": 21.31
+    },
+    {
+     "w": "loud.",
+     "start": 21.31,
+     "end": 21.76
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "That's why everyone at school calls me Calculator.",
+   "start": 21.83,
+   "end": 24.22,
+   "words": [
+    {
+     "w": "That's",
+     "start": 21.83,
+     "end": 22.09
+    },
+    {
+     "w": "why",
+     "start": 22.09,
+     "end": 22.31
+    },
+    {
+     "w": "everyone",
+     "start": 22.31,
+     "end": 22.68
+    },
+    {
+     "w": "at",
+     "start": 22.68,
+     "end": 22.78
+    },
+    {
+     "w": "school",
+     "start": 22.78,
+     "end": 23.09
+    },
+    {
+     "w": "calls",
+     "start": 23.09,
+     "end": 23.4
+    },
+    {
+     "w": "me",
+     "start": 23.4,
+     "end": 23.52
+    },
+    {
+     "w": "Calculator.",
+     "start": 23.52,
+     "end": 24.22
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "Only one light is allowed to stay on after nine: the lighthouse on the rocks. It has its own generator, and my grandpa has kept it shining for forty years.",
+   "start": 24.46,
+   "end": 32.31,
+   "words": [
+    {
+     "w": "Only",
+     "start": 24.46,
+     "end": 24.72
+    },
+    {
+     "w": "one",
+     "start": 24.72,
+     "end": 24.95
+    },
+    {
+     "w": "light",
+     "start": 24.95,
+     "end": 25.22
+    },
+    {
+     "w": "is",
+     "start": 25.22,
+     "end": 25.34
+    },
+    {
+     "w": "allowed",
+     "start": 25.34,
+     "end": 25.64
+    },
+    {
+     "w": "to",
+     "start": 25.64,
+     "end": 25.71
+    },
+    {
+     "w": "stay",
+     "start": 25.71,
+     "end": 25.99
+    },
+    {
+     "w": "on",
+     "start": 25.99,
+     "end": 26.23
+    },
+    {
+     "w": "after",
+     "start": 26.23,
+     "end": 26.47
+    },
+    {
+     "w": "nine:",
+     "start": 26.47,
+     "end": 26.94
+    },
+    {
+     "w": "the",
+     "start": 27.0,
+     "end": 27.08
+    },
+    {
+     "w": "lighthouse",
+     "start": 27.08,
+     "end": 27.61
+    },
+    {
+     "w": "on",
+     "start": 27.61,
+     "end": 27.72
+    },
+    {
+     "w": "the",
+     "start": 27.72,
+     "end": 27.8
+    },
+    {
+     "w": "rocks.",
+     "start": 27.8,
+     "end": 28.33
+    },
+    {
+     "w": "It",
+     "start": 28.47,
+     "end": 28.62
+    },
+    {
+     "w": "has",
+     "start": 28.62,
+     "end": 28.81
+    },
+    {
+     "w": "its",
+     "start": 28.81,
+     "end": 28.95
+    },
+    {
+     "w": "own",
+     "start": 28.95,
+     "end": 29.12
+    },
+    {
+     "w": "generator,",
+     "start": 29.12,
+     "end": 29.7
+    },
+    {
+     "w": "and",
+     "start": 29.7,
+     "end": 29.83
+    },
+    {
+     "w": "my",
+     "start": 29.83,
+     "end": 29.96
+    },
+    {
+     "w": "grandpa",
+     "start": 29.96,
+     "end": 30.4
+    },
+    {
+     "w": "has",
+     "start": 30.4,
+     "end": 30.57
+    },
+    {
+     "w": "kept",
+     "start": 30.57,
+     "end": 30.77
+    },
+    {
+     "w": "it",
+     "start": 30.77,
+     "end": 30.87
+    },
+    {
+     "w": "shining",
+     "start": 30.87,
+     "end": 31.32
+    },
+    {
+     "w": "for",
+     "start": 31.32,
+     "end": 31.45
+    },
+    {
+     "w": "forty",
+     "start": 31.45,
+     "end": 31.79
+    },
+    {
+     "w": "years.",
+     "start": 31.79,
+     "end": 32.31
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "But grandpa's eyes are getting worse. Now he holds the rail with both hands.",
+   "start": 32.31,
+   "end": 36.5,
+   "words": [
+    {
+     "w": "But",
+     "start": 32.31,
+     "end": 32.58
+    },
+    {
+     "w": "grandpa's",
+     "start": 32.58,
+     "end": 33.09
+    },
+    {
+     "w": "eyes",
+     "start": 33.09,
+     "end": 33.36
+    },
+    {
+     "w": "are",
+     "start": 33.36,
+     "end": 33.43
+    },
+    {
+     "w": "getting",
+     "start": 33.43,
+     "end": 33.78
+    },
+    {
+     "w": "worse.",
+     "start": 33.78,
+     "end": 34.25
+    },
+    {
+     "w": "Now",
+     "start": 34.67,
+     "end": 34.9
+    },
+    {
+     "w": "he",
+     "start": 34.9,
+     "end": 34.98
+    },
+    {
+     "w": "holds",
+     "start": 34.98,
+     "end": 35.23
+    },
+    {
+     "w": "the",
+     "start": 35.23,
+     "end": 35.32
+    },
+    {
+     "w": "rail",
+     "start": 35.32,
+     "end": 35.57
+    },
+    {
+     "w": "with",
+     "start": 35.57,
+     "end": 35.71
+    },
+    {
+     "w": "both",
+     "start": 35.71,
+     "end": 35.96
+    },
+    {
+     "w": "hands.",
+     "start": 35.96,
+     "end": 36.5
+    }
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "So every evening, I climb with him. Two hundred and fourteen steps to the top. I've counted them a thousand times.",
+   "start": 36.64,
+   "end": 42.39,
+   "words": [
+    {
+     "w": "So",
+     "start": 36.64,
+     "end": 36.83
+    },
+    {
+     "w": "every",
+     "start": 36.83,
+     "end": 37.13
+    },
+    {
+     "w": "evening,",
+     "start": 37.13,
+     "end": 37.53
+    },
+    {
+     "w": "I",
+     "start": 37.53,
+     "end": 37.69
+    },
+    {
+     "w": "climb",
+     "start": 37.69,
+     "end": 38.03
+    },
+    {
+     "w": "with",
+     "start": 38.03,
+     "end": 38.19
+    },
+    {
+     "w": "him.",
+     "start": 38.19,
+     "end": 38.35
+    },
+    {
+     "w": "Two",
+     "start": 38.51,
+     "end": 38.72
+    },
+    {
+     "w": "hundred",
+     "start": 38.72,
+     "end": 39.01
+    },
+    {
+     "w": "and",
+     "start": 39.01,
+     "end": 39.12
+    },
+    {
+     "w": "fourteen",
+     "start": 39.12,
+     "end": 39.54
+    },
+    {
+     "w": "steps",
+     "start": 39.54,
+     "end": 39.84
+    },
+    {
+     "w": "to",
+     "start": 39.84,
+     "end": 39.96
+    },
+    {
+     "w": "the",
+     "start": 39.96,
+     "end": 40.06
+    },
+    {
+     "w": "top.",
+     "start": 40.06,
+     "end": 40.53
+    },
+    {
+     "w": "I've",
+     "start": 40.74,
+     "end": 40.87
+    },
+    {
+     "w": "counted",
+     "start": 40.87,
+     "end": 41.22
+    },
+    {
+     "w": "them",
+     "start": 41.22,
+     "end": 41.37
+    },
+    {
+     "w": "a",
+     "start": 41.37,
+     "end": 41.41
+    },
+    {
+     "w": "thousand",
+     "start": 41.41,
+     "end": 41.85
+    },
+    {
+     "w": "times.",
+     "start": 41.85,
+     "end": 42.39
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "text": "Up there, he showed me an old oil lamp. \"If the generator ever dies,\" he said, \"this is what keeps the boats safe.\"",
+   "start": 42.46,
+   "end": 48.47,
+   "words": [
+    {
+     "w": "Up",
+     "start": 42.46,
+     "end": 42.65
+    },
+    {
+     "w": "there,",
+     "start": 42.65,
+     "end": 42.95
+    },
+    {
+     "w": "he",
+     "start": 42.95,
+     "end": 43.14
+    },
+    {
+     "w": "showed",
+     "start": 43.14,
+     "end": 43.42
+    },
+    {
+     "w": "me",
+     "start": 43.42,
+     "end": 43.56
+    },
+    {
+     "w": "an",
+     "start": 43.56,
+     "end": 43.63
+    },
+    {
+     "w": "old",
+     "start": 43.63,
+     "end": 43.95
+    },
+    {
+     "w": "oil",
+     "start": 43.95,
+     "end": 44.21
+    },
+    {
+     "w": "lamp.",
+     "start": 44.21,
+     "end": 44.54
+    },
+    {
+     "w": "\"If",
+     "start": 44.85,
+     "end": 44.99
+    },
+    {
+     "w": "the",
+     "start": 44.99,
+     "end": 45.1
+    },
+    {
+     "w": "generator",
+     "start": 45.1,
+     "end": 45.6
+    },
+    {
+     "w": "ever",
+     "start": 45.6,
+     "end": 45.78
+    },
+    {
+     "w": "dies,\"",
+     "start": 45.78,
+     "end": 46.36
+    },
+    {
+     "w": "he",
+     "start": 46.36,
+     "end": 46.51
+    },
+    {
+     "w": "said,",
+     "start": 46.51,
+     "end": 46.86
+    },
+    {
+     "w": "\"this",
+     "start": 46.86,
+     "end": 47.07
+    },
+    {
+     "w": "is",
+     "start": 47.07,
+     "end": 47.21
+    },
+    {
+     "w": "what",
+     "start": 47.21,
+     "end": 47.37
+    },
+    {
+     "w": "keeps",
+     "start": 47.37,
+     "end": 47.63
+    },
+    {
+     "w": "the",
+     "start": 47.63,
+     "end": 47.73
+    },
+    {
+     "w": "boats",
+     "start": 47.73,
+     "end": 48.05
+    },
+    {
+     "w": "safe.\"",
+     "start": 48.05,
+     "end": 48.47
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "text": "And when I counted, grandpa just smiled. \"Lighthouse keepers count too.\"",
+   "start": 48.68,
+   "end": 52.55,
+   "words": [
+    {
+     "w": "And",
+     "start": 48.68,
+     "end": 48.81
+    },
+    {
+     "w": "when",
+     "start": 48.81,
+     "end": 48.95
+    },
+    {
+     "w": "I",
+     "start": 48.95,
+     "end": 49.05
+    },
+    {
+     "w": "counted,",
+     "start": 49.05,
+     "end": 49.47
+    },
+    {
+     "w": "grandpa",
+     "start": 49.47,
+     "end": 49.86
+    },
+    {
+     "w": "just",
+     "start": 49.86,
+     "end": 50.04
+    },
+    {
+     "w": "smiled.",
+     "start": 50.04,
+     "end": 50.58
+    },
+    {
+     "w": "\"Lighthouse",
+     "start": 51.0,
+     "end": 51.46
+    },
+    {
+     "w": "keepers",
+     "start": 51.46,
+     "end": 51.86
+    },
+    {
+     "w": "count",
+     "start": 51.86,
+     "end": 52.15
+    },
+    {
+     "w": "too.\"",
+     "start": 52.15,
+     "end": 52.55
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "text": "Then came the night of the big storm.",
+   "start": 52.78,
+   "end": 54.55,
+   "words": [
+    {
+     "w": "Then",
+     "start": 52.78,
+     "end": 52.97
+    },
+    {
+     "w": "came",
+     "start": 52.97,
+     "end": 53.19
+    },
+    {
+     "w": "the",
+     "start": 53.19,
+     "end": 53.27
+    },
+    {
+     "w": "night",
+     "start": 53.27,
+     "end": 53.57
+    },
+    {
+     "w": "of",
+     "start": 53.57,
+     "end": 53.68
+    },
+    {
+     "w": "the",
+     "start": 53.68,
+     "end": 53.77
+    },
+    {
+     "w": "big",
+     "start": 53.77,
+     "end": 54.0
+    },
+    {
+     "w": "storm.",
+     "start": 54.0,
+     "end": 54.55
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "text": "My dad's fishing boat was still out. He's always home before nine. That night, he wasn't.",
+   "start": 54.7,
+   "end": 59.17,
+   "words": [
+    {
+     "w": "My",
+     "start": 54.7,
+     "end": 54.8
+    },
+    {
+     "w": "dad's",
+     "start": 54.8,
+     "end": 55.16
+    },
+    {
+     "w": "fishing",
+     "start": 55.16,
+     "end": 55.48
+    },
+    {
+     "w": "boat",
+     "start": 55.48,
+     "end": 55.65
+    },
+    {
+     "w": "was",
+     "start": 55.65,
+     "end": 55.79
+    },
+    {
+     "w": "still",
+     "start": 55.79,
+     "end": 56.07
+    },
+    {
+     "w": "out.",
+     "start": 56.07,
+     "end": 56.49
+    },
+    {
+     "w": "He's",
+     "start": 56.49,
+     "end": 56.69
+    },
+    {
+     "w": "always",
+     "start": 56.69,
+     "end": 56.99
+    },
+    {
+     "w": "home",
+     "start": 56.99,
+     "end": 57.21
+    },
+    {
+     "w": "before",
+     "start": 57.21,
+     "end": 57.48
+    },
+    {
+     "w": "nine.",
+     "start": 57.48,
+     "end": 57.97
+    },
+    {
+     "w": "That",
+     "start": 57.97,
+     "end": 58.21
+    },
+    {
+     "w": "night,",
+     "start": 58.21,
+     "end": 58.53
+    },
+    {
+     "w": "he",
+     "start": 58.53,
+     "end": 58.64
+    },
+    {
+     "w": "wasn't.",
+     "start": 58.64,
+     "end": 59.17
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "text": "At nine o'clock, the town went black, like always.",
+   "start": 59.54,
+   "end": 62.26,
+   "words": [
+    {
+     "w": "At",
+     "start": 59.54,
+     "end": 59.69
+    },
+    {
+     "w": "nine",
+     "start": 59.69,
+     "end": 59.96
+    },
+    {
+     "w": "o'clock,",
+     "start": 59.96,
+     "end": 60.37
+    },
+    {
+     "w": "the",
+     "start": 60.37,
+     "end": 60.47
+    },
+    {
+     "w": "town",
+     "start": 60.47,
+     "end": 60.77
+    },
+    {
+     "w": "went",
+     "start": 60.77,
+     "end": 60.95
+    },
+    {
+     "w": "black,",
+     "start": 60.95,
+     "end": 61.36
+    },
+    {
+     "w": "like",
+     "start": 61.36,
+     "end": 61.54
+    },
+    {
+     "w": "always.",
+     "start": 61.54,
+     "end": 62.26
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "text": "Then, out on the rocks, the lighthouse flickered\u2026 and went out.",
+   "start": 62.37,
+   "end": 65.23,
+   "words": [
+    {
+     "w": "Then,",
+     "start": 62.37,
+     "end": 62.57
+    },
+    {
+     "w": "out",
+     "start": 62.57,
+     "end": 62.74
+    },
+    {
+     "w": "on",
+     "start": 62.74,
+     "end": 62.87
+    },
+    {
+     "w": "the",
+     "start": 62.87,
+     "end": 62.95
+    },
+    {
+     "w": "rocks,",
+     "start": 62.95,
+     "end": 63.42
+    },
+    {
+     "w": "the",
+     "start": 63.42,
+     "end": 63.51
+    },
+    {
+     "w": "lighthouse",
+     "start": 63.51,
+     "end": 64.02
+    },
+    {
+     "w": "flickered\u2026",
+     "start": 64.02,
+     "end": 64.47
+    },
+    {
+     "w": "and",
+     "start": 64.63,
+     "end": 64.79
+    },
+    {
+     "w": "went",
+     "start": 64.79,
+     "end": 64.94
+    },
+    {
+     "w": "out.",
+     "start": 64.94,
+     "end": 65.23
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "The generator was dead. And somewhere in that storm, my dad was heading straight for the rocks, with nothing to guide him.",
+   "start": 65.23,
+   "end": 71.16,
+   "words": [
+    {
+     "w": "The",
+     "start": 65.23,
+     "end": 65.37
+    },
+    {
+     "w": "generator",
+     "start": 65.37,
+     "end": 65.88
+    },
+    {
+     "w": "was",
+     "start": 65.88,
+     "end": 66.1
+    },
+    {
+     "w": "dead.",
+     "start": 66.1,
+     "end": 66.49
+    },
+    {
+     "w": "And",
+     "start": 66.85,
+     "end": 66.98
+    },
+    {
+     "w": "somewhere",
+     "start": 66.98,
+     "end": 67.42
+    },
+    {
+     "w": "in",
+     "start": 67.42,
+     "end": 67.52
+    },
+    {
+     "w": "that",
+     "start": 67.52,
+     "end": 67.7
+    },
+    {
+     "w": "storm,",
+     "start": 67.7,
+     "end": 68.12
+    },
+    {
+     "w": "my",
+     "start": 68.21,
+     "end": 68.36
+    },
+    {
+     "w": "dad",
+     "start": 68.36,
+     "end": 68.62
+    },
+    {
+     "w": "was",
+     "start": 68.62,
+     "end": 68.78
+    },
+    {
+     "w": "heading",
+     "start": 68.78,
+     "end": 69.03
+    },
+    {
+     "w": "straight",
+     "start": 69.03,
+     "end": 69.39
+    },
+    {
+     "w": "for",
+     "start": 69.39,
+     "end": 69.52
+    },
+    {
+     "w": "the",
+     "start": 69.52,
+     "end": 69.61
+    },
+    {
+     "w": "rocks,",
+     "start": 69.61,
+     "end": 70.09
+    },
+    {
+     "w": "with",
+     "start": 70.09,
+     "end": 70.29
+    },
+    {
+     "w": "nothing",
+     "start": 70.29,
+     "end": 70.62
+    },
+    {
+     "w": "to",
+     "start": 70.62,
+     "end": 70.69
+    },
+    {
+     "w": "guide",
+     "start": 70.69,
+     "end": 70.95
+    },
+    {
+     "w": "him.",
+     "start": 70.95,
+     "end": 71.16
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "text": "Grandpa grabbed his coat, but he couldn't even find the door. \"Leo,\" he whispered. \"I can't do the stairs.\"",
+   "start": 71.35,
+   "end": 76.48,
+   "words": [
+    {
+     "w": "Grandpa",
+     "start": 71.35,
+     "end": 71.69
+    },
+    {
+     "w": "grabbed",
+     "start": 71.69,
+     "end": 71.97
+    },
+    {
+     "w": "his",
+     "start": 71.97,
+     "end": 72.12
+    },
+    {
+     "w": "coat,",
+     "start": 72.12,
+     "end": 72.38
+    },
+    {
+     "w": "but",
+     "start": 72.38,
+     "end": 72.52
+    },
+    {
+     "w": "he",
+     "start": 72.52,
+     "end": 72.64
+    },
+    {
+     "w": "couldn't",
+     "start": 72.64,
+     "end": 72.96
+    },
+    {
+     "w": "even",
+     "start": 72.96,
+     "end": 73.16
+    },
+    {
+     "w": "find",
+     "start": 73.16,
+     "end": 73.39
+    },
+    {
+     "w": "the",
+     "start": 73.39,
+     "end": 73.46
+    },
+    {
+     "w": "door.",
+     "start": 73.46,
+     "end": 73.89
+    },
+    {
+     "w": "\"Leo,\"",
+     "start": 74.3,
+     "end": 74.67
+    },
+    {
+     "w": "he",
+     "start": 74.82,
+     "end": 74.93
+    },
+    {
+     "w": "whispered.",
+     "start": 74.93,
+     "end": 75.36
+    },
+    {
+     "w": "\"I",
+     "start": 75.52,
+     "end": 75.6
+    },
+    {
+     "w": "can't",
+     "start": 75.6,
+     "end": 75.83
+    },
+    {
+     "w": "do",
+     "start": 75.83,
+     "end": 75.94
+    },
+    {
+     "w": "the",
+     "start": 75.94,
+     "end": 76.01
+    },
+    {
+     "w": "stairs.\"",
+     "start": 76.01,
+     "end": 76.48
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "text": "So I went.",
+   "start": 76.62,
+   "end": 77.2,
+   "words": [
+    {
+     "w": "So",
+     "start": 76.62,
+     "end": 76.8
+    },
+    {
+     "w": "I",
+     "start": 76.8,
+     "end": 76.84
+    },
+    {
+     "w": "went.",
+     "start": 76.84,
+     "end": 77.2
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "text": "Six hundred and twelve steps from our door to the lighthouse. I counted every one in the rain.",
+   "start": 77.2,
+   "end": 80.89,
+   "words": [
+    {
+     "w": "Six",
+     "start": 77.2,
+     "end": 77.41
+    },
+    {
+     "w": "hundred",
+     "start": 77.41,
+     "end": 77.67
+    },
+    {
+     "w": "and",
+     "start": 77.67,
+     "end": 77.79
+    },
+    {
+     "w": "twelve",
+     "start": 77.79,
+     "end": 78.04
+    },
+    {
+     "w": "steps",
+     "start": 78.04,
+     "end": 78.35
+    },
+    {
+     "w": "from",
+     "start": 78.35,
+     "end": 78.51
+    },
+    {
+     "w": "our",
+     "start": 78.51,
+     "end": 78.64
+    },
+    {
+     "w": "door",
+     "start": 78.64,
+     "end": 78.87
+    },
+    {
+     "w": "to",
+     "start": 78.87,
+     "end": 78.94
+    },
+    {
+     "w": "the",
+     "start": 78.94,
+     "end": 79.02
+    },
+    {
+     "w": "lighthouse.",
+     "start": 79.02,
+     "end": 79.57
+    },
+    {
+     "w": "I",
+     "start": 79.57,
+     "end": 79.72
+    },
+    {
+     "w": "counted",
+     "start": 79.72,
+     "end": 80.02
+    },
+    {
+     "w": "every",
+     "start": 80.02,
+     "end": 80.21
+    },
+    {
+     "w": "one",
+     "start": 80.21,
+     "end": 80.36
+    },
+    {
+     "w": "in",
+     "start": 80.36,
+     "end": 80.44
+    },
+    {
+     "w": "the",
+     "start": 80.44,
+     "end": 80.52
+    },
+    {
+     "w": "rain.",
+     "start": 80.52,
+     "end": 80.89
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "text": "Inside, it was so dark I couldn't see my own hands. But I didn't need to see.",
+   "start": 80.89,
+   "end": 84.41,
+   "words": [
+    {
+     "w": "Inside,",
+     "start": 80.89,
+     "end": 81.42
+    },
+    {
+     "w": "it",
+     "start": 81.42,
+     "end": 81.51
+    },
+    {
+     "w": "was",
+     "start": 81.51,
+     "end": 81.64
+    },
+    {
+     "w": "so",
+     "start": 81.64,
+     "end": 81.8
+    },
+    {
+     "w": "dark",
+     "start": 81.8,
+     "end": 82.06
+    },
+    {
+     "w": "I",
+     "start": 82.06,
+     "end": 82.12
+    },
+    {
+     "w": "couldn't",
+     "start": 82.12,
+     "end": 82.36
+    },
+    {
+     "w": "see",
+     "start": 82.36,
+     "end": 82.52
+    },
+    {
+     "w": "my",
+     "start": 82.52,
+     "end": 82.68
+    },
+    {
+     "w": "own",
+     "start": 82.68,
+     "end": 82.8
+    },
+    {
+     "w": "hands.",
+     "start": 82.8,
+     "end": 83.28
+    },
+    {
+     "w": "But",
+     "start": 83.39,
+     "end": 83.52
+    },
+    {
+     "w": "I",
+     "start": 83.52,
+     "end": 83.59
+    },
+    {
+     "w": "didn't",
+     "start": 83.59,
+     "end": 83.81
+    },
+    {
+     "w": "need",
+     "start": 83.81,
+     "end": 83.99
+    },
+    {
+     "w": "to",
+     "start": 83.99,
+     "end": 84.07
+    },
+    {
+     "w": "see.",
+     "start": 84.07,
+     "end": 84.41
+    }
+   ]
+  },
+  {
+   "id": "L21",
+   "text": "Seventy-one, the cracked step. One hundred and fifty, the turn. Two hundred and fourteen.",
+   "start": 84.51,
+   "end": 88.42,
+   "words": [
+    {
+     "w": "Seventy-one,",
+     "start": 84.51,
+     "end": 85.14
+    },
+    {
+     "w": "the",
+     "start": 85.2,
+     "end": 85.29
+    },
+    {
+     "w": "cracked",
+     "start": 85.29,
+     "end": 85.59
+    },
+    {
+     "w": "step.",
+     "start": 85.59,
+     "end": 86.0
+    },
+    {
+     "w": "One",
+     "start": 86.0,
+     "end": 86.19
+    },
+    {
+     "w": "hundred",
+     "start": 86.19,
+     "end": 86.45
+    },
+    {
+     "w": "and",
+     "start": 86.45,
+     "end": 86.56
+    },
+    {
+     "w": "fifty,",
+     "start": 86.56,
+     "end": 86.91
+    },
+    {
+     "w": "the",
+     "start": 86.91,
+     "end": 87.02
+    },
+    {
+     "w": "turn.",
+     "start": 87.02,
+     "end": 87.37
+    },
+    {
+     "w": "Two",
+     "start": 87.37,
+     "end": 87.58
+    },
+    {
+     "w": "hundred",
+     "start": 87.58,
+     "end": 87.81
+    },
+    {
+     "w": "and",
+     "start": 87.81,
+     "end": 87.91
+    },
+    {
+     "w": "fourteen.",
+     "start": 87.91,
+     "end": 88.42
+    }
+   ]
+  },
+  {
+   "id": "L22",
+   "text": "I found the matches exactly where grandpa keeps them. Third shelf. Left side.",
+   "start": 88.58,
+   "end": 92.0,
+   "words": [
+    {
+     "w": "I",
+     "start": 88.58,
+     "end": 88.68
+    },
+    {
+     "w": "found",
+     "start": 88.68,
+     "end": 88.92
+    },
+    {
+     "w": "the",
+     "start": 88.92,
+     "end": 88.98
+    },
+    {
+     "w": "matches",
+     "start": 88.98,
+     "end": 89.35
+    },
+    {
+     "w": "exactly",
+     "start": 89.35,
+     "end": 89.77
+    },
+    {
+     "w": "where",
+     "start": 89.77,
+     "end": 89.93
+    },
+    {
+     "w": "grandpa",
+     "start": 89.93,
+     "end": 90.29
+    },
+    {
+     "w": "keeps",
+     "start": 90.29,
+     "end": 90.57
+    },
+    {
+     "w": "them.",
+     "start": 90.57,
+     "end": 90.76
+    },
+    {
+     "w": "Third",
+     "start": 90.91,
+     "end": 91.1
+    },
+    {
+     "w": "shelf.",
+     "start": 91.1,
+     "end": 91.4
+    },
+    {
+     "w": "Left",
+     "start": 91.4,
+     "end": 91.61
+    },
+    {
+     "w": "side.",
+     "start": 91.61,
+     "end": 92.0
+    }
+   ]
+  },
+  {
+   "id": "L23",
+   "text": "The first match blew out. So did the second.",
+   "start": 92.0,
+   "end": 93.97,
+   "words": [
+    {
+     "w": "The",
+     "start": 92.0,
+     "end": 92.11
+    },
+    {
+     "w": "first",
+     "start": 92.11,
+     "end": 92.38
+    },
+    {
+     "w": "match",
+     "start": 92.38,
+     "end": 92.64
+    },
+    {
+     "w": "blew",
+     "start": 92.64,
+     "end": 92.88
+    },
+    {
+     "w": "out.",
+     "start": 92.88,
+     "end": 93.11
+    },
+    {
+     "w": "So",
+     "start": 93.2,
+     "end": 93.37
+    },
+    {
+     "w": "did",
+     "start": 93.37,
+     "end": 93.46
+    },
+    {
+     "w": "the",
+     "start": 93.46,
+     "end": 93.53
+    },
+    {
+     "w": "second.",
+     "start": 93.53,
+     "end": 93.97
+    }
+   ]
+  },
+  {
+   "id": "L24",
+   "text": "The third one caught. The old lamp roared to life, and the giant lens threw its light across the sea.",
+   "start": 93.97,
+   "end": 98.78,
+   "words": [
+    {
+     "w": "The",
+     "start": 93.97,
+     "end": 94.14
+    },
+    {
+     "w": "third",
+     "start": 94.14,
+     "end": 94.4
+    },
+    {
+     "w": "one",
+     "start": 94.4,
+     "end": 94.57
+    },
+    {
+     "w": "caught.",
+     "start": 94.57,
+     "end": 94.9
+    },
+    {
+     "w": "The",
+     "start": 94.9,
+     "end": 95.12
+    },
+    {
+     "w": "old",
+     "start": 95.12,
+     "end": 95.29
+    },
+    {
+     "w": "lamp",
+     "start": 95.29,
+     "end": 95.53
+    },
+    {
+     "w": "roared",
+     "start": 95.53,
+     "end": 95.8
+    },
+    {
+     "w": "to",
+     "start": 95.8,
+     "end": 95.88
+    },
+    {
+     "w": "life,",
+     "start": 95.88,
+     "end": 96.2
+    },
+    {
+     "w": "and",
+     "start": 96.2,
+     "end": 96.42
+    },
+    {
+     "w": "the",
+     "start": 96.42,
+     "end": 96.49
+    },
+    {
+     "w": "giant",
+     "start": 96.49,
+     "end": 96.88
+    },
+    {
+     "w": "lens",
+     "start": 96.88,
+     "end": 97.21
+    },
+    {
+     "w": "threw",
+     "start": 97.21,
+     "end": 97.48
+    },
+    {
+     "w": "its",
+     "start": 97.48,
+     "end": 97.61
+    },
+    {
+     "w": "light",
+     "start": 97.61,
+     "end": 97.9
+    },
+    {
+     "w": "across",
+     "start": 97.9,
+     "end": 98.24
+    },
+    {
+     "w": "the",
+     "start": 98.24,
+     "end": 98.32
+    },
+    {
+     "w": "sea.",
+     "start": 98.32,
+     "end": 98.78
+    }
+   ]
+  },
+  {
+   "id": "L25",
+   "text": "Far out in the waves, a tiny boat turned away from the rocks. Just in time.",
+   "start": 99.12,
+   "end": 102.87,
+   "words": [
+    {
+     "w": "Far",
+     "start": 99.12,
+     "end": 99.34
+    },
+    {
+     "w": "out",
+     "start": 99.34,
+     "end": 99.48
+    },
+    {
+     "w": "in",
+     "start": 99.48,
+     "end": 99.57
+    },
+    {
+     "w": "the",
+     "start": 99.57,
+     "end": 99.64
+    },
+    {
+     "w": "waves,",
+     "start": 99.64,
+     "end": 100.07
+    },
+    {
+     "w": "a",
+     "start": 100.07,
+     "end": 100.16
+    },
+    {
+     "w": "tiny",
+     "start": 100.16,
+     "end": 100.53
+    },
+    {
+     "w": "boat",
+     "start": 100.53,
+     "end": 100.79
+    },
+    {
+     "w": "turned",
+     "start": 100.79,
+     "end": 101.02
+    },
+    {
+     "w": "away",
+     "start": 101.02,
+     "end": 101.23
+    },
+    {
+     "w": "from",
+     "start": 101.23,
+     "end": 101.41
+    },
+    {
+     "w": "the",
+     "start": 101.41,
+     "end": 101.49
+    },
+    {
+     "w": "rocks.",
+     "start": 101.49,
+     "end": 102.04
+    },
+    {
+     "w": "Just",
+     "start": 102.04,
+     "end": 102.3
+    },
+    {
+     "w": "in",
+     "start": 102.3,
+     "end": 102.42
+    },
+    {
+     "w": "time.",
+     "start": 102.42,
+     "end": 102.87
+    }
+   ]
+  },
+  {
+   "id": "L26",
+   "text": "Dad's boat reached the harbor at ten fifty-two. I know, because I counted every minute.",
+   "start": 103.11,
+   "end": 107.51,
+   "words": [
+    {
+     "w": "Dad's",
+     "start": 103.11,
+     "end": 103.44
+    },
+    {
+     "w": "boat",
+     "start": 103.44,
+     "end": 103.65
+    },
+    {
+     "w": "reached",
+     "start": 103.65,
+     "end": 103.92
+    },
+    {
+     "w": "the",
+     "start": 103.92,
+     "end": 104.02
+    },
+    {
+     "w": "harbor",
+     "start": 104.02,
+     "end": 104.4
+    },
+    {
+     "w": "at",
+     "start": 104.4,
+     "end": 104.53
+    },
+    {
+     "w": "ten",
+     "start": 104.53,
+     "end": 104.78
+    },
+    {
+     "w": "fifty-two.",
+     "start": 104.78,
+     "end": 105.42
+    },
+    {
+     "w": "I",
+     "start": 105.68,
+     "end": 105.81
+    },
+    {
+     "w": "know,",
+     "start": 105.81,
+     "end": 106.12
+    },
+    {
+     "w": "because",
+     "start": 106.12,
+     "end": 106.5
+    },
+    {
+     "w": "I",
+     "start": 106.5,
+     "end": 106.57
+    },
+    {
+     "w": "counted",
+     "start": 106.57,
+     "end": 106.92
+    },
+    {
+     "w": "every",
+     "start": 106.92,
+     "end": 107.17
+    },
+    {
+     "w": "minute.",
+     "start": 107.17,
+     "end": 107.51
+    }
+   ]
+  },
+  {
+   "id": "L27",
+   "text": "The whole town was waiting on the dock in the dark, and grandpa hugged me like he'd never let go.",
+   "start": 107.65,
+   "end": 111.98,
+   "words": [
+    {
+     "w": "The",
+     "start": 107.65,
+     "end": 107.74
+    },
+    {
+     "w": "whole",
+     "start": 107.74,
+     "end": 107.93
+    },
+    {
+     "w": "town",
+     "start": 107.93,
+     "end": 108.25
+    },
+    {
+     "w": "was",
+     "start": 108.25,
+     "end": 108.39
+    },
+    {
+     "w": "waiting",
+     "start": 108.39,
+     "end": 108.67
+    },
+    {
+     "w": "on",
+     "start": 108.67,
+     "end": 108.77
+    },
+    {
+     "w": "the",
+     "start": 108.77,
+     "end": 108.86
+    },
+    {
+     "w": "dock",
+     "start": 108.86,
+     "end": 109.2
+    },
+    {
+     "w": "in",
+     "start": 109.2,
+     "end": 109.28
+    },
+    {
+     "w": "the",
+     "start": 109.28,
+     "end": 109.37
+    },
+    {
+     "w": "dark,",
+     "start": 109.37,
+     "end": 109.76
+    },
+    {
+     "w": "and",
+     "start": 109.76,
+     "end": 110.01
+    },
+    {
+     "w": "grandpa",
+     "start": 110.01,
+     "end": 110.44
+    },
+    {
+     "w": "hugged",
+     "start": 110.44,
+     "end": 110.69
+    },
+    {
+     "w": "me",
+     "start": 110.69,
+     "end": 110.83
+    },
+    {
+     "w": "like",
+     "start": 110.83,
+     "end": 111.03
+    },
+    {
+     "w": "he'd",
+     "start": 111.03,
+     "end": 111.21
+    },
+    {
+     "w": "never",
+     "start": 111.21,
+     "end": 111.45
+    },
+    {
+     "w": "let",
+     "start": 111.45,
+     "end": 111.61
+    },
+    {
+     "w": "go.",
+     "start": 111.61,
+     "end": 111.98
+    }
+   ]
+  },
+  {
+   "id": "L28",
+   "text": "Now, on stormy nights, nobody laughs at the kid who counts.",
+   "start": 112.12,
+   "end": 114.73,
+   "words": [
+    {
+     "w": "Now,",
+     "start": 112.12,
+     "end": 112.31
+    },
+    {
+     "w": "on",
+     "start": 112.31,
+     "end": 112.42
+    },
+    {
+     "w": "stormy",
+     "start": 112.42,
+     "end": 112.76
+    },
+    {
+     "w": "nights,",
+     "start": 112.76,
+     "end": 113.1
+    },
+    {
+     "w": "nobody",
+     "start": 113.1,
+     "end": 113.39
+    },
+    {
+     "w": "laughs",
+     "start": 113.39,
+     "end": 113.73
+    },
+    {
+     "w": "at",
+     "start": 113.73,
+     "end": 113.81
+    },
+    {
+     "w": "the",
+     "start": 113.81,
+     "end": 113.9
+    },
+    {
+     "w": "kid",
+     "start": 113.9,
+     "end": 114.12
+    },
+    {
+     "w": "who",
+     "start": 114.12,
+     "end": 114.23
+    },
+    {
+     "w": "counts.",
+     "start": 114.23,
+     "end": 114.73
+    }
+   ]
+  },
+  {
+   "id": "L29",
+   "text": "They count with me.",
+   "start": 114.73,
+   "end": 115.8,
+   "words": [
+    {
+     "w": "They",
+     "start": 114.73,
+     "end": 115.05
+    },
+    {
+     "w": "count",
+     "start": 115.05,
+     "end": 115.3
+    },
+    {
+     "w": "with",
+     "start": 115.3,
+     "end": 115.46
+    },
+    {
+     "w": "me.",
+     "start": 115.46,
+     "end": 115.8
+    }
+   ]
+  }
+ ]
+}

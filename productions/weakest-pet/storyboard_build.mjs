@@ -316,6 +316,13 @@ const starts = S.map((o) => (o.cue[0] === 'L1' && o.cue[1] === 0 ? 0 : cueTime(o
 for (let i = 1; i < starts.length; i++) if (!(starts[i] > starts[i - 1])) throw new Error(`shot ${i + 1} does not start after shot ${i}`);
 const END = AUDIO_END + TAIL;
 
+// Calmer pace (requested after the preview): gestures, idles and walk cycles run at
+// PACE speed, walkers cover PACE of the distance (so feet don't slide), and camera
+// push-ins / pans travel CAM_PACE of their distance. Cuts stay locked to the voice.
+const PACE = 0.8, CAM_PACE = 0.6;
+const shrink = (from, to, k) => (from && to ? [from[0] + (to[0] - from[0]) * k, from[1] + (to[1] - from[1]) * k] : to);
+const calmCam = (c) => ({ ...c, to: Object.fromEntries(Object.entries(c.to).map(([k, v]) => [k, c.from[k] + (v - c.from[k]) * CAM_PACE])) });
+
 const scenes = S.map((o, i) => {
   const t0 = starts[i], t1 = i + 1 < S.length ? starts[i + 1] : END, dur = t1 - t0;
   const f = (cue) => Math.min(1, Math.max(0, (cueTime(cue) - t0) / dur));
@@ -328,14 +335,16 @@ const scenes = S.map((o, i) => {
       actions.push({ char: id, action, expr, face, at: 0, end: x.at, glasses: false });
       actions.push({ char: id, action: x.action || action, expr, at: x.at, end: x.end ?? 1, move: x.move, ease: x.ease, params: x.params, glasses: false });
     } else {
-      actions.push({ char: id, action, expr, face, at: x.at ?? 0, end: x.end ?? 1, move: x.move, ease: x.ease, params: x.params, prop: x.prop, glasses: false });
+      const walker = x.move && x.ease !== 'linear' && ['walk', 'run', 'pull'].includes(action);
+      actions.push({ char: id, action, expr, face, at: x.at ?? 0, end: x.end ?? 1, move: walker ? shrink(at, x.move, PACE) : x.move, ease: x.ease, params: x.params, prop: x.prop, glasses: false });
     }
   }
   const props = [], propMoves = [];
   (o.props || []).forEach((p, k) => {
     const id = p.id || `p${k}`;
     props.push({ id, type: p.type, at: p.at, y: p.y, ry: p.ry, scale: p.scale, color: p.color });
-    if (p.move) propMoves.push({ prop: id, to: p.move, y: p.moveY, ease: p.ease, when: p.when ?? 0, end: p.end ?? 1 });
+    const follows = p.move && p.ease !== 'linear' && p.when == null; // carried along by a walking character
+    if (p.move) propMoves.push({ prop: id, to: follows ? shrink(p.at, p.move, PACE) : p.move, y: p.moveY, ease: p.ease, when: p.when ?? 0, end: p.end ?? 1 });
   });
   const labels = (o.labels || []).map(([char, text, color, x = {}]) => ({ char, text, color, glitch: x.glitch, when: x.from ? f(x.from) : 0, end: x.to ? f(x.to) : 1 }));
   const pops = (o.pops || []).map(([text, color, cue, x = {}]) => ({ text, color, when: f(cue), dur: x.dur ?? 1.0, y: x.y ?? 0.75, size: x.size ?? 0.82 }));
@@ -354,7 +363,7 @@ const scenes = S.map((o, i) => {
     music: o.light === 'purple' ? 'danger' : o.light === 'night' ? 'sad' : undefined,
     transition: o.transition || 'cut', transitionDur: o.transition === 'flash' ? 0.35 : undefined,
     props, cast: castIds,
-    beats: [{ duration: +dur.toFixed(4), camera: [{ ...o.camera, at: 0, end: 1 }], actions, labels, pops, fx, emotes, propMoves }],
+    beats: [{ duration: +dur.toFixed(4), camera: [{ ...calmCam(o.camera), at: 0, end: 1 }], actions, labels, pops, fx, emotes, propMoves }],
     note: o.note, cue: o.cue, t0: +t0.toFixed(3), t1: +t1.toFixed(3),
   };
 });
@@ -362,7 +371,7 @@ const scenes = S.map((o, i) => {
 const storyboard = {
   title: 'The Weakest Pet in the World', seed: 6, style: 'bright', captionStyle: 'yellow', mood: 'adventure',
   narration: { audio: 'productions/weakest-pet/audio/narration_james_240wpm.mp3', alignment: 'productions/weakest-pet/timing/alignment.json', offset: 0 },
-  musicVolume: 0.3, sfxVolume: 0.9, voiceVolume: 1,
+  musicVolume: 0.3, sfxVolume: 0.9, voiceVolume: 1, animSpeed: PACE,
   characters: [...new Set(S.flatMap((o) => o.c.map((c) => c[0])))],
   scenes,
 };

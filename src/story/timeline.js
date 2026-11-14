@@ -124,7 +124,7 @@ export function buildTimeline(storyboard, opts = {}) {
             scene.fx.push({ type: 'bigdust', at: a.char, t, shake: (a.shake ?? 0.45) * Math.min(2, big) });
           }
         } else if (seg.move && (seg.action === 'walk' || seg.action === 'run' || seg.action === 'sneak')) {
-          const step = seg.action === 'run' ? 0.17 : 0.29;
+          const step = (seg.action === 'run' ? 0.17 : 0.29) / (storyboard.animSpeed || 1);
           for (let t = seg.t0 + 0.1; t < seg.t1 - 0.05; t += step) sfx.push({ t, name: 'step', gain: seg.action === 'sneak' ? 0.2 : 0.35 });
         }
       }
@@ -204,6 +204,7 @@ export function buildTimeline(storyboard, opts = {}) {
     volumes: { narration: storyboard.voiceVolume ?? 1, music: storyboard.musicVolume ?? 0.35, effects: storyboard.sfxVolume ?? 1 },
     captionStyle: storyboard.captionStyle || 'yellow',
     style: storyboard.style || 'default',
+    animSpeed: storyboard.animSpeed || 1,
     narratorVoice: storyboard.narratorVoice || 'storyteller',
   };
 }

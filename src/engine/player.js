@@ -193,6 +193,8 @@ export class StoryPlayer {
 
   act(id, name, t, d, params) {
     const c = this.characters[id];
+    // global animation pace (1 = normal; < 1 = calmer gestures, idles and walk cycles)
+    const k = this.timeline.animSpeed || 1; t *= k; d *= k;
     if (c.kind === 'animal') return evalDogAction(name, t, d, params, c.spec);
     return c.kind === 'creature' ? evalCreatureAction(name, t, d, params) : evalAction(name, t, d, params);
   }

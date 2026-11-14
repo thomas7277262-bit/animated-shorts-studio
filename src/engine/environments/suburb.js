@@ -179,6 +179,7 @@ export function suburb(seed = 5, opts = {}) {
   // green hills between downtown and mountains
   for (let i = 0; i < 8; i++) g.add(mesh(new THREE.SphereGeometry(rng.float(10, 16), 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), S('#4fc04a', { flatShading: true }), { x: -90 + i * 26, y: -1, z: -120, cast: false }));
   const cloudWhite = new THREE.MeshBasicMaterial({ color: '#ffffff', fog: false }); // pure white, unaffected by the green bounce light
+  cloudWhite.userData.skyTint = true; // re-tinted by applyLighting for night / purple skies
   for (let i = 0; i < 8; i++) {
     const c = cloud(rng, { x: rng.float(-80, 80), y: rng.float(38, 60), z: rng.float(-150, -90), s: rng.float(1.2, 2) });
     c.traverse((o) => { if (o.isMesh) o.material = cloudWhite; });

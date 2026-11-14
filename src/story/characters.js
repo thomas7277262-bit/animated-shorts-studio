@@ -195,7 +195,7 @@ export const WEAKEST_PET_CAST = {
     cheeks: true, eyeStyle: 'round', brows: 'normal', accent: '#eea95c', personality: 'tiny, brave, power level 0',
   },
   nuggetGold: {
-    id: 'nuggetGold', name: 'Golden Nugget', role: 'giant form', kind: 'animal', model: 'dog', scale: 9,
+    id: 'nuggetGold', name: 'Golden Nugget', role: 'giant form', kind: 'animal', model: 'dog', scale: 14,
     fur: '#ffc928', belly: '#fff3b0', muzzle: '#fff3b0', faceFur: '#ffd451', ears: 'round', earColor: '#ffe08a',
     body: [1.35, 1.3, 0.75], round: true, legScale: 0.4, headScale: 1.25, tail: 'stub', snout: 'small',
     cheeks: true, eyeStyle: 'determined', brows: 'thick', glow: 0.55, accent: '#ffc928', personality: 'power level 9,999,999,999',
@@ -217,8 +217,53 @@ export const WEAKEST_PET_CAST = {
     ears: 'pointed', earColor: '#2f9e57', tail: 'long', tailTip: '#2f9e57', eyeStyle: 'determined', brows: 'normal', accent: '#4cc36a',
   },
   shadowbeast: {
-    id: 'shadowbeast', name: 'Shadow Monster', kind: 'creature', model: 'beast', scale: 3.4,
-    color: '#2a1840', belly: '#3a2458', spikes: '#6c2bd9', glow: '#d14dff', accent: '#d14dff',
+    id: 'shadowbeast', name: 'Shadow Monster', kind: 'creature', model: 'beast', scale: 3.0,
+    color: '#4a2d78', belly: '#6b45a0', spikes: '#9a4dff', glow: '#e070ff', accent: '#d14dff',
+  },
+  // supporting cast
+  kitten: {
+    id: 'kitten', name: 'Kitten', kind: 'animal', model: 'dog', scale: 0.42,
+    fur: '#9aa3ad', belly: '#f4f4f4', muzzle: '#f4f4f4', faceFur: '#a7b0ba', ears: 'pointed', earColor: '#f6b8b0',
+    tail: 'long', snout: 'small', headScale: 1.3, legScale: 0.8, eyeStyle: 'round', brows: 'thin', cheeks: true, accent: '#9aa3ad',
+  },
+  pigeon: {
+    id: 'pigeon', name: 'Pigeon', kind: 'animal', model: 'dog', scale: 0.36,
+    fur: '#8e97a6', belly: '#b9c1cc', muzzle: '#f2b33d', faceFur: '#6d7f99', ears: 'round', earColor: '#8e97a6', earSize: 0.2,
+    body: [1.0, 1.1, 1.1], round: true, legScale: 0.45, headScale: 1.0, wings: '#6f7887', tail: 'stub', snout: 'small',
+    eyeStyle: 'round', brows: 'thin', accent: '#8e97a6',
+  },
+  puppy: {
+    id: 'puppy', name: 'Puppy', kind: 'animal', model: 'dog', scale: 0.55,
+    fur: '#d9a066', muzzle: '#fbe7cc', faceFur: '#e0aa70', ears: 'floppy', earColor: '#a86b34', collar: '#2f80ed', tag: '#ffc21a',
+    headScale: 1.2, eyeStyle: 'round', brows: 'normal', cheeks: true, accent: '#d9a066',
+  },
+  policedog: {
+    id: 'policedog', name: 'Police dog', kind: 'animal', model: 'dog', scale: 1.15,
+    fur: '#7a5230', faceFur: '#2b2118', muzzle: '#2b2118', ears: 'pointed', earColor: '#2b2118', collar: '#1d4ed8', tag: '#ffd34d',
+    tail: 'long', eyeStyle: 'determined', brows: 'thick', accent: '#1d4ed8',
+  },
+  firedragon: {
+    id: 'firedragon', name: 'Fire dragon', kind: 'animal', model: 'dog', scale: 1.4,
+    fur: '#e2462f', belly: '#ffd28a', muzzle: '#ef6a48', faceFur: '#e65438', wings: '#a92a1c', horns: '#fff2c2',
+    ears: 'pointed', earColor: '#a92a1c', tail: 'long', tailTip: '#ffb02e', eyeStyle: 'determined', brows: 'thick', accent: '#e2462f',
+  },
+  eagle: {
+    id: 'eagle', name: "The mayor's giant eagle", kind: 'animal', model: 'dog', scale: 2.4,
+    fur: '#6b4423', belly: '#7d5530', muzzle: '#f2b33d', faceFur: '#ffffff', ears: 'round', earColor: '#ffffff', earSize: 0.2,
+    body: [1.1, 1.1, 1.2], round: true, legScale: 0.6, headScale: 1.05, wings: '#4e311a', tail: 'stub', snout: 'small',
+    eyeStyle: 'determined', brows: 'thick', accent: '#6b4423',
+  },
+  grandma: {
+    id: 'grandma', name: 'Grandma', role: 'neighbour', style: 'blocky', height: 0.95,
+    skin: '#f1c9a6', hair: '#e6e6e6', hairStyle: 'bun', pearls: true,
+    shirt: '#b56fc2', shirtDetail: 'blouse', shirtAccent: '#ffffff', sleeves: 'long', pants: '#5b4a6e', shoes: '#6b4a2e',
+    accent: '#b56fc2', eyeStyle: 'sleepy', brows: 'thin', cheeks: true, personality: 'sweet, slow, lots of groceries',
+  },
+  tot: {
+    id: 'tot', name: 'Little kid', role: 'kid', style: 'blocky', height: 0.68,
+    skin: '#c98d62', hair: '#1d1209', hairStyle: 'pigtails',
+    shirt: '#ffd23f', shirtDetail: 'star', shirtAccent: '#ff5fa2', pants: '#5b8def', shoes: '#ff5fa2',
+    accent: '#ffd23f', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'tiny, loves her balloon',
   },
 };
 // ids used in timelines

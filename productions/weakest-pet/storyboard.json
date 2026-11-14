@@ -1,0 +1,8001 @@
+{
+ "title": "The Weakest Pet in the World",
+ "seed": 6,
+ "style": "bright",
+ "captionStyle": "yellow",
+ "mood": "adventure",
+ "narration": {
+  "audio": "productions/weakest-pet/audio/narration_james_240wpm.mp3",
+  "alignment": "productions/weakest-pet/timing/alignment.json",
+  "offset": 0
+ },
+ "musicVolume": 0.3,
+ "sfxVolume": 0.9,
+ "voiceVolume": 1,
+ "characters": [
+  "maxkid",
+  "nugget",
+  "reyes",
+  "lion",
+  "brax",
+  "tiger",
+  "owen",
+  "petdragon",
+  "mia",
+  "puppy",
+  "noah",
+  "zed",
+  "kitten",
+  "pigeon",
+  "grandma",
+  "tot",
+  "shadowbeast",
+  "policedog",
+  "firedragon",
+  "eagle",
+  "nuggetGold"
+ ],
+ "scenes": [
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -1.2,
+      -0.2
+     ],
+     "face": 90
+    },
+    {
+     "id": "nugget",
+     "at": [
+      -0.3,
+      0.1
+     ],
+     "face": 90
+    },
+    {
+     "id": "reyes",
+     "at": [
+      3.5,
+      -9
+     ],
+     "face": -90
+    },
+    {
+     "id": "lion",
+     "at": [
+      5.2,
+      -8.9
+     ],
+     "face": -90
+    },
+    {
+     "id": "brax",
+     "at": [
+      -6,
+      -0.4
+     ],
+     "face": 90
+    },
+    {
+     "id": "tiger",
+     "at": [
+      -4.6,
+      -0.2
+     ],
+     "face": 90
+    },
+    {
+     "id": "owen",
+     "at": [
+      8,
+      -3.4
+     ],
+     "face": -90
+    },
+    {
+     "id": "petdragon",
+     "at": [
+      9.5,
+      -3.6
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.42,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        2,
+        0,
+        -6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -28,
+        "dist": 30,
+        "height": 19,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": -22,
+        "dist": 24,
+        "height": 14,
+        "lookY": 0,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "walk",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.5,
+        -0.2
+       ],
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "walk",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        2.4,
+        0.1
+       ],
+       "glasses": false
+      },
+      {
+       "char": "reyes",
+       "action": "walk",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.5,
+        -9
+       ],
+       "glasses": false
+      },
+      {
+       "char": "lion",
+       "action": "walk",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        2.2,
+        -8.9
+       ],
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "walk",
+       "expr": "smug",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -3.4,
+        -0.4
+       ],
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "walk",
+       "expr": "angry",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -2,
+        -0.2
+       ],
+       "glasses": false
+      },
+      {
+       "char": "owen",
+       "action": "idle",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "petdragon",
+       "action": "idle",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Aerial: the bright town, kids walking their pets",
+   "cue": [
+    "L1",
+    0
+   ],
+   "t0": 0,
+   "t1": 1.42
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "reyes",
+     "at": [
+      -2.6,
+      -0.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "lion",
+     "at": [
+      -1.3,
+      0.2
+     ],
+     "face": 20
+    },
+    {
+     "id": "owen",
+     "at": [
+      1.1,
+      -0.8
+     ],
+     "face": -10
+    },
+    {
+     "id": "petdragon",
+     "at": [
+      2.3,
+      0
+     ],
+     "face": -25
+    },
+    {
+     "id": "mia",
+     "at": [
+      0,
+      -1.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "puppy",
+     "at": [
+      0.4,
+      0.9
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.04,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 8.6,
+        "height": 0.6,
+        "lookY": 0.7,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 7.6,
+        "height": 0.4,
+        "lookY": 0.7,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "reyes",
+       "action": "idle",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "lion",
+       "action": "idle",
+       "expr": "happy",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "owen",
+       "action": "idle",
+       "expr": "happy",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "petdragon",
+       "action": "wag",
+       "expr": "happy",
+       "face": -25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "wave",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "puppy",
+       "action": "wag",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "9,000",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "petdragon",
+       "text": "50,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "puppy",
+       "text": "800",
+       "color": "#ffffff",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Every pet has a number floating above its head",
+   "cue": [
+    "L1",
+    7
+   ],
+   "t0": 1.42,
+   "t1": 2.46
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      0,
+      0
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.81,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 4.4,
+        "height": -1.1,
+        "lookY": 0.9,
+        "fov": 48
+       },
+       "to": {
+        "angle": 5,
+        "dist": 3.8,
+        "height": -1.2,
+        "lookY": 1,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "idle",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "9,000",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Low angle: the number glowing over the lion",
+   "cue": [
+    "L1",
+    10
+   ],
+   "t0": 2.46,
+   "t1": 3.27
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      0,
+      0
+     ],
+     "face": 20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.48,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 15,
+        "dist": 4.2,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "to": {
+        "angle": 8,
+        "dist": 3.5,
+        "height": 0.1,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "bark",
+       "expr": "angry",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "9,000",
+       "when": 0,
+       "end": 0.3648648648648649
+      }
+     ],
+     "pops": [
+      {
+       "text": "9,000",
+       "color": "#ffe14a",
+       "when": 0.3648648648648649,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Lions get 9,000",
+   "cue": [
+    "L2",
+    0
+   ],
+   "t0": 3.27,
+   "t1": 4.75
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "petdragon",
+     "at": [
+      0,
+      0
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.68,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -15,
+        "dist": 4.4,
+        "height": 0,
+        "lookY": 0.4,
+        "fov": 50
+       },
+       "to": {
+        "angle": -8,
+        "dist": 3.6,
+        "height": 0.2,
+        "lookY": 0.4,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "petdragon",
+       "action": "jump",
+       "expr": "determined",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "petdragon",
+       "text": "50,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0.357142857142857
+      },
+      {
+       "char": "petdragon",
+       "text": "50,000",
+       "color": "#7dff8a",
+       "when": 0.9226190476190476,
+       "end": 1
+      }
+     ],
+     "pops": [
+      {
+       "text": "50,000",
+       "color": "#7dff8a",
+       "when": 0.357142857142857,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": [
+        0,
+        1.4,
+        0.3
+       ],
+       "when": 0.357142857142857
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Dragons get 50,000",
+   "cue": [
+    "L2",
+    4
+   ],
+   "t0": 4.75,
+   "t1": 6.43
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -0.55,
+      -0.5
+     ],
+     "face": 15
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.35,
+      0.35
+     ],
+     "face": -10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.05,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.8,
+        "height": 0.1,
+        "lookY": 0.25,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5.2,
+        "height": 0,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "wave",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "And my hamster, Nugget?",
+   "cue": [
+    "L3",
+    0
+   ],
+   "t0": 6.43,
+   "t1": 7.77
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.73,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.42,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 1.9,
+        "height": 0.08,
+        "lookY": 0.18,
+        "fov": 42
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.5,
+        "height": 0.05,
+        "lookY": 0.18,
+        "fov": 42
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 0.5,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "tilt",
+       "expr": "sad",
+       "face": 0,
+       "at": 0.5,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [
+      {
+       "text": "ZERO",
+       "color": "#ff5a5a",
+       "when": 0,
+       "dur": 1,
+       "y": 1,
+       "size": 0.68
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Zero. Literally zero. Extreme close-up of Nugget",
+   "cue": [
+    "L3",
+    4
+   ],
+   "t0": 7.77,
+   "t1": 9.5
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      -2.4,
+      -0.2
+     ],
+     "face": 90
+    },
+    {
+     "id": "tiger",
+     "at": [
+      -1.4,
+      0.7
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.19,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "brax",
+        "tiger"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 12,
+        "dist": 7.6,
+        "height": -1,
+        "lookY": 0.9,
+        "fov": 52
+       },
+       "to": {
+        "angle": 6,
+        "dist": 7,
+        "height": -1,
+        "lookY": 0.9,
+        "fov": 52
+       },
+       "focusY": 1.3,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "walk",
+       "expr": "smug",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -0.3,
+        -0.2
+       ],
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "walk",
+       "expr": "angry",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.9,
+        0.7
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The bully, Brax: low angle as he struts in",
+   "cue": [
+    "L4",
+    0
+   ],
+   "t0": 9.5,
+   "t1": 10.69
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      -0.8,
+      -0.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "tiger",
+     "at": [
+      0.5,
+      0.3
+     ],
+     "face": -15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.44,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.1,
+        1.3,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -5,
+        "dist": 6.2,
+        "height": -0.3,
+        "lookY": 0.6,
+        "fov": 52
+       },
+       "to": {
+        "angle": -2,
+        "dist": 5.6,
+        "height": -0.4,
+        "lookY": 0.6,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "idle",
+       "expr": "smug",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "bark",
+       "expr": "angry",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 0.368055555555556
+      }
+     ],
+     "pops": [
+      {
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0.368055555555556,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "His tiger: 12,000",
+   "cue": [
+    "L4",
+    5
+   ],
+   "t0": 10.69,
+   "t1": 12.13
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      -2.5,
+      1
+     ],
+     "face": 160
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.4,
+      1.2
+     ],
+     "face": 200
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      -0.5,
+      2
+     ],
+     "face": 180
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.3,
+      2.2
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.4,
+        -0.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 9,
+        "height": 1.6,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 8,
+        "height": 1.2,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "walk",
+       "expr": "happy",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -1.6,
+        -1
+       ],
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "walk",
+       "expr": "happy",
+       "face": 200,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.4,
+        -0.8
+       ],
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "walk",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -0.3,
+        0.2
+       ],
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "walk",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.5,
+        0.5
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "First day of school: kids arriving",
+   "cue": [
+    "L5",
+    0
+   ],
+   "t0": 12.13,
+   "t1": 13.47
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "tiger",
+     "at": [
+      -0.9,
+      0
+     ],
+     "face": 70
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.3,
+      0.1
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.02,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.5,
+        0.8,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6.8,
+        "height": 0.4,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6.8,
+        "height": 0.4,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tiger",
+       "action": "jump",
+       "expr": "angry",
+       "face": 70,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "scared",
+       "face": -90,
+       "at": 0,
+       "end": 0.35,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "scared",
+       "at": 0.35,
+       "end": 1,
+       "move": [
+        2.6,
+        0.4
+       ],
+       "ease": "linear",
+       "params": {
+        "arc": 1.1
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "impact",
+       "at": [
+        0.2,
+        0.4,
+        0.2
+       ],
+       "when": 0.0980392156862742,
+       "shake": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The tiger swipes at Nugget",
+   "cue": [
+    "L5",
+    6
+   ],
+   "t0": 13.47,
+   "t1": 14.49
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      -3.5,
+      0
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.95,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "nugget"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 55
+       },
+       "to": {
+        "angle": 8,
+        "dist": 5.5,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 55
+       },
+       "focusY": 0.9,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "scared",
+       "face": 90,
+       "at": 0,
+       "end": 0.6,
+       "move": [
+        3,
+        0.5
+       ],
+       "ease": "linear",
+       "params": {
+        "arc": 1.8
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "dust",
+       "at": [
+        3,
+        0.1,
+        0.5
+       ],
+       "when": 0.6
+      },
+      {
+       "type": "stars",
+       "at": [
+        3,
+        0.5,
+        0.5
+       ],
+       "when": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Nugget flies across the playground",
+   "cue": [
+    "L5",
+    11
+   ],
+   "t0": 14.49,
+   "t1": 15.44
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      -1.8,
+      -0.2
+     ],
+     "face": 10
+    },
+    {
+     "id": "mia",
+     "at": [
+      1.7,
+      -0.3
+     ],
+     "face": -10
+    },
+    {
+     "id": "zed",
+     "at": [
+      -0.6,
+      -1.4
+     ],
+     "face": 0
+    },
+    {
+     "id": "brax",
+     "at": [
+      0.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "id": "tiger",
+     "at": [
+      1.6,
+      0.6
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.87,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.5,
+        -0.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 8.4,
+        "height": 0.4,
+        "lookY": 0.3,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 7.6,
+        "height": 0.4,
+        "lookY": 0.3,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "idle",
+       "expr": "laugh",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "idle",
+       "expr": "laugh",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "idle",
+       "expr": "laugh",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "idle",
+       "expr": "smug",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The whole school filmed it (phones out, Brax laughing)",
+   "cue": [
+    "L5",
+    15
+   ],
+   "t0": 15.44,
+   "t1": 16.31
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0.18
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.31,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.6,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "idle",
+       "expr": "sad",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "shiver",
+       "expr": "cry",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 1
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "I picked him up, and he was shaking",
+   "cue": [
+    "L6",
+    0
+   ],
+   "t0": 16.31,
+   "t1": 17.62
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "dusk",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -0.6,
+      -0.8
+     ],
+     "face": 20
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.5,
+      -0.4
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.07,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.8,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0.8,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 4.4,
+        "height": 0.6,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "sit",
+       "expr": "sad",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "lie",
+       "expr": "sad",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "That night, in Max's room",
+   "cue": [
+    "L7",
+    0
+   ],
+   "t0": 17.62,
+   "t1": 18.69
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "dusk",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.71,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "think",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [
+      {
+       "char": "maxkid",
+       "icon": "?",
+       "when": 0.3802816901408459,
+       "dur": 1
+      }
+     ],
+     "propMoves": []
+    }
+   ],
+   "note": "I noticed something weird",
+   "cue": [
+    "L7",
+    5
+   ],
+   "t0": 18.69,
+   "t1": 19.4
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "dusk",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.42,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 1.9,
+        "height": 0.1,
+        "lookY": 0.25,
+        "fov": 42
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.5,
+        "height": 0.08,
+        "lookY": 0.25,
+        "fov": 42
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "glitch": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "1"
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "His number… had moved (the 0 flickers)",
+   "cue": [
+    "L7",
+    7
+   ],
+   "t0": 19.4,
+   "t1": 20.74
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "dusk",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -0.55,
+      -0.5
+     ],
+     "face": 20
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.35,
+      0.2
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.14,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.8,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 4.4,
+        "height": 0.4,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 4.4,
+        "height": 0.4,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "sit",
+       "expr": "surprised",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 0.49122807017544035
+      },
+      {
+       "char": "nugget",
+       "text": "1",
+       "color": "#7dff8a",
+       "when": 0.49122807017544035,
+       "end": 0.49122807017544035
+      }
+     ],
+     "pops": [
+      {
+       "text": "1",
+       "color": "#7dff8a",
+       "when": 0.49122807017544035,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": "nugget",
+       "when": 0.49122807017544035
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Zero… to one",
+   "cue": [
+    "L7",
+    11
+   ],
+   "t0": 20.74,
+   "t1": 21.88
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kitten",
+     "at": [
+      0.2,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.2,
+      -5.4
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.51,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.2,
+        0.4,
+        -3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 25,
+        "dist": 4.6,
+        "height": 1,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 15,
+        "dist": 3.8,
+        "height": 0.8,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kitten",
+       "action": "walk",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.2,
+        -1
+       ],
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "pull",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.2,
+        -1.7
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "1",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The next morning: Nugget pushes a lost kitten out of the road",
+   "cue": [
+    "L8",
+    0
+   ],
+   "t0": 21.88,
+   "t1": 23.39
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kitten",
+     "at": [
+      -0.3,
+      0
+     ],
+     "face": 30
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.3,
+      0.1
+     ],
+     "face": -30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.18,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.4,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.2,
+        "height": 0.15,
+        "lookY": 0.2,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.2,
+        "height": 0.15,
+        "lookY": 0.2,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kitten",
+       "action": "wag",
+       "expr": "happy",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": -30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "7",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0.7118644067796611
+      }
+     ],
+     "pops": [
+      {
+       "text": "7",
+       "color": "#7dff8a",
+       "when": 0.7118644067796611,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "hearts",
+       "at": [
+        0,
+        0.7,
+        0.2
+       ],
+       "when": 0.7118644067796611
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Seven",
+   "cue": [
+    "L8",
+    7
+   ],
+   "t0": 23.39,
+   "t1": 24.57
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": "rain",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "leaf",
+     "type": "leaf",
+     "at": [
+      -1.6,
+      0
+     ]
+    },
+    {
+     "id": "hw",
+     "type": "homework",
+     "at": [
+      -1.6,
+      0
+     ],
+     "y": 0.55
+    }
+   ],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      -1.6,
+      0
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.64,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "nugget"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -15,
+        "dist": 4,
+        "height": 0.3,
+        "lookY": 0.1,
+        "fov": 48
+       },
+       "to": {
+        "angle": 15,
+        "dist": 3.6,
+        "height": 0.25,
+        "lookY": 0.1,
+        "fov": 48
+       },
+       "focusY": 0.5,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "walk",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.2,
+        0
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "7",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0.7804878048780493
+      },
+      {
+       "char": "nugget",
+       "text": "40",
+       "color": "#7dff8a",
+       "when": 0.7804878048780493,
+       "end": 0.7804878048780493
+      }
+     ],
+     "pops": [
+      {
+       "text": "40",
+       "color": "#7dff8a",
+       "when": 0.7804878048780493,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "leaf",
+       "to": [
+        1.2,
+        0
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "hw",
+       "to": [
+        1.2,
+        0
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ]
+    }
+   ],
+   "note": "He carried my homework through the rain (leaf umbrella)",
+   "cue": [
+    "L9",
+    0
+   ],
+   "t0": 24.57,
+   "t1": 26.21
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "seed",
+     "at": [
+      0,
+      0.05
+     ]
+    }
+   ],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      -0.32,
+      0
+     ],
+     "face": 90
+    },
+    {
+     "id": "pigeon",
+     "at": [
+      0.32,
+      0
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.3,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.9,
+        "height": 0.2,
+        "lookY": 0.1,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.6,
+        "height": 0.15,
+        "lookY": 0.1,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "pigeon",
+       "action": "tilt",
+       "expr": "happy",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "40",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0.8162544169611308
+      },
+      {
+       "char": "nugget",
+       "text": "90",
+       "color": "#7dff8a",
+       "when": 0.8162544169611308,
+       "end": 0.8162544169611308
+      }
+     ],
+     "pops": [
+      {
+       "text": "90",
+       "color": "#7dff8a",
+       "when": 0.8162544169611308,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "hearts",
+       "at": [
+        0,
+        0.6,
+        0.1
+       ],
+       "when": 0.5300353356890463
+      },
+      {
+       "type": "sparkle",
+       "at": "nugget",
+       "when": 0.8162544169611308
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Sharing his last sunflower seed with a hungry pigeon",
+   "cue": [
+    "L9b",
+    0
+   ],
+   "t0": 26.21,
+   "t1": 29.04
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.95,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.85,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.8,
+        "height": 0.05,
+        "lookY": 0.1,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.5,
+        "height": 0.05,
+        "lookY": 0.1,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "think",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [
+      {
+       "char": "maxkid",
+       "icon": "idea",
+       "when": 0.3684210526315807,
+       "dur": 1
+      }
+     ],
+     "propMoves": []
+    }
+   ],
+   "note": "That's when I figured it out",
+   "cue": [
+    "L10",
+    0
+   ],
+   "t0": 29.04,
+   "t1": 29.99
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "tiger",
+     "at": [
+      0.8,
+      -0.3
+     ],
+     "face": -40
+    },
+    {
+     "id": "nugget",
+     "at": [
+      -0.6,
+      0.4
+     ],
+     "face": 30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.22,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.8,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -10,
+        "dist": 4.2,
+        "height": 0.2,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": -10,
+        "dist": 4.2,
+        "height": 0.2,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tiger",
+       "action": "bark",
+       "expr": "angry",
+       "face": -40,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "shiver",
+       "expr": "scared",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "nugget",
+       "text": "90",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Not by fighting (Nugget is tiny next to the tiger)",
+   "cue": [
+    "L10",
+    6
+   ],
+   "t0": 29.99,
+   "t1": 31.21
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    },
+    {
+     "id": "kitten",
+     "at": [
+      -0.8,
+      -0.5
+     ],
+     "face": 20
+    },
+    {
+     "id": "pigeon",
+     "at": [
+      0.8,
+      -0.5
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.28,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.4,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.9,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0.2,
+        "lookY": 0.2,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "kitten",
+       "action": "wag",
+       "expr": "happy",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "pigeon",
+       "action": "idle",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "90",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": "nugget",
+       "when": 0.3984374999999981
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "He got stronger by protecting people",
+   "cue": [
+    "L10",
+    12
+   ],
+   "t0": 31.21,
+   "t1": 32.49
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -3,
+      0
+     ],
+     "face": 90
+    },
+    {
+     "id": "nugget",
+     "at": [
+      -2.2,
+      0.6
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.27,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "maxkid",
+        "nugget"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -30,
+        "dist": 7,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "to": {
+        "angle": 30,
+        "dist": 7,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "focusY": 1,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "run",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        3,
+        0
+       ],
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "run",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        3.8,
+        0.6
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "So we trained. Every single day",
+   "cue": [
+    "L11",
+    0
+   ],
+   "t0": 32.49,
+   "t1": 33.76
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "bag",
+     "type": "groceries",
+     "at": [
+      -0.4,
+      0.5
+     ]
+    }
+   ],
+   "cast": [
+    {
+     "id": "grandma",
+     "at": [
+      -1.6,
+      -0.4
+     ],
+     "face": 90
+    },
+    {
+     "id": "nugget",
+     "at": [
+      -0.9,
+      0.5
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.93,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "grandma",
+        "nugget"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 6.4,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 10,
+        "dist": 6.4,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "focusY": 1,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandma",
+       "action": "walk",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.6,
+        -0.4
+       ],
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "pull",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.3,
+        0.5
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "90",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0.7150259067357527
+      },
+      {
+       "char": "nugget",
+       "text": "300",
+       "color": "#7dff8a",
+       "when": 0.7150259067357527,
+       "end": 0.7150259067357527
+      }
+     ],
+     "pops": [
+      {
+       "text": "300",
+       "color": "#7dff8a",
+       "when": 0.7150259067357527,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "bag",
+       "to": [
+        1.8,
+        0.5
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ]
+    }
+   ],
+   "note": "Helping Grandma carry her groceries",
+   "cue": [
+    "L12",
+    0
+   ],
+   "t0": 33.76,
+   "t1": 35.69
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "tree",
+     "at": [
+      0.6,
+      -0.8
+     ],
+     "scale": 1
+    },
+    {
+     "id": "bal",
+     "type": "balloon",
+     "at": [
+      0.4,
+      -0.2
+     ],
+     "y": 2.2
+    }
+   ],
+   "cast": [
+    {
+     "id": "tot",
+     "at": [
+      -1.2,
+      0.3
+     ],
+     "face": 30
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.3,
+      0.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.73,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.2,
+        1.4,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.6,
+        "height": 0,
+        "lookY": 0.5,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5.6,
+        "height": 0,
+        "lookY": 0.5,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tot",
+       "action": "scared",
+       "expr": "sad",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "determined",
+       "face": 0,
+       "at": 0.15,
+       "end": 0.55,
+       "params": {
+        "arc": 2.1
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "bal",
+       "to": [
+        -0.9,
+        0.3
+       ],
+       "y": 0.5,
+       "when": 0.55,
+       "end": 1
+      }
+     ]
+    }
+   ],
+   "note": "Saving a little kid's balloon from a tree",
+   "cue": [
+    "L13",
+    0
+   ],
+   "t0": 35.69,
+   "t1": 37.42
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "balloon",
+     "at": [
+      -1.05,
+      -0.4
+     ],
+     "y": 0.5
+    }
+   ],
+   "cast": [
+    {
+     "id": "tot",
+     "at": [
+      -0.5,
+      -0.2
+     ],
+     "face": 20
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.4,
+      0.4
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.76,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.1,
+        0.9,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tot",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "2,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0
+      }
+     ],
+     "pops": [
+      {
+       "text": "2,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        2.2,
+        0
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Two thousand",
+   "cue": [
+    "L13",
+    9
+   ],
+   "t0": 37.42,
+   "t1": 38.18
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      -2,
+      0.4
+     ],
+     "face": 90
+    },
+    {
+     "id": "puppy",
+     "at": [
+      -2.8,
+      0.3
+     ],
+     "face": 90
+    },
+    {
+     "id": "reyes",
+     "at": [
+      2.2,
+      -0.8
+     ],
+     "face": -60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.63,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "nugget",
+        "puppy"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.4,
+        "height": 0.6,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 10,
+        "dist": 5,
+        "height": 0.5,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "focusY": 0.7,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "pull",
+       "expr": "determined",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.8,
+        0.4
+       ],
+       "glasses": false
+      },
+      {
+       "char": "puppy",
+       "action": "walk",
+       "expr": "happy",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0,
+        0.3
+       ],
+       "glasses": false
+      },
+      {
+       "char": "reyes",
+       "action": "wave",
+       "expr": "happy",
+       "face": -60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "2,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Walking a lost puppy all the way home",
+   "cue": [
+    "L13b",
+    0
+   ],
+   "t0": 38.18,
+   "t1": 39.81
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "reyes",
+     "at": [
+      -0.6,
+      -0.6
+     ],
+     "face": 20
+    },
+    {
+     "id": "puppy",
+     "at": [
+      -0.2,
+      0.3
+     ],
+     "face": 10
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.5,
+      0.4
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.86,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.6,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5.6,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "reyes",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "puppy",
+       "action": "lick",
+       "expr": "happy",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "10,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 0
+      }
+     ],
+     "pops": [
+      {
+       "text": "10,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Ten thousand",
+   "cue": [
+    "L13b",
+    9
+   ],
+   "t0": 39.81,
+   "t1": 40.67
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "cart",
+     "type": "shoppingcart",
+     "at": [
+      -7,
+      0.5
+     ],
+     "ry": 0
+    }
+   ],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0.6
+     ],
+     "face": -90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.6,
+        0.6,
+        0.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 30,
+        "dist": 4.4,
+        "height": 0.2,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "to": {
+        "angle": 30,
+        "dist": 4.4,
+        "height": 0.2,
+        "lookY": 0.2,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "pull",
+       "expr": "determined",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "10,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "impact",
+       "at": [
+        -0.4,
+        0.6,
+        0.6
+       ],
+       "when": 0.6,
+       "shake": 0.7
+      }
+     ],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "cart",
+       "to": [
+        -0.9,
+        0.5
+       ],
+       "ease": "linear",
+       "when": 0,
+       "end": 0.6
+      }
+     ]
+    }
+   ],
+   "note": "Stopping a runaway shopping cart",
+   "cue": [
+    "L14",
+    0
+   ],
+   "t0": 40.67,
+   "t1": 42.01
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "shoppingcart",
+     "at": [
+      -1,
+      0.9
+     ],
+     "ry": 0.3
+    }
+   ],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      -1.8,
+      -0.8
+     ],
+     "face": 20
+    },
+    {
+     "id": "mia",
+     "at": [
+      1.8,
+      -0.8
+     ],
+     "face": -20
+    },
+    {
+     "id": "grandma",
+     "at": [
+      -0.9,
+      -1.8
+     ],
+     "face": 10
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      0.9,
+      -1.6
+     ],
+     "face": -10
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0.4
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        -0.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6,
+        "height": 0.6,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6,
+        "height": 0.6,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "grandma",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "88,000",
+       "color": "#ffe14a",
+       "when": 0,
+       "end": 0
+      }
+     ],
+     "pops": [
+      {
+       "text": "88,000",
+       "color": "#ffe14a",
+       "when": 0,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.82
+      }
+     ],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        3,
+        -0.5
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Eighty-eight thousand! The crowd goes wild",
+   "cue": [
+    "L14",
+    6
+   ],
+   "t0": 42.01,
+   "t1": 42.84
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      -0.3,
+      0
+     ],
+     "face": 15
+    },
+    {
+     "id": "tiger",
+     "at": [
+      0.9,
+      0.6
+     ],
+     "face": -15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.2,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.2,
+        1.5,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6.2,
+        "height": -0.9,
+        "lookY": 0.8,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6.2,
+        "height": -0.9,
+        "lookY": 0.8,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "idle",
+       "expr": "smug",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "But Brax just laughed",
+   "cue": [
+    "L15",
+    0
+   ],
+   "t0": 42.84,
+   "t1": 44.04
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.95,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2.1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 2.3,
+        "height": -0.1,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 5,
+        "dist": 2,
+        "height": -0.1,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "point",
+       "expr": "smug",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "\"A hamster with eighty-eight thousand?\"",
+   "cue": [
+    "L15",
+    4
+   ],
+   "t0": 44.04,
+   "t1": 44.99
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      0,
+      -0.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "tiger",
+     "at": [
+      0.9,
+      -0.2
+     ],
+     "face": -10
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      1.6
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.09,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.3,
+        1.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 1.8,
+        "height": 0.2,
+        "lookY": 1.4,
+        "fov": 60
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.8,
+        "height": 0.2,
+        "lookY": 1.4,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "angry",
+       "expr": "angry",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "bark",
+       "expr": "angry",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "88,000",
+       "color": "#ffe14a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "\"Prove it.\" (looking up from Nugget's height)",
+   "cue": [
+    "L15",
+    8
+   ],
+   "t0": 44.99,
+   "t1": 46.08
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "flash",
+   "transitionDur": 0.35,
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      -0.7,
+      0
+     ],
+     "face": 180
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.1,
+      0.4
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      1.1,
+      -0.3
+     ],
+     "face": 170
+    },
+    {
+     "id": "grandma",
+     "at": [
+      -1.9,
+      -0.5
+     ],
+     "face": 190
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.21,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6.5,
+        "height": -0.8,
+        "lookY": 2.4,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6,
+        "height": -1,
+        "lookY": 3.2,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "scared",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "scared",
+       "expr": "scared",
+       "face": 170,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "grandma",
+       "action": "scared",
+       "expr": "scared",
+       "face": 190,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Then the sky turned purple (everyone looks up)",
+   "cue": [
+    "L16",
+    0
+   ],
+   "t0": 46.08,
+   "t1": 47.29
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      2,
+      -60
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.02,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        2,
+        10,
+        -40
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 50,
+        "height": -6,
+        "lookY": 4,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 50,
+        "height": -6,
+        "lookY": 4,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": 0,
+       "at": 0,
+       "end": 0.9,
+       "params": {
+        "rise": [
+         -28,
+         0
+        ]
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "A shadow monster rises over the city",
+   "cue": [
+    "L17",
+    0
+   ],
+   "t0": 47.29,
+   "t1": 49.31
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      2,
+      -60
+     ],
+     "face": 0
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      1.2,
+      3
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.02,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1,
+        12,
+        -30
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 34,
+        "height": -11,
+        "lookY": 8,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 32,
+        "height": -11.5,
+        "lookY": 10,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "scared",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Taller than every skyscraper",
+   "cue": [
+    "L17",
+    8
+   ],
+   "t0": 49.31,
+   "t1": 50.33
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      10,
+      -48
+     ],
+     "face": -60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        2,
+        9,
+        -44
+       ],
+       "scale": false,
+       "from": {
+        "angle": 15,
+        "dist": 62,
+        "height": -5,
+        "lookY": 4,
+        "fov": 58
+       },
+       "to": {
+        "angle": 15,
+        "dist": 62,
+        "height": -5,
+        "lookY": 4,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "walk",
+       "expr": "angry",
+       "face": -60,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -2,
+        -44
+       ],
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Everywhere it walked…",
+   "cue": [
+    "L18",
+    0
+   ],
+   "t0": 50.33,
+   "t1": 51.16
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      -1.8,
+      0
+     ],
+     "face": 20
+    },
+    {
+     "id": "petdragon",
+     "at": [
+      1.8,
+      -0.2
+     ],
+     "face": -20
+    },
+    {
+     "id": "puppy",
+     "at": [
+      0,
+      0.6
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.4,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 8.4,
+        "height": 0.4,
+        "lookY": 0.6,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 8.4,
+        "height": 0.4,
+        "lookY": 0.6,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "scared",
+       "expr": "scared",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "petdragon",
+       "action": "scared",
+       "expr": "scared",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "puppy",
+       "action": "shiver",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "9,000",
+       "color": "#ffe14a",
+       "glitch": [
+        "9,000",
+        "900",
+        "90",
+        "9"
+       ],
+       "when": 0,
+       "end": 0.6857142857142835
+      },
+      {
+       "char": "lion",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0.6857142857142835,
+       "end": 1
+      },
+      {
+       "char": "petdragon",
+       "text": "50,000",
+       "color": "#7dff8a",
+       "glitch": [
+        "50,000",
+        "5,000",
+        "500",
+        "5"
+       ],
+       "when": 0,
+       "end": 0.6857142857142835
+      },
+      {
+       "char": "petdragon",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0.6857142857142835,
+       "end": 1
+      },
+      {
+       "char": "puppy",
+       "text": "800",
+       "color": "#ffffff",
+       "when": 0,
+       "end": 0.6857142857142835
+      },
+      {
+       "char": "puppy",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0.6857142857142835,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "…every pet's power dropped to zero",
+   "cue": [
+    "L18",
+    4
+   ],
+   "t0": 51.16,
+   "t1": 52.56
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      -0.95,
+      0
+     ],
+     "face": 15
+    },
+    {
+     "id": "petdragon",
+     "at": [
+      0.95,
+      -0.1
+     ],
+     "face": -15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.15,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 12,
+        "dist": 6.2,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "to": {
+        "angle": -12,
+        "dist": 6.2,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "sad",
+       "expr": "scared",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "petdragon",
+       "action": "sad",
+       "expr": "scared",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "petdragon",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The lions. The dragons.",
+   "cue": [
+    "L18",
+    10
+   ],
+   "t0": 52.56,
+   "t1": 53.71
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      -0.8,
+      -0.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "tiger",
+     "at": [
+      0.5,
+      0.3
+     ],
+     "face": -15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.99,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 4.6,
+        "height": 0,
+        "lookY": 0.5,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 4.6,
+        "height": 0,
+        "lookY": 0.5,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "scared",
+       "expr": "scared",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "shiver",
+       "expr": "scared",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 0.5757575757575749
+      },
+      {
+       "char": "tiger",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0.5757575757575749,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Even Brax's tiger",
+   "cue": [
+    "L18",
+    14
+   ],
+   "t0": 53.71,
+   "t1": 54.7
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "policedog",
+     "at": [
+      -1.6,
+      3
+     ],
+     "face": 180
+    },
+    {
+     "id": "firedragon",
+     "at": [
+      1.4,
+      3.4
+     ],
+     "face": 180
+    },
+    {
+     "id": "shadowbeast",
+     "at": [
+      0,
+      -48
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.25,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2,
+        -1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 10,
+        "height": -0.6,
+        "lookY": 2.2,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 10,
+        "height": -0.6,
+        "lookY": 2.2,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "policedog",
+       "action": "run",
+       "expr": "angry",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -1.2,
+        -3.5
+       ],
+       "glasses": false
+      },
+      {
+       "char": "firedragon",
+       "action": "run",
+       "expr": "angry",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1,
+        -3.5
+       ],
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "fire",
+       "at": [
+        1,
+        1.6,
+        -3
+       ],
+       "when": 0.6879999999999995
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Police dogs, fire dragons charge in…",
+   "cue": [
+    "L18b",
+    0
+   ],
+   "t0": 54.7,
+   "t1": 55.95
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "eagle",
+     "at": [
+      -3,
+      3
+     ],
+     "face": 150
+    },
+    {
+     "id": "shadowbeast",
+     "at": [
+      4,
+      -48
+     ],
+     "face": -10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.88,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        3,
+        -5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 15,
+        "height": -1.5,
+        "lookY": 2.5,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 15,
+        "height": -1.5,
+        "lookY": 2.5,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "eagle",
+       "action": "jump",
+       "expr": "angry",
+       "face": 150,
+       "at": 0,
+       "end": 1,
+       "move": [
+        2,
+        -12
+       ],
+       "params": {
+        "arc": 7
+       },
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "…even the mayor's giant eagle",
+   "cue": [
+    "L18b",
+    4
+   ],
+   "t0": 55.95,
+   "t1": 56.83
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "policedog",
+     "at": [
+      -1.4,
+      0
+     ],
+     "face": 20
+    },
+    {
+     "id": "firedragon",
+     "at": [
+      1.4,
+      -0.4
+     ],
+     "face": -20
+    },
+    {
+     "id": "eagle",
+     "at": [
+      0.3,
+      -2.4
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.05,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1,
+        -0.8
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 7.5,
+        "height": 1,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 7.5,
+        "height": 1,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "policedog",
+       "action": "lieDown",
+       "expr": "sad",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "firedragon",
+       "action": "lieDown",
+       "expr": "sad",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "eagle",
+       "action": "lie",
+       "expr": "sad",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "policedog",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "firedragon",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "eagle",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "smoke",
+       "at": [
+        0,
+        0.4,
+        0
+       ],
+       "when": 0.38095238095237804
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Nothing worked",
+   "cue": [
+    "L18b",
+    8
+   ],
+   "t0": 56.83,
+   "t1": 57.88
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      18,
+      -36
+     ],
+     "face": -60
+    },
+    {
+     "id": "brax",
+     "at": [
+      1.5,
+      2
+     ],
+     "face": 160
+    },
+    {
+     "id": "tiger",
+     "at": [
+      2.7,
+      2.4
+     ],
+     "face": 160
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.88,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        5,
+        8,
+        -12
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 30,
+        "height": -6.5,
+        "lookY": 5,
+        "fov": 64
+       },
+       "to": {
+        "angle": 0,
+        "dist": 30,
+        "height": -6.5,
+        "lookY": 5,
+        "fov": 64
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "walk",
+       "expr": "angry",
+       "face": -60,
+       "at": 0,
+       "end": 1,
+       "move": [
+        13,
+        -30
+       ],
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "shiver",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The monster turned toward the school",
+   "cue": [
+    "L19",
+    0
+   ],
+   "t0": 57.88,
+   "t1": 58.76
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.04,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2,
+        "height": 0,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "scared",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Toward Brax",
+   "cue": [
+    "L19",
+    5
+   ],
+   "t0": 58.76,
+   "t1": 59.8
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      13,
+      -30
+     ],
+     "face": -25
+    },
+    {
+     "id": "brax",
+     "at": [
+      2.7,
+      3
+     ],
+     "face": 160
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      0.3,
+      3.2
+     ],
+     "face": 160
+    },
+    {
+     "id": "noah",
+     "at": [
+      -1.1,
+      3.6
+     ],
+     "face": 160
+    },
+    {
+     "id": "mia",
+     "at": [
+      4.1,
+      3.6
+     ],
+     "face": 160
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.91,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        5,
+        7,
+        -6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 21,
+        "height": -6,
+        "lookY": 5.5,
+        "fov": 66
+       },
+       "to": {
+        "angle": 0,
+        "dist": 21,
+        "height": -6,
+        "lookY": 5.5,
+        "fov": 66
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": -25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "And nobody could stop it",
+   "cue": [
+    "L19",
+    8
+   ],
+   "t0": 59.8,
+   "t1": 60.71
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      0.6
+     ],
+     "face": 180
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0.25,
+      0.75
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.94,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.1,
+        -0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 150,
+        "dist": 5.6,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 52
+       },
+       "to": {
+        "angle": 150,
+        "dist": 5.6,
+        "height": 0.2,
+        "lookY": 0.3,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "scared",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 0.3,
+       "params": {
+        "lift": 1.55
+       },
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 0.3,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "jump",
+       "expr": "determined",
+       "at": 0.3,
+       "end": 0.75,
+       "move": [
+        0.1,
+        -1.4
+       ],
+       "params": {
+        "arc": 1,
+        "rise": [
+         1.55,
+         0
+        ]
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Nobody… except Nugget (he leaps out of Max's hood)",
+   "cue": [
+    "L20",
+    0
+   ],
+   "t0": 60.71,
+   "t1": 61.65
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      2.2,
+      1
+     ],
+     "face": 160
+    },
+    {
+     "id": "shadowbeast",
+     "at": [
+      13,
+      -30
+     ],
+     "face": -25
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      0.6,
+      3.2
+     ],
+     "face": 160
+    },
+    {
+     "id": "brax",
+     "at": [
+      3.5,
+      3
+     ],
+     "face": 160
+    },
+    {
+     "id": "noah",
+     "at": [
+      -0.8,
+      3.8
+     ],
+     "face": 160
+    },
+    {
+     "id": "mia",
+     "at": [
+      4.9,
+      3.8
+     ],
+     "face": 160
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        5,
+        7,
+        -6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -8,
+        "dist": 20,
+        "height": -6,
+        "lookY": 5.5,
+        "fov": 66
+       },
+       "to": {
+        "angle": -8,
+        "dist": 19,
+        "height": -6.2,
+        "lookY": 6,
+        "fov": 66
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "idle",
+       "expr": "angry",
+       "face": -25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "scared",
+       "expr": "scared",
+       "face": 160,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "He stood in front of the whole school",
+   "cue": [
+    "L21",
+    0
+   ],
+   "t0": 61.65,
+   "t1": 62.99
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "shadowbeast",
+     "at": [
+      13,
+      -30
+     ],
+     "face": -25
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.04,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        13,
+        15,
+        -30
+       ],
+       "scale": false,
+       "from": {
+        "angle": 30,
+        "dist": 34,
+        "height": -13,
+        "lookY": 5,
+        "fov": 60
+       },
+       "to": {
+        "angle": 30,
+        "dist": 34,
+        "height": -13,
+        "lookY": 5,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": -25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "bigdust",
+       "at": [
+        13,
+        0.5,
+        -26
+       ],
+       "when": 0.5192307692307688,
+       "shake": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "And the monster laughed",
+   "cue": [
+    "L21",
+    8
+   ],
+   "t0": 62.99,
+   "t1": 64.03
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.21,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -15,
+        "dist": 2.1,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": -15,
+        "dist": 2.1,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "point",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "I yelled, \"Nugget, run!\"",
+   "cue": [
+    "L21b",
+    0
+   ],
+   "t0": 64.03,
+   "t1": 65.24
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      9,
+      0
+     ],
+     "face": 172
+    },
+    {
+     "id": "shadowbeast",
+     "at": [
+      13,
+      -30
+     ],
+     "face": -25
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.81,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        9,
+        0.4,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -8,
+        "dist": 2.4,
+        "height": 0.15,
+        "lookY": 2.6,
+        "fov": 64
+       },
+       "to": {
+        "angle": -8,
+        "dist": 2.1,
+        "height": 0.1,
+        "lookY": 3,
+        "fov": 64
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 172,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "idle",
+       "expr": "angry",
+       "face": -25,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "But he didn't run",
+   "cue": [
+    "L21b",
+    4
+   ],
+   "t0": 65.24,
+   "t1": 66.05
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 150
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.42,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.42,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 1.7,
+        "height": 0.08,
+        "lookY": 0.18,
+        "fov": 42
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.4,
+        "height": 0.05,
+        "lookY": 0.18,
+        "fov": 42
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 150,
+       "at": 0,
+       "end": 0.45,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "wag",
+       "expr": "happy",
+       "face": 0,
+       "at": 0.45,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "He looked back at me… and smiled",
+   "cue": [
+    "L21b",
+    8
+   ],
+   "t0": 66.05,
+   "t1": 67.47
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.28,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.45,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.6,
+        "height": 0.15,
+        "lookY": 0.3,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.1,
+        "height": 0.12,
+        "lookY": 0.3,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "glitch": [
+        "0",
+        "9",
+        "0",
+        "99",
+        "0",
+        "9",
+        "#",
+        "0"
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "magic",
+       "at": "nugget",
+       "when": 0.7109374999999967
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Then Nugget's number started glitching",
+   "cue": [
+    "L22",
+    0
+   ],
+   "t0": 67.47,
+   "t1": 68.75
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.27,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0.45,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3,
+        "height": 0.2,
+        "lookY": 0.35,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0.15,
+        "lookY": 0.35,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "9",
+       "color": "#ffe14a",
+       "when": 0,
+       "end": 0.2599118942731297
+      },
+      {
+       "char": "nugget",
+       "text": "99",
+       "color": "#ffe14a",
+       "when": 0.2599118942731297,
+       "end": 0.43612334801761965
+      },
+      {
+       "char": "nugget",
+       "text": "999,999",
+       "color": "#ffe14a",
+       "when": 0.43612334801761965,
+       "end": 0.6343612334801764
+      },
+      {
+       "char": "nugget",
+       "text": "9,999,999,999",
+       "color": "#ffe14a",
+       "when": 0.6343612334801764,
+       "end": 0.7753303964757745
+      }
+     ],
+     "pops": [
+      {
+       "text": "9,999,999,999",
+       "color": "#ffe14a",
+       "when": 0.7753303964757745,
+       "dur": 1.2,
+       "y": 0.85,
+       "size": 0.8
+      }
+     ],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": "nugget",
+       "when": 0
+      },
+      {
+       "type": "magic",
+       "at": "nugget",
+       "when": 0.6343612334801764
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Nine… nine, nine… NINE BILLION!",
+   "cue": [
+    "L22",
+    5
+   ],
+   "t0": 68.75,
+   "t1": 71.02
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0.2,
+        "lookY": 0.6,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6,
+        "height": 0,
+        "lookY": 1,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "idle",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "grow": [
+         0.03571428571428571,
+         0.2
+        ]
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "magic",
+       "at": [
+        0,
+        0.5,
+        0.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "And he grew…",
+   "cue": [
+    "L23",
+    0
+   ],
+   "t0": 71.02,
+   "t1": 71.85
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      0,
+      -10
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.82,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        3,
+        -10
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 18,
+        "height": -1,
+        "lookY": 2,
+        "fov": 58
+       },
+       "to": {
+        "angle": 0,
+        "dist": 20,
+        "height": -1.5,
+        "lookY": 3,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "idle",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "grow": [
+         0.2,
+         0.45
+        ]
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Bigger than the trees",
+   "cue": [
+    "L23",
+    3
+   ],
+   "t0": 71.85,
+   "t1": 72.67
+  },
+  {
+   "environment": "school",
+   "envSeed": 4,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      -13,
+      -18
+     ],
+     "face": 15
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      -3,
+      2.5
+     ],
+     "face": 200
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.81,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -5,
+        7,
+        -10
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 28,
+        "height": -6,
+        "lookY": 4,
+        "fov": 64
+       },
+       "to": {
+        "angle": 0,
+        "dist": 30,
+        "height": -6.5,
+        "lookY": 6,
+        "fov": 64
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "idle",
+       "expr": "determined",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "grow": [
+         0.45,
+         1
+        ]
+       },
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "scared",
+       "expr": "surprised",
+       "face": 200,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Bigger than the school",
+   "cue": [
+    "L23",
+    7
+   ],
+   "t0": 72.67,
+   "t1": 73.48
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      -1,
+      -12
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.12,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -1,
+        8,
+        -12
+       ],
+       "scale": false,
+       "from": {
+        "angle": 8,
+        "dist": 30,
+        "height": -7.5,
+        "lookY": 3,
+        "fov": 62
+       },
+       "to": {
+        "angle": 4,
+        "dist": 27,
+        "height": -7.8,
+        "lookY": 3.5,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "idle",
+       "expr": "determined",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nuggetGold",
+       "text": "9,999,999,999",
+       "color": "#ffe14a",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": [
+        -1,
+        8,
+        -9
+       ],
+       "when": 0.2028301886792427
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "A giant golden hamster, glowing like the sun",
+   "cue": [
+    "L23",
+    11
+   ],
+   "t0": 73.48,
+   "t1": 75.6
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "purple",
+   "weather": null,
+   "music": "danger",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      -16,
+      -40
+     ],
+     "face": 60
+    },
+    {
+     "id": "shadowbeast",
+     "at": [
+      8,
+      -52
+     ],
+     "face": -60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.07,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -2,
+        12,
+        -46
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 66,
+        "height": -5,
+        "lookY": 4,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 66,
+        "height": -5,
+        "lookY": 4,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "idle",
+       "expr": "angry",
+       "face": 60,
+       "at": 0,
+       "end": 0.02,
+       "glasses": false
+      },
+      {
+       "char": "nuggetGold",
+       "action": "jump",
+       "expr": "angry",
+       "at": 0.02,
+       "end": 0.22,
+       "move": [
+        -5,
+        -46
+       ],
+       "params": {
+        "arc": 6
+       },
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "roar",
+       "expr": "angry",
+       "face": -60,
+       "at": 0,
+       "end": 0.22,
+       "glasses": false
+      },
+      {
+       "char": "shadowbeast",
+       "action": "scared",
+       "expr": "scared",
+       "face": -60,
+       "at": 0.22,
+       "end": 0.5,
+       "params": {
+        "grow": [
+         1,
+         0.01
+        ]
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "impact",
+       "at": [
+        2,
+        14,
+        -40
+       ],
+       "when": 0.0772946859903431,
+       "shake": 1.4
+      },
+      {
+       "type": "stars",
+       "at": [
+        6,
+        14,
+        -44
+       ],
+       "when": 0.492753623188409,
+       "shake": 1.2
+      },
+      {
+       "type": "sparkle",
+       "at": [
+        6,
+        14,
+        -43
+       ],
+       "when": 0.492753623188409
+      },
+      {
+       "type": "confetti",
+       "at": [
+        6,
+        16,
+        -43
+       ],
+       "when": 0.6811594202898579
+      },
+      {
+       "type": "magic",
+       "at": [
+        6,
+        12,
+        -43
+       ],
+       "when": 0.6811594202898579
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "One punch, and the monster exploded into stars",
+   "cue": [
+    "L24",
+    0
+   ],
+   "t0": 75.6,
+   "t1": 77.67
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "flash",
+   "transitionDur": 0.35,
+   "props": [],
+   "cast": [
+    {
+     "id": "noah",
+     "at": [
+      -1.8,
+      -0.4
+     ],
+     "face": 15
+    },
+    {
+     "id": "mia",
+     "at": [
+      1.8,
+      -0.4
+     ],
+     "face": -15
+    },
+    {
+     "id": "grandma",
+     "at": [
+      -0.7,
+      -1.4
+     ],
+     "face": 5
+    },
+    {
+     "id": "tot",
+     "at": [
+      0.7,
+      -0.9
+     ],
+     "face": -5
+    },
+    {
+     "id": "reyes",
+     "at": [
+      2.8,
+      -1.6
+     ],
+     "face": -20
+    },
+    {
+     "id": "owen",
+     "at": [
+      -2.8,
+      -1.6
+     ],
+     "face": 20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.39,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        -0.8
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 6.6,
+        "height": 0.6,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6.6,
+        "height": 0.6,
+        "lookY": 0.4,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "noah",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "grandma",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 5,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": -5,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "reyes",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "owen",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        3.5,
+        -0.5
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "The whole city chanted his name",
+   "cue": [
+    "L24b",
+    0
+   ],
+   "t0": 77.67,
+   "t1": 79.06
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "day",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nuggetGold",
+     "at": [
+      0,
+      -30
+     ],
+     "face": 0
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      -0.8,
+      1.5
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      0.8,
+      1.6
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.8,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        6,
+        -10
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 20,
+        "height": -4.5,
+        "lookY": 4,
+        "fov": 62
+       },
+       "to": {
+        "angle": 0,
+        "dist": 20,
+        "height": -4.5,
+        "lookY": 4,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nuggetGold",
+       "action": "wag",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        4,
+        0
+       ],
+       "when": 0
+      },
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        4,
+        0
+       ],
+       "when": 0.474999999999996
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Nugget! Nugget!",
+   "cue": [
+    "L24b",
+    6
+   ],
+   "t0": 79.06,
+   "t1": 79.86
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      -1.8,
+      0
+     ],
+     "face": 20
+    },
+    {
+     "id": "petdragon",
+     "at": [
+      1.8,
+      -0.2
+     ],
+     "face": -20
+    },
+    {
+     "id": "tiger",
+     "at": [
+      0,
+      -0.8
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.11,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 8.4,
+        "height": 0.5,
+        "lookY": 0.6,
+        "fov": 55
+       },
+       "to": {
+        "angle": 0,
+        "dist": 8.4,
+        "height": 0.5,
+        "lookY": 0.6,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "wag",
+       "expr": "happy",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "petdragon",
+       "action": "jump",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tiger",
+       "action": "idle",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "lion",
+       "text": "9,000",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "petdragon",
+       "text": "50,000",
+       "color": "#7dff8a",
+       "when": 0,
+       "end": 1
+      },
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": [
+        0,
+        2,
+        0
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "Every pet got its power back",
+   "cue": [
+    "L25",
+    0
+   ],
+   "t0": 79.86,
+   "t1": 80.97
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      2.6,
+      -0.4
+     ],
+     "face": -90
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      -0.7,
+      -0.2
+     ],
+     "face": 60
+    },
+    {
+     "id": "nugget",
+     "at": [
+      -0.2,
+      0.5
+     ],
+     "face": 30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.13,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.4,
+        "height": 0.4,
+        "lookY": 0.3,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5.4,
+        "height": 0.4,
+        "lookY": 0.3,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "walk",
+       "expr": "sad",
+       "face": -90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.7,
+        -0.3
+       ],
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "idle",
+       "expr": "happy",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "And Brax walked over…",
+   "cue": [
+    "L25",
+    6
+   ],
+   "t0": 80.97,
+   "t1": 82.1
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "brax",
+     "at": [
+      0.6,
+      -0.3
+     ],
+     "face": -60
+    },
+    {
+     "id": "maxkid",
+     "at": [
+      -0.6,
+      -0.2
+     ],
+     "face": 60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.8,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.7,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3.4,
+        "height": 0.1,
+        "lookY": 0.1,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 3.4,
+        "height": 0.1,
+        "lookY": 0.1,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "brax",
+       "action": "idle",
+       "expr": "sad",
+       "face": -60,
+       "at": 0,
+       "end": 0.6,
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "bow",
+       "expr": "sad",
+       "face": -60,
+       "at": 0.6,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "maxkid",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "…and for the first time ever, he said sorry",
+   "cue": [
+    "L25",
+    11
+   ],
+   "t0": 82.1,
+   "t1": 83.9
+  },
+  {
+   "environment": "house",
+   "envSeed": 4,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "maxkid",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    },
+    {
+     "id": "nugget",
+     "at": [
+      0,
+      0.18
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.7,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.45,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0.1,
+        "lookY": 0.05,
+        "fov": 45
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.9,
+        "height": 0.05,
+        "lookY": 0.05,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "maxkid",
+       "action": "idle",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "nugget",
+       "action": "lie",
+       "expr": "sleepy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "params": {
+        "lift": 1
+       },
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "nugget",
+       "text": "9,999,999,999",
+       "color": "#ffe14a",
+       "when": 0,
+       "end": 0.08518518518518176
+      },
+      {
+       "char": "nugget",
+       "text": "0",
+       "color": "#ff5a5a",
+       "when": 0.08518518518518176,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [
+      {
+       "char": "nugget",
+       "icon": "zzz",
+       "when": 0.7370370370370383,
+       "dur": 1
+      }
+     ],
+     "propMoves": []
+    }
+   ],
+   "note": "Nugget shrank back down, curled up in my hand, and fell asleep",
+   "cue": [
+    "L26",
+    0
+   ],
+   "t0": 83.9,
+   "t1": 86.6
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "tiger",
+     "at": [
+      0.4,
+      0
+     ],
+     "face": -20
+    },
+    {
+     "id": "brax",
+     "at": [
+      1.4,
+      -0.8
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.43,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.4,
+        1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 4.4,
+        "height": 0.3,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 3.8,
+        "height": 0.3,
+        "lookY": 0.3,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tiger",
+       "action": "idle",
+       "expr": "neutral",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "brax",
+       "action": "idle",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "But then I looked at Brax's tiger…",
+   "cue": [
+    "L27",
+    0
+   ],
+   "t0": 86.6,
+   "t1": 88.03
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 6,
+   "lighting": "sunset",
+   "weather": null,
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "tiger",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.918,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3.6,
+        "height": 0.2,
+        "lookY": 0.5,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.4,
+        "height": 0.15,
+        "lookY": 0.6,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "tiger",
+       "action": "tilt",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "labels": [
+      {
+       "char": "tiger",
+       "text": "12,000",
+       "color": "#ff9b3d",
+       "glitch": [
+        "12,000",
+        "12,000",
+        "99,999",
+        "12,000",
+        "?????",
+        "12,0#0",
+        "999,999"
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": []
+    }
+   ],
+   "note": "…and its number was glitching too",
+   "cue": [
+    "L27",
+    7
+   ],
+   "t0": 88.03,
+   "t1": 90.948
+  }
+ ]
+}

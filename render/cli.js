@@ -20,7 +20,7 @@ import { synthLine } from './tts.js';
 import { buildAss } from './subtitles.js';
 import { renderVideo } from './frames.js';
 import { verifyVideo } from './verify.js';
-import { run, have, log } from './util.js';
+import { run, have, log, decodeAudio } from './util.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -54,7 +54,7 @@ const { values: opt } = parseArgs({
 const RES = { '720p': [720, 1280], '1080p': [1080, 1920], '1440p': [1440, 2560], '4k': [2160, 3840] };
 
 async function main() {
-  for (const tool of ['ffmpeg', 'ffprobe', 'espeak-ng']) if (!have(tool)) throw new Error(`${tool} is not installed (see docs/SETUP.md)`);
+  for (const tool of ['ffmpeg', 'ffprobe']) if (!have(tool)) throw new Error(`${tool} is not installed (see docs/SETUP.md)`);
   const [width, height] = RES[opt.res] || RES['1080p'];
   const fps = Number(opt.fps);
   const outFile = path.resolve(opt.out);
@@ -87,10 +87,20 @@ async function main() {
     run('npx', ['vite', 'build', '--logLevel', 'error'], { cwd: ROOT, stdio: 'inherit' });
   }
 
-  // 3. voices (TTS) – speed up a little if the story is longer than the target
-  const lines = collectLines(sb);
-  let speed = 1, timings, timeline;
-  for (let pass = 0; pass < 3; pass++) {
+  // 3. voices: a pre-recorded narration file (+ word alignment), or TTS per line
+  const lines = sb.narration ? [] : collectLines(sb);
+  if (lines.length && !have('espeak-ng')) throw new Error('espeak-ng is not installed (see docs/SETUP.md)');
+  let speed = 1, timings, timeline, narrationPcm = null;
+  if (sb.narration) {
+    const al = JSON.parse(fs.readFileSync(path.resolve(ROOT, sb.narration.alignment), 'utf8'));
+    narrationPcm = decodeAudio(path.resolve(ROOT, sb.narration.audio), SR);
+    const off = sb.narration.offset || 0;
+    timeline = buildTimeline(sb, { narration: { lines: al.lines, offset: off }, fps, width, height });
+    timings = {};
+    for (const l of timeline.lines) timings[l.id] = { pcm: narrationPcm.subarray(Math.floor((l.start - off) * SR), Math.ceil((l.end - off) * SR)) };
+    log(`Narration: ${sb.narration.audio} (${(narrationPcm.length / SR).toFixed(2)}s, ${timeline.lines.length} aligned lines) → timeline ${timeline.duration.toFixed(2)}s`);
+  }
+  for (let pass = 0; pass < 3 && !sb.narration; pass++) {
     timings = {};
     for (const l of lines) timings[l.id] = synthLine(l, { narratorVoice: sb.narratorVoice, speedFactor: speed, workDir });
     timeline = buildTimeline(sb, { lineTimings: timings, fps, width, height });
@@ -101,7 +111,7 @@ async function main() {
     speed = Math.min(1.35, speed * (speechTotal / Math.max(0.5, speechTotal - over)) * 1.02);
     log(`  story is ${over.toFixed(2)}s too long – re-voicing at ${speed.toFixed(2)}x speed`);
   }
-  log(`Voices: ${lines.length} lines, speed ${speed.toFixed(2)}x → timeline ${timeline.duration.toFixed(2)}s`);
+  if (!sb.narration) log(`Voices: ${lines.length} lines, speed ${speed.toFixed(2)}x → timeline ${timeline.duration.toFixed(2)}s`);
   const lean = JSON.parse(JSON.stringify(timeline));
   fs.writeFileSync(path.join(workDir, 'timeline.json'), JSON.stringify(lean, null, 1));
 
@@ -123,13 +133,15 @@ async function main() {
     });
   }
   const clips = [];
-  for (const line of timeline.lines) clips.push({ pcm: timings[line.id].pcm, at: line.start, gain: 0.95 * voiceVolume, voice: true });
+  if (narrationPcm) clips.push({ pcm: narrationPcm, at: sb.narration.offset || 0, gain: 0.95 * voiceVolume, voice: true });
+  else for (const line of timeline.lines) clips.push({ pcm: timings[line.id].pcm, at: line.start, gain: 0.95 * voiceVolume, voice: true });
   for (const s of timeline.sfx) clips.push({ pcm: makeSfx(s.name), at: s.t, gain: (s.gain ?? 0.8) * 0.55 * sfxVolume, duck: true });
   for (const s of timeline.scenes) if (s.ambience) clips.push({ pcm: ambience(s.ambience, s.end - s.start + 0.6, SR, s.index + 1), at: Math.max(0, s.start - 0.3), gain: 0.25 * sfxVolume, duck: true });
   const mixStats = {};
   const audio = mix({ duration: timeline.duration, music, musicGain: timeline.music.gain, clips, speech: timeline.lines, stats: mixStats });
   const voiceStem = new Float32Array(Math.floor(timeline.duration * SR));
-  for (const line of timeline.lines) { const p = timings[line.id].pcm, o = Math.round(line.start * SR); for (let i = 0; i < p.length && o + i < voiceStem.length; i++) voiceStem[o + i] += p[i]; }
+  if (narrationPcm) { const o = Math.round((sb.narration.offset || 0) * SR); for (let i = 0; i < narrationPcm.length && o + i < voiceStem.length; i++) voiceStem[o + i] = narrationPcm[i]; }
+  else for (const line of timeline.lines) { const p = timings[line.id].pcm, o = Math.round(line.start * SR); for (let i = 0; i < p.length && o + i < voiceStem.length; i++) voiceStem[o + i] += p[i]; }
   const audioFile = path.join(workDir, 'audio.wav');
   fs.writeFileSync(audioFile, encodeWav(audio, SR));
   if (opt['audio-only']) { log(`Audio-only: voice is ${mixStats.voiceOverBackgroundDb.toFixed(1)} dB above music+effects during speech → ${audioFile}`); return; }

@@ -39,9 +39,11 @@ export function applyLighting(player, env, preset) {
   player.renderer.toneMappingExposure = player.baseExposure;
   // lit windows/lamps glow more at night
   const glow = preset === 'night' || preset === 'storm' || preset === 'dusk' || preset === 'purple';
+  const CLOUD = { purple: '#6a3a9a', night: '#3a4560', storm: '#6a7080', dusk: '#e0a0b0', sunset: '#ffd2b0' };
   env.group.traverse((o) => {
+    if (o.material && o.material.userData.skyTint) o.material.color.set(CLOUD[preset] || '#ffffff');
     if (o.material && o.material.emissive && o.material.emissiveIntensity > 0 && !o.material.userData.baseEI) o.material.userData.baseEI = o.material.emissiveIntensity;
-    if (o.material && o.material.userData.baseEI) o.material.emissiveIntensity = o.material.userData.baseEI * (glow ? 3 : 1);
+    if (o.material && o.material.userData.baseEI) o.material.emissiveIntensity = o.material.userData.baseEI * (glow ? (player.brightStyle ? 1.4 : 3) : 1);
   });
 }
 

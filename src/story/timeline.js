@@ -66,7 +66,7 @@ export function buildTimeline(storyboard, opts = {}) {
     let timing = null;
     if (b.line && b.line.text) timing = timings[id] || estimateLineTiming(b.line.text);
     const speech = timing ? LEAD_IN + timing.duration + PAD_AFTER : 0;
-    const dur = Math.max(b.minDuration || 1.0, speech);
+    const dur = b.duration != null ? b.duration : Math.max(b.minDuration || 1.0, speech);
     beatInfo.push({ si, bi, id, timing, dur, speech });
   }));
 
@@ -147,6 +147,10 @@ export function buildTimeline(storyboard, opts = {}) {
       for (const s of b.sfx || []) sfx.push({ t: at(s.when), name: s.name, gain: s.gain ?? 0.8 });
       for (const l of b.labels || []) scene.labels.push({ ...l, t0: at(l.when), t1: at(l.end ?? 1) });
       for (const p of b.pops || []) { scene.pops.push({ ...p, t0: at(p.when), t1: at(p.when) + (p.dur || 0.9) }); sfx.push({ t: at(p.when), name: p.sfx || 'pop', gain: 0.7 }); }
+      for (const m of b.propMoves || []) {
+        const prop = scene.props.find((p) => p.id === m.prop);
+        if (prop) (prop.moves ||= []).push({ to: m.to, y: m.y, spin: m.spin, ease: m.ease, t0: at(m.when ?? 0), t1: at(m.end ?? 1) });
+      }
       for (const d of b.destroy || []) {
         const prop = scene.props.find((p) => p.id === d.prop);
         if (!prop) continue;
@@ -181,6 +185,17 @@ export function buildTimeline(storyboard, opts = {}) {
     scenes.push(scene);
   });
 
+  // pre-recorded narration (one audio file + forced-alignment word times)
+  if (opts.narration) {
+    const off = opts.narration.offset || 0;
+    for (const l of opts.narration.lines) {
+      if (l.start + off >= clock) continue; // (a preview cut of the story stops early)
+      lines.push({
+        id: l.id, speaker: 'narrator', text: l.text, start: l.start + off, end: l.end + off,
+        words: l.words.map((w) => ({ w: w.w, start: w.start + off, end: w.end + off })),
+      });
+    }
+  }
   sfx.sort((a, b) => a.t - b.t);
   return {
     version: 1, title: storyboard.title, seed: storyboard.seed || 7, fps, width, height,

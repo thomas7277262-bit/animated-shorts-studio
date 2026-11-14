@@ -251,7 +251,17 @@ export class StoryPlayer {
       if (d >= 0 && d < 0.16) { blink = Math.sin((d / 0.16) * Math.PI); break; }
     }
     const glasses = idx >= 0 ? segs[idx].glasses !== false : true;
-    return { pos, facing, pose, face: { expr, blink, mouth, lookX: 0, lookY: 0 }, prop, glasses };
+    // optional body lift (knock-back / leap arcs) and size change (growing)
+    let lift = 0, grow = 1;
+    for (const sg of segs) {
+      const pr = sg.params; if (!pr || t < sg.t0) continue;
+      const u = clamp((t - sg.t0) / Math.max(0.001, sg.t1 - sg.t0), 0, 1);
+      if (pr.grow) grow = pr.grow[0] + (pr.grow[1] - pr.grow[0]) * easeInOut(u);
+      if (pr.arc && t < sg.t1) lift += 4 * u * (1 - u) * pr.arc;
+      if (pr.lift != null) lift += pr.lift;
+      if (pr.rise) lift += pr.rise[0] + (pr.rise[1] - pr.rise[0]) * easeInOut(u);
+    }
+    return { pos, facing, pose, face: { expr, blink, mouth, lookX: 0, lookY: 0 }, prop, glasses, lift, grow };
   }
 
   headWorld(id) {
@@ -288,7 +298,8 @@ export class StoryPlayer {
       c.root.visible = castIds.has(id);
       if (!c.root.visible) continue;
       const st = this.evalCharacter(s, id, t);
-      c.root.position.set(st.pos.x, 0, st.pos.z);
+      c.root.position.set(st.pos.x, st.lift || 0, st.pos.z);
+      c.root.scale.setScalar(st.grow || 1);
       c.root.rotation.y = st.facing;
       c.applyPose(st.pose, t);
       c.setFace(st.face);
@@ -328,7 +339,9 @@ export class StoryPlayer {
       if (t < lb.t0 || t > lb.t1) continue;
       const c = this.characters[lb.char]; if (!c || !c.root.visible) continue;
       const hp = this.headWorld(lb.char);
-      const sc = c.kind === 'animal' ? Math.min(2.6, Math.max(0.55, (c.spec.scale || 1) * 0.55)) : 0.6;
+      let sc = c.kind === 'animal' ? Math.min(2.6, Math.max(0.55, (c.spec.scale || 1) * 0.55)) : 0.6;
+      // keep tags readable but never screen-filling in close-ups
+      sc = Math.min(sc, Math.max(0.12, hp.distanceTo(this.camera.position) * 0.11));
       // a glitching number flickers between its values
       const text = lb.glitch ? lb.glitch[Math.floor(t * 14) % lb.glitch.length] : lb.text;
       sprites.push({ kind: 'label', key: text, color: lb.color || '#ffe14a', pos: hp.add(new THREE.Vector3(0, c.dims.headR * 1.6 + 0.35 * sc + (lb.dy || 0), 0)), age: t - lb.t0, life: lb.t1 - lb.t0, size: sc });
@@ -347,7 +360,7 @@ export class StoryPlayer {
     // draw
     this.renderer.clear();
     if (this.composer) {
-      this.bloomPass.strength = ['night', 'storm', 'dusk', 'purple'].includes(s.lighting) ? 0.75 : this.bloomDayOff ? 0 : 0.35;
+      this.bloomPass.strength = ['night', 'storm', 'dusk', 'purple'].includes(s.lighting) ? (this.brightStyle ? 0.4 : 0.75) : this.bloomDayOff ? 0 : 0.35;
       this.composer.render();
     } else this.renderer.render(this.scene, this.camera);
     const tr = this.transitionAt(t);
@@ -372,6 +385,17 @@ export class StoryPlayer {
     this.activeProps = entry;
     animateEnvironment(entry.group, t);
     for (const { spec, obj } of entry.items) {
+      if (spec.moves) {
+        let x = spec.at[0], z = spec.at[1], y = spec.y || 0, ry = spec.ry || 0;
+        for (const m of spec.moves) {
+          if (t <= m.t0) break;
+          const u0 = clamp((t - m.t0) / Math.max(0.001, m.t1 - m.t0), 0, 1);
+          const u = m.ease === 'linear' ? u0 : easeInOut(u0);
+          const tx = m.to ? m.to[0] : x, tz = m.to ? m.to[1] : z, ty = m.y ?? y;
+          x += (tx - x) * u; z += (tz - z) * u; y += (ty - y) * u; ry += (m.spin || 0) * u;
+        }
+        obj.position.set(x, y, z); obj.rotation.y = ry;
+      }
       if (spec.collapseT === undefined) continue;
       const u = clamp((t - spec.collapseT) / 1.1, 0, 1);
       const e = u * u;
@@ -407,7 +431,7 @@ export class StoryPlayer {
       return v;
     }
     const focus = one ? (one.kind === 'creature' ? one.height * 0.62 : one.height - 0.45) : 1.25;
-    v.y = focus;
+    v.y = shot.focusY ?? focus;
     if (shot.offset) { v.x += shot.offset[0]; v.y += shot.offset[1]; v.z += shot.offset[2]; }
     return v;
   }

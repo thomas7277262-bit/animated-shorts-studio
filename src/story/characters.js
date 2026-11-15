@@ -301,3 +301,69 @@ export const LIGHTS_CAST = {
 };
 for (const [k, v] of Object.entries(LIGHTS_CAST)) v.id = k;
 Object.assign(CHARACTER_LIBRARY, LIGHTS_CAST);
+
+// "Every Time I Sneeze, I Swap Places With a Stranger" cast
+export const SNEEZE_CAST = {
+  max: {
+    name: 'Max', role: 'hero kid', style: 'blocky', height: 0.86,
+    skin: '#f0c19a', hair: '#7a4a22', hairStyle: 'spiky', cheeks: true,
+    shirt: '#2fbf71', shirtDetail: 'hoodie', shirtAccent: '#ffffff', sleeves: 'long', hood: true,
+    pants: '#2c3e70', shoes: '#ff8a1a', accent: '#2fbf71', eyeStyle: 'round', brows: 'normal',
+    personality: 'allergic to everything, quick, panics then improvises',
+  },
+  teacher: {
+    name: 'Ms Park', role: 'maths teacher', style: 'blocky', height: 1.0,
+    skin: '#e8b48a', hair: '#1d1209', hairStyle: 'bun', accessory: 'glasses',
+    shirt: '#7e57c2', shirtDetail: 'blouse', shirtAccent: '#ffffff', sleeves: 'long', pants: '#3d3d55', shoes: '#4a2e18',
+    accent: '#7e57c2', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'strict, secretly delighted',
+  },
+  chef: {
+    name: 'Chef Tony', role: 'pizza chef', style: 'blocky', height: 1.05,
+    skin: '#e3ae84', hair: '#2b1a10', hairStyle: 'chef', beard: '#2b1a10',
+    shirt: '#ffffff', shirtDetail: 'zip', shirtAccent: '#d8402a', sleeves: 'long', pants: '#2f2f2f', shoes: '#1d1d1d',
+    accent: '#d8402a', eyeStyle: 'round', brows: 'thick', cheeks: true, personality: 'loud, confused, good at maths',
+  },
+  zookeeper: {
+    name: 'Zookeeper', role: 'zookeeper', style: 'blocky', height: 1.02,
+    skin: '#c98d62', hair: '#1d1209', hairStyle: 'cap', hatColor: '#8a7a4a',
+    shirt: '#b5a46a', shirtDetail: 'zip', shirtAccent: '#6b5d33', sleeves: 'short', pants: '#6b5d33', shoes: '#4a2e18',
+    accent: '#8a7a4a', eyeStyle: 'round', brows: 'normal', cheeks: false, personality: 'calm with lions, panics at fractions',
+  },
+  bride: {
+    name: 'Bride', role: 'bride', style: 'blocky', height: 1.0,
+    skin: '#f1c9a6', hair: '#c98a3a', hairStyle: 'veil',
+    shirt: '#ffffff', shirtDetail: 'dress', shirtAccent: '#ffd1e3', sleeves: 'short', pants: '#ffffff', shoes: '#ffffff',
+    accent: '#ffd1e3', eyeStyle: 'lashes', brows: 'thin', cheeks: true, personality: 'very confused',
+  },
+  firefighter: {
+    name: 'Firefighter', role: 'fire truck driver', style: 'blocky', height: 1.08,
+    skin: '#8d5a3b', hair: '#111111', hairStyle: 'firehat',
+    shirt: '#3a3a3a', shirtDetail: 'stripe', shirtAccent: '#ffd23f', sleeves: 'long', pants: '#3a3a3a', shoes: '#111111',
+    accent: '#ffd23f', eyeStyle: 'round', brows: 'thick', cheeks: false, personality: 'brave',
+  },
+  pilot: {
+    name: 'Captain', role: 'airline pilot', style: 'blocky', height: 1.06,
+    skin: '#f1c9a6', hair: '#6b6b6b', hairStyle: 'cap', hatColor: '#1f2f4f',
+    shirt: '#1f2f4f', shirtDetail: 'tie', shirtAccent: '#ffc21a', sleeves: 'long', pants: '#1f2f4f', shoes: '#111111',
+    accent: '#ffc21a', eyeStyle: 'round', brows: 'bushy', cheeks: false, personality: 'calm, loves pepper sandwiches',
+  },
+  doctor: {
+    name: 'Doctor', role: 'doctor', style: 'blocky', height: 1.02,
+    skin: '#c98d62', hair: '#1d1209', hairStyle: 'slick', accessory: 'glasses',
+    shirt: '#ffffff', shirtDetail: 'suit', shirtAccent: '#4fb6ff', sleeves: 'long', pants: '#4f6d8a', shoes: '#1d1d1d',
+    accent: '#4fb6ff', eyeStyle: 'round', brows: 'normal', cheeks: false, personality: 'kind',
+  },
+  goalie: {
+    name: 'Goalkeeper', role: 'goalkeeper', style: 'blocky', height: 1.06,
+    skin: '#e3ae84', hair: '#c98a3a', hairStyle: 'swept',
+    shirt: '#ffd23f', shirtDetail: 'stripe', shirtAccent: '#1b1b1b', sleeves: 'long', pants: '#1b1b1b', shoes: '#2fbf71',
+    accent: '#ffd23f', eyeStyle: 'determined', brows: 'thick', cheeks: false, personality: 'never misses a save',
+  },
+  lion: {
+    name: 'Lion', kind: 'animal', model: 'dog', scale: 1.5,
+    fur: '#e0a743', belly: '#f3d08a', muzzle: '#f6dfa6', faceFur: '#e7b452', mane: '#a8561c', ears: 'round', earColor: '#b8701f', earSize: 0.22,
+    tail: 'long', tailTip: '#7a3a12', headScale: 1.15, eyeStyle: 'determined', brows: 'thick', accent: '#e0a743',
+  },
+};
+for (const [k, v] of Object.entries(SNEEZE_CAST)) v.id = k;
+Object.assign(CHARACTER_LIBRARY, SNEEZE_CAST);

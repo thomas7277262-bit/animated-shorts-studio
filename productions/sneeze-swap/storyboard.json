@@ -1,0 +1,5960 @@
+{
+ "title": "Every Time I Sneeze, I Swap Places With a Stranger",
+ "seed": 5,
+ "style": "bright",
+ "captionStyle": "yellow",
+ "mood": "comedy",
+ "narration": {
+  "audio": "productions/sneeze-swap/audio/narration_james_raw_elevenlabs.mp3",
+  "alignment": "productions/sneeze-swap/timing/alignment.json",
+  "offset": 0
+ },
+ "musicVolume": 0.26,
+ "sfxVolume": 0.8,
+ "voiceVolume": 1,
+ "animSpeed": 1.2,
+ "characters": [
+  "max",
+  "noah",
+  "mia",
+  "zed",
+  "tot",
+  "grandma",
+  "teacher",
+  "chef",
+  "lion",
+  "zookeeper",
+  "bride",
+  "pilot",
+  "goalie",
+  "doctor",
+  "mum"
+ ],
+ "scenes": [
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.25,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 173.3455749539934,
+        "dist": 3.020347662107791,
+        "height": 0.5999999999999999,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 172.8749836510982,
+        "dist": 2.4186773244895647,
+        "height": 0.54,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sitWrite",
+       "expr": "sad",
+       "face": 180,
+       "at": 0,
+       "end": 0.20533333333333328,
+       "glasses": false
+      },
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0.20533333333333328,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.15,
+        1.95,
+        0.7
+       ],
+       "size": 0.42,
+       "when": 0.472,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.4,
+        1
+       ],
+       "when": 0.8880000000000001,
+       "shake": 0.5
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Max at his desk… sneezes (\"Every time I sneeze\")",
+   "cue": [
+    "L1",
+    0
+   ],
+   "t0": 0,
+   "t1": 1.25
+  },
+  {
+   "environment": "downtown",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      2.2
+     ],
+     "face": 10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.1,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -15,
+        "dist": 4.2,
+        "height": 0.3,
+        "lookY": 0.1,
+        "fov": 52
+       },
+       "to": {
+        "angle": 15,
+        "dist": 3.4,
+        "height": 0.2,
+        "lookY": 0.1,
+        "fov": 52
+       },
+       "focusY": 1.4,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "surprised",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "SWAP!",
+       "color": "#ff5fa2",
+       "when": 0.1523809523809524,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.7
+      }
+     ],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1,
+        2.2
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…and swap places with a random stranger: Max is suddenly on a busy street holding someone's shopping",
+   "cue": [
+    "L1",
+    5
+   ],
+   "t0": 1.25,
+   "t1": 3.35
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "grandma",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.68,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 173.75808565258495,
+        "dist": 3.2190837205639746,
+        "height": 1.2,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 173.418055344822,
+        "dist": 2.6172504656604803,
+        "height": 1.0799999999999998,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "grandma",
+       "action": "sitPanic",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.4,
+        1.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [
+      {
+       "char": "grandma",
+       "icon": "?",
+       "when": 0.11904761904761887,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…and the stranger (a grandma) lands at his school desk, totally confused",
+   "cue": [
+    "L1",
+    11
+   ],
+   "t0": 3.35,
+   "t1": 5.03
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -2,
+      1.2
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.52,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 45,
+        "dist": 4.8,
+        "height": 0.4,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "to": {
+        "angle": 25,
+        "dist": 3.8,
+        "height": 0.3,
+        "lookY": 0.2,
+        "fov": 50
+       },
+       "focusY": 1.5,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "walk",
+       "expr": "sad",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        1.2,
+        1.2
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "POLLEN",
+       "color": "#ffd23f",
+       "when": 0.5197368421052633,
+       "dur": 0.8,
+       "y": 0.8,
+       "size": 0.6
+      }
+     ],
+     "comic": [],
+     "fx": [
+      {
+       "type": "sparkle",
+       "at": [
+        -0.5,
+        2.2,
+        1.2
+       ],
+       "when": 0.5197368421052633
+      },
+      {
+       "type": "sparkle",
+       "at": [
+        0.6,
+        1.9,
+        1.2
+       ],
+       "when": 0.9276315789473688
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Today the pollen count was the highest in history: Max walking past blooming trees, itchy nose",
+   "cue": [
+    "L2",
+    0
+   ],
+   "t0": 5.03,
+   "t1": 6.55
+  },
+  {
+   "environment": "suburb",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.5,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3.2,
+        "height": 0.1,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.1,
+        "height": 0,
+        "lookY": 0,
+        "fov": 48
+       },
+       "focusY": 1.75,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "RECORD HIGH!",
+       "color": "#ff3b3b",
+       "when": 0.05333333333333335,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.62
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…highest in history (big red RECORD pop)",
+   "cue": [
+    "L2",
+    6
+   ],
+   "t0": 6.55,
+   "t1": 8.05
+  },
+  {
+   "environment": "school",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.05,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10,
+        "dist": 4.6,
+        "height": 0.3,
+        "lookY": 0.1,
+        "fov": 50
+       },
+       "to": {
+        "angle": -5,
+        "dist": 3.6,
+        "height": 0.2,
+        "lookY": 0.1,
+        "fov": 50
+       },
+       "focusY": 1.5,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "wave",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "MAX",
+       "color": "#2fbf71",
+       "when": 0.40000000000000036,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.7
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "\"My name is Max.\" Max waves in front of his school",
+   "cue": [
+    "L3",
+    0
+   ],
+   "t0": 8.05,
+   "t1": 9.1
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    },
+    {
+     "id": "teacher",
+     "at": [
+      3,
+      -4
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.85,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2.4,
+        -3.5
+       ],
+       "scale": false,
+       "from": {
+        "angle": 14.715071650597777,
+        "dist": 10.235721762533407,
+        "height": 2.0000000000000004,
+        "lookY": 0,
+        "fov": 58
+       },
+       "to": {
+        "angle": 10.42071239679451,
+        "dist": 8.845903006477066,
+        "height": 1.5,
+        "lookY": 0.20000000000000018,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sitWrite",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "teacher",
+       "action": "idle",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "It started in the middle of a math test (the whole class writing, MATH TEST on the board)",
+   "cue": [
+    "L3",
+    4
+   ],
+   "t0": 9.1,
+   "t1": 10.95
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.7,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 170.0737544933483,
+        "dist": 2.0303940504246953,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 169.38034472384487,
+        "dist": 1.6278820596099708,
+        "height": 0.44999999999999996,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.5,
+        2.2,
+        1
+       ],
+       "size": 0.55,
+       "when": 0,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.4,
+        1.3
+       ],
+       "when": 0,
+       "shake": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "ACHOO! (close on Max, the whole desk shakes)",
+   "cue": [
+    "L4",
+    0
+   ],
+   "t0": 10.95,
+   "t1": 11.65
+  },
+  {
+   "environment": "pizzashop",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [
+    {
+     "id": "p0",
+     "type": "dough",
+     "at": [
+      0,
+      -0.3
+     ],
+     "y": 2.4
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.42,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.9,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 6.4287477488298554,
+        "dist": 7.1449282711585,
+        "height": 1.1,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": 3.945186229037563,
+        "dist": 5.813776741499452,
+        "height": 0.7000000000000002,
+        "lookY": 0.10000000000000009,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1,
+        -0.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "y": 4.6,
+       "ease": "out",
+       "when": 0,
+       "end": 0.5
+      },
+      {
+       "prop": "p0",
+       "y": 3.2,
+       "ease": "in",
+       "when": 0.5,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "Suddenly Max is in a pizza shop",
+   "cue": [
+    "L4",
+    1
+   ],
+   "t0": 11.65,
+   "t1": 13.07
+  },
+  {
+   "environment": "pizzashop",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "dough",
+     "at": [
+      0,
+      -0.3
+     ],
+     "y": 2.6
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.92,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2.15,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 4.635463426902643,
+        "dist": 3.7121422386541165,
+        "height": -0.44999999999999996,
+        "lookY": 0,
+        "fov": 60
+       },
+       "to": {
+        "angle": 3.468229258917148,
+        "dist": 3.3060550509633075,
+        "height": -0.44999999999999996,
+        "lookY": 0.10000000000000009,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "toss",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "y": 4,
+       "ease": "out",
+       "when": 0,
+       "end": 0.45
+      },
+      {
+       "prop": "p0",
+       "y": 2.65,
+       "ease": "in",
+       "when": 0.45,
+       "end": 0.95
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "…with dough flying over his head (he tries to catch it)",
+   "cue": [
+    "L4",
+    8
+   ],
+   "t0": 13.07,
+   "t1": 14.99
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "chef",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.15,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 173.3455749539934,
+        "dist": 3.020347662107791,
+        "height": 0.9999999999999998,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 172.8749836510982,
+        "dist": 2.4186773244895647,
+        "height": 0.9000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "chef",
+       "action": "sitPanic",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.5,
+        1.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [
+      {
+       "char": "chef",
+       "icon": "!?",
+       "when": 0.20930232558139497,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "And the pizza chef? Poof: he is sitting at Max's desk",
+   "cue": [
+    "L5",
+    0
+   ],
+   "t0": 14.99,
+   "t1": 17.14
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "chef",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.53,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 172.03038960567864,
+        "dist": 2.5243811122728674,
+        "height": 0.5999999999999999,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 171.86989764584402,
+        "dist": 2.121320343559643,
+        "height": 0.54,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "chef",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [
+      {
+       "char": "chef",
+       "icon": "?",
+       "when": 0.2483660130718946,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…staring at the math test (close, he scratches his head)",
+   "cue": [
+    "L5",
+    10
+   ],
+   "t0": 17.14,
+   "t1": 18.67
+  },
+  {
+   "environment": "pizzashop",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "dough",
+     "at": [
+      0,
+      -0.3
+     ],
+     "y": 4.2
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.2,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.85,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 7.696051722016571,
+        "dist": 3.733630940518894,
+        "height": 0.44999999999999973,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 7.696051722016571,
+        "dist": 3.733630940518894,
+        "height": 0.44999999999999973,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.7,
+        3,
+        -0.2
+       ],
+       "size": 0.55,
+       "when": 0,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.6,
+        0
+       ],
+       "when": 0,
+       "shake": 0.5
+      }
+     ],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "y": 2.3,
+       "ease": "in",
+       "when": 0.25,
+       "end": 0.6
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "ACHOO! (the dough flops onto his head)",
+   "cue": [
+    "L6",
+    0
+   ],
+   "t0": 18.67,
+   "t1": 19.87
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.02,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 9.3,
+        "height": 0.7999999999999998,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0,
+        "dist": 6.8,
+        "height": 0.3999999999999999,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "goalie",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1,
+        -0.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Now I was a goalkeeper (Max in the goal, arms up)",
+   "cue": [
+    "L6",
+    1
+   ],
+   "t0": 19.87,
+   "t1": 20.89
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.63,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        3,
+        -6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -31.429565614838516,
+        "dist": 42.190046219457976,
+        "height": 15,
+        "lookY": 0,
+        "fov": 60
+       },
+       "to": {
+        "angle": 27.89727103094763,
+        "dist": 38.47076812334269,
+        "height": 12,
+        "lookY": 0,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "goalie",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "50,000",
+       "color": "#ffffff",
+       "when": 0.39163498098859373,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.75
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…in a giant stadium with fifty thousand people screaming (huge sweeping wide)",
+   "cue": [
+    "L6",
+    6
+   ],
+   "t0": 20.89,
+   "t1": 23.52
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "ball",
+     "at": [
+      0.5,
+      12
+     ],
+     "y": 0.1
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.75,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.4,
+        6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 155.22485943116806,
+        "dist": 8.59069263796581,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": 156.8936731417284,
+        "dist": 8.154140052758477,
+        "height": 0.10000000000000009,
+        "lookY": 0.20000000000000018,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "goalie",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "to": [
+        0.1,
+        1.2
+       ],
+       "y": 1.75,
+       "ease": "linear",
+       "when": 0.05,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "The ball flew straight at his face (ball rockets toward the goal)",
+   "cue": [
+    "L7",
+    0
+   ],
+   "t0": 23.52,
+   "t1": 24.27
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "ball",
+     "at": [
+      0.1,
+      4
+     ],
+     "y": 1.6
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.92,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.85,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 14.534455080540122,
+        "dist": 2.78926513619627,
+        "height": 0.1499999999999999,
+        "lookY": 0,
+        "fov": 45
+       },
+       "to": {
+        "angle": 14.534455080540122,
+        "dist": 2.78926513619627,
+        "height": 0.1499999999999999,
+        "lookY": 0,
+        "fov": 45
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "to": [
+        0.05,
+        1.1
+       ],
+       "y": 1.7,
+       "ease": "linear",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "…at my face (close: the ball fills the frame, Max cross-eyed)",
+   "cue": [
+    "L7",
+    4
+   ],
+   "t0": 24.27,
+   "t1": 25.19
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "ball",
+     "at": [
+      0.05,
+      1.2
+     ],
+     "y": 1.75
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.46,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.85,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 15.255118703057777,
+        "dist": 3.4205262752974135,
+        "height": 0.25,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 12.528807709151511,
+        "dist": 2.765863337187866,
+        "height": 0.1499999999999999,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 0.4155251141552512,
+       "glasses": false
+      },
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0.4155251141552512,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.6,
+        2.6,
+        0.2
+       ],
+       "size": 0.55,
+       "when": 0.6438356164383559,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.8,
+        0.4
+       ],
+       "when": 0.6438356164383559,
+       "shake": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "\"I sneezed again.\" ACHOO! just before impact",
+   "cue": [
+    "L7",
+    7
+   ],
+   "t0": 25.19,
+   "t1": 26.65
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      1.2,
+      0.8
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2.6,
+        -4
+       ],
+       "scale": false,
+       "from": {
+        "angle": -6.7098368077569335,
+        "dist": 17.11724276862369,
+        "height": 2.9,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": -4.085616779974877,
+        "dist": 14.0356688476182,
+        "height": 1.9999999999999996,
+        "lookY": -0.20000000000000018,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "surprised",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        1.2,
+        1,
+        0.8
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I was in the zoo (wide: LIONS sign, visitors behind the bars)",
+   "cue": [
+    "L8",
+    1
+   ],
+   "t0": 26.65,
+   "t1": 27.48
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      1.2,
+      0.8
+     ],
+     "face": 0
+    },
+    {
+     "id": "lion",
+     "at": [
+      -1.4,
+      -0.6
+     ],
+     "face": 50
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.4,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 26.21137801783153,
+        "dist": 7.244998274671983,
+        "height": 1,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 25.709953780811265,
+        "dist": 5.993329625508679,
+        "height": 0.8000000000000003,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "lion",
+       "action": "walk",
+       "expr": "angry",
+       "face": 50,
+       "at": 0,
+       "end": 1,
+       "move": [
+        -0.6,
+        -0.1
+       ],
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Inside the lion cage… (the lion is right behind him)",
+   "cue": [
+    "L8",
+    6
+   ],
+   "t0": 27.48,
+   "t1": 28.82
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      1.2,
+      0.8
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.33,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1,
+        1.5,
+        0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": -19.025606037568686,
+        "dist": 3.0675723300355937,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": -20.556045219583464,
+        "dist": 2.563201123595259,
+        "height": 0.3999999999999999,
+        "lookY": 0.050000000000000044,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "holdOut",
+       "expr": "scared",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "prop": "bucket",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…holding a bucket of meat",
+   "cue": [
+    "L8",
+    10
+   ],
+   "t0": 28.82,
+   "t1": 30.15
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "lion",
+     "at": [
+      -0.6,
+      -0.1
+     ],
+     "face": 60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.07,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.4,
+        1.4,
+        -0.1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 25.709953780811265,
+        "dist": 2.9966648127543394,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 26.56505117707799,
+        "dist": 2.23606797749979,
+        "height": 0.40000000000000013,
+        "lookY": 0.050000000000000044,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "lion",
+       "action": "tilt",
+       "expr": "angry",
+       "face": 60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The lion looked at me (slow push in on the lion's face)",
+   "cue": [
+    "L9",
+    0
+   ],
+   "t0": 30.15,
+   "t1": 31.22
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      1.2,
+      0.8
+     ],
+     "face": -60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.93,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        1.2,
+        1.85,
+        0.8
+       ],
+       "scale": false,
+       "from": {
+        "angle": -56.309932474020215,
+        "dist": 2.1633307652783933,
+        "height": 0.1499999999999999,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": -56.309932474020215,
+        "dist": 2.1633307652783933,
+        "height": 0.1499999999999999,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "holdOut",
+       "expr": "scared",
+       "face": -60,
+       "at": 0,
+       "end": 1,
+       "prop": "bucket",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [
+      {
+       "char": "max",
+       "icon": "sweat",
+       "when": 0.06451612903226053,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I looked at the lion (Max, sweating)",
+   "cue": [
+    "L9",
+    5
+   ],
+   "t0": 31.22,
+   "t1": 32.15
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "zookeeper",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.84,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 173.3455749539934,
+        "dist": 3.020347662107791,
+        "height": 1.1000000000000003,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 172.8749836510982,
+        "dist": 2.4186773244895647,
+        "height": 0.99,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zookeeper",
+       "action": "sitPanic",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.5,
+        1.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [
+      {
+       "char": "zookeeper",
+       "icon": "!?",
+       "when": 0.3804347826086965,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The zookeeper was now in my math class",
+   "cue": [
+    "L9",
+    10
+   ],
+   "t0": 32.15,
+   "t1": 33.99
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      1.2,
+      0.8
+     ],
+     "face": -40
+    },
+    {
+     "id": "lion",
+     "at": [
+      -0.6,
+      -0.1
+     ],
+     "face": 60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.65,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.3,
+        1.4,
+        0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 29.875992691689433,
+        "dist": 5.420332093147062,
+        "height": 1.2000000000000002,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 29.875992691689433,
+        "dist": 5.420332093147062,
+        "height": 1.2000000000000002,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": -40,
+       "at": 0,
+       "end": 1,
+       "prop": "bucket",
+       "glasses": false
+      },
+      {
+       "char": "lion",
+       "action": "jump",
+       "expr": "surprised",
+       "face": 60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        1.4,
+        2.8,
+        1
+       ],
+       "size": 0.55,
+       "when": 0,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        1,
+        1.6,
+        0.8
+       ],
+       "when": 0,
+       "shake": 0.6
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "ACHOO! (the lion jumps back in fright)",
+   "cue": [
+    "L10",
+    0
+   ],
+   "t0": 33.99,
+   "t1": 34.64
+  },
+  {
+   "environment": "wedding",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0.6,
+      -0.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "bride",
+     "at": [
+      -0.6,
+      -0.6
+     ],
+     "face": 20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.93,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 166.8274465766731,
+        "dist": 9.654014708917737,
+        "height": 1.7,
+        "lookY": 0,
+        "fov": 58
+       },
+       "to": {
+        "angle": 170.53767779197437,
+        "dist": 8.515867542417507,
+        "height": 1.0999999999999999,
+        "lookY": 0,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "idle",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "bride",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0.6,
+        1,
+        -0.6
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "A wedding! Everyone was staring at me (Max at the flower arch beside the bride, rows of guests staring)",
+   "cue": [
+    "L10",
+    1
+   ],
+   "t0": 34.64,
+   "t1": 36.57
+  },
+  {
+   "environment": "wedding",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0.6,
+      -0.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "bride",
+     "at": [
+      -0.6,
+      -0.6
+     ],
+     "face": 30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.16,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.4,
+        1.6,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -12.528807709151511,
+        "dist": 2.7658633371878665,
+        "height": 0.7999999999999998,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": -12.528807709151511,
+        "dist": 2.7658633371878665,
+        "height": 0.7999999999999998,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "holdOut",
+       "expr": "scared",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "prop": "ring",
+       "glasses": false
+      },
+      {
+       "char": "bride",
+       "action": "idle",
+       "expr": "surprised",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "glint",
+       "at": [
+        0.85,
+        1.75,
+        0.2
+       ],
+       "when": 0.4913793103448293
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…I was holding the ring (sparkle)",
+   "cue": [
+    "L10",
+    8
+   ],
+   "t0": 36.57,
+   "t1": 37.73
+  },
+  {
+   "environment": "wedding",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0.6,
+      -0.6
+     ],
+     "face": 0
+    },
+    {
+     "id": "bride",
+     "at": [
+      -0.6,
+      -0.6
+     ],
+     "face": 30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.78,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 2.385944030388813,
+        "dist": 4.804164859785725,
+        "height": 0.6000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 2.385944030388813,
+        "dist": 4.804164859785725,
+        "height": 0.6000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "prop": "ring",
+       "glasses": false
+      },
+      {
+       "char": "bride",
+       "action": "scared",
+       "expr": "surprised",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.8,
+        2.9,
+        -0.4
+       ],
+       "size": 0.55,
+       "when": 0,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0.6,
+        2.2,
+        -0.2
+       ],
+       "when": 0,
+       "shake": 0.5
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "ACHOO! (petals blast everywhere)",
+   "cue": [
+    "L11",
+    0
+   ],
+   "t0": 37.73,
+   "t1": 38.51
+  },
+  {
+   "environment": "downtown",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "city",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [
+    {
+     "id": "truck",
+     "type": "firetruck",
+     "at": [
+      -14,
+      -3
+     ]
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -11.1,
+      -3.5
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.98,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "ease": "linear",
+       "from": {
+        "angle": 55,
+        "dist": 15,
+        "height": 2.5,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 20,
+        "dist": 12,
+        "height": 2,
+        "lookY": 0,
+        "fov": 52
+       },
+       "focusY": 1.8,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "drive",
+       "expr": "scared",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        12.9,
+        -3.5
+       ],
+       "ease": "linear",
+       "params": {
+        "lift": 1
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "truck",
+       "to": [
+        10,
+        -3
+       ],
+       "ease": "linear",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "A fire truck! (it roars down the street, lights flashing)",
+   "cue": [
+    "L11",
+    1
+   ],
+   "t0": 38.51,
+   "t1": 39.49
+  },
+  {
+   "environment": "downtown",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "city",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "truck",
+     "type": "firetruck",
+     "at": [
+      -2,
+      -3
+     ]
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0.9,
+      -3.5
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.18,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "ease": "linear",
+       "from": {
+        "angle": 62,
+        "dist": 4.6,
+        "height": 0.2,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 50,
+        "dist": 4,
+        "height": 0.2,
+        "lookY": 0,
+        "fov": 52
+       },
+       "focusY": 2.6,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "drive",
+       "expr": "scared",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        14.9,
+        -3.5
+       ],
+       "ease": "linear",
+       "params": {
+        "lift": 1
+       },
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "I'M 11!",
+       "color": "#ff3b3b",
+       "when": 0.5847457627118626,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.62
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "truck",
+       "to": [
+        12,
+        -3
+       ],
+       "ease": "linear",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "And I was driving it! (side close, Max gripping the wheel)",
+   "cue": [
+    "L11",
+    7
+   ],
+   "t0": 39.49,
+   "t1": 40.67
+  },
+  {
+   "environment": "downtown",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.01,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3.6,
+        "height": 0.1,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 1.6,
+        "height": 0,
+        "lookY": 0,
+        "fov": 50
+       },
+       "focusY": 1.8,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sniff",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0,
+       "end": 0.530679933665007,
+       "glasses": false
+      },
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 0,
+       "at": 0.530679933665007,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOOOO!",
+       "color": "#ffd23f",
+       "at": [
+        0,
+        3,
+        2.3
+       ],
+       "size": 0.7,
+       "when": 0.6965174129353233,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.8,
+        2.6
+       ],
+       "when": 0.6965174129353233,
+       "shake": 0.9
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Then came the biggest sneeze of my life (slow push into Max's face, nose twitching)",
+   "cue": [
+    "L12",
+    0
+   ],
+   "t0": 40.67,
+   "t1": 42.68
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": false,
+    "dive": 0
+   },
+   "music": "tense",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.93,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.95,
+        1.4,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": 146.88865803962798,
+        "dist": 1.372953021774598,
+        "height": 0.40000000000000013,
+        "lookY": 0,
+        "fov": 60
+       },
+       "to": {
+        "angle": 146.97613244420336,
+        "dist": 1.1926860441876563,
+        "height": 0.3500000000000001,
+        "lookY": 0,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sit",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        -0.95,
+        1.4,
+        0.4
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I opened my eyes in the cockpit of a plane",
+   "cue": [
+    "L13",
+    0
+   ],
+   "t0": 42.68,
+   "t1": 44.61
+  },
+  {
+   "environment": "skies",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "tense",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "plane",
+     "type": "plane",
+     "at": [
+      -6,
+      0
+     ],
+     "y": 0,
+     "ry": 0.15
+    }
+   ],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.23,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 19.98310652189998,
+        "dist": 23.40939982143925,
+        "height": 3,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": -14.743562836470735,
+        "dist": 19.6468827043885,
+        "height": 4.5,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "plane",
+       "to": [
+        6,
+        0
+       ],
+       "ease": "linear",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "…high above the clouds (the jet soaring over a sea of clouds)",
+   "cue": [
+    "L13",
+    10
+   ],
+   "t0": 44.61,
+   "t1": 45.84
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "pilot",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 173.3455749539934,
+        "dist": 3.020347662107791,
+        "height": 0.9999999999999998,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 172.8749836510982,
+        "dist": 2.4186773244895647,
+        "height": 0.9000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "pilot",
+       "action": "sitPanic",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.5,
+        1.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [
+      {
+       "char": "pilot",
+       "icon": "!",
+       "when": 0.0849999999999973,
+       "dur": 1.1
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "And the pilot? He's at Max's desk",
+   "cue": [
+    "L14",
+    0
+   ],
+   "t0": 45.84,
+   "t1": 47.84
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "pilot",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.85,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 172.03038960567864,
+        "dist": 2.5243811122728674,
+        "height": 0.5999999999999999,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 171.86989764584402,
+        "dist": 2.121320343559643,
+        "height": 0.54,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "pilot",
+       "action": "sitWrite",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "144 ÷ 12",
+       "color": "#ffffff",
+       "when": 0.2823529411764665,
+       "dur": 1,
+       "y": 0.78,
+       "size": 0.55
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…doing long division (calmly, very seriously)",
+   "cue": [
+    "L14",
+    8
+   ],
+   "t0": 47.84,
+   "t1": 48.69
+  },
+  {
+   "environment": "skies",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "dive": 1
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "plane",
+     "type": "plane",
+     "at": [
+      -4,
+      0
+     ],
+     "y": 2,
+     "ry": 0.15
+    }
+   ],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.35,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        -1,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 21.80140948635181,
+        "dist": 32.31098884280703,
+        "height": 7,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": 19.65382405805331,
+        "dist": 29.732137494637012,
+        "height": 3,
+        "lookY": -5,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "plane",
+       "to": [
+        6,
+        0
+       ],
+       "y": -10,
+       "rz": -0.55,
+       "ease": "in",
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "The plane started to dive (nose drops, it plunges toward the clouds)",
+   "cue": [
+    "L15",
+    0
+   ],
+   "t0": 48.69,
+   "t1": 50.04
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.14,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.4,
+        1.7,
+        -1.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 7.495857639729858,
+        "dist": 3.8327535793473597,
+        "height": 0.5000000000000002,
+        "lookY": 0,
+        "fov": 62
+       },
+       "to": {
+        "angle": 7.539445139509308,
+        "dist": 3.429650127928504,
+        "height": 0.40000000000000013,
+        "lookY": 0,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sitPanic",
+       "expr": "scared",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "impact",
+       "at": [
+        -0.95,
+        1.8,
+        -0.4
+       ],
+       "when": 0,
+       "shake": 0.8
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Alarms everywhere (red flashing, everything shaking)",
+   "cue": [
+    "L15",
+    5
+   ],
+   "t0": 50.04,
+   "t1": 51.18
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.1,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.95,
+        1.45,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": 152.7004277886672,
+        "dist": 1.7442763542512407,
+        "height": 0.44999999999999996,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 153.434948822922,
+        "dist": 1.5652475842498528,
+        "height": 0.40000000000000013,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sniff",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I needed one more sneeze… (Max scrunches his face, trying)",
+   "cue": [
+    "L15",
+    7
+   ],
+   "t0": 51.18,
+   "t1": 52.28
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.97,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.95,
+        1.45,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": 149.42077312751098,
+        "dist": 1.277693233918064,
+        "height": 0.30000000000000004,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 149.42077312751098,
+        "dist": 1.277693233918064,
+        "height": 0.30000000000000004,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sit",
+       "expr": "sad",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": ". . .",
+       "color": "#ffffff",
+       "when": 0.23711340206185272,
+       "dur": 1,
+       "y": 0.7,
+       "size": 0.6
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…but nothing came",
+   "cue": [
+    "L15",
+    12
+   ],
+   "t0": 52.28,
+   "t1": 53.25
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      0.9
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": -23.749494492866763,
+        "dist": 2.7313000567495327,
+        "height": 1,
+        "lookY": 0,
+        "fov": 62
+       },
+       "to": {
+        "angle": 22.61986494804043,
+        "dist": 2.5999999999999996,
+        "height": 0.8999999999999999,
+        "lookY": 0,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "scared",
+       "expr": "scared",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I searched everywhere (Max standing, frantically looking around)",
+   "cue": [
+    "L16",
+    0
+   ],
+   "t0": 53.25,
+   "t1": 54.08
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "sandwich",
+     "at": [
+      0.95,
+      0.55
+     ],
+     "y": 0.76,
+     "ry": 0.4
+    }
+   ],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 1.61,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.95,
+        0.85,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": -158.6293777306568,
+        "dist": 1.2349089035228467,
+        "height": 1.25,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": -159.14554196042167,
+        "dist": 1.1236102527122116,
+        "height": 1.0499999999999998,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [
+      {
+       "text": "LUNCH",
+       "color": "#ffe14a",
+       "when": 0.7888198757763998,
+       "dur": 1,
+       "y": 0.72,
+       "size": 0.5
+      }
+     ],
+     "comic": [],
+     "fx": [
+      {
+       "type": "glint",
+       "at": [
+        0.95,
+        1,
+        0.55
+       ],
+       "when": 0.2111801242236047
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Then I found it: the pilot's lunch on the co-pilot seat",
+   "cue": [
+    "L16",
+    3
+   ],
+   "t0": 54.08,
+   "t1": 55.69
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "tense",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "sandwich",
+     "at": [
+      0.95,
+      0.55
+     ],
+     "y": 0.76,
+     "ry": 0.4
+    }
+   ],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 0.83,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.95,
+        0.85,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": -160.70995378081128,
+        "dist": 1.0594810050208545,
+        "height": 0.9,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": -160.70995378081128,
+        "dist": 1.0594810050208545,
+        "height": 0.9,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [
+      {
+       "text": "PEPPER!",
+       "color": "#ff3b3b",
+       "when": 0.0722891566265083,
+       "dur": 1,
+       "y": 0.72,
+       "size": 0.62
+      }
+     ],
+     "comic": [],
+     "fx": [
+      {
+       "type": "glint",
+       "at": [
+        0.95,
+        1,
+        0.55
+       ],
+       "when": 0.0722891566265083
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "A PEPPER sandwich (big sparkle)",
+   "cue": [
+    "L16",
+    10
+   ],
+   "t0": 55.69,
+   "t1": 56.52
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "suspense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      0.9
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.99,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": 170.8376529542783,
+        "dist": 1.5700318468107581,
+        "height": 0.25,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 173.6598082540901,
+        "dist": 1.3583077707206126,
+        "height": 0.19999999999999996,
+        "lookY": 0.050000000000000044,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sniff",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "prop": "sandwich",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "I took one big sniff (push in)",
+   "cue": [
+    "L17",
+    0
+   ],
+   "t0": 56.52,
+   "t1": 57.51
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": true,
+    "dive": 0.7
+   },
+   "music": "suspense",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      0.9
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.7,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": 169.38034472384487,
+        "dist": 1.6278820596099708,
+        "height": 0.5499999999999998,
+        "lookY": 0,
+        "fov": 62
+       },
+       "to": {
+        "angle": 169.38034472384487,
+        "dist": 1.6278820596099708,
+        "height": 0.5499999999999998,
+        "lookY": 0,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sneeze",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "prop": "sandwich",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [
+      {
+       "text": "ACHOO!",
+       "color": "#ffd23f",
+       "at": [
+        0.3,
+        2.6,
+        0.4
+       ],
+       "size": 0.6,
+       "when": 0,
+       "dur": 0.9
+      }
+     ],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.7,
+        0.8
+       ],
+       "when": 0,
+       "shake": 1
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "ACHOO! (the biggest one yet)",
+   "cue": [
+    "L17",
+    5
+   ],
+   "t0": 57.51,
+   "t1": 58.21
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": false,
+    "dive": 0
+   },
+   "music": "adventure",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "pilot",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.25,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.95,
+        1.4,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": 145.12467165539783,
+        "dist": 2.0112185361118766,
+        "height": 0.55,
+        "lookY": 0,
+        "fov": 58
+       },
+       "to": {
+        "angle": 145.00797980144134,
+        "dist": 1.8309833423600554,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 58
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "pilot",
+       "action": "drive",
+       "expr": "determined",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        -0.95,
+        1.4,
+        0.4
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The pilot was back in the sky (calmly levelling the plane)",
+   "cue": [
+    "L18",
+    0
+   ],
+   "t0": 58.21,
+   "t1": 59.46
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "flash",
+   "transitionDur": 0.24,
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.24,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        1.45
+       ],
+       "scale": false,
+       "from": {
+        "angle": 172.8749836510982,
+        "dist": 2.821790211904492,
+        "height": 0.9000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 172.23483398157467,
+        "dist": 2.220360331117452,
+        "height": 0.8100000000000003,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sit",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitWrite",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [
+      {
+       "type": "poof",
+       "at": [
+        0,
+        1.5,
+        1.3
+       ],
+       "when": 0
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "And I was back at my desk",
+   "cue": [
+    "L18",
+    7
+   ],
+   "t0": 59.46,
+   "t1": 60.7
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "noah",
+     "at": [
+      -2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "mia",
+     "at": [
+      2.2,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "zed",
+     "at": [
+      0,
+      4.05
+     ],
+     "face": 180
+    },
+    {
+     "id": "tot",
+     "at": [
+      -2.2,
+      -1.15
+     ],
+     "face": 180
+    },
+    {
+     "id": "teacher",
+     "at": [
+      2.2,
+      -2.6
+     ],
+     "face": -30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.07,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 176.02750405924934,
+        "dist": 7.217340230306452,
+        "height": 3.2,
+        "lookY": 0,
+        "fov": 62
+       },
+       "to": {
+        "angle": 177.31622484053102,
+        "dist": 6.4070273918565395,
+        "height": 2.7,
+        "lookY": 0,
+        "fov": 62
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sit",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "noah",
+       "action": "sitClap",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mia",
+       "action": "sitClap",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zed",
+       "action": "sitClap",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "tot",
+       "action": "sitClap",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "teacher",
+       "action": "clap",
+       "expr": "laugh",
+       "face": -30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "My whole class was clapping",
+   "cue": [
+    "L19",
+    0
+   ],
+   "t0": 60.7,
+   "t1": 61.77
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1.45
+     ],
+     "face": 180
+    },
+    {
+     "id": "teacher",
+     "at": [
+      1.2,
+      0.1
+     ],
+     "face": -120
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.75,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.5,
+        1.5,
+        0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": -140.4403320310055,
+        "dist": 2.983286778035259,
+        "height": 1.1,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": -140.4403320310055,
+        "dist": 2.983286778035259,
+        "height": 1.1,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "sit",
+       "expr": "surprised",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "teacher",
+       "action": "holdOut",
+       "expr": "happy",
+       "face": -120,
+       "at": 0,
+       "end": 1,
+       "prop": "paper",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The teacher handed back my test",
+   "cue": [
+    "L20",
+    0
+   ],
+   "t0": 61.77,
+   "t1": 63.52
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0,
+      1
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.63,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 174.28940686250036,
+        "dist": 3.0149626863362666,
+        "height": 0.5499999999999998,
+        "lookY": 0,
+        "fov": 54
+       },
+       "to": {
+        "angle": 174.28940686250036,
+        "dist": 2.5124689052802225,
+        "height": 0.3500000000000001,
+        "lookY": 0.050000000000000044,
+        "fov": 54
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "cheer",
+       "expr": "laugh",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "prop": "paper",
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "A+",
+       "color": "#ffe14a",
+       "when": 0,
+       "dur": 0.8,
+       "y": 0.8,
+       "size": 0.9
+      },
+      {
+       "text": "100%",
+       "color": "#2fbf71",
+       "when": 0.5276073619631847,
+       "dur": 1,
+       "y": 0.6,
+       "size": 0.6
+      }
+     ],
+     "comic": [],
+     "fx": [
+      {
+       "type": "confetti",
+       "at": [
+        0,
+        2.6,
+        1
+       ],
+       "when": 0.055214723926378016
+      }
+     ],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "A PLUS! Perfect score (Max jumps up cheering, confetti)",
+   "cue": [
+    "L20",
+    6
+   ],
+   "t0": 63.52,
+   "t1": 65.15
+  },
+  {
+   "environment": "pizzashop",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "p0",
+     "type": "dough",
+     "at": [
+      0,
+      -0.3
+     ],
+     "y": 3
+    }
+   ],
+   "cast": [
+    {
+     "id": "chef",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.79,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        2.1,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 5.572197803963797,
+        "dist": 4.119465984809196,
+        "height": 0.2999999999999998,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 5.572197803963797,
+        "dist": 4.119465984809196,
+        "height": 0.2999999999999998,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "chef",
+       "action": "toss",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "Q1 ✔",
+       "color": "#2fbf71",
+       "when": 0.35443037974684044,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.55
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "p0",
+       "y": 3.8,
+       "ease": "out",
+       "when": 0,
+       "end": 0.5
+      },
+      {
+       "prop": "p0",
+       "y": 3,
+       "ease": "in",
+       "when": 0.5,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "Because a chef… (Chef Tony spinning dough, winks)",
+   "cue": [
+    "L21",
+    0
+   ],
+   "t0": 65.15,
+   "t1": 65.94
+  },
+  {
+   "environment": "stadium",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "goalie",
+     "at": [
+      0,
+      -0.3
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.66,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        -0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 6.9810574068297955,
+        "dist": 4.9365980188789935,
+        "height": 0.6999999999999997,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 6.9810574068297955,
+        "dist": 4.9365980188789935,
+        "height": 0.6999999999999997,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "goalie",
+       "action": "goalie",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "Q2 ✔",
+       "color": "#2fbf71",
+       "when": 0.13636363636364224,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.55
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…a goalkeeper (making a diving save)",
+   "cue": [
+    "L21",
+    3
+   ],
+   "t0": 65.94,
+   "t1": 66.6
+  },
+  {
+   "environment": "zoo",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zookeeper",
+     "at": [
+      1,
+      0.6
+     ],
+     "face": -50
+    },
+    {
+     "id": "lion",
+     "at": [
+      -0.6,
+      -0.1
+     ],
+     "face": 60
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.58,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.2,
+        1.4,
+        0.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 25.55996517182381,
+        "dist": 5.0990195135927845,
+        "height": 0.8999999999999999,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 25.55996517182381,
+        "dist": 5.0990195135927845,
+        "height": 0.8999999999999999,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zookeeper",
+       "action": "holdOut",
+       "expr": "happy",
+       "face": -50,
+       "at": 0,
+       "end": 1,
+       "prop": "bucket",
+       "glasses": false
+      },
+      {
+       "char": "lion",
+       "action": "sit",
+       "expr": "happy",
+       "face": 60,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "Q3 ✔",
+       "color": "#2fbf71",
+       "when": 0.17241379310345925,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.55
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…a zookeeper (feeding the now-happy lion)",
+   "cue": [
+    "L21",
+    5
+   ],
+   "t0": 66.6,
+   "t1": 67.18
+  },
+  {
+   "environment": "cockpit",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "env": {
+    "alarm": false,
+    "dive": 0
+   },
+   "music": "adventure",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "pilot",
+     "at": [
+      -0.95,
+      0.55
+     ],
+     "face": 180
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.9,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -0.95,
+        1.4,
+        0.55
+       ],
+       "scale": false,
+       "from": {
+        "angle": 145.12467165539783,
+        "dist": 2.0112185361118766,
+        "height": 0.55,
+        "lookY": 0,
+        "fov": 56
+       },
+       "to": {
+        "angle": 145.12467165539783,
+        "dist": 2.0112185361118766,
+        "height": 0.55,
+        "lookY": 0,
+        "fov": 56
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "pilot",
+       "action": "drive",
+       "expr": "happy",
+       "face": 180,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "Q4 ✔",
+       "color": "#2fbf71",
+       "when": 0.06842105263157686,
+       "dur": 1,
+       "y": 0.75,
+       "size": 0.55
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "…and a pilot had each solved one question (pilot gives a thumbs up)",
+   "cue": [
+    "L21",
+    7
+   ],
+   "t0": 67.18,
+   "t1": 69.08
+  },
+  {
+   "environment": "house",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "doctor",
+     "at": [
+      -1,
+      0.3
+     ],
+     "face": 40
+    },
+    {
+     "id": "max",
+     "at": [
+      0.9,
+      0.5
+     ],
+     "face": -40
+    },
+    {
+     "id": "mum",
+     "at": [
+      1.9,
+      0.1
+     ],
+     "face": -30
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.47,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0.2,
+        1.5,
+        0.3
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0.9710219310791663,
+        "dist": 5.900847396772773,
+        "height": 1.1,
+        "lookY": 0,
+        "fov": 52
+       },
+       "to": {
+        "angle": 0.5846305207051777,
+        "dist": 4.900255095400647,
+        "height": 0.8999999999999999,
+        "lookY": 0,
+        "fov": 52
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "doctor",
+       "action": "talk",
+       "expr": "happy",
+       "face": 40,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "max",
+       "action": "idle",
+       "expr": "happy",
+       "face": -40,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mum",
+       "action": "idle",
+       "expr": "happy",
+       "face": -30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The doctor says I'll grow out of it",
+   "cue": [
+    "L22",
+    0
+   ],
+   "t0": 69.08,
+   "t1": 70.55
+  },
+  {
+   "environment": "house",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      0.6,
+      0.6
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.34,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3,
+        "height": 0.1,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.2,
+        "height": 0.05,
+        "lookY": 0,
+        "fov": 48
+       },
+       "focusY": 1.75,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "think",
+       "expr": "determined",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "MATH FINAL",
+       "color": "#ff3b3b",
+       "when": 0.5298507462686614,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.6
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "But tomorrow is the math final (Max turns to camera, sly grin)",
+   "cue": [
+    "L23",
+    0
+   ],
+   "t0": 70.55,
+   "t1": 71.89
+  },
+  {
+   "environment": "downtown",
+   "envSeed": 5,
+   "lighting": "day",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [
+    {
+     "id": "cart",
+     "type": "shoppingcart",
+     "at": [
+      -2.2,
+      3
+     ],
+     "ry": 1.5707963267948966
+    },
+    {
+     "id": "pep0",
+     "type": "pepper",
+     "at": [
+      -2.45,
+      2.85
+     ],
+     "y": 0.62
+    },
+    {
+     "id": "pep1",
+     "type": "pepper",
+     "at": [
+      -2.2,
+      3.1
+     ],
+     "y": 0.62
+    },
+    {
+     "id": "pep2",
+     "type": "pepper",
+     "at": [
+      -1.9500000000000002,
+      2.9
+     ],
+     "y": 0.62
+    },
+    {
+     "id": "pep3",
+     "type": "pepper",
+     "at": [
+      -2.3000000000000003,
+      3.18
+     ],
+     "y": 0.62
+    },
+    {
+     "id": "pep4",
+     "type": "pepper",
+     "at": [
+      -2.0500000000000003,
+      3.2
+     ],
+     "y": 0.62
+    }
+   ],
+   "cast": [
+    {
+     "id": "max",
+     "at": [
+      -3.3,
+      3
+     ],
+     "face": 90
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.931,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        "max"
+       ],
+       "scale": false,
+       "from": {
+        "angle": -25,
+        "dist": 6.2,
+        "height": 0.8,
+        "lookY": 0.2,
+        "fov": 54
+       },
+       "to": {
+        "angle": 15,
+        "dist": 5.6,
+        "height": 0.7,
+        "lookY": 0.2,
+        "fov": 54
+       },
+       "focusY": 1.4,
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "max",
+       "action": "walk",
+       "expr": "laugh",
+       "face": 90,
+       "at": 0,
+       "end": 1,
+       "move": [
+        0.3,
+        3
+       ],
+       "prop": "pepper",
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "PEPPER",
+       "color": "#ff3b3b",
+       "when": 0.31388604571818424,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.6
+      }
+     ],
+     "comic": [],
+     "fx": [],
+     "emotes": [],
+     "propMoves": [
+      {
+       "prop": "cart",
+       "to": [
+        1.4,
+        3
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "pep0",
+       "to": [
+        1.15,
+        2.85
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "pep1",
+       "to": [
+        1.4,
+        3.1
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "pep2",
+       "to": [
+        1.65,
+        2.9
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "pep3",
+       "to": [
+        1.2999999999999998,
+        3.18
+       ],
+       "when": 0,
+       "end": 1
+      },
+      {
+       "prop": "pep4",
+       "to": [
+        1.5499999999999998,
+        3.2
+       ],
+       "when": 0,
+       "end": 1
+      }
+     ],
+     "envEvents": []
+    }
+   ],
+   "note": "So tonight, I'm buying pepper (Max marches out of the grocery with a cart full of pepper)",
+   "cue": [
+    "L24",
+    0
+   ],
+   "t0": 71.89,
+   "t1": 74.821
+  }
+ ]
+}

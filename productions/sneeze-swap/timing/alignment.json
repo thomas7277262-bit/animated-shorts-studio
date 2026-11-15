@@ -1,0 +1,1613 @@
+{
+ "report": {
+  "method": "pocketsphinx forced alignment",
+  "audio_s": 73.421,
+  "words": 282,
+  "speech_start": 0.0,
+  "speech_end": 73.13
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "text": "Every time I sneeze, I swap places with a random stranger. And they land at my school desk.",
+   "start": 0.0,
+   "end": 4.76,
+   "words": [
+    {
+     "w": "Every",
+     "start": 0.0,
+     "end": 0.25
+    },
+    {
+     "w": "time",
+     "start": 0.25,
+     "end": 0.5
+    },
+    {
+     "w": "I",
+     "start": 0.5,
+     "end": 0.59
+    },
+    {
+     "w": "sneeze,",
+     "start": 0.59,
+     "end": 1.11
+    },
+    {
+     "w": "I",
+     "start": 1.11,
+     "end": 1.25
+    },
+    {
+     "w": "swap",
+     "start": 1.25,
+     "end": 1.57
+    },
+    {
+     "w": "places",
+     "start": 1.57,
+     "end": 1.97
+    },
+    {
+     "w": "with",
+     "start": 1.97,
+     "end": 2.1
+    },
+    {
+     "w": "a",
+     "start": 2.1,
+     "end": 2.14
+    },
+    {
+     "w": "random",
+     "start": 2.14,
+     "end": 2.51
+    },
+    {
+     "w": "stranger.",
+     "start": 2.51,
+     "end": 3.07
+    },
+    {
+     "w": "And",
+     "start": 3.35,
+     "end": 3.45
+    },
+    {
+     "w": "they",
+     "start": 3.45,
+     "end": 3.55
+    },
+    {
+     "w": "land",
+     "start": 3.55,
+     "end": 3.83
+    },
+    {
+     "w": "at",
+     "start": 3.83,
+     "end": 3.9
+    },
+    {
+     "w": "my",
+     "start": 3.9,
+     "end": 4.02
+    },
+    {
+     "w": "school",
+     "start": 4.02,
+     "end": 4.32
+    },
+    {
+     "w": "desk.",
+     "start": 4.32,
+     "end": 4.76
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "And today, the pollen count was the highest in history.",
+   "start": 5.03,
+   "end": 7.62,
+   "words": [
+    {
+     "w": "And",
+     "start": 5.03,
+     "end": 5.17
+    },
+    {
+     "w": "today,",
+     "start": 5.17,
+     "end": 5.61
+    },
+    {
+     "w": "the",
+     "start": 5.72,
+     "end": 5.82
+    },
+    {
+     "w": "pollen",
+     "start": 5.82,
+     "end": 6.2
+    },
+    {
+     "w": "count",
+     "start": 6.2,
+     "end": 6.44
+    },
+    {
+     "w": "was",
+     "start": 6.44,
+     "end": 6.55
+    },
+    {
+     "w": "the",
+     "start": 6.55,
+     "end": 6.63
+    },
+    {
+     "w": "highest",
+     "start": 6.63,
+     "end": 7.0
+    },
+    {
+     "w": "in",
+     "start": 7.0,
+     "end": 7.08
+    },
+    {
+     "w": "history.",
+     "start": 7.08,
+     "end": 7.62
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "My name is Max. It started in the middle of a math test.",
+   "start": 8.05,
+   "end": 10.79,
+   "words": [
+    {
+     "w": "My",
+     "start": 8.05,
+     "end": 8.15
+    },
+    {
+     "w": "name",
+     "start": 8.15,
+     "end": 8.36
+    },
+    {
+     "w": "is",
+     "start": 8.36,
+     "end": 8.47
+    },
+    {
+     "w": "Max.",
+     "start": 8.47,
+     "end": 9.01
+    },
+    {
+     "w": "It",
+     "start": 9.1,
+     "end": 9.2
+    },
+    {
+     "w": "started",
+     "start": 9.2,
+     "end": 9.52
+    },
+    {
+     "w": "in",
+     "start": 9.52,
+     "end": 9.61
+    },
+    {
+     "w": "the",
+     "start": 9.61,
+     "end": 9.68
+    },
+    {
+     "w": "middle",
+     "start": 9.68,
+     "end": 9.95
+    },
+    {
+     "w": "of",
+     "start": 9.95,
+     "end": 10.02
+    },
+    {
+     "w": "a",
+     "start": 10.02,
+     "end": 10.06
+    },
+    {
+     "w": "math",
+     "start": 10.06,
+     "end": 10.39
+    },
+    {
+     "w": "test.",
+     "start": 10.39,
+     "end": 10.79
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "Achoo! Suddenly I was in a pizza shop, with dough flying over my head.",
+   "start": 10.95,
+   "end": 14.49,
+   "words": [
+    {
+     "w": "Achoo!",
+     "start": 10.95,
+     "end": 11.48
+    },
+    {
+     "w": "Suddenly",
+     "start": 11.65,
+     "end": 12.01
+    },
+    {
+     "w": "I",
+     "start": 12.01,
+     "end": 12.09
+    },
+    {
+     "w": "was",
+     "start": 12.09,
+     "end": 12.27
+    },
+    {
+     "w": "in",
+     "start": 12.27,
+     "end": 12.35
+    },
+    {
+     "w": "a",
+     "start": 12.35,
+     "end": 12.39
+    },
+    {
+     "w": "pizza",
+     "start": 12.39,
+     "end": 12.71
+    },
+    {
+     "w": "shop,",
+     "start": 12.71,
+     "end": 13.07
+    },
+    {
+     "w": "with",
+     "start": 13.07,
+     "end": 13.21
+    },
+    {
+     "w": "dough",
+     "start": 13.21,
+     "end": 13.45
+    },
+    {
+     "w": "flying",
+     "start": 13.45,
+     "end": 13.84
+    },
+    {
+     "w": "over",
+     "start": 13.84,
+     "end": 13.97
+    },
+    {
+     "w": "my",
+     "start": 13.97,
+     "end": 14.13
+    },
+    {
+     "w": "head.",
+     "start": 14.13,
+     "end": 14.49
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "And the pizza chef? He was sitting at my desk, staring at my math test.",
+   "start": 14.99,
+   "end": 18.42,
+   "words": [
+    {
+     "w": "And",
+     "start": 14.99,
+     "end": 15.1
+    },
+    {
+     "w": "the",
+     "start": 15.1,
+     "end": 15.16
+    },
+    {
+     "w": "pizza",
+     "start": 15.16,
+     "end": 15.44
+    },
+    {
+     "w": "chef?",
+     "start": 15.44,
+     "end": 15.8
+    },
+    {
+     "w": "He",
+     "start": 16.01,
+     "end": 16.1
+    },
+    {
+     "w": "was",
+     "start": 16.1,
+     "end": 16.26
+    },
+    {
+     "w": "sitting",
+     "start": 16.26,
+     "end": 16.5
+    },
+    {
+     "w": "at",
+     "start": 16.5,
+     "end": 16.57
+    },
+    {
+     "w": "my",
+     "start": 16.57,
+     "end": 16.7
+    },
+    {
+     "w": "desk,",
+     "start": 16.7,
+     "end": 17.14
+    },
+    {
+     "w": "staring",
+     "start": 17.14,
+     "end": 17.52
+    },
+    {
+     "w": "at",
+     "start": 17.52,
+     "end": 17.58
+    },
+    {
+     "w": "my",
+     "start": 17.58,
+     "end": 17.68
+    },
+    {
+     "w": "math",
+     "start": 17.68,
+     "end": 18.0
+    },
+    {
+     "w": "test.",
+     "start": 18.0,
+     "end": 18.42
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "Achoo! Now I was a goalkeeper, in a giant stadium, with fifty thousand people screaming.",
+   "start": 18.67,
+   "end": 23.27,
+   "words": [
+    {
+     "w": "Achoo!",
+     "start": 18.67,
+     "end": 19.31
+    },
+    {
+     "w": "Now",
+     "start": 19.87,
+     "end": 20.07
+    },
+    {
+     "w": "I",
+     "start": 20.07,
+     "end": 20.11
+    },
+    {
+     "w": "was",
+     "start": 20.11,
+     "end": 20.27
+    },
+    {
+     "w": "a",
+     "start": 20.27,
+     "end": 20.31
+    },
+    {
+     "w": "goalkeeper,",
+     "start": 20.31,
+     "end": 20.89
+    },
+    {
+     "w": "in",
+     "start": 20.89,
+     "end": 21.0
+    },
+    {
+     "w": "a",
+     "start": 21.0,
+     "end": 21.05
+    },
+    {
+     "w": "giant",
+     "start": 21.05,
+     "end": 21.39
+    },
+    {
+     "w": "stadium,",
+     "start": 21.39,
+     "end": 21.77
+    },
+    {
+     "w": "with",
+     "start": 21.77,
+     "end": 21.92
+    },
+    {
+     "w": "fifty",
+     "start": 21.92,
+     "end": 22.18
+    },
+    {
+     "w": "thousand",
+     "start": 22.18,
+     "end": 22.53
+    },
+    {
+     "w": "people",
+     "start": 22.53,
+     "end": 22.75
+    },
+    {
+     "w": "screaming.",
+     "start": 22.75,
+     "end": 23.27
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "The ball flew straight at my face. I sneezed again.",
+   "start": 23.52,
+   "end": 25.99,
+   "words": [
+    {
+     "w": "The",
+     "start": 23.52,
+     "end": 23.59
+    },
+    {
+     "w": "ball",
+     "start": 23.59,
+     "end": 23.82
+    },
+    {
+     "w": "flew",
+     "start": 23.82,
+     "end": 23.99
+    },
+    {
+     "w": "straight",
+     "start": 23.99,
+     "end": 24.27
+    },
+    {
+     "w": "at",
+     "start": 24.27,
+     "end": 24.33
+    },
+    {
+     "w": "my",
+     "start": 24.33,
+     "end": 24.46
+    },
+    {
+     "w": "face.",
+     "start": 24.46,
+     "end": 24.98
+    },
+    {
+     "w": "I",
+     "start": 25.19,
+     "end": 25.28
+    },
+    {
+     "w": "sneezed",
+     "start": 25.28,
+     "end": 25.65
+    },
+    {
+     "w": "again.",
+     "start": 25.65,
+     "end": 25.99
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "Achoo! I was in the zoo. Inside the lion cage. Holding a bucket of meat.",
+   "start": 26.13,
+   "end": 29.91,
+   "words": [
+    {
+     "w": "Achoo!",
+     "start": 26.13,
+     "end": 26.54
+    },
+    {
+     "w": "I",
+     "start": 26.65,
+     "end": 26.71
+    },
+    {
+     "w": "was",
+     "start": 26.71,
+     "end": 26.87
+    },
+    {
+     "w": "in",
+     "start": 26.87,
+     "end": 26.95
+    },
+    {
+     "w": "the",
+     "start": 26.95,
+     "end": 27.03
+    },
+    {
+     "w": "zoo.",
+     "start": 27.03,
+     "end": 27.39
+    },
+    {
+     "w": "Inside",
+     "start": 27.48,
+     "end": 27.83
+    },
+    {
+     "w": "the",
+     "start": 27.83,
+     "end": 27.89
+    },
+    {
+     "w": "lion",
+     "start": 27.89,
+     "end": 28.25
+    },
+    {
+     "w": "cage.",
+     "start": 28.25,
+     "end": 28.64
+    },
+    {
+     "w": "Holding",
+     "start": 28.82,
+     "end": 29.07
+    },
+    {
+     "w": "a",
+     "start": 29.07,
+     "end": 29.12
+    },
+    {
+     "w": "bucket",
+     "start": 29.12,
+     "end": 29.42
+    },
+    {
+     "w": "of",
+     "start": 29.42,
+     "end": 29.51
+    },
+    {
+     "w": "meat.",
+     "start": 29.51,
+     "end": 29.91
+    }
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "The lion looked at me. I looked at the lion. The zookeeper was now in my math class.",
+   "start": 30.15,
+   "end": 33.87,
+   "words": [
+    {
+     "w": "The",
+     "start": 30.15,
+     "end": 30.25
+    },
+    {
+     "w": "lion",
+     "start": 30.25,
+     "end": 30.57
+    },
+    {
+     "w": "looked",
+     "start": 30.57,
+     "end": 30.81
+    },
+    {
+     "w": "at",
+     "start": 30.81,
+     "end": 30.9
+    },
+    {
+     "w": "me.",
+     "start": 30.9,
+     "end": 31.12
+    },
+    {
+     "w": "I",
+     "start": 31.22,
+     "end": 31.28
+    },
+    {
+     "w": "looked",
+     "start": 31.28,
+     "end": 31.5
+    },
+    {
+     "w": "at",
+     "start": 31.5,
+     "end": 31.57
+    },
+    {
+     "w": "the",
+     "start": 31.57,
+     "end": 31.64
+    },
+    {
+     "w": "lion.",
+     "start": 31.64,
+     "end": 32.15
+    },
+    {
+     "w": "The",
+     "start": 32.15,
+     "end": 32.26
+    },
+    {
+     "w": "zookeeper",
+     "start": 32.26,
+     "end": 32.68
+    },
+    {
+     "w": "was",
+     "start": 32.68,
+     "end": 32.85
+    },
+    {
+     "w": "now",
+     "start": 32.85,
+     "end": 33.0
+    },
+    {
+     "w": "in",
+     "start": 33.0,
+     "end": 33.06
+    },
+    {
+     "w": "my",
+     "start": 33.06,
+     "end": 33.16
+    },
+    {
+     "w": "math",
+     "start": 33.16,
+     "end": 33.44
+    },
+    {
+     "w": "class.",
+     "start": 33.44,
+     "end": 33.87
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "text": "Achoo! A wedding. Everyone was staring at me. I was holding the ring.",
+   "start": 33.99,
+   "end": 37.53,
+   "words": [
+    {
+     "w": "Achoo!",
+     "start": 33.99,
+     "end": 34.48
+    },
+    {
+     "w": "A",
+     "start": 34.64,
+     "end": 34.72
+    },
+    {
+     "w": "wedding.",
+     "start": 34.72,
+     "end": 35.12
+    },
+    {
+     "w": "Everyone",
+     "start": 35.12,
+     "end": 35.64
+    },
+    {
+     "w": "was",
+     "start": 35.64,
+     "end": 35.76
+    },
+    {
+     "w": "staring",
+     "start": 35.76,
+     "end": 36.13
+    },
+    {
+     "w": "at",
+     "start": 36.13,
+     "end": 36.22
+    },
+    {
+     "w": "me.",
+     "start": 36.22,
+     "end": 36.45
+    },
+    {
+     "w": "I",
+     "start": 36.57,
+     "end": 36.65
+    },
+    {
+     "w": "was",
+     "start": 36.65,
+     "end": 36.8
+    },
+    {
+     "w": "holding",
+     "start": 36.8,
+     "end": 37.07
+    },
+    {
+     "w": "the",
+     "start": 37.07,
+     "end": 37.14
+    },
+    {
+     "w": "ring.",
+     "start": 37.14,
+     "end": 37.53
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "text": "Achoo! A fire truck. And I was driving it. I'm eleven!",
+   "start": 37.73,
+   "end": 40.67,
+   "words": [
+    {
+     "w": "Achoo!",
+     "start": 37.73,
+     "end": 38.3
+    },
+    {
+     "w": "A",
+     "start": 38.51,
+     "end": 38.63
+    },
+    {
+     "w": "fire",
+     "start": 38.63,
+     "end": 38.94
+    },
+    {
+     "w": "truck.",
+     "start": 38.94,
+     "end": 39.22
+    },
+    {
+     "w": "And",
+     "start": 39.22,
+     "end": 39.33
+    },
+    {
+     "w": "I",
+     "start": 39.33,
+     "end": 39.36
+    },
+    {
+     "w": "was",
+     "start": 39.36,
+     "end": 39.49
+    },
+    {
+     "w": "driving",
+     "start": 39.49,
+     "end": 39.89
+    },
+    {
+     "w": "it.",
+     "start": 39.89,
+     "end": 40.04
+    },
+    {
+     "w": "I'm",
+     "start": 40.18,
+     "end": 40.26
+    },
+    {
+     "w": "eleven!",
+     "start": 40.26,
+     "end": 40.67
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "text": "Then came the biggest sneeze of my life.",
+   "start": 40.67,
+   "end": 42.51,
+   "words": [
+    {
+     "w": "Then",
+     "start": 40.67,
+     "end": 41.01
+    },
+    {
+     "w": "came",
+     "start": 41.01,
+     "end": 41.2
+    },
+    {
+     "w": "the",
+     "start": 41.2,
+     "end": 41.28
+    },
+    {
+     "w": "biggest",
+     "start": 41.28,
+     "end": 41.61
+    },
+    {
+     "w": "sneeze",
+     "start": 41.61,
+     "end": 41.88
+    },
+    {
+     "w": "of",
+     "start": 41.88,
+     "end": 41.95
+    },
+    {
+     "w": "my",
+     "start": 41.95,
+     "end": 42.07
+    },
+    {
+     "w": "life.",
+     "start": 42.07,
+     "end": 42.51
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "text": "I opened my eyes in the cockpit of a plane, high above the clouds.",
+   "start": 42.68,
+   "end": 45.65,
+   "words": [
+    {
+     "w": "I",
+     "start": 42.68,
+     "end": 42.78
+    },
+    {
+     "w": "opened",
+     "start": 42.78,
+     "end": 43.04
+    },
+    {
+     "w": "my",
+     "start": 43.04,
+     "end": 43.16
+    },
+    {
+     "w": "eyes",
+     "start": 43.16,
+     "end": 43.44
+    },
+    {
+     "w": "in",
+     "start": 43.44,
+     "end": 43.5
+    },
+    {
+     "w": "the",
+     "start": 43.5,
+     "end": 43.58
+    },
+    {
+     "w": "cockpit",
+     "start": 43.58,
+     "end": 43.96
+    },
+    {
+     "w": "of",
+     "start": 43.96,
+     "end": 44.04
+    },
+    {
+     "w": "a",
+     "start": 44.04,
+     "end": 44.09
+    },
+    {
+     "w": "plane,",
+     "start": 44.09,
+     "end": 44.46
+    },
+    {
+     "w": "high",
+     "start": 44.61,
+     "end": 44.8
+    },
+    {
+     "w": "above",
+     "start": 44.8,
+     "end": 45.04
+    },
+    {
+     "w": "the",
+     "start": 45.04,
+     "end": 45.11
+    },
+    {
+     "w": "clouds.",
+     "start": 45.11,
+     "end": 45.65
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "text": "And the pilot? He was in my classroom, doing long division.",
+   "start": 45.84,
+   "end": 48.69,
+   "words": [
+    {
+     "w": "And",
+     "start": 45.84,
+     "end": 45.95
+    },
+    {
+     "w": "the",
+     "start": 45.95,
+     "end": 46.01
+    },
+    {
+     "w": "pilot?",
+     "start": 46.01,
+     "end": 46.47
+    },
+    {
+     "w": "He",
+     "start": 46.7,
+     "end": 46.79
+    },
+    {
+     "w": "was",
+     "start": 46.79,
+     "end": 46.94
+    },
+    {
+     "w": "in",
+     "start": 46.94,
+     "end": 47.0
+    },
+    {
+     "w": "my",
+     "start": 47.0,
+     "end": 47.1
+    },
+    {
+     "w": "classroom,",
+     "start": 47.1,
+     "end": 47.7
+    },
+    {
+     "w": "doing",
+     "start": 47.84,
+     "end": 48.08
+    },
+    {
+     "w": "long",
+     "start": 48.08,
+     "end": 48.26
+    },
+    {
+     "w": "division.",
+     "start": 48.26,
+     "end": 48.69
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "text": "The plane started to dive. Alarms everywhere. I needed one more sneeze. But nothing came.",
+   "start": 48.69,
+   "end": 53.12,
+   "words": [
+    {
+     "w": "The",
+     "start": 48.69,
+     "end": 48.92
+    },
+    {
+     "w": "plane",
+     "start": 48.92,
+     "end": 49.14
+    },
+    {
+     "w": "started",
+     "start": 49.14,
+     "end": 49.41
+    },
+    {
+     "w": "to",
+     "start": 49.41,
+     "end": 49.48
+    },
+    {
+     "w": "dive.",
+     "start": 49.48,
+     "end": 49.93
+    },
+    {
+     "w": "Alarms",
+     "start": 50.04,
+     "end": 50.42
+    },
+    {
+     "w": "everywhere.",
+     "start": 50.42,
+     "end": 50.96
+    },
+    {
+     "w": "I",
+     "start": 51.18,
+     "end": 51.26
+    },
+    {
+     "w": "needed",
+     "start": 51.26,
+     "end": 51.46
+    },
+    {
+     "w": "one",
+     "start": 51.46,
+     "end": 51.65
+    },
+    {
+     "w": "more",
+     "start": 51.65,
+     "end": 51.82
+    },
+    {
+     "w": "sneeze.",
+     "start": 51.82,
+     "end": 52.28
+    },
+    {
+     "w": "But",
+     "start": 52.28,
+     "end": 52.51
+    },
+    {
+     "w": "nothing",
+     "start": 52.51,
+     "end": 52.77
+    },
+    {
+     "w": "came.",
+     "start": 52.77,
+     "end": 53.12
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "I searched everywhere. Then I found it. The pilot's lunch. A pepper sandwich.",
+   "start": 53.25,
+   "end": 56.38,
+   "words": [
+    {
+     "w": "I",
+     "start": 53.25,
+     "end": 53.33
+    },
+    {
+     "w": "searched",
+     "start": 53.33,
+     "end": 53.67
+    },
+    {
+     "w": "everywhere.",
+     "start": 53.67,
+     "end": 54.08
+    },
+    {
+     "w": "Then",
+     "start": 54.08,
+     "end": 54.33
+    },
+    {
+     "w": "I",
+     "start": 54.33,
+     "end": 54.42
+    },
+    {
+     "w": "found",
+     "start": 54.42,
+     "end": 54.69
+    },
+    {
+     "w": "it.",
+     "start": 54.69,
+     "end": 54.89
+    },
+    {
+     "w": "The",
+     "start": 54.89,
+     "end": 55.0
+    },
+    {
+     "w": "pilot's",
+     "start": 55.0,
+     "end": 55.35
+    },
+    {
+     "w": "lunch.",
+     "start": 55.35,
+     "end": 55.6
+    },
+    {
+     "w": "A",
+     "start": 55.69,
+     "end": 55.75
+    },
+    {
+     "w": "pepper",
+     "start": 55.75,
+     "end": 55.97
+    },
+    {
+     "w": "sandwich.",
+     "start": 55.97,
+     "end": 56.38
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "text": "I took one big sniff. Achoo!",
+   "start": 56.52,
+   "end": 58.11,
+   "words": [
+    {
+     "w": "I",
+     "start": 56.52,
+     "end": 56.6
+    },
+    {
+     "w": "took",
+     "start": 56.6,
+     "end": 56.76
+    },
+    {
+     "w": "one",
+     "start": 56.76,
+     "end": 56.93
+    },
+    {
+     "w": "big",
+     "start": 56.93,
+     "end": 57.08
+    },
+    {
+     "w": "sniff.",
+     "start": 57.08,
+     "end": 57.38
+    },
+    {
+     "w": "Achoo!",
+     "start": 57.51,
+     "end": 58.11
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "text": "The pilot was back in the sky. And I was back at my desk.",
+   "start": 58.21,
+   "end": 60.7,
+   "words": [
+    {
+     "w": "The",
+     "start": 58.21,
+     "end": 58.33
+    },
+    {
+     "w": "pilot",
+     "start": 58.33,
+     "end": 58.62
+    },
+    {
+     "w": "was",
+     "start": 58.62,
+     "end": 58.75
+    },
+    {
+     "w": "back",
+     "start": 58.75,
+     "end": 58.96
+    },
+    {
+     "w": "in",
+     "start": 58.96,
+     "end": 59.03
+    },
+    {
+     "w": "the",
+     "start": 59.03,
+     "end": 59.09
+    },
+    {
+     "w": "sky.",
+     "start": 59.09,
+     "end": 59.46
+    },
+    {
+     "w": "And",
+     "start": 59.46,
+     "end": 59.69
+    },
+    {
+     "w": "I",
+     "start": 59.69,
+     "end": 59.73
+    },
+    {
+     "w": "was",
+     "start": 59.73,
+     "end": 59.85
+    },
+    {
+     "w": "back",
+     "start": 59.85,
+     "end": 60.05
+    },
+    {
+     "w": "at",
+     "start": 60.05,
+     "end": 60.11
+    },
+    {
+     "w": "my",
+     "start": 60.11,
+     "end": 60.24
+    },
+    {
+     "w": "desk.",
+     "start": 60.24,
+     "end": 60.7
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "text": "My whole class was clapping.",
+   "start": 60.7,
+   "end": 61.77,
+   "words": [
+    {
+     "w": "My",
+     "start": 60.7,
+     "end": 60.82
+    },
+    {
+     "w": "whole",
+     "start": 60.82,
+     "end": 60.97
+    },
+    {
+     "w": "class",
+     "start": 60.97,
+     "end": 61.26
+    },
+    {
+     "w": "was",
+     "start": 61.26,
+     "end": 61.39
+    },
+    {
+     "w": "clapping.",
+     "start": 61.39,
+     "end": 61.77
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "text": "The teacher handed back my test. A plus. Perfect score.",
+   "start": 61.77,
+   "end": 65.04,
+   "words": [
+    {
+     "w": "The",
+     "start": 61.77,
+     "end": 62.15
+    },
+    {
+     "w": "teacher",
+     "start": 62.15,
+     "end": 62.42
+    },
+    {
+     "w": "handed",
+     "start": 62.42,
+     "end": 62.63
+    },
+    {
+     "w": "back",
+     "start": 62.63,
+     "end": 62.79
+    },
+    {
+     "w": "my",
+     "start": 62.79,
+     "end": 62.92
+    },
+    {
+     "w": "test.",
+     "start": 62.92,
+     "end": 63.39
+    },
+    {
+     "w": "A",
+     "start": 63.52,
+     "end": 63.61
+    },
+    {
+     "w": "plus.",
+     "start": 63.61,
+     "end": 64.12
+    },
+    {
+     "w": "Perfect",
+     "start": 64.38,
+     "end": 64.65
+    },
+    {
+     "w": "score.",
+     "start": 64.65,
+     "end": 65.04
+    }
+   ]
+  },
+  {
+   "id": "L21",
+   "text": "Because a chef, a goalkeeper, a zookeeper, and a pilot had each solved one question.",
+   "start": 65.15,
+   "end": 68.89,
+   "words": [
+    {
+     "w": "Because",
+     "start": 65.15,
+     "end": 65.4
+    },
+    {
+     "w": "a",
+     "start": 65.4,
+     "end": 65.43
+    },
+    {
+     "w": "chef,",
+     "start": 65.43,
+     "end": 65.8
+    },
+    {
+     "w": "a",
+     "start": 65.94,
+     "end": 66.03
+    },
+    {
+     "w": "goalkeeper,",
+     "start": 66.03,
+     "end": 66.6
+    },
+    {
+     "w": "a",
+     "start": 66.6,
+     "end": 66.7
+    },
+    {
+     "w": "zookeeper,",
+     "start": 66.7,
+     "end": 67.18
+    },
+    {
+     "w": "and",
+     "start": 67.18,
+     "end": 67.28
+    },
+    {
+     "w": "a",
+     "start": 67.28,
+     "end": 67.31
+    },
+    {
+     "w": "pilot",
+     "start": 67.31,
+     "end": 67.66
+    },
+    {
+     "w": "had",
+     "start": 67.66,
+     "end": 67.79
+    },
+    {
+     "w": "each",
+     "start": 67.79,
+     "end": 67.94
+    },
+    {
+     "w": "solved",
+     "start": 67.94,
+     "end": 68.24
+    },
+    {
+     "w": "one",
+     "start": 68.24,
+     "end": 68.41
+    },
+    {
+     "w": "question.",
+     "start": 68.41,
+     "end": 68.89
+    }
+   ]
+  },
+  {
+   "id": "L22",
+   "text": "The doctor says I'll grow out of it.",
+   "start": 69.08,
+   "end": 70.55,
+   "words": [
+    {
+     "w": "The",
+     "start": 69.08,
+     "end": 69.17
+    },
+    {
+     "w": "doctor",
+     "start": 69.17,
+     "end": 69.46
+    },
+    {
+     "w": "says",
+     "start": 69.46,
+     "end": 69.66
+    },
+    {
+     "w": "I'll",
+     "start": 69.66,
+     "end": 69.77
+    },
+    {
+     "w": "grow",
+     "start": 69.77,
+     "end": 69.97
+    },
+    {
+     "w": "out",
+     "start": 69.97,
+     "end": 70.1
+    },
+    {
+     "w": "of",
+     "start": 70.1,
+     "end": 70.19
+    },
+    {
+     "w": "it.",
+     "start": 70.19,
+     "end": 70.55
+    }
+   ]
+  },
+  {
+   "id": "L23",
+   "text": "But tomorrow is the math final.",
+   "start": 70.55,
+   "end": 71.85,
+   "words": [
+    {
+     "w": "But",
+     "start": 70.55,
+     "end": 70.68
+    },
+    {
+     "w": "tomorrow",
+     "start": 70.68,
+     "end": 71.11
+    },
+    {
+     "w": "is",
+     "start": 71.11,
+     "end": 71.19
+    },
+    {
+     "w": "the",
+     "start": 71.19,
+     "end": 71.26
+    },
+    {
+     "w": "math",
+     "start": 71.26,
+     "end": 71.52
+    },
+    {
+     "w": "final.",
+     "start": 71.52,
+     "end": 71.85
+    }
+   ]
+  },
+  {
+   "id": "L24",
+   "text": "So tonight, I'm buying pepper.",
+   "start": 71.89,
+   "end": 73.13,
+   "words": [
+    {
+     "w": "So",
+     "start": 71.89,
+     "end": 72.02
+    },
+    {
+     "w": "tonight,",
+     "start": 72.02,
+     "end": 72.41
+    },
+    {
+     "w": "I'm",
+     "start": 72.41,
+     "end": 72.54
+    },
+    {
+     "w": "buying",
+     "start": 72.54,
+     "end": 72.81
+    },
+    {
+     "w": "pepper.",
+     "start": 72.81,
+     "end": 73.13
+    }
+   ]
+  }
+ ]
+}

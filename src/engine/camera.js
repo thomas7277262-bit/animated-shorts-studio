@@ -31,7 +31,8 @@ export function shotState(shot, t) {
   const preset = SHOT_PRESETS[shot.type] || SHOT_PRESETS.medium;
   const from = { ...preset.from, ...(shot.from || {}) };
   const to = { ...preset.to, ...(shot.to || {}) };
-  const u = easeInOut((t - shot.t0) / Math.max(0.001, shot.t1 - shot.t0));
+  const u0 = Math.min(1, Math.max(0, (t - shot.t0) / Math.max(0.001, shot.t1 - shot.t0)));
+  const u = shot.ease === 'linear' ? u0 : shot.ease === 'out' ? 1 - (1 - u0) * (1 - u0) : easeInOut(u0);
   const o = {};
   for (const k of Object.keys(from)) o[k] = lerp(from[k], to[k] ?? from[k], u);
   return o;

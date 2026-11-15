@@ -101,6 +101,45 @@ export const ACTIONS = {
   holdMatch: (t) => pose({ ...breathe(t, 0.4), headNod: 12, armR: { raise: 18, fwd: 70, elbow: 65 }, armL: { raise: 18, fwd: 55, elbow: 80, elbowOut: -15 } }),
   climb: (t, d, p = {}) => { const w = walkCycle(t, 0.75 * (p.speed || 1), 0.9); return pose({ ...w, lean: 12, armR: { raise: 45, fwd: 40, elbow: 40 } }); },
   lookUp: (t) => pose({ ...breathe(t), headNod: -28, lean: -4, armL: { raise: 12, fwd: 10, elbow: 15 }, armR: { raise: 12, fwd: 10, elbow: 15 } }),
+  // one big sneeze: wind-up (head back) then snap forward, then recover
+  sneeze: (t) => {
+    const w = smoothstep((t - 0) / (0.35 - 0)), snap = smoothstep((t - 0.35) / (0.45 - 0.35)), rec = smoothstep((t - 0.7) / (1.2 - 0.7));
+    const k = snap * (1 - rec);
+    return pose({
+      ...breathe(t, 0.4), headNod: -24 * w * (1 - snap) + 30 * k, lean: -8 * w * (1 - snap) + 20 * k, bodyY: 0.04 * w * (1 - snap),
+      squash: 0.05 * k,
+      armL: { raise: 20 + 25 * w, fwd: 40 + 40 * w, elbow: 110 }, armR: { raise: 20 + 25 * w, fwd: 40 + 40 * w, elbow: 110 },
+    });
+  },
+  sniff: (t) => pose({ ...breathe(t, 0.4), headNod: -10 + sin(t * 9) * 4, lean: 6, armR: { raise: 20, fwd: 80, elbow: 95 }, armL: { raise: 12, fwd: 15, elbow: 20 } }),
+  sitWrite: (t) => pose({
+    ...breathe(t, 0.4), hipDrop: -0.45, headNod: 22, lean: 10,
+    legL: { fwd: 85, knee: 85 }, legR: { fwd: 85, knee: 85 },
+    armL: { raise: 15, fwd: 55, elbow: 70 }, armR: { raise: 18 + sin(t * 11) * 4, fwd: 58, elbow: 75 + sin(t * 13) * 8, elbowOut: sin(t * 7) * 6 },
+  }),
+  sitPanic: (t) => pose({
+    hipDrop: -0.45, headTurn: sin(t * 7) * 30, sway: sin(t * 30) * 2, headNod: -6,
+    legL: { fwd: 85, knee: 85 }, legR: { fwd: 85, knee: 85 },
+    armL: { raise: 30, fwd: 70, elbow: 40 + sin(t * 20) * 10 }, armR: { raise: 30, fwd: 70, elbow: 40 + sin(t * 20 + 1) * 10 },
+  }),
+  drive: (t) => pose({
+    ...breathe(t, 0.3), hipDrop: -0.45, lean: 6, sway: sin(t * 3) * 6,
+    legL: { fwd: 80, knee: 70 }, legR: { fwd: 80, knee: 70 },
+    armL: { raise: 25 + sin(t * 3) * 12, fwd: 75, elbow: 35 }, armR: { raise: 25 - sin(t * 3) * 12, fwd: 75, elbow: 35 },
+  }),
+  toss: (t) => {
+    const b = Math.abs(sin(t * 4));
+    return pose({ headNod: -22, lean: -4, bodyY: b * 0.05, armL: { raise: 150 - b * 30, fwd: 20, elbow: 40 }, armR: { raise: 150 - b * 30, fwd: 20, elbow: 40 } });
+  },
+  goalie: (t) => {
+    const j = smoothstep((t - 0) / (0.3 - 0));
+    return pose({ hipDrop: -0.12 * (1 - j), bodyY: 0.25 * j * Math.max(0, sin(t * 3)), sway: sin(t * 30) * 2, headNod: 6,
+      armL: { raise: 120 + 30 * j, fwd: 30, elbow: 15 }, armR: { raise: 120 + 30 * j, fwd: 30, elbow: 15 },
+      legL: { out: 18, knee: 20 }, legR: { out: 18, knee: 20 } });
+  },
+  holdOut: (t) => pose({ ...breathe(t, 0.6), lean: -6, headNod: 4, sway: sin(t * 28) * 1.5, armR: { raise: 20, fwd: 80, elbow: 10 }, armL: { raise: 30, fwd: 30, elbow: 90 }, legL: { knee: 12 }, legR: { knee: 12 } }),
+  clap: (t) => { const c = sin(t * 16); return pose({ ...breathe(t), headNod: -4, bodyY: Math.abs(c) * 0.02, armL: { raise: 30, fwd: 75, elbow: 55, elbowOut: 20 + c * 18 }, armR: { raise: 30, fwd: 75, elbow: 55, elbowOut: 20 + c * 18 } }); },
+  sitClap: (t) => { const c = sin(t * 16); return pose({ hipDrop: -0.45, legL: { fwd: 85, knee: 85 }, legR: { fwd: 85, knee: 85 }, headNod: -4, armL: { raise: 30, fwd: 75, elbow: 55, elbowOut: 20 + c * 18 }, armR: { raise: 30, fwd: 75, elbow: 55, elbowOut: 20 + c * 18 } }); },
   wave: (t) => pose({
     ...breathe(t), headTilt: 8,
     armR: { raise: 140, fwd: 10, elbow: 30 + sin(t * 9) * 25, elbowOut: sin(t * 9) * 20 },

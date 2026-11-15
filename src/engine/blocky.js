@@ -215,6 +215,28 @@ export class BlockCharacter {
         acc.add(at(block(hs * 1.0, hs * 0.06, hs * 0.5, capM, 0.02), 0, top - hs * 0.06, hs * 0.7));
         break;
       }
+      case 'chef': { // tall puffy white chef's hat
+        const w = mat('#ffffff', { roughness: 0.8 });
+        acc.add(at(block(hs * 1.12, hs * 0.22, hs * 1.08, w, 0.05), 0, top + hs * 0.06, 0));
+        acc.add(at(block(hs * 1.0, hs * 0.55, hs * 0.96, w, 0.12), 0, top + hs * 0.42, 0));
+        for (const [x, z] of [[-0.28, 0], [0.28, 0], [0, -0.28], [0, 0.28]]) acc.add(at(new THREE.Mesh(new THREE.SphereGeometry(hs * 0.3, 10, 8), w), x * hs, top + hs * 0.76, z * hs));
+        break;
+      }
+      case 'firehat': { // red firefighter helmet with a wide brim and gold badge
+        const r = mat('#d7261e', { roughness: 0.4 });
+        acc.add(at(block(hs * 1.14, hs * 0.4, hs * 1.12, r, 0.1), 0, top + hs * 0.08, 0));
+        acc.add(at(block(hs * 1.4, hs * 0.05, hs * 1.5, r, 0.02), 0, top - hs * 0.1, -hs * 0.08));
+        acc.add(at(block(hs * 0.3, hs * 0.3, hs * 0.04, mat('#ffc21a', { metalness: 0.6, roughness: 0.3 }), 0.02), 0, top + hs * 0.1, hs * 0.58));
+        break;
+      }
+      case 'veil': { // long hair + white bridal veil and flower crown
+        acc.add(at(block(hs * 1.16, hs * 0.22, hs * 1.1, hair, 0.05), 0, top, 0));
+        acc.add(at(block(hs * 1.16, hs * 1.15, hs * 0.25, hair, 0.05), 0, top - hs * 0.55, -hs * 0.48));
+        const v = mat('#ffffff', { transparent: true, opacity: 0.8, roughness: 0.6 });
+        acc.add(at(block(hs * 1.3, hs * 1.6, hs * 0.08, v, 0.02), 0, top - hs * 0.6, -hs * 0.66));
+        for (let i = 0; i < 7; i++) acc.add(at(new THREE.Mesh(new THREE.SphereGeometry(hs * 0.09, 8, 6), mat(i % 2 ? '#ff7fb0' : '#ffffff')), (i - 3) * hs * 0.17, top + hs * 0.13, hs * 0.2 - Math.abs(i - 3) * hs * 0.1));
+        break;
+      }
       case 'helmet': {
         const steel = mat('#b9c2cc', { metalness: 0.55, roughness: 0.35 });
         acc.add(at(block(hs * 1.18, hs * 0.5, hs * 1.14, steel, 0.06), 0, top - hs * 0.08, 0));
@@ -360,7 +382,29 @@ export class BlockCharacter {
     lantern.add(at(block(0.24, 0.04, 0.24, flat('#333'), 0.01), 0, -0.35, 0));
     lantern.visible = false;
     this.arms.R.hand.add(lantern);
-    this.props = { sword, flashlight, phone, wand, match, lantern };
+    // story props: bucket of meat, ring box, test paper, sandwich, pepper shaker
+    const bucket = new THREE.Group();
+    bucket.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.13, 0.3, 12), flat('#9aa3ad', { metalness: 0.4, roughness: 0.4 })), 0, -0.22, 0.05));
+    for (let i = 0; i < 3; i++) bucket.add(at(new THREE.Mesh(new THREE.DodecahedronGeometry(0.07, 0), flat('#c2433a')), (i - 1) * 0.08, -0.06, 0.05 + (i % 2) * 0.04));
+    bucket.add(at(new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.012, 4, 12, Math.PI), flat('#555')), 0, -0.08, 0.05));
+    bucket.visible = false; this.arms.R.hand.add(bucket);
+    const ring = new THREE.Group();
+    ring.add(at(block(0.14, 0.09, 0.14, flat('#c0143c'), 0.02), 0, -0.02, 0.08));
+    ring.add(at(new THREE.Mesh(new THREE.TorusGeometry(0.045, 0.012, 6, 14), flat('#ffd23f', { metalness: 0.8, roughness: 0.2, emissive: '#ffb800', emissiveIntensity: 0.4 })), 0, 0.06, 0.08));
+    ring.add(at(new THREE.Mesh(new THREE.OctahedronGeometry(0.025, 0), flat('#e8f8ff', { emissive: '#ffffff', emissiveIntensity: 0.8 })), 0, 0.11, 0.08));
+    ring.visible = false; this.arms.R.hand.add(ring);
+    const paper = at(block(0.3, 0.4, 0.01, flat('#fffdf2'), 0.003), 0, -0.1, 0.08);
+    paper.visible = false; this.arms.R.hand.add(paper);
+    const sandwich = new THREE.Group();
+    sandwich.add(at(block(0.26, 0.06, 0.2, flat('#e8c07a'), 0.02), 0, -0.04, 0.08));
+    sandwich.add(at(block(0.27, 0.03, 0.21, flat('#5ab84a'), 0.01), 0, 0.0, 0.08));
+    sandwich.add(at(block(0.26, 0.06, 0.2, flat('#e8c07a'), 0.02), 0, 0.04, 0.08));
+    sandwich.visible = false; this.arms.R.hand.add(sandwich);
+    const pepper = new THREE.Group();
+    pepper.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.065, 0.22, 10), flat('#2b2b2b')), 0, 0.02, 0.06));
+    pepper.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.06, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), flat('#cfd6dd', { metalness: 0.5 })), 0, 0.13, 0.06));
+    pepper.visible = false; this.arms.R.hand.add(pepper);
+    this.props = { sword, flashlight, phone, wand, match, lantern, bucket, ring, paper, sandwich, pepper };
   }
 
   setGlasses(on) { if (this.sunglasses) for (const m of this.sunglasses) m.visible = on; }

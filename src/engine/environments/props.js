@@ -93,11 +93,87 @@ export function buildProp(p) {
     }
     case 'seed': obj = mesh(new THREE.SphereGeometry(0.06, 10, 8), mat('#3b3027'), { y: 0.06, s: [0.6, 1, 1.3] }); break;
     case 'homework': obj = box(0.35, 0.03, 0.26, '#fffdf2', { y: 0.02 }); break;
+    case 'dough': {
+      obj = new THREE.Group();
+      obj.add(mesh(new THREE.CylinderGeometry(0.55, 0.5, 0.06, 20), mat('#f3dfb4', { flatShading: false }), { y: 0.03 }));
+      obj.add(mesh(new THREE.TorusGeometry(0.52, 0.05, 6, 20), mat('#e9c98c'), { y: 0.05, rx: Math.PI / 2 }));
+      obj.userData.spinZ = 0; obj.userData.spin = 9;
+      break;
+    }
+    case 'ball': {
+      obj = new THREE.Group();
+      obj.add(mesh(new THREE.IcosahedronGeometry(0.24, 1), mat('#ffffff'), { y: 0.24 }));
+      for (let i = 0; i < 6; i++) { const a = i * 1.05; obj.add(mesh(new THREE.IcosahedronGeometry(0.075, 0), mat('#111111'), { x: Math.cos(a) * 0.2, y: 0.24 + Math.sin(a * 1.7) * 0.12, z: Math.sin(a) * 0.2 })); }
+      obj.userData.spin = 14;
+      break;
+    }
+    case 'meat': obj = mesh(new THREE.DodecahedronGeometry(0.2, 0), mat('#c2433a'), { y: 0.2, s: [1.4, 0.8, 1] }); break;
+    case 'sandwich': {
+      obj = new THREE.Group();
+      obj.add(box(0.5, 0.08, 0.4, '#e8c07a', { y: 0.04 }));
+      obj.add(box(0.52, 0.04, 0.42, '#5ab84a', { y: 0.1 }));
+      obj.add(box(0.5, 0.05, 0.4, '#d8402a', { y: 0.14 }));
+      for (let i = 0; i < 10; i++) obj.add(box(0.03, 0.02, 0.03, '#1b1b1b', { x: -0.2 + (i % 5) * 0.1, y: 0.175, z: -0.1 + Math.floor(i / 5) * 0.2 }));
+      obj.add(box(0.5, 0.08, 0.4, '#e8c07a', { y: 0.21 }));
+      break;
+    }
+    case 'pepper': {
+      obj = new THREE.Group();
+      obj.add(mesh(new THREE.CylinderGeometry(0.09, 0.1, 0.32, 10), mat('#2b2b2b'), { y: 0.16 }));
+      obj.add(mesh(new THREE.SphereGeometry(0.09, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), mat('#cfd6dd', { metalness: 0.5 }), { y: 0.32 }));
+      break;
+    }
+    case 'firetruck': {
+      // long red engine with an open side window so the driver is visible
+      obj = new THREE.Group();
+      const red = mat('#d7261e'), chrome = mat('#d9dee6', { metalness: 0.6, roughness: 0.3 });
+      obj.add(box(6.2, 1.6, 2.3, red, { x: -1.2, y: 1.5 }));
+      obj.add(box(2.2, 0.7, 2.3, red, { x: 2.9, y: 1.05 }));          // cab floor/bonnet
+      obj.add(box(0.15, 0.7, 2.3, red, { x: 3.95, y: 1.75 }));         // cab front under windshield
+      obj.add(box(2.2, 0.15, 2.3, red, { x: 2.9, y: 3.3 }));           // cab roof
+      obj.add(box(0.06, 1.15, 2.1, mat('#bfe6ff', { transparent: true, opacity: 0.18 }), { x: 4.0, y: 2.7, cast: false }));
+      obj.add(box(0.15, 1.7, 2.3, red, { x: 1.85, y: 2.45 }));         // cab back wall
+      for (const z of [-1.1, 1.1]) obj.add(box(0.15, 1.9, 0.12, red, { x: 3.9, y: 2.4, z }));
+      obj.add(box(6.0, 0.15, 2.36, chrome, { x: -1.2, y: 2.35 }));
+      obj.add(box(1.0, 0.25, 2.2, '#2f6fd6', { x: 2.9, y: 3.5 }));
+      obj.add(box(0.45, 0.22, 0.5, mat('#ff2020', { emissive: '#ff2020', emissiveIntensity: 1.5 }), { x: 2.9, y: 3.55, z: -0.6 }));
+      obj.add(box(0.45, 0.22, 0.5, mat('#2050ff', { emissive: '#2050ff', emissiveIntensity: 1.5 }), { x: 2.9, y: 3.55, z: 0.6 }));
+      // ladder on top
+      for (const z of [-0.5, 0.5]) obj.add(box(5.6, 0.1, 0.1, chrome, { x: -1.4, y: 2.6, z }));
+      for (let i = 0; i < 11; i++) obj.add(box(0.08, 0.08, 1.0, chrome, { x: -4 + i * 0.52, y: 2.6 }));
+      // hose reels, wheels, bumper, lights
+      for (const z of [-1.18, 1.18]) for (let i = 0; i < 3; i++) obj.add(box(1.4, 0.9, 0.06, i === 1 ? chrome : mat('#b81d17'), { x: -3.2 + i * 1.6, y: 1.5, z }));
+      for (const [x, z] of [[2.9, 1.1], [2.9, -1.1], [-2.6, 1.1], [-2.6, -1.1], [-1.2, 1.1], [-1.2, -1.1]]) {
+        obj.add(mesh(new THREE.CylinderGeometry(0.55, 0.55, 0.4, 14), mat('#1d1d1d'), { x, y: 0.55, z, rx: Math.PI / 2 }));
+        obj.add(mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.42, 10), chrome, { x, y: 0.55, z, rx: Math.PI / 2 }));
+      }
+      obj.add(box(0.3, 0.3, 2.4, chrome, { x: 4.05, y: 0.75 }));
+      for (const z of [-0.8, 0.8]) obj.add(box(0.06, 0.25, 0.35, mat('#fff7c2', { emissive: '#fff2a0', emissiveIntensity: 1.2 }), { x: 4.05, y: 1.2, z }));
+      // steering wheel
+      obj.add(mesh(new THREE.TorusGeometry(0.28, 0.04, 6, 16), mat('#1d1d1d'), { x: 3.45, y: 2.25, z: -0.5, ry: Math.PI / 2, rx: 0.5 }));
+      break;
+    }
+    case 'plane': {
+      // passenger jet, nose toward +x
+      obj = new THREE.Group();
+      const white = mat('#f5f7fa', { roughness: 0.5 }), blue = mat('#2f6fd6');
+      obj.add(mesh(new THREE.CylinderGeometry(1.3, 1.3, 16, 16), white, { rz: Math.PI / 2 }));
+      obj.add(mesh(new THREE.SphereGeometry(1.3, 16, 12, 0, Math.PI * 2, 0, Math.PI / 2), white, { x: 8, rz: -Math.PI / 2, s: [1, 1.6, 1] }));
+      obj.add(mesh(new THREE.ConeGeometry(1.3, 4, 16), white, { x: -10, rz: Math.PI / 2 }));
+      obj.add(box(16, 0.25, 2.65, blue, { y: -0.35 }));
+      obj.add(box(1.2, 0.5, 1.6, mat('#1b2a3d'), { x: 9.3, y: 0.55 }));                 // cockpit windows
+      for (let i = 0; i < 16; i++) for (const z of [-1.27, 1.27]) obj.add(box(0.35, 0.4, 0.05, mat('#1b2a3d'), { x: -6 + i * 0.85, y: 0.35, z }));
+      for (const z of [-1, 1]) obj.add(box(4, 0.25, 9, white, { x: -0.5, y: -0.6, z: z * 5.5, ry: z * -0.35 }));
+      for (const z of [-1, 1]) obj.add(mesh(new THREE.CylinderGeometry(0.6, 0.6, 2.6, 12), mat('#c9d1da'), { x: 0.6, y: -1.25, z: z * 4, rz: Math.PI / 2 }));
+      obj.add(box(2.6, 4, 0.25, blue, { x: -10.6, y: 2.2, ry: 0, rz: -0.4 }));
+      for (const z of [-1, 1]) obj.add(box(2, 0.2, 3.6, white, { x: -10.8, y: 0.4, z: z * 2 }));
+      break;
+    }
     default: obj = box(1, 1, 1, '#ff00ff', { y: 0.5 });
   }
   pivot.add(obj);
   outer.position.set(p.at[0], p.y || 0, p.at[1]);
-  outer.rotation.y = p.ry || 0;
+  outer.rotation.set(p.rx || 0, p.ry || 0, p.rz || 0, 'YXZ');
   if (p.scale && p.type !== 'tree') outer.scale.setScalar(p.scale);
   outer.userData.pivot = pivot;
   return outer;

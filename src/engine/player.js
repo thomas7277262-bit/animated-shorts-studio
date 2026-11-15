@@ -394,15 +394,17 @@ export class StoryPlayer {
     animateEnvironment(entry.group, t);
     for (const { spec, obj } of entry.items) {
       if (spec.moves) {
-        let x = spec.at[0], z = spec.at[1], y = spec.y || 0, ry = spec.ry || 0;
+        let x = spec.at[0], z = spec.at[1], y = spec.y || 0, ry = spec.ry || 0, rx = spec.rx || 0, rz = spec.rz || 0;
         for (const m of spec.moves) {
           if (t <= m.t0) break;
           const u0 = clamp((t - m.t0) / Math.max(0.001, m.t1 - m.t0), 0, 1);
-          const u = m.ease === 'linear' ? u0 : easeInOut(u0);
+          const u = m.ease === 'linear' ? u0 : m.ease === 'out' ? 1 - (1 - u0) * (1 - u0) : m.ease === 'in' ? u0 * u0 : easeInOut(u0);
           const tx = m.to ? m.to[0] : x, tz = m.to ? m.to[1] : z, ty = m.y ?? y;
           x += (tx - x) * u; z += (tz - z) * u; y += (ty - y) * u; ry += (m.spin || 0) * u;
+          if (m.rx !== undefined) rx += (m.rx - rx) * u;
+          if (m.rz !== undefined) rz += (m.rz - rz) * u;
         }
-        obj.position.set(x, y, z); obj.rotation.y = ry;
+        obj.position.set(x, y, z); obj.rotation.set(rx, ry, rz, 'YXZ');
       }
       if (spec.collapseT === undefined) continue;
       const u = clamp((t - spec.collapseT) / 1.1, 0, 1);

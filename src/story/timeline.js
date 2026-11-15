@@ -50,7 +50,7 @@ const AUTO_SFX = {
   stomp: [{ name: 'stomp', at: 0.5 }],
   scared: [{ name: 'gasp', at: 0.05 }],
 };
-const FX_SFX = { debris: 'crash', impact: 'bonk', stars: 'bonk', sparkle: 'sparkle', magic: 'magic', confetti: 'party', smoke: 'poof', dust: 'poof', hearts: 'pop', fire: 'fire' };
+const FX_SFX = { debris: 'crash', impact: 'bonk', stars: 'bonk', sparkle: 'sparkle', glint: 'sparkle', magic: 'magic', confetti: 'party', smoke: 'poof', poof: 'poof', dust: 'poof', hearts: 'pop', fire: 'fire' };
 const EMOTE_SFX = { '!': 'ding', '?': 'boop', '!?': 'ding', heart: 'pop', anger: 'grr', sweat: 'boop', idea: 'ding' };
 
 export function buildTimeline(storyboard, opts = {}) {
@@ -151,7 +151,7 @@ export function buildTimeline(storyboard, opts = {}) {
       for (const e of b.envEvents || []) scene.envState.events.push({ key: e.key, value: e.value, t: at(e.when ?? 0) });
       for (const m of b.propMoves || []) {
         const prop = scene.props.find((p) => p.id === m.prop);
-        if (prop) (prop.moves ||= []).push({ to: m.to, y: m.y, spin: m.spin, ease: m.ease, t0: at(m.when ?? 0), t1: at(m.end ?? 1) });
+        if (prop) (prop.moves ||= []).push({ to: m.to, y: m.y, spin: m.spin, rx: m.rx, rz: m.rz, ease: m.ease, t0: at(m.when ?? 0), t1: at(m.end ?? 1) });
       }
       for (const d of b.destroy || []) {
         const prop = scene.props.find((p) => p.id === d.prop);

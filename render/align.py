@@ -7,7 +7,7 @@ import numpy as np
 from pocketsphinx import Decoder
 
 SR = 16000
-EXTRA = {"streetlight": "S T R IY T L AY T", "brax": "B R AE K S", "brax's": "B R AE K S IH Z", "glitching": "G L IH CH IH NG"}
+EXTRA = {"achoo": "AA CH UW", "zookeeper": "Z UW K IY P ER", "streetlight": "S T R IY T L AY T", "brax": "B R AE K S", "brax's": "B R AE K S IH Z", "glitching": "G L IH CH IH NG"}
 
 def norm(tok):
     """display token -> list of dictionary words it is spoken as"""
@@ -25,7 +25,8 @@ def main(audio, lines_path, out_path):
     spoken = [w for _, _, ws in toks for w in ws]
     dec = Decoder(samprate=SR, bestpath=False, loglevel="ERROR")
     for w, p in EXTRA.items():
-        dec.add_word(w, p, True)
+        if dec.lookup_word(w) is None:
+            dec.add_word(w, p, True)
     dec.set_align_text(" ".join(spoken))
     dec.start_utt(); dec.process_raw(pcm, full_utt=True); dec.end_utt()
     seg = [s for s in dec.seg() if s.word not in ("<s>", "</s>", "<sil>", "[NOISE]")]

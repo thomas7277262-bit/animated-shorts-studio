@@ -8,6 +8,8 @@ const FX_TYPES = {
   sparkle:  { count: 28, life: 1.3, speed: [0.4, 1.5], up: [0.2, 1.6], gravity: -0.3, size: [0.04, 0.1], colors: ['#fff6a8', '#a8f0ff', '#ffffff', '#ffb6f2'], shape: 'octa', spread: 1, emissive: true },
   magic:    { count: 40, life: 1.4, speed: [0.8, 2.4], up: [0.5, 2.0], gravity: 0.2, size: [0.05, 0.12], colors: ['#b388ff', '#7c4dff', '#80d8ff', '#ff80ab'], shape: 'octa', spread: 1, emissive: true },
   confetti: { count: 70, life: 2.2, speed: [1.5, 3.5], up: [3, 6], gravity: -4.5, size: [0.06, 0.1], colors: ['#ff4d6d', '#ffd166', '#06d6a0', '#118ab2', '#b388ff'], shape: 'box', spread: 1, spin: true },
+  glint:    { count: 14, life: 1.0, speed: [0.2, 0.7], up: [0.1, 0.6], gravity: 0, size: [0.012, 0.028], colors: ['#ffffff', '#fff6a8', '#a8f0ff'], shape: 'octa', spread: 0.4, emissive: true },
+  poof:     { count: 30, life: 0.6, speed: [1.2, 2.4], up: [0.1, 0.8], gravity: 0, size: [0.03, 0.06], colors: ['#ffffff', '#e8f6ff', '#fff3b0', '#ffd6f0'], shape: 'ico', spread: 0.6, fadeGrow: 1.5, emissive: true },
   smoke:    { count: 16, life: 1.6, speed: [0.3, 0.9], up: [0.6, 1.4], gravity: 0.3, size: [0.25, 0.45], colors: ['#9e9e9e', '#bdbdbd', '#8a8a8a'], shape: 'ico', spread: 1, fadeGrow: 2.2 },
   impact:   { count: 14, life: 0.5, speed: [2.5, 4.5], up: [0.5, 2], gravity: -2, size: [0.07, 0.12], colors: ['#ffffff', '#ffe082'], shape: 'octa', spread: 1, emissive: true },
   hearts:   { count: 10, life: 1.6, speed: [0.2, 0.6], up: [0.8, 1.4], gravity: 0.1, size: [0.1, 0.16], colors: ['#ff4d6d', '#ff85a1'], shape: 'octa', spread: 0.6 },

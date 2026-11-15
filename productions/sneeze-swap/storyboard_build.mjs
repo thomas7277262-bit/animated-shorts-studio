@@ -153,7 +153,7 @@ shot({ cue: ['L10', 0], ...ZOO, music: 'comedy', note: 'ACHOO! (the lion jumps b
 shot({ cue: ['L10', 1], ...WED, ...SWAP, music: 'comedy', note: 'A wedding! Everyone was staring at me (Max at the flower arch beside the bride, rows of guests staring)',
   fx: [{ type: 'poof', at: [0.6, 1.0, -0.6], cue: ['L10', 1] }],
   c: [['max', [0.6, -0.6], 0, 'idle', 'scared'], ['bride', [-0.6, -0.6], 20, 'idle', 'surprised']],
-  camera: look([2.2, 2.9, -3.4], [0, 1.2, 6], 58, [1.4, 2.3, -2.4], [0, 1.2, 4]) });
+  camera: look([0.9, 2.9, -3.4], [0, 1.2, 6], 58, [0.7, 2.4, -2.6], [0, 1.2, 4]) });
 shot({ cue: ['L10', 8], ...WED, music: 'comedy', note: '…I was holding the ring (sparkle)',
   c: [['max', [0.6, -0.6], 0, 'holdOut', 'scared', { prop: 'ring' }], ['bride', [-0.6, -0.6], 30, 'idle', 'surprised']],
   fx: [{ type: 'glint', at: [0.85, 1.75, 0.2], cue: ['L10', 12] }],

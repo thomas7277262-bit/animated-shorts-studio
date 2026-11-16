@@ -154,7 +154,7 @@ async function main() {
   // 6. frames → video
   const workers = Number(opt.workers || Math.max(1, Math.min(4, Math.floor((await import('node:os')).cpus().length / 1))));
   log(`Rendering ${Math.round(timeline.duration * fps)} frames with ${workers} worker(s)…`);
-  const rv = await renderVideo({ timeline: lean, width, height, fps, distDir, workDir, outFile: path.join(workDir, 'video.mp4'), workers, crf: height > 2000 ? 16 : 14 });
+  const rv = await renderVideo({ timeline: lean, width, height, fps, distDir, workDir, outFile: path.join(workDir, 'video.mp4'), workers, crf: height > 2000 ? 12 : 12, quality: 0.98 });
   log(`Frames done in ${rv.seconds.toFixed(1)}s`);
 
   // 7. final encode: burn subtitles + add audio
@@ -162,7 +162,7 @@ async function main() {
   for (const f of fs.readdirSync(path.join(ROOT, 'assets/fonts'))) if (/\.(otf|ttf)$/.test(f)) fs.copyFileSync(path.join(ROOT, 'assets/fonts', f), path.join(workDir, f));
   const vf = (opt['no-subs'] ? '' : 'ass=subs.ass:fontsdir=.,') + 'scale=out_range=tv,format=yuv420p';
   run('ffmpeg', ['-y', '-v', 'error', '-i', 'video.mp4', '-i', 'audio.wav', '-vf', vf,
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', height > 2000 ? '20' : '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-color_range', 'tv', '-r', String(fps),
+    '-c:v', 'libx264', '-preset', 'slow', '-crf', height > 2000 ? '15' : '15', '-tune', 'animation', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-color_range', 'tv', '-r', String(fps),
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2', '-t', timeline.duration.toFixed(3), '-movflags', '+faststart', outFile], { cwd: workDir });
   // poster image (middle of the video)
   run('ffmpeg', ['-y', '-v', 'error', '-ss', (timeline.duration * 0.6).toFixed(2), '-i', outFile, '-frames:v', '1', '-vf', 'scale=540:-2', outFile.replace(/\.mp4$/, '.jpg')]);

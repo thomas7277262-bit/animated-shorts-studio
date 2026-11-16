@@ -66,7 +66,9 @@ export class StoryPlayer {
     this.useBloom = bloom ?? timeline.bloom ?? true;
     this.bloomDayOff = this.brightStyle; // no glow haze in bright daytime shots
     if (this.useBloom) {
-      this.composer = new EffectComposer(this.renderer);
+      // multisampled target: keeps edges smooth (without it the glow pass turns anti-aliasing off)
+      const rt = new THREE.WebGLRenderTarget(this.width * pixelRatio, this.height * pixelRatio, { type: THREE.HalfFloatType, samples: 8 });
+      this.composer = new EffectComposer(this.renderer, rt);
       this.composer.setPixelRatio(pixelRatio);
       this.composer.setSize(this.width, this.height);
       this.composer.addPass(new RenderPass(this.scene, this.camera));

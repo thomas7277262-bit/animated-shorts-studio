@@ -61,7 +61,7 @@ shot({ cue: ['L4', 0], ...STREET, env: { power: true }, events: [['power', false
   pops: [['12:00', BONE, ['L4', 1], { size: 0.6, y: 0.8, sfx: 'heartbeat' }]],
   camera: look([-1, 4, 14], [0, 3, -10], 52) });
 shot({ cue: ['L4', 3], ...HALL, env: { visitor: false }, events: [knock(['L4', 3])], music: 'suspense', note: 'KNOCK. (the door jolts)',
-  sfx: [KN(['L4', 3])], fx: [{ type: 'impact', at: [0.6, 1.7, -3.7], cue: ['L4', 3], shake: 0.35 }],
+  sfx: [KN(['L4', 3])], fx: [{ type: 'none', at: [0.6, 1.7, -3.7], cue: ['L4', 3], shake: 0.35 }],
   camera: lockCam(2.2, 46, 1.8) });
 shot({ cue: ['L5', 0], ...HALL, env: { visitor: true }, music: 'suspense', note: '"Ben? It\'s Mom." Ben freezes on the stairs side of the hall',
   c: [['ben', [0.6, 1.4], 180, 'lookUp', 'surprised']],
@@ -92,7 +92,7 @@ shot({ cue: ['L8', 2], ...HALL, env: { visitor: true }, events: [knock(['L8', 2]
   camera: look([0.9, 1.9, -2.7], [0.6, 1.75, -3.9], 44) });
 shot({ cue: ['L9', 0], ...HALL, env: { visitor: true, flicker: true }, events: [knock(['L9', 0])], music: 'suspense', note: 'FOUR. (red 4, the hall light starts to flicker)',
   sfx: [KN(['L9', 0]), { name: 'sting', cue: ['L9', 0], gain: 0.9 }], pops: [['4', RED, ['L9', 0], { size: 1.0, y: 0.72, sfx: 'none', dur: 0.95 }]],
-  fx: [{ type: 'impact', at: [0.6, 1.7, -3.7], cue: ['L9', 0], shake: 0.6 }],
+  fx: [{ type: 'none', at: [0.6, 1.7, -3.7], cue: ['L9', 0], shake: 0.6 }],
   camera: lockCam(1.5, 44, 1.2) });
 shot({ cue: ['L10', 0], ...HALL, env: { visitor: true, flicker: true }, music: 'suspense', note: 'I froze (terrified close-up, flicker)',
   c: [['ben', [0.25, -2.6], 180, 'scared', 'scared']], sfx: [{ name: 'heartbeat', cue: ['L10', 0], gain: 0.9 }],

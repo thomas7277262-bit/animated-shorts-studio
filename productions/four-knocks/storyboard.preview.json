@@ -595,7 +595,7 @@
      "pops": [],
      "fx": [
       {
-       "type": "impact",
+       "type": "none",
        "at": [
         0.6,
         1.7,
@@ -1371,7 +1371,7 @@
      ],
      "fx": [
       {
-       "type": "impact",
+       "type": "none",
        "at": [
         0.6,
         1.7,

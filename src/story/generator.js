@@ -19,12 +19,12 @@ const DEFAULT_CAST = {
   school: ['teacher', 'max', 'lily'], house: ['bob', 'max', 'lily'], city: ['bob', 'lily', 'max'],
   forest: ['noah', 'mia', 'pete'], mountains: ['noah', 'rook', 'mia'], factory: ['zed', 'noah', 'mayor'],
   studio: ['noah', 'mia', 'pete'], suburb: ['noah', 'mia', 'zed'], harbortown: ['leo', 'grandpa', 'dad'], lighthouseStairs: ['leo', 'grandpa'], lampRoom: ['leo', 'grandpa'],
-  classroom: ['max', 'teacher', 'noah'], pizzashop: ['max', 'chef'], stadium: ['max', 'noah'], zoo: ['max', 'zookeeper'], wedding: ['max', 'bride'], downtown: ['max', 'firefighter'], cockpit: ['max', 'pilot'], skies: ['max', 'pilot'],
+  classroom: ['max', 'teacher', 'noah'], pizzashop: ['max', 'chef'], stadium: ['max', 'noah'], zoo: ['max', 'zookeeper'], wedding: ['max', 'bride'], downtown: ['max', 'firefighter'], cockpit: ['max', 'pilot'], skies: ['max', 'pilot'], nightstreet: ['ben', 'grandma'], knockhouse: ['ben', 'mum'], grandmaroom: ['ben', 'grandma'],
 };
 
-const SECOND_SETTING = { castle: 'village', village: 'castle', battlefield: 'castle', school: 'house', house: 'city', city: 'house', forest: 'village', mountains: 'forest', factory: 'city', studio: 'village', suburb: 'city', harbortown: 'house', lighthouseStairs: 'harbortown', lampRoom: 'harbortown', classroom: 'pizzashop', pizzashop: 'classroom', stadium: 'zoo', zoo: 'stadium', wedding: 'downtown', downtown: 'wedding', cockpit: 'skies', skies: 'cockpit' };
+const SECOND_SETTING = { castle: 'village', village: 'castle', battlefield: 'castle', school: 'house', house: 'city', city: 'house', forest: 'village', mountains: 'forest', factory: 'city', studio: 'village', suburb: 'city', harbortown: 'house', lighthouseStairs: 'harbortown', lampRoom: 'harbortown', classroom: 'pizzashop', pizzashop: 'classroom', stadium: 'zoo', zoo: 'stadium', wedding: 'downtown', downtown: 'wedding', cockpit: 'skies', skies: 'cockpit', nightstreet: 'knockhouse', knockhouse: 'grandmaroom', grandmaroom: 'knockhouse' };
 
-const MOOD = { castle: 'medieval', village: 'medieval', battlefield: 'adventure', school: 'comedy', house: 'comedy', city: 'city', forest: 'adventure', mountains: 'adventure', factory: 'city', studio: 'comedy', suburb: 'comedy', harbortown: 'tense', lighthouseStairs: 'suspense', lampRoom: 'suspense', classroom: 'comedy', pizzashop: 'comedy', stadium: 'comedy', zoo: 'comedy', wedding: 'comedy', downtown: 'city', cockpit: 'tense', skies: 'tense' };
+const MOOD = { castle: 'medieval', village: 'medieval', battlefield: 'adventure', school: 'comedy', house: 'comedy', city: 'city', forest: 'adventure', mountains: 'adventure', factory: 'city', studio: 'comedy', suburb: 'comedy', harbortown: 'tense', lighthouseStairs: 'suspense', lampRoom: 'suspense', classroom: 'comedy', pizzashop: 'comedy', stadium: 'comedy', zoo: 'comedy', wedding: 'comedy', downtown: 'city', cockpit: 'tense', skies: 'tense', nightstreet: 'suspense', knockhouse: 'suspense', grandmaroom: 'calm' };
 
 const POOLS = {
   medieval: {

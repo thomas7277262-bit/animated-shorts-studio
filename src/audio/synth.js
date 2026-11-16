@@ -44,6 +44,16 @@ function makeSfx(name, sr = SR, seed = 1) {
       }
       break;
     }
+    case 'knock': { // knuckles on a heavy wooden door: woody body resonance + sharp click
+      out = buf(0.32); let ph1 = 0, ph2 = 0, lp = 0;
+      for (let i = 0; i < out.length; i++) {
+        const t = i / sr;
+        ph1 += (2 * Math.PI * (110 + 40 * Math.exp(-t * 60))) / sr; ph2 += (2 * Math.PI * 233) / sr;
+        lp += (noise() - lp) * 0.35;
+        out[i] = (Math.sin(ph1) * 0.9 + Math.sin(ph2) * 0.35) * Math.exp(-t * 28) + lp * Math.exp(-t * 140) * 1.4;
+      }
+      break;
+    }
     case 'whoosh': case 'swoosh': {
       const len = name === 'swoosh' ? 0.5 : 0.32;
       out = buf(len); let lp = 0, bp = 0;
@@ -239,7 +249,7 @@ export function sfx(name, sr = SR) {
   if (!sfxCache.has(k)) sfxCache.set(k, makeSfx(name, sr, name.length * 7919));
   return sfxCache.get(k);
 }
-export const SFX_NAMES = ['step', 'boing', 'thud', 'whoosh', 'swoosh', 'bonk', 'sparkle', 'magic', 'party', 'poof', 'pop', 'ding', 'boop', 'grr', 'fire', 'slap', 'stomp', 'roar', 'crash', 'thunder', 'rumble', 'sting', 'gasp', 'heartbeat'];
+export const SFX_NAMES = ['knock', 'step', 'boing', 'thud', 'whoosh', 'swoosh', 'bonk', 'sparkle', 'magic', 'party', 'poof', 'pop', 'ding', 'boop', 'grr', 'fire', 'slap', 'stomp', 'roar', 'crash', 'thunder', 'rumble', 'sting', 'gasp', 'heartbeat'];
 export const AMBIENCES = ['birds', 'wind', 'rain', 'storm', 'night', 'city'];
 
 // ---------------- music ----------------

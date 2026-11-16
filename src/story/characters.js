@@ -367,3 +367,16 @@ export const SNEEZE_CAST = {
 };
 for (const [k, v] of Object.entries(SNEEZE_CAST)) v.id = k;
 Object.assign(CHARACTER_LIBRARY, SNEEZE_CAST);
+
+// "Four Knocks" cast (Grandma and Mum are reused from earlier productions)
+export const KNOCK_CAST = {
+  ben: {
+    name: 'Ben', role: 'hero kid', style: 'blocky', height: 0.84,
+    skin: '#eac2a0', hair: '#2b1a10', hairStyle: 'messy', cheeks: true,
+    shirt: '#6f86c8', shirtDetail: 'stripe', shirtAccent: '#e8ecf8', sleeves: 'long',
+    pants: '#6f86c8', shoes: '#e8ecf8', accent: '#6f86c8', eyeStyle: 'round', brows: 'normal',
+    personality: 'quiet, careful, counts every knock',
+  },
+};
+for (const [k, v] of Object.entries(KNOCK_CAST)) v.id = k;
+Object.assign(CHARACTER_LIBRARY, KNOCK_CAST);

@@ -1,0 +1,719 @@
+{
+ "report": {
+  "method": "pocketsphinx forced alignment",
+  "audio_s": 53.313,
+  "words": 116,
+  "speech_start": 0.0,
+  "speech_end": 53.1
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "text": "In my town, there's one rule. Never open the door after midnight.",
+   "start": 0.0,
+   "end": 4.54,
+   "words": [
+    {
+     "w": "In",
+     "start": 0.0,
+     "end": 0.13
+    },
+    {
+     "w": "my",
+     "start": 0.13,
+     "end": 0.4
+    },
+    {
+     "w": "town,",
+     "start": 0.4,
+     "end": 0.86
+    },
+    {
+     "w": "there's",
+     "start": 1.02,
+     "end": 1.23
+    },
+    {
+     "w": "one",
+     "start": 1.23,
+     "end": 1.57
+    },
+    {
+     "w": "rule.",
+     "start": 1.57,
+     "end": 2.08
+    },
+    {
+     "w": "Never",
+     "start": 2.56,
+     "end": 2.89
+    },
+    {
+     "w": "open",
+     "start": 2.89,
+     "end": 3.14
+    },
+    {
+     "w": "the",
+     "start": 3.14,
+     "end": 3.22
+    },
+    {
+     "w": "door",
+     "start": 3.22,
+     "end": 3.67
+    },
+    {
+     "w": "after",
+     "start": 3.72,
+     "end": 4.02
+    },
+    {
+     "w": "midnight.",
+     "start": 4.02,
+     "end": 4.54
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "Grandma taught me the secret. Real people knock three times. It always knocks four.",
+   "start": 5.13,
+   "end": 10.3,
+   "words": [
+    {
+     "w": "Grandma",
+     "start": 5.13,
+     "end": 5.44
+    },
+    {
+     "w": "taught",
+     "start": 5.44,
+     "end": 5.68
+    },
+    {
+     "w": "me",
+     "start": 5.68,
+     "end": 5.79
+    },
+    {
+     "w": "the",
+     "start": 5.79,
+     "end": 5.87
+    },
+    {
+     "w": "secret.",
+     "start": 5.87,
+     "end": 6.33
+    },
+    {
+     "w": "Real",
+     "start": 6.89,
+     "end": 7.18
+    },
+    {
+     "w": "people",
+     "start": 7.18,
+     "end": 7.57
+    },
+    {
+     "w": "knock",
+     "start": 7.57,
+     "end": 7.87
+    },
+    {
+     "w": "three",
+     "start": 7.87,
+     "end": 8.11
+    },
+    {
+     "w": "times.",
+     "start": 8.11,
+     "end": 8.75
+    },
+    {
+     "w": "It",
+     "start": 9.13,
+     "end": 9.25
+    },
+    {
+     "w": "always",
+     "start": 9.25,
+     "end": 9.57
+    },
+    {
+     "w": "knocks",
+     "start": 9.57,
+     "end": 9.87
+    },
+    {
+     "w": "four.",
+     "start": 9.87,
+     "end": 10.3
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "Last Friday, I was home alone.",
+   "start": 11.05,
+   "end": 12.79,
+   "words": [
+    {
+     "w": "Last",
+     "start": 11.05,
+     "end": 11.3
+    },
+    {
+     "w": "Friday,",
+     "start": 11.3,
+     "end": 11.8
+    },
+    {
+     "w": "I",
+     "start": 11.8,
+     "end": 11.92
+    },
+    {
+     "w": "was",
+     "start": 11.92,
+     "end": 12.08
+    },
+    {
+     "w": "home",
+     "start": 12.08,
+     "end": 12.27
+    },
+    {
+     "w": "alone.",
+     "start": 12.27,
+     "end": 12.79
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "At exactly midnight\u2026 knock.",
+   "start": 13.19,
+   "end": 15.14,
+   "words": [
+    {
+     "w": "At",
+     "start": 13.19,
+     "end": 13.27
+    },
+    {
+     "w": "exactly",
+     "start": 13.27,
+     "end": 13.81
+    },
+    {
+     "w": "midnight\u2026",
+     "start": 13.81,
+     "end": 14.43
+    },
+    {
+     "w": "knock.",
+     "start": 14.63,
+     "end": 15.14
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "\"Ben? It's Mom. I forgot my keys.\"",
+   "start": 15.93,
+   "end": 18.61,
+   "words": [
+    {
+     "w": "\"Ben?",
+     "start": 15.93,
+     "end": 16.31
+    },
+    {
+     "w": "It's",
+     "start": 16.5,
+     "end": 16.69
+    },
+    {
+     "w": "Mom.",
+     "start": 16.69,
+     "end": 17.23
+    },
+    {
+     "w": "I",
+     "start": 17.41,
+     "end": 17.51
+    },
+    {
+     "w": "forgot",
+     "start": 17.51,
+     "end": 17.83
+    },
+    {
+     "w": "my",
+     "start": 17.83,
+     "end": 17.96
+    },
+    {
+     "w": "keys.\"",
+     "start": 17.96,
+     "end": 18.61
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "It was her voice. Her exact voice.",
+   "start": 19.11,
+   "end": 22.15,
+   "words": [
+    {
+     "w": "It",
+     "start": 19.11,
+     "end": 19.23
+    },
+    {
+     "w": "was",
+     "start": 19.23,
+     "end": 19.38
+    },
+    {
+     "w": "her",
+     "start": 19.38,
+     "end": 19.57
+    },
+    {
+     "w": "voice.",
+     "start": 19.57,
+     "end": 20.17
+    },
+    {
+     "w": "Her",
+     "start": 20.64,
+     "end": 20.78
+    },
+    {
+     "w": "exact",
+     "start": 20.78,
+     "end": 21.41
+    },
+    {
+     "w": "voice.",
+     "start": 21.59,
+     "end": 22.15
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "I reached for the lock. And I started counting.",
+   "start": 23.13,
+   "end": 25.76,
+   "words": [
+    {
+     "w": "I",
+     "start": 23.13,
+     "end": 23.2
+    },
+    {
+     "w": "reached",
+     "start": 23.2,
+     "end": 23.54
+    },
+    {
+     "w": "for",
+     "start": 23.54,
+     "end": 23.64
+    },
+    {
+     "w": "the",
+     "start": 23.64,
+     "end": 23.72
+    },
+    {
+     "w": "lock.",
+     "start": 23.72,
+     "end": 24.19
+    },
+    {
+     "w": "And",
+     "start": 24.65,
+     "end": 24.78
+    },
+    {
+     "w": "I",
+     "start": 24.78,
+     "end": 24.82
+    },
+    {
+     "w": "started",
+     "start": 24.82,
+     "end": 25.22
+    },
+    {
+     "w": "counting.",
+     "start": 25.22,
+     "end": 25.76
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "One. Two. Three.",
+   "start": 26.2,
+   "end": 28.39,
+   "words": [
+    {
+     "w": "One.",
+     "start": 26.2,
+     "end": 26.6
+    },
+    {
+     "w": "Two.",
+     "start": 27.01,
+     "end": 27.53
+    },
+    {
+     "w": "Three.",
+     "start": 27.81,
+     "end": 28.39
+    }
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "Four.",
+   "start": 28.72,
+   "end": 29.28,
+   "words": [
+    {
+     "w": "Four.",
+     "start": 28.72,
+     "end": 29.28
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "text": "I froze.",
+   "start": 29.7,
+   "end": 30.29,
+   "words": [
+    {
+     "w": "I",
+     "start": 29.7,
+     "end": 29.8
+    },
+    {
+     "w": "froze.",
+     "start": 29.8,
+     "end": 30.29
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "text": "\"Ben, open the door. It's so cold out here.\"",
+   "start": 30.54,
+   "end": 33.07,
+   "words": [
+    {
+     "w": "\"Ben,",
+     "start": 30.54,
+     "end": 30.86
+    },
+    {
+     "w": "open",
+     "start": 30.86,
+     "end": 31.25
+    },
+    {
+     "w": "the",
+     "start": 31.25,
+     "end": 31.33
+    },
+    {
+     "w": "door.",
+     "start": 31.33,
+     "end": 31.71
+    },
+    {
+     "w": "It's",
+     "start": 31.71,
+     "end": 31.95
+    },
+    {
+     "w": "so",
+     "start": 31.95,
+     "end": 32.15
+    },
+    {
+     "w": "cold",
+     "start": 32.15,
+     "end": 32.56
+    },
+    {
+     "w": "out",
+     "start": 32.56,
+     "end": 32.72
+    },
+    {
+     "w": "here.\"",
+     "start": 32.72,
+     "end": 33.07
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "text": "Then my phone buzzed. It was Mom.",
+   "start": 33.58,
+   "end": 35.67,
+   "words": [
+    {
+     "w": "Then",
+     "start": 33.58,
+     "end": 33.73
+    },
+    {
+     "w": "my",
+     "start": 33.73,
+     "end": 33.86
+    },
+    {
+     "w": "phone",
+     "start": 33.86,
+     "end": 34.21
+    },
+    {
+     "w": "buzzed.",
+     "start": 34.21,
+     "end": 34.62
+    },
+    {
+     "w": "It",
+     "start": 35.09,
+     "end": 35.16
+    },
+    {
+     "w": "was",
+     "start": 35.16,
+     "end": 35.31
+    },
+    {
+     "w": "Mom.",
+     "start": 35.31,
+     "end": 35.67
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "text": "\"Hi sweetie, we're staying at Grandma's tonight.\"",
+   "start": 36.08,
+   "end": 38.08,
+   "words": [
+    {
+     "w": "\"Hi",
+     "start": 36.08,
+     "end": 36.25
+    },
+    {
+     "w": "sweetie,",
+     "start": 36.25,
+     "end": 36.63
+    },
+    {
+     "w": "we're",
+     "start": 36.63,
+     "end": 36.8
+    },
+    {
+     "w": "staying",
+     "start": 36.8,
+     "end": 37.14
+    },
+    {
+     "w": "at",
+     "start": 37.14,
+     "end": 37.2
+    },
+    {
+     "w": "Grandma's",
+     "start": 37.2,
+     "end": 37.72
+    },
+    {
+     "w": "tonight.\"",
+     "start": 37.72,
+     "end": 38.08
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "text": "I looked at the door. The knocking had stopped.",
+   "start": 39.1,
+   "end": 41.73,
+   "words": [
+    {
+     "w": "I",
+     "start": 39.1,
+     "end": 39.16
+    },
+    {
+     "w": "looked",
+     "start": 39.16,
+     "end": 39.41
+    },
+    {
+     "w": "at",
+     "start": 39.41,
+     "end": 39.48
+    },
+    {
+     "w": "the",
+     "start": 39.48,
+     "end": 39.56
+    },
+    {
+     "w": "door.",
+     "start": 39.56,
+     "end": 40.06
+    },
+    {
+     "w": "The",
+     "start": 40.52,
+     "end": 40.6
+    },
+    {
+     "w": "knocking",
+     "start": 40.6,
+     "end": 41.01
+    },
+    {
+     "w": "had",
+     "start": 41.01,
+     "end": 41.13
+    },
+    {
+     "w": "stopped.",
+     "start": 41.13,
+     "end": 41.73
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "text": "Then I heard it again. Knock. Knock. Knock. Knock.",
+   "start": 42.5,
+   "end": 48.92,
+   "words": [
+    {
+     "w": "Then",
+     "start": 42.5,
+     "end": 42.63
+    },
+    {
+     "w": "I",
+     "start": 42.63,
+     "end": 42.7
+    },
+    {
+     "w": "heard",
+     "start": 42.7,
+     "end": 42.92
+    },
+    {
+     "w": "it",
+     "start": 42.92,
+     "end": 43.0
+    },
+    {
+     "w": "again.",
+     "start": 43.0,
+     "end": 43.52
+    },
+    {
+     "w": "Knock.",
+     "start": 44.35,
+     "end": 44.86
+    },
+    {
+     "w": "Knock.",
+     "start": 45.57,
+     "end": 46.12
+    },
+    {
+     "w": "Knock.",
+     "start": 46.97,
+     "end": 47.58
+    },
+    {
+     "w": "Knock.",
+     "start": 48.32,
+     "end": 48.92
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "But this time\u2026 it was coming from inside my closet.",
+   "start": 49.75,
+   "end": 53.1,
+   "words": [
+    {
+     "w": "But",
+     "start": 49.75,
+     "end": 49.9
+    },
+    {
+     "w": "this",
+     "start": 49.9,
+     "end": 50.2
+    },
+    {
+     "w": "time\u2026",
+     "start": 50.2,
+     "end": 50.64
+    },
+    {
+     "w": "it",
+     "start": 50.9,
+     "end": 50.99
+    },
+    {
+     "w": "was",
+     "start": 50.99,
+     "end": 51.16
+    },
+    {
+     "w": "coming",
+     "start": 51.16,
+     "end": 51.5
+    },
+    {
+     "w": "from",
+     "start": 51.5,
+     "end": 51.71
+    },
+    {
+     "w": "inside",
+     "start": 51.71,
+     "end": 52.23
+    },
+    {
+     "w": "my",
+     "start": 52.23,
+     "end": 52.38
+    },
+    {
+     "w": "closet.",
+     "start": 52.38,
+     "end": 53.1
+    }
+   ]
+  }
+ ]
+}

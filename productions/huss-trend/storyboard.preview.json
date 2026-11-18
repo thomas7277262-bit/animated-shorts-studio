@@ -1,0 +1,1906 @@
+{
+ "title": "The Trend Is Me (preview)",
+ "seed": 9,
+ "style": "bright",
+ "captionStyle": "whitered",
+ "mood": "comedy",
+ "captionRed": [
+  "huss",
+  "trend",
+  "dance",
+  "views",
+  "million",
+  "laughed",
+  "quiet",
+  "won",
+  "twenty",
+  "stadium"
+ ],
+ "narration": {
+  "audio": "productions/huss-trend/audio/narration_fenrir_kokoro.mp3",
+  "alignment": "productions/huss-trend/timing/alignment.json",
+  "offset": 0
+ },
+ "musicVolume": 0.26,
+ "sfxVolume": 0.9,
+ "voiceVolume": 1,
+ "animSpeed": 1.15,
+ "characters": [
+  "zoe",
+  "leo",
+  "mailman",
+  "mayor",
+  "kai",
+  "nana"
+ ],
+ "scenes": [
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zoe",
+     "at": [
+      -2.2,
+      -3.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "leo",
+     "at": [
+      -0.6,
+      -4.4
+     ],
+     "face": 0
+    },
+    {
+     "id": "mailman",
+     "at": [
+      1.2,
+      -3.4
+     ],
+     "face": -10
+    },
+    {
+     "id": "mayor",
+     "at": [
+      2.9,
+      -4.6
+     ],
+     "face": -20
+    },
+    {
+     "id": "kai",
+     "at": [
+      0.2,
+      0.9
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.42,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.5,
+        -6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 18,
+        "height": 7.5,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 15,
+        "height": 3,
+        "lookY": -0.10000000000000009,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zoe",
+       "action": "dance",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "dance",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mailman",
+       "action": "dance",
+       "expr": "happy",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mayor",
+       "action": "dance",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "kai",
+       "action": "idle",
+       "expr": "neutral",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Crane down over the town: the whole street doing the same dance",
+   "cue": [
+    "L1",
+    0
+   ],
+   "t0": 0,
+   "t1": 1.42
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zoe",
+     "at": [
+      -0.8,
+      -0.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "leo",
+     "at": [
+      0.8,
+      -0.6
+     ],
+     "face": -15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.95,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        -0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 3.576334374997351,
+        "dist": 4.80936586256442,
+        "height": 0.5999999999999999,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 2.862405226111748,
+        "dist": 4.004996878900157,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zoe",
+       "action": "dance",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "dance",
+       "expr": "happy",
+       "face": -15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Zoe and Leo, identical moves",
+   "cue": [
+    "L1",
+    4
+   ],
+   "t0": 1.42,
+   "t1": 3.37
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zoe",
+     "at": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.31,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 11.309932474020213,
+        "dist": 3.059411708155671,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 11.309932474020215,
+        "dist": 2.447529366524537,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zoe",
+       "action": "dance",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "One kid starts a dance (Zoe alone)",
+   "cue": [
+    "L2",
+    0
+   ],
+   "t0": 3.37,
+   "t1": 4.68
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zoe",
+     "at": [
+      -2.2,
+      -3.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "leo",
+     "at": [
+      -0.6,
+      -4.4
+     ],
+     "face": 0
+    },
+    {
+     "id": "mailman",
+     "at": [
+      1.2,
+      -3.4
+     ],
+     "face": -10
+    },
+    {
+     "id": "mayor",
+     "at": [
+      2.9,
+      -4.6
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.97,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.6,
+        -4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 20.224859431168078,
+        "dist": 10.124228365658293,
+        "height": -0.7000000000000001,
+        "lookY": 0,
+        "fov": 55
+       },
+       "to": {
+        "angle": 14.676393137450017,
+        "dist": 8.683317338436964,
+        "height": -0.6000000000000001,
+        "lookY": 0,
+        "fov": 55
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zoe",
+       "action": "dance",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "dance",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mailman",
+       "action": "dance",
+       "expr": "happy",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mayor",
+       "action": "dance",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "The whole street joins in (low wide)",
+   "cue": [
+    "L2",
+    6
+   ],
+   "t0": 4.68,
+   "t1": 6.65
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "mailman",
+     "at": [
+      0,
+      0
+     ],
+     "face": 10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.86,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.75,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": -7.907162702958458,
+        "dist": 3.63455636907725,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": -7.594643368591445,
+        "dist": 3.026549190084311,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "mailman",
+       "action": "dance",
+       "expr": "laugh",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "prop": "paper",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Even the mailman (dancing with his mail)",
+   "cue": [
+    "L3",
+    0
+   ],
+   "t0": 6.65,
+   "t1": 7.51
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "mayor",
+     "at": [
+      0,
+      -1
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.13,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.9,
+        -1
+       ],
+       "scale": false,
+       "from": {
+        "angle": 6.009005957494526,
+        "dist": 3.8209946349085593,
+        "height": -0.5999999999999999,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 5.194428907734806,
+        "dist": 3.3136083051561784,
+        "height": -0.5999999999999999,
+        "lookY": 0.050000000000000044,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "mayor",
+       "action": "dance",
+       "expr": "laugh",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Even the mayor (town hall behind him)",
+   "cue": [
+    "L3",
+    3
+   ],
+   "t0": 7.51,
+   "t1": 8.64
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "zoe",
+     "at": [
+      -2.2,
+      -3.6
+     ],
+     "face": 15
+    },
+    {
+     "id": "leo",
+     "at": [
+      -0.6,
+      -4.4
+     ],
+     "face": 0
+    },
+    {
+     "id": "mailman",
+     "at": [
+      1.2,
+      -3.4
+     ],
+     "face": -10
+    },
+    {
+     "id": "mayor",
+     "at": [
+      2.9,
+      -4.6
+     ],
+     "face": -20
+    },
+    {
+     "id": "kai",
+     "at": [
+      0,
+      0.9
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.59,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.25,
+        0.9
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 4.5,
+        "height": 0.25,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 0,
+        "dist": 2.5,
+        "height": 0.19999999999999996,
+        "lookY": 0.050000000000000044,
+        "fov": 46
+       },
+       "ease": "linear",
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "zoe",
+       "action": "dance",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "leo",
+       "action": "dance",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mailman",
+       "action": "dance",
+       "expr": "happy",
+       "face": -10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "mayor",
+       "action": "dance",
+       "expr": "happy",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "kai",
+       "action": "idle",
+       "expr": "neutral",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Everyone… except me (slow push on Kai standing still, dancers behind)",
+   "cue": [
+    "L4",
+    0
+   ],
+   "t0": 8.64,
+   "t1": 10.23
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      0,
+      0.6
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.58,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.2,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 8.746162262555211,
+        "dist": 2.630589287593181,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 9.090276920822324,
+        "dist": 2.025438224187546,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "talk",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Kai to camera: I make up my own stuff",
+   "cue": [
+    "L5",
+    0
+   ],
+   "t0": 10.23,
+   "t1": 12.81
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 2.03,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.2,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 28.072486935852954,
+        "dist": 3.4,
+        "height": 0.40000000000000013,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 28.072486935852954,
+        "dist": 3.4,
+        "height": 0.40000000000000013,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "holdOut",
+       "expr": "happy",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "One day I filmed myself (selfie at the bus stop)",
+   "cue": [
+    "L6",
+    0
+   ],
+   "t0": 12.81,
+   "t1": 14.84
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.52,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.2,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 14.931417178137552,
+        "dist": 3.1048349392520045,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": 13.828650972280167,
+        "dist": 2.67761087538873,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "huss",
+       "expr": "laugh",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [
+      {
+       "name": "pop",
+       "when": 0,
+       "gain": 0.55
+      },
+      {
+       "name": "pop",
+       "when": 1,
+       "gain": 0.55
+      },
+      {
+       "name": "pop",
+       "when": 1,
+       "gain": 0.55
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "HUSS! (punch-in)",
+   "cue": [
+    "L6",
+    7
+   ],
+   "t0": 14.84,
+   "t1": 15.36
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.51,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.45,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -12.264773727892402,
+        "dist": 2.3537204591879637,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": -11.309932474020224,
+        "dist": 2.039607805437114,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "huss",
+       "expr": "laugh",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "HUSS! (closer)",
+   "cue": [
+    "L6",
+    8
+   ],
+   "t0": 15.36,
+   "t1": 15.87
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 15
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.85,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.55,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 6.340191745909915,
+        "dist": 1.8110770276274832,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 44
+       },
+       "to": {
+        "angle": 5.710593137499648,
+        "dist": 1.6079800993793425,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 44
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "huss",
+       "expr": "laugh",
+       "face": 15,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "HUSS! (face)",
+   "cue": [
+    "L6",
+    9
+   ],
+   "t0": 15.87,
+   "t1": 16.72
+  },
+  {
+   "environment": "trendfeed",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "env": {
+    "screen": "views",
+    "views": 12
+   },
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [],
+   "beats": [
+    {
+     "duration": 0.7,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        0,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 13.9,
+        "height": 0,
+        "lookY": 0,
+        "fov": 60
+       },
+       "to": {
+        "angle": 0,
+        "dist": 13.3,
+        "height": 0,
+        "lookY": 0,
+        "fov": 60
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Twelve views",
+   "cue": [
+    "L7",
+    0
+   ],
+   "t0": 16.72,
+   "t1": 17.42
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      -0.7,
+      0
+     ],
+     "face": 20
+    },
+    {
+     "id": "zoe",
+     "at": [
+      0.7,
+      0
+     ],
+     "face": -20
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.33,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.25,
+        0
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 3.8,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 3.2,
+        "height": 0,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zoe",
+       "action": "point",
+       "expr": "laugh",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Everybody laughed (Leo and Zoe point and laugh)",
+   "cue": [
+    "L7",
+    2
+   ],
+   "t0": 17.42,
+   "t1": 18.75
+  },
+  {
+   "environment": "classroom",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "leo",
+     "at": [
+      -1.3,
+      -1.2
+     ],
+     "face": 20
+    },
+    {
+     "id": "zoe",
+     "at": [
+      1.3,
+      -1.2
+     ],
+     "face": -20
+    },
+    {
+     "id": "kai",
+     "at": [
+      0,
+      2.2
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.86,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.3,
+        0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 0,
+        "dist": 5.8,
+        "height": 0.5999999999999999,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 0,
+        "dist": 5,
+        "height": 0.5,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "leo",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": 20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "zoe",
+       "action": "laugh",
+       "expr": "laugh",
+       "face": -20,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "kai",
+       "action": "idle",
+       "expr": "sad",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "HUSS BOY",
+       "color": "#ff3030",
+       "when": 0.46774193548387166,
+       "dur": 1,
+       "y": 0.8,
+       "size": 0.65,
+       "sfx": "boing"
+      }
+     ],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "At school: \"Huss Boy\" (classmates laughing, Kai slumps)",
+   "cue": [
+    "L8",
+    0
+   ],
+   "t0": 18.75,
+   "t1": 20.61
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nana",
+     "at": [
+      0,
+      0.4
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.12,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.35,
+        0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": -8.746162262555211,
+        "dist": 2.630589287593181,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 46
+       },
+       "to": {
+        "angle": -8.664135433108068,
+        "dist": 2.124241040936739,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 46
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nana",
+       "action": "holdOut",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Nana on the porch, watching his video on her phone",
+   "cue": [
+    "L9",
+    0
+   ],
+   "t0": 20.61,
+   "t1": 21.73
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nana",
+     "at": [
+      0,
+      0.4
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.44,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.4,
+        0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 10.619655276155132,
+        "dist": 1.6278820596099708,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 42
+       },
+       "to": {
+        "angle": 9.727578551401603,
+        "dist": 1.4204224723651762,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 42
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nana",
+       "action": "holdOut",
+       "expr": "laugh",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "prop": "phone",
+       "glasses": false
+      }
+     ],
+     "pops": [
+      {
+       "text": "x40",
+       "color": "#ff3030",
+       "when": 0,
+       "dur": 1,
+       "y": 0.78,
+       "size": 0.7,
+       "sfx": "ding"
+      }
+     ],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "Forty times!",
+   "cue": [
+    "L9",
+    4
+   ],
+   "t0": 21.73,
+   "t1": 23.17
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "nana",
+     "at": [
+      -0.5,
+      0.3
+     ],
+     "face": 30
+    },
+    {
+     "id": "kai",
+     "at": [
+      0.6,
+      0.5
+     ],
+     "face": -35
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.52,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        0,
+        1.25,
+        0.4
+       ],
+       "scale": false,
+       "from": {
+        "angle": 3.8140748342903543,
+        "dist": 3.006659275674582,
+        "height": 0.25,
+        "lookY": 0,
+        "fov": 48
+       },
+       "to": {
+        "angle": 3.576334374997351,
+        "dist": 2.40468293128221,
+        "height": 0.19999999999999996,
+        "lookY": 0,
+        "fov": 48
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "nana",
+       "action": "talk",
+       "expr": "happy",
+       "face": 30,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      },
+      {
+       "char": "kai",
+       "action": "idle",
+       "expr": "happy",
+       "face": -35,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "\"Keep going, baby.\" (Nana and Kai, she pats his shoulder)",
+   "cue": [
+    "L9",
+    8
+   ],
+   "t0": 23.17,
+   "t1": 24.69
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 0
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.59,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.4,
+        0.2
+       ],
+       "scale": false,
+       "from": {
+        "angle": 27.34987578006987,
+        "dist": 6.529931086925803,
+        "height": 0.6000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": 27.34987578006987,
+        "dist": 6.529931086925803,
+        "height": 0.6000000000000001,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "idle",
+       "expr": "happy",
+       "face": 0,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "So I did. At the bus stop (wide, bus stop and town hall)",
+   "cue": [
+    "L10",
+    0
+   ],
+   "t0": 24.69,
+   "t1": 26.28
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 1.03,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": -12.994616791916496,
+        "dist": 2.6683328128252666,
+        "height": 0.10000000000000009,
+        "lookY": 0,
+        "fov": 50
+       },
+       "to": {
+        "angle": -12.308015817427938,
+        "dist": 2.2517548712060114,
+        "height": 0.050000000000000044,
+        "lookY": 0,
+        "fov": 50
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "huss",
+       "expr": "laugh",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [
+      {
+       "name": "pop",
+       "when": 0,
+       "gain": 0.55
+      },
+      {
+       "name": "pop",
+       "when": 0.4951456310679604,
+       "gain": 0.55
+      },
+      {
+       "name": "pop",
+       "when": 1,
+       "gain": 0.55
+      }
+     ],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "HUSS! HUSS! HUSS! at the bus stop",
+   "cue": [
+    "L10",
+    7
+   ],
+   "t0": 26.28,
+   "t1": 27.31
+  },
+  {
+   "environment": "trendtown",
+   "envSeed": 9,
+   "lighting": "env",
+   "weather": null,
+   "music": "comedy",
+   "transition": "cut",
+   "props": [],
+   "cast": [
+    {
+     "id": "kai",
+     "at": [
+      -8.2,
+      0.6
+     ],
+     "face": 10
+    }
+   ],
+   "beats": [
+    {
+     "duration": 0.85,
+     "camera": [
+      {
+       "type": "medium",
+       "target": [
+        -8.2,
+        1.5,
+        0.6
+       ],
+       "scale": false,
+       "from": {
+        "angle": 18.434948822922003,
+        "dist": 1.897366596101027,
+        "height": -1,
+        "lookY": 0,
+        "fov": 54
+       },
+       "to": {
+        "angle": 18.434948822922003,
+        "dist": 1.897366596101027,
+        "height": -1,
+        "lookY": 0,
+        "fov": 54
+       },
+       "at": 0,
+       "end": 1
+      }
+     ],
+     "actions": [
+      {
+       "char": "kai",
+       "action": "huss",
+       "expr": "laugh",
+       "face": 10,
+       "at": 0,
+       "end": 1,
+       "glasses": false
+      }
+     ],
+     "pops": [],
+     "fx": [],
+     "sfx": [],
+     "propMoves": [],
+     "envEvents": []
+    }
+   ],
+   "note": "HUSS! (low hero angle)",
+   "cue": [
+    "L10",
+    9
+   ],
+   "t0": 27.31,
+   "t1": 28.16
+  }
+ ]
+}

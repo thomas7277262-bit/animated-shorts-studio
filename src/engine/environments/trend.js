@@ -148,7 +148,6 @@ export function trendcourt(seed = 6) {
   ban.tex.needsUpdate = true;
   g.add(mesh(new THREE.PlaneGeometry(9, 1.4), new THREE.MeshStandardMaterial({ map: ban.tex, roughness: 0.8 }), { y: 4.4, z: -12.0 }));
   bunting(g, rng, -11, 11, 6.0, -6.6, 0.7);
-  bunting(g, rng, -14, 14, 4.5, 9.6, 0.6);
   // backdrop houses and trees
   const walls = ['#ffd23f', '#b9a3e3', '#ffab6b', '#a7dfa0', '#9dd3ff', '#f8bbd0'];
   for (let i = -5; i <= 5; i++) {

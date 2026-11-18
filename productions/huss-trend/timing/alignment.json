@@ -1,0 +1,1021 @@
+{
+ "report": {
+  "method": "pocketsphinx forced alignment",
+  "audio_s": 57.492,
+  "words": 170,
+  "speech_start": 0.15,
+  "speech_end": 57.03
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "text": "In this town, everybody copies every single trend.",
+   "start": 0.15,
+   "end": 3.0,
+   "words": [
+    {
+     "w": "In",
+     "start": 0.15,
+     "end": 0.25
+    },
+    {
+     "w": "this",
+     "start": 0.25,
+     "end": 0.42
+    },
+    {
+     "w": "town,",
+     "start": 0.42,
+     "end": 0.81
+    },
+    {
+     "w": "everybody",
+     "start": 0.81,
+     "end": 1.42
+    },
+    {
+     "w": "copies",
+     "start": 1.42,
+     "end": 1.92
+    },
+    {
+     "w": "every",
+     "start": 1.92,
+     "end": 2.2
+    },
+    {
+     "w": "single",
+     "start": 2.2,
+     "end": 2.58
+    },
+    {
+     "w": "trend.",
+     "start": 2.58,
+     "end": 3.0
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "If one kid does a dance, the whole street does it by lunch.",
+   "start": 3.37,
+   "end": 6.27,
+   "words": [
+    {
+     "w": "If",
+     "start": 3.37,
+     "end": 3.49
+    },
+    {
+     "w": "one",
+     "start": 3.49,
+     "end": 3.71
+    },
+    {
+     "w": "kid",
+     "start": 3.71,
+     "end": 3.97
+    },
+    {
+     "w": "does",
+     "start": 3.97,
+     "end": 4.14
+    },
+    {
+     "w": "a",
+     "start": 4.14,
+     "end": 4.18
+    },
+    {
+     "w": "dance,",
+     "start": 4.18,
+     "end": 4.68
+    },
+    {
+     "w": "the",
+     "start": 4.68,
+     "end": 4.8
+    },
+    {
+     "w": "whole",
+     "start": 4.8,
+     "end": 5.06
+    },
+    {
+     "w": "street",
+     "start": 5.06,
+     "end": 5.41
+    },
+    {
+     "w": "does",
+     "start": 5.41,
+     "end": 5.59
+    },
+    {
+     "w": "it",
+     "start": 5.59,
+     "end": 5.65
+    },
+    {
+     "w": "by",
+     "start": 5.65,
+     "end": 5.83
+    },
+    {
+     "w": "lunch.",
+     "start": 5.83,
+     "end": 6.27
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "Even the mailman. Even the mayor.",
+   "start": 6.65,
+   "end": 8.19,
+   "words": [
+    {
+     "w": "Even",
+     "start": 6.65,
+     "end": 6.83
+    },
+    {
+     "w": "the",
+     "start": 6.83,
+     "end": 6.9
+    },
+    {
+     "w": "mailman.",
+     "start": 6.9,
+     "end": 7.41
+    },
+    {
+     "w": "Even",
+     "start": 7.51,
+     "end": 7.75
+    },
+    {
+     "w": "the",
+     "start": 7.75,
+     "end": 7.82
+    },
+    {
+     "w": "mayor.",
+     "start": 7.82,
+     "end": 8.19
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "Everyone... except me.",
+   "start": 8.64,
+   "end": 9.87,
+   "words": [
+    {
+     "w": "Everyone...",
+     "start": 8.64,
+     "end": 9.12
+    },
+    {
+     "w": "except",
+     "start": 9.12,
+     "end": 9.56
+    },
+    {
+     "w": "me.",
+     "start": 9.56,
+     "end": 9.87
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "I'm the only kid who makes up my own stuff.",
+   "start": 10.23,
+   "end": 12.42,
+   "words": [
+    {
+     "w": "I'm",
+     "start": 10.23,
+     "end": 10.37
+    },
+    {
+     "w": "the",
+     "start": 10.37,
+     "end": 10.49
+    },
+    {
+     "w": "only",
+     "start": 10.49,
+     "end": 10.83
+    },
+    {
+     "w": "kid",
+     "start": 10.83,
+     "end": 11.16
+    },
+    {
+     "w": "who",
+     "start": 11.16,
+     "end": 11.29
+    },
+    {
+     "w": "makes",
+     "start": 11.29,
+     "end": 11.53
+    },
+    {
+     "w": "up",
+     "start": 11.53,
+     "end": 11.61
+    },
+    {
+     "w": "my",
+     "start": 11.61,
+     "end": 11.81
+    },
+    {
+     "w": "own",
+     "start": 11.81,
+     "end": 12.0
+    },
+    {
+     "w": "stuff.",
+     "start": 12.0,
+     "end": 12.42
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "So one day, I filmed myself yelling. HUSS! HUSS! HUSS!",
+   "start": 12.81,
+   "end": 16.23,
+   "words": [
+    {
+     "w": "So",
+     "start": 12.81,
+     "end": 12.95
+    },
+    {
+     "w": "one",
+     "start": 12.95,
+     "end": 13.18
+    },
+    {
+     "w": "day,",
+     "start": 13.18,
+     "end": 13.39
+    },
+    {
+     "w": "I",
+     "start": 13.39,
+     "end": 13.52
+    },
+    {
+     "w": "filmed",
+     "start": 13.52,
+     "end": 13.87
+    },
+    {
+     "w": "myself",
+     "start": 13.87,
+     "end": 14.3
+    },
+    {
+     "w": "yelling.",
+     "start": 14.3,
+     "end": 14.69
+    },
+    {
+     "w": "HUSS!",
+     "start": 14.84,
+     "end": 15.19
+    },
+    {
+     "w": "HUSS!",
+     "start": 15.36,
+     "end": 15.71
+    },
+    {
+     "w": "HUSS!",
+     "start": 15.87,
+     "end": 16.23
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "Twelve views. Everybody laughed.",
+   "start": 16.72,
+   "end": 18.38,
+   "words": [
+    {
+     "w": "Twelve",
+     "start": 16.72,
+     "end": 17.0
+    },
+    {
+     "w": "views.",
+     "start": 17.0,
+     "end": 17.42
+    },
+    {
+     "w": "Everybody",
+     "start": 17.42,
+     "end": 17.95
+    },
+    {
+     "w": "laughed.",
+     "start": 17.95,
+     "end": 18.38
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "At school, they called me Huss Boy.",
+   "start": 18.75,
+   "end": 20.24,
+   "words": [
+    {
+     "w": "At",
+     "start": 18.75,
+     "end": 18.85
+    },
+    {
+     "w": "school,",
+     "start": 18.85,
+     "end": 19.18
+    },
+    {
+     "w": "they",
+     "start": 19.18,
+     "end": 19.28
+    },
+    {
+     "w": "called",
+     "start": 19.28,
+     "end": 19.51
+    },
+    {
+     "w": "me",
+     "start": 19.51,
+     "end": 19.62
+    },
+    {
+     "w": "Huss",
+     "start": 19.62,
+     "end": 19.86
+    },
+    {
+     "w": "Boy.",
+     "start": 19.86,
+     "end": 20.24
+    }
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "But Grandma watched it forty times and said, \"Keep going, baby.\"",
+   "start": 20.61,
+   "end": 24.31,
+   "words": [
+    {
+     "w": "But",
+     "start": 20.61,
+     "end": 20.72
+    },
+    {
+     "w": "Grandma",
+     "start": 20.72,
+     "end": 21.21
+    },
+    {
+     "w": "watched",
+     "start": 21.21,
+     "end": 21.63
+    },
+    {
+     "w": "it",
+     "start": 21.63,
+     "end": 21.73
+    },
+    {
+     "w": "forty",
+     "start": 21.73,
+     "end": 22.08
+    },
+    {
+     "w": "times",
+     "start": 22.08,
+     "end": 22.52
+    },
+    {
+     "w": "and",
+     "start": 22.52,
+     "end": 22.62
+    },
+    {
+     "w": "said,",
+     "start": 22.62,
+     "end": 22.98
+    },
+    {
+     "w": "\"Keep",
+     "start": 23.17,
+     "end": 23.47
+    },
+    {
+     "w": "going,",
+     "start": 23.47,
+     "end": 23.83
+    },
+    {
+     "w": "baby.\"",
+     "start": 23.83,
+     "end": 24.31
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "text": "So I did. At the bus stop. HUSS! HUSS! HUSS!",
+   "start": 24.69,
+   "end": 27.65,
+   "words": [
+    {
+     "w": "So",
+     "start": 24.69,
+     "end": 24.84
+    },
+    {
+     "w": "I",
+     "start": 24.84,
+     "end": 24.94
+    },
+    {
+     "w": "did.",
+     "start": 24.94,
+     "end": 25.26
+    },
+    {
+     "w": "At",
+     "start": 25.26,
+     "end": 25.39
+    },
+    {
+     "w": "the",
+     "start": 25.39,
+     "end": 25.46
+    },
+    {
+     "w": "bus",
+     "start": 25.46,
+     "end": 25.72
+    },
+    {
+     "w": "stop.",
+     "start": 25.72,
+     "end": 26.13
+    },
+    {
+     "w": "HUSS!",
+     "start": 26.28,
+     "end": 26.61
+    },
+    {
+     "w": "HUSS!",
+     "start": 26.79,
+     "end": 27.13
+    },
+    {
+     "w": "HUSS!",
+     "start": 27.31,
+     "end": 27.65
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "text": "Then came the big summer game. We were losing by twenty.",
+   "start": 28.16,
+   "end": 31.18,
+   "words": [
+    {
+     "w": "Then",
+     "start": 28.16,
+     "end": 28.33
+    },
+    {
+     "w": "came",
+     "start": 28.33,
+     "end": 28.61
+    },
+    {
+     "w": "the",
+     "start": 28.61,
+     "end": 28.69
+    },
+    {
+     "w": "big",
+     "start": 28.69,
+     "end": 28.92
+    },
+    {
+     "w": "summer",
+     "start": 28.92,
+     "end": 29.28
+    },
+    {
+     "w": "game.",
+     "start": 29.28,
+     "end": 29.67
+    },
+    {
+     "w": "We",
+     "start": 29.84,
+     "end": 29.92
+    },
+    {
+     "w": "were",
+     "start": 29.92,
+     "end": 30.01
+    },
+    {
+     "w": "losing",
+     "start": 30.01,
+     "end": 30.47
+    },
+    {
+     "w": "by",
+     "start": 30.47,
+     "end": 30.64
+    },
+    {
+     "w": "twenty.",
+     "start": 30.64,
+     "end": 31.18
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "text": "The whole crowd was dead quiet.",
+   "start": 31.54,
+   "end": 33.08,
+   "words": [
+    {
+     "w": "The",
+     "start": 31.54,
+     "end": 31.6
+    },
+    {
+     "w": "whole",
+     "start": 31.6,
+     "end": 31.8
+    },
+    {
+     "w": "crowd",
+     "start": 31.8,
+     "end": 32.15
+    },
+    {
+     "w": "was",
+     "start": 32.15,
+     "end": 32.32
+    },
+    {
+     "w": "dead",
+     "start": 32.32,
+     "end": 32.56
+    },
+    {
+     "w": "quiet.",
+     "start": 32.56,
+     "end": 33.08
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "text": "So I climbed the bleachers and yelled... HUSS! HUSS! HUSS!",
+   "start": 33.44,
+   "end": 36.7,
+   "words": [
+    {
+     "w": "So",
+     "start": 33.44,
+     "end": 33.57
+    },
+    {
+     "w": "I",
+     "start": 33.57,
+     "end": 33.64
+    },
+    {
+     "w": "climbed",
+     "start": 33.64,
+     "end": 33.97
+    },
+    {
+     "w": "the",
+     "start": 33.97,
+     "end": 34.03
+    },
+    {
+     "w": "bleachers",
+     "start": 34.03,
+     "end": 34.6
+    },
+    {
+     "w": "and",
+     "start": 34.6,
+     "end": 34.74
+    },
+    {
+     "w": "yelled...",
+     "start": 34.74,
+     "end": 35.18
+    },
+    {
+     "w": "HUSS!",
+     "start": 35.33,
+     "end": 35.66
+    },
+    {
+     "w": "HUSS!",
+     "start": 35.84,
+     "end": 36.18
+    },
+    {
+     "w": "HUSS!",
+     "start": 36.36,
+     "end": 36.7
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "text": "One kid yelled it back. Then ten. Then the whole stadium!",
+   "start": 37.22,
+   "end": 40.25,
+   "words": [
+    {
+     "w": "One",
+     "start": 37.22,
+     "end": 37.43
+    },
+    {
+     "w": "kid",
+     "start": 37.43,
+     "end": 37.69
+    },
+    {
+     "w": "yelled",
+     "start": 37.69,
+     "end": 37.97
+    },
+    {
+     "w": "it",
+     "start": 37.97,
+     "end": 38.04
+    },
+    {
+     "w": "back.",
+     "start": 38.04,
+     "end": 38.4
+    },
+    {
+     "w": "Then",
+     "start": 38.4,
+     "end": 38.66
+    },
+    {
+     "w": "ten.",
+     "start": 38.66,
+     "end": 39.08
+    },
+    {
+     "w": "Then",
+     "start": 39.08,
+     "end": 39.36
+    },
+    {
+     "w": "the",
+     "start": 39.36,
+     "end": 39.43
+    },
+    {
+     "w": "whole",
+     "start": 39.43,
+     "end": 39.65
+    },
+    {
+     "w": "stadium!",
+     "start": 39.65,
+     "end": 40.25
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "text": "We came back and won the game.",
+   "start": 40.6,
+   "end": 41.98,
+   "words": [
+    {
+     "w": "We",
+     "start": 40.6,
+     "end": 40.67
+    },
+    {
+     "w": "came",
+     "start": 40.67,
+     "end": 40.97
+    },
+    {
+     "w": "back",
+     "start": 40.97,
+     "end": 41.27
+    },
+    {
+     "w": "and",
+     "start": 41.27,
+     "end": 41.36
+    },
+    {
+     "w": "won",
+     "start": 41.36,
+     "end": 41.48
+    },
+    {
+     "w": "the",
+     "start": 41.48,
+     "end": 41.55
+    },
+    {
+     "w": "game.",
+     "start": 41.55,
+     "end": 41.98
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "Next morning, my video had two million views.",
+   "start": 42.38,
+   "end": 44.91,
+   "words": [
+    {
+     "w": "Next",
+     "start": 42.38,
+     "end": 42.61
+    },
+    {
+     "w": "morning,",
+     "start": 42.61,
+     "end": 42.97
+    },
+    {
+     "w": "my",
+     "start": 42.97,
+     "end": 43.17
+    },
+    {
+     "w": "video",
+     "start": 43.17,
+     "end": 43.51
+    },
+    {
+     "w": "had",
+     "start": 43.51,
+     "end": 43.76
+    },
+    {
+     "w": "two",
+     "start": 43.76,
+     "end": 44.05
+    },
+    {
+     "w": "million",
+     "start": 44.05,
+     "end": 44.4
+    },
+    {
+     "w": "views.",
+     "start": 44.4,
+     "end": 44.91
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "text": "Now the mailman and the mayor say it. HUSS! HUSS! HUSS!",
+   "start": 45.27,
+   "end": 48.37,
+   "words": [
+    {
+     "w": "Now",
+     "start": 45.27,
+     "end": 45.48
+    },
+    {
+     "w": "the",
+     "start": 45.48,
+     "end": 45.57
+    },
+    {
+     "w": "mailman",
+     "start": 45.57,
+     "end": 45.97
+    },
+    {
+     "w": "and",
+     "start": 45.97,
+     "end": 46.06
+    },
+    {
+     "w": "the",
+     "start": 46.06,
+     "end": 46.12
+    },
+    {
+     "w": "mayor",
+     "start": 46.12,
+     "end": 46.4
+    },
+    {
+     "w": "say",
+     "start": 46.4,
+     "end": 46.67
+    },
+    {
+     "w": "it.",
+     "start": 46.67,
+     "end": 46.87
+    },
+    {
+     "w": "HUSS!",
+     "start": 47.01,
+     "end": 47.36
+    },
+    {
+     "w": "HUSS!",
+     "start": 47.53,
+     "end": 47.86
+    },
+    {
+     "w": "HUSS!",
+     "start": 48.05,
+     "end": 48.37
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "text": "And Grandma says it louder than anybody.",
+   "start": 48.37,
+   "end": 50.95,
+   "words": [
+    {
+     "w": "And",
+     "start": 48.37,
+     "end": 48.47
+    },
+    {
+     "w": "Grandma",
+     "start": 48.95,
+     "end": 49.43
+    },
+    {
+     "w": "says",
+     "start": 49.43,
+     "end": 49.72
+    },
+    {
+     "w": "it",
+     "start": 49.72,
+     "end": 49.82
+    },
+    {
+     "w": "louder",
+     "start": 49.82,
+     "end": 50.21
+    },
+    {
+     "w": "than",
+     "start": 50.21,
+     "end": 50.37
+    },
+    {
+     "w": "anybody.",
+     "start": 50.37,
+     "end": 50.95
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "text": "In this town, everybody copies the trend.",
+   "start": 51.33,
+   "end": 53.49,
+   "words": [
+    {
+     "w": "In",
+     "start": 51.33,
+     "end": 51.43
+    },
+    {
+     "w": "this",
+     "start": 51.43,
+     "end": 51.59
+    },
+    {
+     "w": "town,",
+     "start": 51.59,
+     "end": 51.96
+    },
+    {
+     "w": "everybody",
+     "start": 51.96,
+     "end": 52.57
+    },
+    {
+     "w": "copies",
+     "start": 52.57,
+     "end": 52.99
+    },
+    {
+     "w": "the",
+     "start": 52.99,
+     "end": 53.06
+    },
+    {
+     "w": "trend.",
+     "start": 53.06,
+     "end": 53.49
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "text": "But this time... the trend is me. HUSS! HUSS! HUSS!",
+   "start": 53.84,
+   "end": 57.03,
+   "words": [
+    {
+     "w": "But",
+     "start": 53.84,
+     "end": 53.95
+    },
+    {
+     "w": "this",
+     "start": 53.95,
+     "end": 54.14
+    },
+    {
+     "w": "time...",
+     "start": 54.14,
+     "end": 54.54
+    },
+    {
+     "w": "the",
+     "start": 54.54,
+     "end": 54.66
+    },
+    {
+     "w": "trend",
+     "start": 54.66,
+     "end": 54.99
+    },
+    {
+     "w": "is",
+     "start": 54.99,
+     "end": 55.15
+    },
+    {
+     "w": "me.",
+     "start": 55.15,
+     "end": 55.46
+    },
+    {
+     "w": "HUSS!",
+     "start": 55.6,
+     "end": 55.99
+    },
+    {
+     "w": "HUSS!",
+     "start": 56.12,
+     "end": 56.47
+    },
+    {
+     "w": "HUSS!",
+     "start": 56.64,
+     "end": 57.03
+    }
+   ]
+  }
+ ]
+}

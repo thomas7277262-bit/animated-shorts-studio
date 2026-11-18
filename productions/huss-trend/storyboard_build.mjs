@@ -10,7 +10,7 @@ const HERE = path.dirname(new URL(import.meta.url).pathname);
 const AL = JSON.parse(fs.readFileSync(path.join(HERE, 'timing/alignment.json'), 'utf8'));
 const LINES = Object.fromEntries(AL.lines.map((l) => [l.id, l]));
 const AUDIO_END = AL.report.audio_s;
-const TAIL = 1.4;
+const TAIL = 3.0;
 const PACE = 1.15;
 const cueTime = ([id, wi = 0]) => { const w = LINES[id]?.words[wi]; if (!w) throw new Error(`bad cue ${id}:${wi}`); return w.start; };
 
@@ -45,9 +45,9 @@ shot({ cue: ['L2', 0], ...TOWN, note: 'One kid starts a dance (Zoe alone)',
 shot({ cue: ['L2', 6], ...TOWN, note: 'The whole street joins in (low wide)',
   c: DANCERS(), camera: look([3.5, 0.9, 5.5], [0, 1.6, -4], 55, [2.2, 1.0, 4.4], [0, 1.6, -4]) });
 shot({ cue: ['L3', 0], ...TOWN, note: 'Even the mailman (dancing with his mail)',
-  c: [['mailman', [0, 0], 10, 'dance', 'laugh', { prop: 'paper' }]], camera: face([0, 0], 2.8, 1.5, 46, 2.2, -0.5) });
+  c: [['mailman', [0, 0], 10, 'dance', 'laugh', { prop: 'paper' }]], camera: face([0, 0], 3.6, 1.75, 48, 3.0, -0.5) });
 shot({ cue: ['L3', 3], ...TOWN, note: 'Even the mayor (town hall behind him)',
-  c: [['mayor', [0, -1], 0, 'dance', 'laugh']], camera: look([0.4, 0.9, 2.2], [0, 2.4, -1], 52, [0.3, 0.9, 1.8], [0, 2.5, -1]) });
+  c: [['mayor', [0, -1], 0, 'dance', 'laugh']], camera: look([0.4, 1.3, 2.8], [0, 1.9, -1], 50, [0.3, 1.3, 2.3], [0, 1.95, -1]) });
 shot({ cue: ['L4', 0], ...TOWN, note: 'Everyone… except me (slow push on Kai standing still, dancers behind)',
   c: [...DANCERS(), ['kai', [0, 0.9], 0, 'idle', 'neutral']], camera: look([0, 1.5, 5.4], [0, 1.25, 0.9], 46, [0, 1.45, 3.4], [0, 1.3, 0.9], 'linear') });
 shot({ cue: ['L5', 0], ...TOWN, note: 'Kai to camera: I make up my own stuff',
@@ -59,16 +59,16 @@ shot({ cue: ['L6', 0], ...TOWN, note: 'One day I filmed myself (selfie at the bu
 shot({ cue: ['L6', 7], ...TOWN, note: 'HUSS! (punch-in)', sfx: HUSS_SFX('L6', 7),
   c: [['kai', [-8.2, 0.6], 15, 'huss', 'laugh']], camera: face([-8.2, 0.6], 3.0, 1.2, 46, 2.6, 0.8) });
 shot({ cue: ['L6', 8], ...TOWN, note: 'HUSS! (closer)',
-  c: [['kai', [-8.2, 0.6], 15, 'huss', 'laugh']], camera: face([-8.2, 0.6], 2.0, 1.25, 44, 1.8, -0.5) });
+  c: [['kai', [-8.2, 0.6], 15, 'huss', 'laugh']], camera: face([-8.2, 0.6], 2.3, 1.45, 46, 2.0, -0.5) });
 shot({ cue: ['L6', 9], ...TOWN, note: 'HUSS! (face)',
-  c: [['kai', [-8.2, 0.6], 15, 'huss', 'laugh']], camera: face([-8.2, 0.6], 1.4, 1.3, 42, 1.25, 0.2) });
+  c: [['kai', [-8.2, 0.6], 15, 'huss', 'laugh']], camera: face([-8.2, 0.6], 1.8, 1.55, 44, 1.6, 0.2) });
 shot({ cue: ['L7', 0], ...FEED, env: { screen: 'views', views: 12 }, note: 'Twelve views', camera: feedCam() });
 shot({ cue: ['L7', 2], ...TOWN, note: 'Everybody laughed (Leo and Zoe point and laugh)',
   c: [['leo', [-0.7, 0], 20, 'laugh', 'laugh'], ['zoe', [0.7, 0], -20, 'point', 'laugh']], camera: look([0, 1.3, 3.8], [0, 1.25, 0], 50, [0, 1.25, 3.2], [0, 1.25, 0]) });
 shot({ cue: ['L8', 0], ...SCHOOL, note: 'At school: "Huss Boy" (classmates laughing, Kai slumps)',
-  c: [['leo', [-1.3, -1.2], 20, 'laugh', 'laugh'], ['zoe', [1.3, -1.2], -20, 'laugh', 'laugh'], ['kai', [0, 0.6], 0, 'idle', 'sad']],
+  c: [['leo', [-1.3, -1.2], 20, 'laugh', 'laugh'], ['zoe', [1.3, -1.2], -20, 'laugh', 'laugh'], ['kai', [0, 2.2], 0, 'idle', 'sad']],
   pops: [['HUSS BOY', '#ff3030', ['L8', 5], { size: 0.65, y: 0.8, sfx: 'boing' }]],
-  camera: look([0, 1.6, 4.4], [0, 1.2, -0.4], 50, [0, 1.5, 3.6], [0, 1.2, -0.4]) });
+  camera: look([0, 1.9, 6.2], [0, 1.3, 0.4], 50, [0, 1.8, 5.4], [0, 1.3, 0.4]) });
 
 // ================================================================ NANA
 shot({ cue: ['L9', 0], ...TOWN, note: 'Nana on the porch, watching his video on her phone',
@@ -90,7 +90,7 @@ shot({ cue: ['L10', 9], ...TOWN, note: 'HUSS! (low hero angle)',
 shot({ cue: ['L11', 0], ...COURT, env: { score: '48 - 68' }, note: 'The big summer game (wide court, bleachers, banner)',
   c: [['kai', KAI_B, 0, 'idle', 'neutral', { params: { lift: KAI_LIFT } }]], camera: look([0, 4.5, 14], [0, 2.5, -6], 50, [0, 3.6, 11], [0, 2.6, -7]) });
 shot({ cue: ['L11', 6], ...COURT, env: { score: '48 - 68', quiet: true }, music: 'tense', note: 'Losing by twenty (scoreboard)',
-  pops: [], camera: look([0, 7.2, -6.5], [0, 7.4, -12.4], 46, [0, 7.3, -7.8], [0, 7.4, -12.4]) });
+  pops: [], camera: look([0, 5.8, 1.8], [0, 6.9, -12.4], 46, [0, 6.0, 0.2], [0, 7.0, -12.4]) });
 shot({ cue: ['L12', 0], ...COURT, env: { score: '48 - 68', quiet: true }, music: 'tense', note: 'Dead quiet crowd (Kai among them, sad)',
   c: [['kai', KAI_B, 0, 'idle', 'sad', { params: { lift: KAI_LIFT } }]], camera: look([1.5, 2.6, -1.5], [0, 2.0, -9], 50, [1.2, 2.6, -2.5], [0, 2.0, -9]) });
 shot({ cue: ['L13', 0], ...COURT, env: { score: '48 - 68', quiet: true }, music: 'tense', note: 'Kai climbs the bleachers',
@@ -110,7 +110,7 @@ shot({ cue: ['L14', 7], ...COURT, env: { score: '48 - 68', cheer: true }, note: 
   camera: look([0, 3.2, 12], [0, 3.0, -8], 50, [0, 2.8, 8], [0, 3.0, -8]) });
 shot({ cue: ['L15', 0], ...COURT, env: { score: '48 - 68', cheer: true }, events: [['score', '72 - 70', ['L15', 4]]], note: 'We came back and won (scoreboard flips)',
   sfx: [{ name: 'party', cue: ['L15', 4], gain: 0.8 }], fx: [{ type: 'confetti', at: [0, 8, -11], cue: ['L15', 4] }],
-  camera: look([0, 6.0, -4.5], [0, 7.2, -12.4], 50, [0, 6.6, -6.5], [0, 7.4, -12.4]) });
+  camera: look([0, 6.0, -2.2], [0, 7.0, -12.4], 50, [0, 6.4, -3.6], [0, 7.2, -12.4]) });
 
 // ================================================================ VIRAL
 shot({ cue: ['L16', 0], ...FEED, env: { screen: 'views', from: 12, views: 2000000, t0: cueTime(['L16', 2]), t1: cueTime(['L16', 7]) }, note: 'Views roll from 12 to 2M',
@@ -119,7 +119,7 @@ shot({ cue: ['L17', 0], ...TOWN, note: 'Now the mailman and the mayor say it',
   c: [['mayor', [-0.6, 0], 15, 'huss', 'laugh'], ['mailman', [0.8, 0], -15, 'huss', 'laugh']], camera: look([0, 1.6, 4.4], [0, 1.4, 0], 50, [0, 1.5, 3.6], [0, 1.4, 0]) });
 shot({ cue: ['L17', 8], ...FEED, env: { screen: 'comments', views: 40000, t0: cueTime(['L17', 8]) }, note: 'Comment wall: HUSS! HUSS! HUSS!', sfx: HUSS_SFX('L17', 8), camera: feedCam(13.9, 13.4) });
 shot({ cue: ['L18', 0], ...TOWN, note: 'Nana yells it louder than anybody',
-  c: [['nana', [0, 0.4], 0, 'huss', 'laugh']], camera: face([0, 0.4], 2.4, 1.3, 46, 1.8, 0.4) });
+  c: [['nana', [0, 0.4], 0, 'huss', 'laugh']], camera: face([0, 0.4], 2.8, 1.55, 46, 2.2, 0.4) });
 shot({ cue: ['L19', 0], ...FEED, env: { screen: 'grid', t0: cueTime(['L19', 0]) }, note: 'Everybody copies the trend (copycat grid fills up)', camera: feedCam(13.9, 13.2) });
 shot({ cue: ['L19', 4], ...TOWN, note: 'The whole town doing HUSS (crane up)',
   c: [...DANCERS('huss', 'laugh'), ['nana', [-3.4, 0.2], 20, 'huss', 'laugh']], camera: look([0, 2.0, 7], [0, 1.4, -3], 52, [0, 6.0, 10], [0, 1.4, -4]) });
@@ -159,7 +159,7 @@ const scenes = S.map((o, i) => {
 const storyboard = {
   title: 'The Trend Is Me', seed: 9, style: 'bright', captionStyle: 'whitered', mood: 'comedy',
   captionRed: ['huss', 'trend', 'dance', 'views', 'million', 'laughed', 'quiet', 'won', 'twenty', 'stadium'],
-  narration: { audio: 'productions/huss-trend/audio/narration_lukas_raw_elevenlabs.mp3', alignment: 'productions/huss-trend/timing/alignment.json', offset: 0 },
+  narration: { audio: 'productions/huss-trend/audio/narration_fenrir_kokoro.mp3', alignment: 'productions/huss-trend/timing/alignment.json', offset: 0 },
   musicVolume: 0.26, sfxVolume: 0.9, voiceVolume: 1, animSpeed: PACE,
   characters: [...new Set(S.flatMap((o) => (o.c || []).map((c) => c[0])))],
   scenes,
@@ -168,7 +168,7 @@ fs.writeFileSync(path.join(HERE, 'storyboard.json'), JSON.stringify(storyboard, 
 const cut = scenes.findIndex((sc) => sc.cue[0] === 'L11');
 fs.writeFileSync(path.join(HERE, 'storyboard.preview.json'), JSON.stringify({ ...storyboard, title: storyboard.title + ' (preview)', scenes: scenes.slice(0, cut) }, null, 1));
 const md = ['# "The Trend Is Me" – Storyboard (timed to the real narration)', '',
-  `Narration: Lukas (ElevenLabs), ${AUDIO_END.toFixed(2)} s · video ${END.toFixed(2)} s · ${S.length} shots · average shot ${(END / S.length).toFixed(2)} s`, '',
+  `Narration: Fenrir (Kokoro, free local voice), ${AUDIO_END.toFixed(2)} s · video ${END.toFixed(2)} s · ${S.length} shots · average shot ${(END / S.length).toFixed(2)} s`, '',
   '| # | Time | Set | Shot | On-screen text |', '|---|---|---|---|---|'];
 scenes.forEach((sc, i) => md.push(`| ${i + 1} | ${sc.t0.toFixed(2)}–${sc.t1.toFixed(2)} | ${sc.environment} | ${sc.note} | ${(sc.beats[0].pops || []).map((p) => `**${p.text}**`).join(' ')} |`));
 fs.writeFileSync(path.join(HERE, 'STORYBOARD.md'), md.join('\n') + '\n');

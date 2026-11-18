@@ -83,10 +83,10 @@ function shirtTexture(color, detail, accent, text) {
     default: break;
   }
   if (text) { // printed chest slogan
-    g.font = `900 ${Math.round(150 / Math.max(3, text.length))}px Fredoka, Arial Black, sans-serif`;
+    g.font = `900 ${Math.round(260 / Math.max(4, text.length))}px Fredoka, Arial Black, sans-serif`;
     g.textAlign = 'center'; g.textBaseline = 'middle';
-    g.lineWidth = 8; g.strokeStyle = 'rgba(0,0,0,0.55)'; g.strokeText(text, 128, 70);
-    g.fillStyle = accent; g.fillText(text, 128, 70);
+    g.lineJoin = 'round'; g.lineWidth = 12; g.strokeStyle = '#ffffff'; g.strokeText(text, 128, 72);
+    g.fillStyle = accent; g.fillText(text, 128, 72);
   }
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;

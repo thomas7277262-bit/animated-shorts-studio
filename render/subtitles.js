@@ -27,7 +27,10 @@ export function chunkWords(words, max = 3) {
 }
 
 export function buildAss(timeline, opts) {
-  return (opts.style || timeline.captionStyle || 'yellow') === 'classic' ? buildAssClassic(timeline, opts) : buildAssYellow(timeline, opts);
+  const style = opts.style || timeline.captionStyle || 'yellow';
+  if (style === 'classic') return buildAssClassic(timeline, opts);
+  if (style === 'whitered') return buildAssYellow(timeline, { ...opts, whiteRed: true });
+  return buildAssYellow(timeline, opts);
 }
 
 /**
@@ -35,11 +38,13 @@ export function buildAss(timeline, opts) {
  * content): ONE word on screen at a time, exactly while it is spoken; heavy
  * rounded font, bright yellow, black outline + soft shadow, lower-middle.
  */
-export function buildAssYellow(timeline, { width, height, font = 'Fredoka' }) {
+export function buildAssYellow(timeline, { width, height, font = 'Fredoka', whiteRed = false }) {
+  const red = new Set((timeline.captionRed || []).map((x) => x.toLowerCase()));
+  const primary = whiteRed ? '&H00FFFFFF&' : '&H002EFFF2&';
   const size = Math.round(height * 0.09);
   const outline = Math.max(3, Math.round(height * 0.0075));
   const shadow = Math.max(2, Math.round(height * 0.006));
-  const marginV = Math.round(height * 0.255);
+  const marginV = Math.round(height * (whiteRed ? 0.36 : 0.255));
   const header = `[Script Info]
 ScriptType: v4.00+
 PlayResX: ${width}
@@ -49,7 +54,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Caption,${font},${size},&H002EFFF2&,&H002EFFF2&,&H00000000&,&H80000000&,-1,0,0,0,100,100,0,0,1,${outline},${shadow},2,${Math.round(width * 0.05)},${Math.round(width * 0.05)},${marginV},1
+Style: Caption,${font},${size},${primary},${primary},&H00000000&,&H80000000&,-1,0,0,0,100,100,0,0,1,${outline},${shadow},2,${Math.round(width * 0.05)},${Math.round(width * 0.05)},${marginV},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -60,7 +65,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
       const next = line.words[i + 1];
       const end = next ? next.start : Math.min(line.end + 0.25, w.end + 0.45);
       const word = esc(w.w.toLowerCase().replace(/[^\p{L}\p{N}'’-]/gu, '')) || esc(w.w);
-      events.push(`Dialogue: 0,${assTime(w.start)},${assTime(Math.max(end, w.start + 0.08))},Caption,,0,0,0,,{\\fscx88\\fscy88\\t(0,80,\\fscx100\\fscy100)}${word}`);
+      const isRed = whiteRed && red.has(word.toLowerCase());
+      const shown = isRed ? `{\\c&H002020FF&}${word.toUpperCase()}${word.toLowerCase() === 'huss' ? '!' : ''}` : word;
+      events.push(`Dialogue: 0,${assTime(w.start)},${assTime(Math.max(end, w.start + 0.08))},Caption,,0,0,0,,{\\fscx88\\fscy88\\t(0,80,\\fscx100\\fscy100)}${shown}`);
     });
   }
   return header + events.join('\n') + '\n';

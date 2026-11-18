@@ -40,7 +40,7 @@ function shade(hex, pct) {
   return '#' + c.getHexString();
 }
 
-function shirtTexture(color, detail, accent) {
+function shirtTexture(color, detail, accent, text) {
   const c = document.createElement('canvas');
   c.width = 256; c.height = 256;
   const g = c.getContext('2d');
@@ -82,6 +82,12 @@ function shirtTexture(color, detail, accent) {
     case 'armor': g.fillStyle = '#c9d1da'; g.fillRect(20, 0, 216, 256); g.fillStyle = accent; g.fillRect(110, 20, 36, 200); g.fillRect(50, 90, 156, 30); break;
     default: break;
   }
+  if (text) { // printed chest slogan
+    g.font = `900 ${Math.round(150 / Math.max(3, text.length))}px Fredoka, Arial Black, sans-serif`;
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.lineWidth = 8; g.strokeStyle = 'rgba(0,0,0,0.55)'; g.strokeText(text, 128, 70);
+    g.fillStyle = accent; g.fillText(text, 128, 70);
+  }
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   return t;
@@ -96,7 +102,7 @@ export class BlockCharacter {
     this.dims = { upperLeg: S * 1.0, lowerLeg: S * 1.0, torso: S * 2, upperArm: S * 1.0, lowerArm: S * 0.95, headR: S * 0.62 };
     const d = this.dims;
     const skin = mat(spec.skin || '#f3c99a');
-    const shirt = new THREE.MeshStandardMaterial({ map: shirtTexture(spec.shirt || spec.accent, spec.shirtDetail, spec.shirtAccent || '#ffffff'), roughness: 0.7 });
+    const shirt = new THREE.MeshStandardMaterial({ map: shirtTexture(spec.shirt || spec.accent, spec.shirtDetail, spec.shirtAccent || '#ffffff', spec.shirtText), roughness: 0.7 });
     const shirtPlain = mat(spec.shirt || spec.accent, { roughness: 0.7 });
     const pants = mat(spec.pants || '#2e4a7d', { roughness: 0.75 });
     const shoes = mat(spec.shoes || '#2b2b2b', { roughness: 0.6 });

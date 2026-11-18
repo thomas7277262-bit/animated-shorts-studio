@@ -380,3 +380,46 @@ export const KNOCK_CAST = {
 };
 for (const [k, v] of Object.entries(KNOCK_CAST)) v.id = k;
 Object.assign(CHARACTER_LIBRARY, KNOCK_CAST);
+
+// "The Trend Is Me" cast (original designs)
+export const TREND_CAST = {
+  kai: {
+    name: 'Kai', role: 'hero kid', style: 'blocky', height: 0.86,
+    skin: '#f0c7a0', hair: '#3b2414', hairStyle: 'cap', hatColor: '#e53935', cheeks: true,
+    shirt: '#ffc928', shirtDetail: 'hoodie', shirtAccent: '#e53935', shirtText: 'HUSS', sleeves: 'long', hood: true,
+    pants: '#2d3f8f', shoes: '#ffffff', accent: '#e53935', eyeStyle: 'round', brows: 'normal',
+    personality: 'makes up his own stuff, loud, never gives up',
+  },
+  nana: {
+    name: 'Nana', role: 'grandma', style: 'blocky', height: 0.92,
+    skin: '#f3cfae', hair: '#eeeeee', hairStyle: 'bun', accessory: 'glasses', pearls: true,
+    shirt: '#7fc8e8', shirtDetail: 'blouse', shirtAccent: '#ffffff', sleeves: 'long', pants: '#8a6fb0', shoes: '#6b4a2e',
+    accent: '#7fc8e8', eyeStyle: 'sleepy', brows: 'thin', cheeks: true, personality: 'his biggest fan',
+  },
+  mailman: {
+    name: 'Mailman', role: 'mailman', style: 'blocky', height: 1.0,
+    skin: '#c98d62', hair: '#1d1209', hairStyle: 'cap', hatColor: '#1f4e9c',
+    shirt: '#3f7fd6', shirtDetail: 'zip', shirtAccent: '#1f4e9c', sleeves: 'short', pants: '#1f3a6b', shoes: '#222222',
+    accent: '#3f7fd6', eyeStyle: 'round', brows: 'thick', personality: 'copies every trend first',
+  },
+  mayor: {
+    name: 'Mayor', role: 'mayor', style: 'blocky', height: 1.0,
+    skin: '#eab48c', hair: '#9e9e9e', hairStyle: 'slick', accessory: 'glasses',
+    shirt: '#2b2b3a', shirtDetail: 'suit', shirtAccent: '#e53935', sleeves: 'long', pants: '#2b2b3a', shoes: '#111111',
+    accent: '#e53935', eyeStyle: 'round', brows: 'thick', personality: 'pompous, secretly loves trends',
+  },
+  zoe: {
+    name: 'Zoe', role: 'trend kid', style: 'blocky', height: 0.84,
+    skin: '#8d5a3b', hair: '#1a1a1a', hairStyle: 'pigtails', cheeks: true,
+    shirt: '#ff5fa2', shirtDetail: 'star', shirtAccent: '#ffffff', sleeves: 'short', pants: '#4a4a8a', shoes: '#ffffff',
+    accent: '#ff5fa2', eyeStyle: 'lashes', brows: 'thin', personality: 'trend queen',
+  },
+  leo: {
+    name: 'Leo', role: 'mean kid', style: 'blocky', height: 0.88,
+    skin: '#f1c9a6', hair: '#e0b050', hairStyle: 'spiky',
+    shirt: '#2fbf71', shirtDetail: 'stripe', shirtAccent: '#ffffff', sleeves: 'short', pants: '#333333', shoes: '#e53935',
+    accent: '#2fbf71', eyeStyle: 'round', brows: 'thick', personality: 'laughs at everything',
+  },
+};
+for (const [k, v] of Object.entries(TREND_CAST)) v.id = k;
+Object.assign(CHARACTER_LIBRARY, TREND_CAST);

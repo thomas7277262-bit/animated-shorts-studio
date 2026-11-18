@@ -2,6 +2,7 @@ import { harbortown, lighthouseStairs, lampRoom } from './coast.js';
 import * as THREE from 'three';
 import { suburb } from './suburb.js';
 import { nightstreet, knockhouse, grandmaroom } from './horror.js';
+import { trendtown, trendcourt, trendfeed } from './trend.js';
 import { classroom, pizzashop, stadium, zoo, wedding, downtown, cockpit, skies } from './swap.js';
 import { Rng } from '../rng.js';
 import {
@@ -400,12 +401,12 @@ function studio(seed) {
   return { group: g, light: { sun: '#ffffff', sunI: 2.2, hemiSky: '#ffffff', hemiGround: '#cfd8e0', hemiI: 1.6, dir: [6, 12, 10] }, fog: ['#eef3f8', 60, 200] };
 }
 
-export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio, suburb, harbortown, lighthouseStairs, lampRoom, classroom, pizzashop, stadium, zoo, wedding, downtown, cockpit, skies, nightstreet, knockhouse, grandmaroom };
+export const ENVIRONMENTS = { castle, village, battlefield, school, house: houseInterior, city, forest, mountains: mountainPass, factory, studio, suburb, harbortown, lighthouseStairs, lampRoom, classroom, pizzashop, stadium, zoo, wedding, downtown, cockpit, skies, nightstreet, knockhouse, grandmaroom, trendtown, trendcourt, trendfeed };
 export const ENVIRONMENT_LABELS = {
   castle: 'Medieval castle', village: 'Medieval village', battlefield: 'Battlefield',
   school: 'School', house: 'House (living room)', city: 'Modern city',
   forest: 'Forest', mountains: 'Mountain pass', factory: 'Factory', studio: 'Studio backdrop', suburb: 'Bright suburb', harbortown: 'Harbour town at night', lighthouseStairs: 'Lighthouse stairs', lampRoom: 'Lighthouse lamp room',
-  classroom: 'Sunny classroom', pizzashop: 'Pizza shop', stadium: 'Football stadium', zoo: 'Zoo lion enclosure', wedding: 'Garden wedding', downtown: 'Downtown street (day)', cockpit: 'Plane cockpit', skies: 'Open sky above the clouds', nightstreet: 'Night street (horror)', knockhouse: 'Ben\'s house at night (hall + bedroom)', grandmaroom: 'Grandma\'s living room (fireplace)',
+  classroom: 'Sunny classroom', pizzashop: 'Pizza shop', stadium: 'Football stadium', zoo: 'Zoo lion enclosure', wedding: 'Garden wedding', downtown: 'Downtown street (day)', cockpit: 'Plane cockpit', skies: 'Open sky above the clouds', nightstreet: 'Night street (horror)', knockhouse: 'Ben\'s house at night (hall + bedroom)', grandmaroom: 'Grandma\'s living room (fireplace)', trendtown: 'Sunny trend town (clock tower)', trendcourt: 'Summer game court + bleachers', trendfeed: 'Phone feed screen',
 };
 
 export function buildEnvironment(name, seed = 7, opts = {}) {

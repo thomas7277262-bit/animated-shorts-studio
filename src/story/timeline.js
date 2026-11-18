@@ -205,6 +205,7 @@ export function buildTimeline(storyboard, opts = {}) {
     music: { mood: storyboard.mood || 'adventure', gain: storyboard.musicVolume ?? 0.35, bpm: storyboard.bpm },
     volumes: { narration: storyboard.voiceVolume ?? 1, music: storyboard.musicVolume ?? 0.35, effects: storyboard.sfxVolume ?? 1 },
     captionStyle: storyboard.captionStyle || 'yellow',
+    captionRed: storyboard.captionRed || [],
     style: storyboard.style || 'default',
     animSpeed: storyboard.animSpeed || 1,
     narratorVoice: storyboard.narratorVoice || 'storyteller',

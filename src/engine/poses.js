@@ -145,6 +145,16 @@ export const ACTIONS = {
     armR: { raise: 140, fwd: 10, elbow: 30 + sin(t * 9) * 25, elbowOut: sin(t * 9) * 20 },
   }),
 
+  // "HUSS!" shout: chest out, chin up, double fist-pump on every beat (~2.6 per second)
+  huss: (t) => {
+    const ph = (t * 2.6) % 1, k = ph < 0.25 ? Math.sin(ph / 0.25 * Math.PI / 2) : Math.max(0, 1 - (ph - 0.25) / 0.6);
+    return pose({
+      lean: 8 * k - 4, bodyY: k * 0.06, squash: -k * 0.03, headNod: -16 * k,
+      armL: { raise: 60 + k * 70, fwd: 25, elbow: 95 - k * 40, elbowOut: 15 }, armR: { raise: 60 + k * 70, fwd: 25, elbow: 95 - k * 40, elbowOut: 15 },
+      legL: { knee: 10 + (1 - k) * 8 }, legR: { knee: 10 + (1 - k) * 8 },
+    });
+  },
+
   cheer: (t) => {
     const b = Math.abs(sin(t * 6));
     return pose({

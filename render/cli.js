@@ -78,7 +78,7 @@ async function renderFilm({ width, height, fps, outFile, workDir }) {
   if (opt.music) {
     if (!fs.existsSync(opt.music)) throw new Error(`Music file not found: ${opt.music}`);
     run('ffmpeg', ['-y', '-v', 'error', '-ss', opt['music-offset'], '-i', path.resolve(opt.music), '-vn', '-t', duration.toFixed(3),
-      '-af', `volume=${vol},alimiter=limit=0.89:level=false,afade=t=out:st=${(duration - 0.6).toFixed(3)}:d=0.6,apad=whole_dur=${duration.toFixed(3)}`, '-ar', '48000', '-ac', '2', audioFile]);
+      '-af', `volume=${vol},volume=-3.5dB,alimiter=limit=0.7:attack=1:release=50:level=0,afade=t=out:st=${(duration - 0.6).toFixed(3)}:d=0.6,apad=whole_dur=${duration.toFixed(3)}`, '-ar', '48000', '-ac', '2', audioFile]);
     log(`Audio: music from ${path.basename(opt.music)} (offset ${opt['music-offset']}s)`);
   } else {
     const pcm = generateMusic(duration + 0.5, opt.mood || 'calm', 7);

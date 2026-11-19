@@ -23,6 +23,7 @@ import { renderVideo } from './frames.js';
 import { verifyVideo } from './verify.js';
 import { run, have, log, decodeAudio } from './util.js';
 import { FILM_INFO } from '../src/films/index.js';
+import { composeAnthem, encodeWavStereo } from '../src/audio/score.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -80,6 +81,11 @@ async function renderFilm({ width, height, fps, outFile, workDir }) {
     run('ffmpeg', ['-y', '-v', 'error', '-ss', opt['music-offset'], '-i', path.resolve(opt.music), '-vn', '-t', duration.toFixed(3),
       '-af', `volume=${vol},volume=-3.5dB,alimiter=limit=0.7:attack=1:release=50:level=0,afade=t=out:st=${(duration - 0.6).toFixed(3)}:d=0.6,apad=whole_dur=${duration.toFixed(3)}`, '-ar', '48000', '-ac', '2', audioFile]);
     log(`Audio: music from ${path.basename(opt.music)} (offset ${opt['music-offset']}s)`);
+  } else if (info.score) {
+    const a = composeAnthem({ ...info.score, duration }, SR);
+    if (vol !== 1) for (let i = 0; i < a.L.length; i++) { a.L[i] *= vol; a.R[i] *= vol; }
+    fs.writeFileSync(audioFile, encodeWavStereo(a.L, a.R, SR));
+    log(`Audio: the film's own royalty-free score (${info.score.bpm} BPM)`);
   } else {
     const pcm = generateMusic(duration + 0.5, opt.mood || 'calm', 7);
     const out = mix({ duration, music: pcm, musicGain: 0.5 * vol, clips: [], speech: [] });

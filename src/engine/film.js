@@ -20,7 +20,7 @@ const JITTER = [[0.25, -0.15], [-0.3, 0.3], [0.1, 0.4], [-0.15, -0.35], [0.4, 0.
 const quadVS = 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }';
 
 // ---------------- HUD (screen-space text) ----------------
-function textCanvas(text, { size = 46, weight = 800, spacing = 0.32, color = '#ffffff', underline = null, shadow = 0.6, font = 'Inter, "Helvetica Neue", Arial, sans-serif' } = {}) {
+function textCanvas(text, { size = 46, weight = 800, spacing = 0.32, color = '#ffffff', underline = null, shadow = 0.6, pill = null, font = 'Inter, "Helvetica Neue", Arial, sans-serif' } = {}) {
   const c = document.createElement('canvas');
   const g = c.getContext('2d');
   g.font = `${weight} ${size}px ${font}`;
@@ -32,6 +32,14 @@ function textCanvas(text, { size = 46, weight = 800, spacing = 0.32, color = '#f
   c.width = w; c.height = h;
   g.font = `${weight} ${size}px ${font}`;
   g.textBaseline = 'middle';
+  if (pill) {
+    // rounded tag behind the text
+    const r = size * 0.55, x0 = size * 0.2, y0 = size * 0.22, pw = w - size * 0.4, ph = size * 1.26;
+    g.fillStyle = pill;
+    g.beginPath();
+    g.moveTo(x0 + r, y0); g.arcTo(x0 + pw, y0, x0 + pw, y0 + ph, r); g.arcTo(x0 + pw, y0 + ph, x0, y0 + ph, r);
+    g.arcTo(x0, y0 + ph, x0, y0, r); g.arcTo(x0, y0, x0 + pw, y0, r); g.closePath(); g.fill();
+  }
   g.fillStyle = color;
   if (shadow) { g.shadowColor = `rgba(0,0,0,${shadow})`; g.shadowBlur = size * 0.35; g.shadowOffsetY = size * 0.05; }
   let x = size * 0.6;

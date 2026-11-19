@@ -15,6 +15,28 @@ function limb(length, radius, material = inkMat) {
   return m;
 }
 
+// ---- "toon" style: thick white limbs, cel shading and black outlines ----
+let _gradient = null;
+function toonGradient() {
+  if (!_gradient) {
+    _gradient = new THREE.DataTexture(new Uint8Array([90, 90, 90, 255, 175, 175, 175, 255, 255, 255, 255, 255]), 3, 1, THREE.RGBAFormat);
+    _gradient.minFilter = _gradient.magFilter = THREE.NearestFilter;
+    _gradient.needsUpdate = true;
+  }
+  return _gradient;
+}
+const outlineCache = new Map();
+function outlineMat(width) {
+  const key = width.toFixed(4);
+  if (!outlineCache.has(key)) {
+    const m = new THREE.MeshBasicMaterial({ color: 0x141414, side: THREE.BackSide });
+    m.onBeforeCompile = (sh) => { sh.vertexShader = sh.vertexShader.replace('#include <begin_vertex>', `vec3 transformed = position + normal * ${key};`); };
+    m.customProgramCacheKey = () => 'outline' + key;
+    outlineCache.set(key, m);
+  }
+  return outlineCache.get(key);
+}
+
 function flat(color, opts = {}) {
   return new THREE.MeshStandardMaterial({ color, roughness: 0.55, metalness: 0, flatShading: true, ...opts });
 }
@@ -27,13 +49,19 @@ export class Character {
   constructor(spec) {
     this.spec = spec;
     const h = spec.height || 1;
-    this.dims = {
+    const toon = spec.style === 'toon';
+    this.toon = toon;
+    this.dims = toon ? {
+      upperLeg: 0.5 * h, lowerLeg: 0.47 * h, torso: 0.62 * h,
+      upperArm: 0.37 * h, lowerArm: 0.35 * h, headR: 0.31, limbR: 0.066,
+    } : {
       upperLeg: 0.46 * h, lowerLeg: 0.44 * h, torso: 0.58 * h,
       upperArm: 0.36 * h, lowerArm: 0.34 * h, headR: 0.4, limbR: 0.034,
     };
     const d = this.dims;
-    // optional per-character limb colour (default: shared black ink)
-    const ink = spec.ink ? new THREE.MeshStandardMaterial({ color: spec.ink, roughness: 0.6, metalness: 0 }) : inkMat;
+    // limb material: toon = cel-shaded body colour, else shared black ink (or spec.ink)
+    const ink = toon ? new THREE.MeshToonMaterial({ color: spec.body || '#f3f2ee', gradientMap: toonGradient() })
+      : spec.ink ? new THREE.MeshStandardMaterial({ color: spec.ink, roughness: 0.6, metalness: 0 }) : inkMat;
     this.root = new THREE.Group();
     this.root.name = spec.id;
 
@@ -56,7 +84,7 @@ export class Character {
     this.spine.add(this.chest);
 
     // scarf in the character's accent colour (identity marker)
-    const scarf = new THREE.Mesh(new THREE.TorusGeometry(0.085, 0.04, 8, 16), flat(spec.accent));
+    const scarf = new THREE.Mesh(new THREE.TorusGeometry(toon ? 0.1 : 0.085, toon ? 0.045 : 0.04, 8, 16), flat(spec.accent));
     scarf.rotation.x = Math.PI / 2;
     scarf.position.y = 0.0;
     scarf.castShadow = true;
@@ -77,7 +105,9 @@ export class Character {
     this.faceTex = new THREE.CanvasTexture(this.faceCanvas);
     this.faceTex.colorSpace = THREE.SRGBColorSpace;
     this.faceTex.anisotropy = 8;
-    const headMat = new THREE.MeshStandardMaterial({ map: this.faceTex, roughness: 0.45, metalness: 0, emissive: 0xffffff, emissiveMap: this.faceTex, emissiveIntensity: 0.22 });
+    const headMat = toon
+      ? new THREE.MeshToonMaterial({ map: this.faceTex, gradientMap: toonGradient(), emissive: 0xffffff, emissiveMap: this.faceTex, emissiveIntensity: 0.12 })
+      : new THREE.MeshStandardMaterial({ map: this.faceTex, roughness: 0.45, metalness: 0, emissive: 0xffffff, emissiveMap: this.faceTex, emissiveIntensity: 0.22 });
     const headMesh = new THREE.Mesh(new THREE.SphereGeometry(d.headR, 48, 32), headMat);
     headMesh.castShadow = true;
     this.head.add(headMesh);
@@ -99,7 +129,7 @@ export class Character {
       const hand = new THREE.Group();
       hand.position.y = -d.lowerArm - 0.02;
       elbow.add(hand);
-      const handMesh = new THREE.Mesh(new THREE.SphereGeometry(0.065, 12, 10), ink);
+      const handMesh = new THREE.Mesh(new THREE.SphereGeometry(toon ? 0.088 : 0.065, 14, 10), ink);
       handMesh.castShadow = true;
       hand.add(handMesh);
       this.arms[side] = { shoulder, elbow, hand, sx };
@@ -117,7 +147,7 @@ export class Character {
       knee.position.y = -d.upperLeg;
       hip.add(knee);
       knee.add(limb(d.lowerLeg, d.limbR, ink));
-      const foot = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), ink);
+      const foot = new THREE.Mesh(new THREE.SphereGeometry(toon ? 0.085 : 0.07, 14, 10), ink);
       foot.scale.set(0.9, 0.55, 1.7);
       foot.position.set(0, -d.lowerLeg - 0.01, 0.06);
       foot.castShadow = true;
@@ -129,6 +159,7 @@ export class Character {
     this.props = {};
     this.buildProps();
     this._faceKey = '';
+    if (toon) this.addOutlines();
   }
 
   buildAccessory(spec) {
@@ -242,6 +273,7 @@ export class Character {
         }
         break;
       }
+      case 'bald': break;
       default: {
         // a tiny hair curl so the default hero still has a silhouette
         const curl = new THREE.Mesh(new THREE.TorusGeometry(r * 0.12, r * 0.025, 6, 12, Math.PI * 1.5), inkMat);
@@ -325,6 +357,20 @@ export class Character {
     phone.visible = false;
     this.arms.R.hand.add(phone);
     this.props.phone = phone;
+  }
+
+  /** Inverted-hull outlines around the body, head, hands and feet (toon style). */
+  addOutlines() {
+    const meshes = [];
+    this.body.traverse((o) => { if (o.isMesh && !o.userData.noOutline) meshes.push(o); });
+    for (const m of meshes) {
+      if (!m.visible && !Object.values(this.props).some((p) => p === m)) continue;
+      const w = m === this.headMesh ? 0.022 : 0.016;
+      const o = new THREE.Mesh(m.geometry, outlineMat(w / Math.max(m.scale.x, m.scale.y, m.scale.z)));
+      o.userData.noOutline = true;
+      o.castShadow = false; o.receiveShadow = false;
+      m.add(o);
+    }
   }
 
   setProp(name) {

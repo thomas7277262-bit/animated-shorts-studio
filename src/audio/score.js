@@ -53,6 +53,26 @@ function saws(f, dur, sr, { voices = 5, detune = 0.012, cutoff = 2200, attack = 
   return out;
 }
 
+// bowed-string ensemble: detuned saws with vibrato, slow attack, darkened
+function strings(f, dur, sr, { attack = 0.5, release = 0.9, cutoff = 2400, seed = 3 } = {}) {
+  const n = Math.floor((dur + release) * sr), out = new Float32Array(n);
+  const rng = new Rng(seed);
+  const V = 6, ph = Array.from({ length: V }, () => rng.float(0, 1)), det = Array.from({ length: V }, (_, k) => 1 + (k / (V - 1) - 0.5) * 0.014);
+  const vr = Array.from({ length: V }, () => rng.float(4.6, 5.8)), vp = Array.from({ length: V }, () => rng.float(0, 6));
+  const a = 1 - Math.exp(-2 * Math.PI * cutoff / sr);
+  let l1 = 0, l2 = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / sr;
+    let v = 0;
+    for (let k = 0; k < V; k++) { ph[k] += f * det[k] * (1 + 0.004 * Math.sin(2 * Math.PI * vr[k] * t + vp[k]) * Math.min(1, t / 0.6)) / sr; ph[k] -= Math.floor(ph[k]); v += ph[k] * 2 - 1; }
+    v /= Math.sqrt(V);
+    l1 += (v - l1) * a; l2 += (l1 - l2) * a;
+    const e = Math.min(1, t / attack) ** 1.5 * (t > dur ? Math.max(0, 1 - (t - dur) / release) : 1);
+    out[i] = l2 * e;
+  }
+  return out;
+}
+
 function sub(f, dur, sr) {
   const n = Math.floor(dur * sr), out = new Float32Array(n);
   let ph = 0, lp = 0;
@@ -194,10 +214,18 @@ export function composeAnthem(plan, sr = 48000) {
         }
       }
     }
+    // ---- strings: enter in the build, carry the drop and the outro ----
+    if (build || drop || (outro && b === S.outro[0])) {
+      const len = outro ? (plan.bars - b) * bar + 0.5 : bar;
+      const g = build ? 0.05 + 0.03 * (b - S.build[0]) : outro ? 0.12 : 0.1;
+      for (const m of notes) for (const [oct, pan] of [[12, -0.45], [0, 0.45]]) {
+        addMono(music, strings(midiHz(m + oct), len, sr, { attack: build ? 0.8 : 0.25, release: outro ? 1.8 : 0.5, cutoff: build ? 1600 + 400 * (b - S.build[0]) : 2600, seed: m + b * 3 + oct }), T(b), g, pan);
+      }
+    }
     // ---- drop: supersaw chords, bass, lead ----
     if (drop) {
       for (const m of notes) for (const [oct, pan] of [[0, -0.6], [12, 0.6]]) {
-        addMono(music, saws(midiHz(m + oct), bar, sr, { voices: 7, detune: 0.018, cutoff: 3200, attack: 0.01, release: 0.05, seed: m * 7 + b + oct }), T(b), 0.11, pan);
+        addMono(music, saws(midiHz(m + oct), bar, sr, { voices: 7, detune: 0.016, cutoff: 2600, attack: 0.01, release: 0.05, seed: m * 7 + b + oct }), T(b), 0.075, pan);
       }
       for (let q = 0; q < 8; q++) addMono(music, sub(midiHz(bassN - 12), beat * 0.45, sr), T(b, q * 0.5), 0.42, 0);
     }
@@ -227,7 +255,8 @@ export function composeAnthem(plan, sr = 48000) {
     const rz = riser(sr, rng, t1 - (S.build[0] + 0.5) * bar);
     addMono(fx, rz, (S.build[0] + 0.5) * bar * sr, 0.22, 0);
   }
-  // lead hook in the drop
+  // lead hook in the drop (own track, ping-pong echo)
+  const leadTr = new Track(n);
   if (plan.lead) {
     const phraseBars = 2;
     for (let b = S.drop[0], k = 0; b < S.drop[1]; b += phraseBars, k++) {
@@ -235,10 +264,15 @@ export function composeAnthem(plan, sr = 48000) {
       for (const [bt, m, len] of phrase) {
         const v = saws(midiHz(m), len * beat * 0.95, sr, { voices: 3, detune: 0.008, cutoff: 4200, attack: 0.008, release: 0.12, seed: m + k });
         // gentle vibrato-free square-ish lead + piano double for definition
-        addMono(music, v, T(b, bt), 0.13, 0.15);
-        addMono(music, piano(midiHz(m), len * beat, sr, 0.5), T(b, bt), 0.22, -0.15);
+        addMono(leadTr, v, T(b, bt), 0.13, 0.1);
+        addMono(leadTr, piano(midiHz(m), len * beat, sr, 0.55), T(b, bt), 0.24, -0.1);
       }
     }
+  }
+  {
+    const d = Math.floor(beat * 0.75 * sr);
+    for (let i = d; i < n; i++) { leadTr.L[i] += leadTr.R[i - d] * 0.32; leadTr.R[i] += leadTr.L[i - d] * 0.32; }
+    for (let i = 0; i < n; i++) { music.L[i] += leadTr.L[i]; music.R[i] += leadTr.R[i]; }
   }
   // crashes and the drop impact
   for (const cb of plan.crashes || []) addMono(fx, noiseHit(sr, rng, 2.2, 1.8, 0.95), T(cb), 0.22, 0);
@@ -260,10 +294,18 @@ export function composeAnthem(plan, sr = 48000) {
   const verbM = reverb(music, 0.3, 0.86, sr);
   const verbF = reverb(fx, 0.35, 0.88, sr);
   const L = new Float32Array(n), R = new Float32Array(n);
-  let peak = 0;
+  // master glue compressor (RMS detector, ratio 3:1) then soft clip
+  let env2 = 0, peak = 0;
+  const att = 1 - Math.exp(-1 / (0.01 * sr)), rel = 1 - Math.exp(-1 / (0.18 * sr));
+  const thr = 0.22;
   for (let i = 0; i < n; i++) {
-    L[i] = Math.tanh((verbM.L[i] + drums.L[i] + verbF.L[i]) * 1.2);
-    R[i] = Math.tanh((verbM.R[i] + drums.R[i] + verbF.R[i]) * 1.2);
+    const l = verbM.L[i] + drums.L[i] + verbF.L[i], r = verbM.R[i] + drums.R[i] + verbF.R[i];
+    const lvl = (l * l + r * r) / 2;
+    env2 += (lvl - env2) * (lvl > env2 ? att : rel);
+    const rms = Math.sqrt(env2);
+    const g = rms > thr ? Math.pow(thr / rms, 1 - 1 / 3) : 1;
+    L[i] = Math.tanh(l * g * 1.6);
+    R[i] = Math.tanh(r * g * 1.6);
     peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
   }
   const fo = Math.floor(0.8 * sr);

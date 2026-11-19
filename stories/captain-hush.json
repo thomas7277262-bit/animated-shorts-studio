@@ -1,0 +1,824 @@
+{
+  "title": "Captain Hush",
+  "seed": 207,
+  "mood": "comedy",
+  "narratorVoice": "storytellerF",
+  "targetDuration": 26,
+  "characters": [
+    "daisy",
+    "ike",
+    "ollie",
+    "ben",
+    "gus"
+  ],
+  "scenes": [
+    {
+      "environment": "house",
+      "cast": [
+        {
+          "id": "daisy",
+          "at": [
+            -4.2,
+            0.4
+          ],
+          "face": 90
+        },
+        {
+          "id": "ike",
+          "at": [
+            -0.9,
+            -1.8
+          ],
+          "face": 10
+        },
+        {
+          "id": "ollie",
+          "at": [
+            0.2,
+            -2.2
+          ],
+          "face": 0
+        },
+        {
+          "id": "ben",
+          "at": [
+            1.3,
+            -1.8
+          ],
+          "face": -10
+        },
+        {
+          "id": "gus",
+          "at": [
+            2.4,
+            -1.4
+          ],
+          "face": -20
+        }
+      ],
+      "beats": [
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "Daisy is two. And Daisy is the boss of nap time."
+          },
+          "camera": [
+            {
+              "type": "establish",
+              "target": [
+                0,
+                0.6,
+                -1.5
+              ],
+              "at": 0,
+              "end": 0.45
+            },
+            {
+              "type": "follow",
+              "target": "daisy",
+              "at": 0.45,
+              "end": 1
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "walk",
+              "move": [
+                -2.6,
+                -0.9
+              ],
+              "at": 0,
+              "end": 0.7,
+              "expr": "determined"
+            },
+            {
+              "char": "daisy",
+              "action": "idle",
+              "at": 0.7,
+              "end": 1,
+              "expr": "smug",
+              "face": "front"
+            },
+            {
+              "char": "ike",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "happy"
+            },
+            {
+              "char": "ollie",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "happy"
+            },
+            {
+              "char": "ben",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "happy"
+            },
+            {
+              "char": "gus",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy"
+            }
+          ]
+        },
+        {
+          "line": {
+            "speaker": "daisy",
+            "text": "Shhh! Everybody. Quiet. Now."
+          },
+          "camera": [
+            {
+              "type": "lowAngle",
+              "target": "daisy",
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -55,
+                "dist": 4.2
+              },
+              "to": {
+                "angle": -40,
+                "dist": 3.8
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "point",
+              "at": 0,
+              "end": 1,
+              "expr": "angry",
+              "face": "ike"
+            },
+            {
+              "char": "ike",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "surprised",
+              "face": "daisy"
+            },
+            {
+              "char": "ollie",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "surprised",
+              "face": "daisy"
+            },
+            {
+              "char": "ben",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "surprised",
+              "face": "daisy"
+            },
+            {
+              "char": "gus",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "daisy"
+            }
+          ],
+          "comic": [
+            {
+              "text": "SHHH!",
+              "at": [
+                -2.6,
+                2.3,
+                -0.9
+              ],
+              "when": 0.1,
+              "dur": 1.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "environment": "house",
+      "transition": "cut",
+      "cast": [
+        {
+          "id": "daisy",
+          "at": [
+            -2.6,
+            -0.9
+          ],
+          "face": 70
+        },
+        {
+          "id": "ike",
+          "at": [
+            -0.9,
+            -1.8
+          ],
+          "face": 10
+        },
+        {
+          "id": "ollie",
+          "at": [
+            0.2,
+            -2.2
+          ],
+          "face": 0
+        },
+        {
+          "id": "ben",
+          "at": [
+            1.3,
+            -1.8
+          ],
+          "face": -10
+        },
+        {
+          "id": "gus",
+          "at": [
+            2.4,
+            -1.4
+          ],
+          "face": -20
+        }
+      ],
+      "beats": [
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "Her four baby brothers had other plans."
+          },
+          "camera": [
+            {
+              "type": "wide",
+              "target": [
+                0.7,
+                0.5,
+                -1.8
+              ],
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -15,
+                "dist": 6
+              },
+              "to": {
+                "angle": 10,
+                "dist": 5
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "ike",
+              "action": "laugh",
+              "at": 0.1,
+              "end": 1,
+              "expr": "laugh",
+              "face": "front"
+            },
+            {
+              "char": "ollie",
+              "action": "cheer",
+              "at": 0.2,
+              "end": 1,
+              "expr": "laugh",
+              "face": "front"
+            },
+            {
+              "char": "ben",
+              "action": "cheer",
+              "at": 0.3,
+              "end": 1,
+              "expr": "laugh",
+              "face": "front"
+            },
+            {
+              "char": "gus",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            },
+            {
+              "char": "daisy",
+              "action": "idle",
+              "at": 0,
+              "end": 1,
+              "expr": "surprised",
+              "face": "ollie"
+            }
+          ],
+          "comic": [
+            {
+              "text": "HEE HEE!",
+              "at": [
+                0.3,
+                2.2,
+                -1.6
+              ],
+              "when": 0.3,
+              "dur": 1.2
+            }
+          ]
+        },
+        {
+          "line": {
+            "speaker": "daisy",
+            "text": "I said SHHH!"
+          },
+          "camera": [
+            {
+              "type": "closeup",
+              "target": "daisy",
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -30
+              },
+              "to": {
+                "angle": -20
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "angry",
+              "at": 0,
+              "end": 1,
+              "expr": "angry",
+              "face": "front"
+            }
+          ],
+          "emotes": [
+            {
+              "char": "daisy",
+              "icon": "anger",
+              "when": 0.15,
+              "dur": 1.2
+            }
+          ]
+        },
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "That only made them louder."
+          },
+          "camera": [
+            {
+              "type": "orbit",
+              "target": [
+                0.7,
+                0.4,
+                -1.8
+              ],
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -25,
+                "dist": 5.5
+              },
+              "to": {
+                "angle": 25,
+                "dist": 5
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "ike",
+              "action": "dance",
+              "at": 0,
+              "end": 1,
+              "expr": "laugh"
+            },
+            {
+              "char": "ollie",
+              "action": "jump",
+              "at": 0,
+              "end": 0.5,
+              "expr": "laugh"
+            },
+            {
+              "char": "ollie",
+              "action": "laugh",
+              "at": 0.5,
+              "end": 1,
+              "expr": "laugh"
+            },
+            {
+              "char": "ben",
+              "action": "dance",
+              "at": 0.1,
+              "end": 1,
+              "expr": "laugh"
+            },
+            {
+              "char": "gus",
+              "action": "cheer",
+              "at": 0.3,
+              "end": 1,
+              "expr": "happy"
+            }
+          ],
+          "comic": [
+            {
+              "text": "HA HA HA!",
+              "at": [
+                0.7,
+                2.4,
+                -1.6
+              ],
+              "when": 0.2,
+              "dur": 1.4
+            }
+          ],
+          "fx": [
+            {
+              "type": "confetti",
+              "at": [
+                0.7,
+                2.8,
+                -1.8
+              ],
+              "when": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "environment": "house",
+      "transition": "wipe",
+      "cast": [
+        {
+          "id": "daisy",
+          "at": [
+            -2.6,
+            -0.9
+          ],
+          "face": 70
+        },
+        {
+          "id": "ike",
+          "at": [
+            -0.9,
+            -1.8
+          ],
+          "face": 10
+        },
+        {
+          "id": "ollie",
+          "at": [
+            0.2,
+            -2.2
+          ],
+          "face": 0
+        },
+        {
+          "id": "ben",
+          "at": [
+            1.3,
+            -1.8
+          ],
+          "face": -10
+        },
+        {
+          "id": "gus",
+          "at": [
+            2.4,
+            -1.4
+          ],
+          "face": -20
+        }
+      ],
+      "beats": [
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "So Daisy tried her secret move."
+          },
+          "camera": [
+            {
+              "type": "medium",
+              "target": "daisy",
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -35,
+                "dist": 4
+              },
+              "to": {
+                "angle": -15,
+                "dist": 3.4
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "think",
+              "at": 0,
+              "end": 0.55,
+              "expr": "smug",
+              "face": "front"
+            },
+            {
+              "char": "daisy",
+              "action": "sit",
+              "at": 0.55,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            }
+          ],
+          "emotes": [
+            {
+              "char": "daisy",
+              "icon": "idea",
+              "when": 0.2,
+              "dur": 1.0
+            }
+          ]
+        },
+        {
+          "line": {
+            "speaker": "daisy",
+            "text": "Yaaawn. So sleepy."
+          },
+          "camera": [
+            {
+              "type": "dollyIn",
+              "target": "daisy",
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": -20
+              },
+              "to": {
+                "angle": -10
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            }
+          ],
+          "emotes": [
+            {
+              "char": "daisy",
+              "icon": "zzz",
+              "when": 0.4,
+              "dur": 1.2
+            }
+          ]
+        },
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "One by one, the babies copied her."
+          },
+          "camera": [
+            {
+              "type": "wide",
+              "target": [
+                0.7,
+                0.4,
+                -1.8
+              ],
+              "at": 0,
+              "end": 1,
+              "from": {
+                "angle": 15,
+                "dist": 5.5
+              },
+              "to": {
+                "angle": -5,
+                "dist": 4.6
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "ike",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            },
+            {
+              "char": "ollie",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            },
+            {
+              "char": "ben",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            },
+            {
+              "char": "gus",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            }
+          ],
+          "emotes": [
+            {
+              "char": "ike",
+              "icon": "zzz",
+              "when": 0.1,
+              "dur": 1.6
+            },
+            {
+              "char": "ollie",
+              "icon": "zzz",
+              "when": 0.3,
+              "dur": 1.4
+            },
+            {
+              "char": "ben",
+              "icon": "zzz",
+              "when": 0.5,
+              "dur": 1.2
+            },
+            {
+              "char": "gus",
+              "icon": "zzz",
+              "when": 0.7,
+              "dur": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "environment": "house",
+      "transition": "fade",
+      "cast": [
+        {
+          "id": "daisy",
+          "at": [
+            0,
+            -1.7
+          ],
+          "face": 0
+        },
+        {
+          "id": "ike",
+          "at": [
+            -1.25,
+            -0.7
+          ],
+          "face": 15
+        },
+        {
+          "id": "ollie",
+          "at": [
+            -0.42,
+            -0.45
+          ],
+          "face": 5
+        },
+        {
+          "id": "ben",
+          "at": [
+            0.42,
+            -0.45
+          ],
+          "face": -5
+        },
+        {
+          "id": "gus",
+          "at": [
+            1.25,
+            -0.7
+          ],
+          "face": -15
+        }
+      ],
+      "beats": [
+        {
+          "line": {
+            "speaker": "narrator",
+            "text": "Nap time: complete. Even the boss."
+          },
+          "camera": [
+            {
+              "type": "crane",
+              "target": [
+                0,
+                0.3,
+                -1.0
+              ],
+              "at": 0,
+              "end": 1,
+              "from": {
+                "dist": 6,
+                "height": 5
+              },
+              "to": {
+                "dist": 5.5,
+                "height": 0.9
+              }
+            }
+          ],
+          "actions": [
+            {
+              "char": "daisy",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy",
+              "face": "front"
+            },
+            {
+              "char": "ike",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy"
+            },
+            {
+              "char": "ollie",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy"
+            },
+            {
+              "char": "ben",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy"
+            },
+            {
+              "char": "gus",
+              "action": "sit",
+              "at": 0,
+              "end": 1,
+              "expr": "sleepy"
+            }
+          ],
+          "emotes": [
+            {
+              "char": "daisy",
+              "icon": "zzz",
+              "when": 0.3,
+              "dur": 2
+            }
+          ],
+          "comic": [
+            {
+              "text": "ZZZ...",
+              "at": [
+                0,
+                2.5,
+                -1.4
+              ],
+              "when": 0.4,
+              "dur": 2
+            }
+          ],
+          "fx": [
+            {
+              "type": "hearts",
+              "at": "daisy",
+              "height": "head",
+              "when": 0.7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

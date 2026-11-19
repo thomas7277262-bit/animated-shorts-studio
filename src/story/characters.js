@@ -125,3 +125,22 @@ export const CREATURE_LIBRARY = {
 };
 
 Object.assign(CHARACTER_LIBRARY, BLOCKY_CHARACTERS, CREATURE_LIBRARY);
+
+// ---------------------------------------------------------------------------
+// "Captain Hush" cast (original): a bossy toddler and her four baby brothers.
+// Small heights give the big-headed toddler/baby proportions.
+export const FAMILY_CHARACTERS = {
+  daisy: {
+    id: 'daisy', name: 'Daisy', role: 'toddler',
+    accessory: 'bow', accent: '#9b5cff', height: 0.66,
+    eyeStyle: 'lashes', brows: 'thick', cheeks: true,
+    voice: { espeak: 'en-us+f5', pitch: 92, speed: 165 },
+    personality: 'two years old and absolutely in charge',
+  },
+  ike: { id: 'ike', name: 'Ike', role: 'baby', accessory: 'none', accent: '#2fb8ff', height: 0.5, eyeStyle: 'round', brows: 'thin', cheeks: true, voice: { espeak: 'en-us+m7', pitch: 99, speed: 180 }, personality: 'giggles at everything' },
+  ollie: { id: 'ollie', name: 'Ollie', role: 'baby', accessory: 'cap', accent: '#ffb000', height: 0.5, eyeStyle: 'round', brows: 'thin', cheeks: true, voice: { espeak: 'en-us+m7', pitch: 95, speed: 180 }, personality: 'loudest laugh in the house' },
+  ben: { id: 'ben', name: 'Ben', role: 'baby', accessory: 'none', accent: '#3dbb3d', height: 0.5, eyeStyle: 'round', brows: 'thin', cheeks: true, voice: { espeak: 'en-us+m7', pitch: 97, speed: 180 }, personality: 'copies whatever Ollie does' },
+  gus: { id: 'gus', name: 'Gus', role: 'baby', accessory: 'none', accent: '#ff5a36', height: 0.5, eyeStyle: 'sleepy', brows: 'thin', cheeks: true, voice: { espeak: 'en-us+m7', pitch: 93, speed: 180 }, personality: 'always sleepy' },
+};
+
+Object.assign(CHARACTER_LIBRARY, FAMILY_CHARACTERS);

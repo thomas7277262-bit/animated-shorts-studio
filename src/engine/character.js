@@ -7,10 +7,10 @@ const INK = 0x151515;
 // Shared materials keep every character visually identical in style.
 const inkMat = new THREE.MeshStandardMaterial({ color: INK, roughness: 0.6, metalness: 0.0 });
 
-function limb(length, radius) {
+function limb(length, radius, material = inkMat) {
   const g = new THREE.CapsuleGeometry(radius, length, 4, 10);
   g.translate(0, -length / 2, 0);
-  const m = new THREE.Mesh(g, inkMat);
+  const m = new THREE.Mesh(g, material);
   m.castShadow = true;
   return m;
 }
@@ -32,6 +32,8 @@ export class Character {
       upperArm: 0.36 * h, lowerArm: 0.34 * h, headR: 0.4, limbR: 0.034,
     };
     const d = this.dims;
+    // optional per-character limb colour (default: shared black ink)
+    const ink = spec.ink ? new THREE.MeshStandardMaterial({ color: spec.ink, roughness: 0.6, metalness: 0 }) : inkMat;
     this.root = new THREE.Group();
     this.root.name = spec.id;
 
@@ -45,7 +47,7 @@ export class Character {
     // spine
     this.spine = new THREE.Group();
     this.hips.add(this.spine);
-    const spineMesh = limb(d.torso, d.limbR * 1.15);
+    const spineMesh = limb(d.torso, d.limbR * 1.15, ink);
     spineMesh.rotation.x = Math.PI; // points up
     this.spine.add(spineMesh);
 
@@ -89,15 +91,15 @@ export class Character {
       const shoulder = new THREE.Group();
       shoulder.position.set(sx * 0.03, -0.06, 0);
       this.chest.add(shoulder);
-      shoulder.add(limb(d.upperArm, d.limbR));
+      shoulder.add(limb(d.upperArm, d.limbR, ink));
       const elbow = new THREE.Group();
       elbow.position.y = -d.upperArm;
       shoulder.add(elbow);
-      elbow.add(limb(d.lowerArm, d.limbR));
+      elbow.add(limb(d.lowerArm, d.limbR, ink));
       const hand = new THREE.Group();
       hand.position.y = -d.lowerArm - 0.02;
       elbow.add(hand);
-      const handMesh = new THREE.Mesh(new THREE.SphereGeometry(0.065, 12, 10), inkMat);
+      const handMesh = new THREE.Mesh(new THREE.SphereGeometry(0.065, 12, 10), ink);
       handMesh.castShadow = true;
       hand.add(handMesh);
       this.arms[side] = { shoulder, elbow, hand, sx };
@@ -110,12 +112,12 @@ export class Character {
       const hip = new THREE.Group();
       hip.position.set(sx * 0.07, 0, 0);
       this.hips.add(hip);
-      hip.add(limb(d.upperLeg, d.limbR));
+      hip.add(limb(d.upperLeg, d.limbR, ink));
       const knee = new THREE.Group();
       knee.position.y = -d.upperLeg;
       hip.add(knee);
-      knee.add(limb(d.lowerLeg, d.limbR));
-      const foot = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), inkMat);
+      knee.add(limb(d.lowerLeg, d.limbR, ink));
+      const foot = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), ink);
       foot.scale.set(0.9, 0.55, 1.7);
       foot.position.set(0, -d.lowerLeg - 0.01, 0.06);
       foot.castShadow = true;

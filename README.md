@@ -40,6 +40,27 @@ free neural voice such as Piper is the planned next step). Word timings are
 estimated from per-word synthesis and snapped to pauses in the audio, so they are
 close but not phoneme-perfect. The story generator uses templates, not an AI model.
 
+## Hand-directed films (`--film`)
+
+Besides generated stories, the studio can play fully hand-directed films
+(`src/films/`), rendered by `FilmPlayer` (`src/engine/film.js`) with:
+- **real motion blur** (each frame averages 4 sub-frames over a 180° shutter)
+  plus sub-pixel jitter for extra anti-aliasing (`--motion-blur 1` for fast previews)
+- crisp floating character labels and title cards drawn after the blur
+- bloom, vignette, film grain, fades and flashes
+
+```bash
+# "Run Your Race": overthinking vs doing, comparison vs focus, envy vs inspiration
+node render/cli.js --film run-your-race --music path/to/track.mp3 --out output/run-your-race.mp4
+node render/cli.js --film run-your-race --res 720p --motion-blur 1   # quick preview, procedural music
+FILM=run-your-race MB=4 node scripts/snap.mjs out 3 12 20            # still frames
+```
+`--music` takes any audio or video file (`--music-offset` to start later in it). The
+film's cues are timed to a ≈123 BPM track with its drop at 15.58 s (see `CUE` in
+`src/films/run-your-race.js`). Only publish with music you have the rights to:
+for YouTube Shorts, add the sound in the app ("Use this sound") or pick a
+royalty-free track. Music files are never committed to this repository.
+
 ## Commands (for the cloud environment)
 
 ```bash

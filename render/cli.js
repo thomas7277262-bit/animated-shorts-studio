@@ -4,6 +4,7 @@
 //   node render/cli.js --demo --out output/demo.mp4
 //   node render/cli.js --storyboard my-story.json --res 4k --fps 30
 //   node render/cli.js --idea "a knight who is afraid of chickens" --duration 30
+//   node render/cli.js --film run-your-race --music track.mp3 --out output/run-your-race.mp4
 //
 // Steps: storyboard -> voice (TTS) -> timeline -> music+sfx mix -> subtitles
 //        -> 3D frames (headless Chromium + Three.js) -> MP4 -> verification.
@@ -20,7 +21,8 @@ import { synthLine } from './tts.js';
 import { buildAss } from './subtitles.js';
 import { renderVideo } from './frames.js';
 import { verifyVideo } from './verify.js';
-import { run, have, log } from './util.js';
+import { run, have, log, decodeAudio } from './util.js';
+import { FILM_INFO } from '../src/films/index.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -48,12 +50,78 @@ const { values: opt } = parseArgs({
     seed: { type: 'string' },
     'skip-build': { type: 'boolean' },
     'audio-only': { type: 'boolean' },
+    film: { type: 'string' },
+    music: { type: 'string' },
+    'music-offset': { type: 'string', default: '0' },
+    'motion-blur': { type: 'string', default: '4' },
   },
 });
 
 const RES = { '720p': [720, 1280], '1080p': [1080, 1920], '1440p': [1440, 2560], '4k': [2160, 3840] };
 
+// Hand-directed film (src/films/): no TTS or subtitles; optional external music track.
+async function renderFilm({ width, height, fps, outFile, workDir }) {
+  const info = FILM_INFO[opt.film];
+  if (!info) throw new Error(`Unknown film "${opt.film}". Available: ${Object.keys(FILM_INFO).join(', ')}`);
+  const duration = info.duration;
+  const distDir = path.join(ROOT, 'dist');
+  if (!opt['skip-build'] || !fs.existsSync(path.join(distDir, 'render.html'))) {
+    log('Building 3D engine bundle…');
+    run('npx', ['vite', 'build', '--logLevel', 'error'], { cwd: ROOT, stdio: 'inherit' });
+  }
+  const timeline = { film: opt.film, title: info.title, duration, fps, width, height, motionBlur: Number(opt['motion-blur']) };
+  log(`Film: "${info.title}" – ${duration.toFixed(2)}s, ${width}x${height} @ ${fps}fps, motion blur ${timeline.motionBlur}x`);
+
+  // audio: the given music file (trimmed, faded), or procedural music
+  const audioFile = path.join(workDir, 'audio.wav');
+  const vol = Number(opt['music-volume'] ?? 1);
+  if (opt.music) {
+    if (!fs.existsSync(opt.music)) throw new Error(`Music file not found: ${opt.music}`);
+    run('ffmpeg', ['-y', '-v', 'error', '-ss', opt['music-offset'], '-i', path.resolve(opt.music), '-vn', '-t', duration.toFixed(3),
+      '-af', `volume=${vol},alimiter=limit=0.89:level=false,afade=t=out:st=${(duration - 0.6).toFixed(3)}:d=0.6,apad=whole_dur=${duration.toFixed(3)}`, '-ar', '48000', '-ac', '2', audioFile]);
+    log(`Audio: music from ${path.basename(opt.music)} (offset ${opt['music-offset']}s)`);
+  } else {
+    const pcm = generateMusic(duration + 0.5, opt.mood || 'calm', 7);
+    const out = mix({ duration, music: pcm, musicGain: 0.5 * vol, clips: [], speech: [] });
+    fs.writeFileSync(audioFile, encodeWav(out, SR));
+    log(`Audio: procedural "${opt.mood || 'calm'}" music (pass --music <file> to use your own track)`);
+  }
+
+  const workers = Number(opt.workers || Math.max(1, Math.min(4, (await import('node:os')).cpus().length)));
+  log(`Rendering ${Math.round(duration * fps)} frames with ${workers} worker(s)…`);
+  const rv = await renderVideo({ timeline, width, height, fps, distDir, workDir, outFile: path.join(workDir, 'video.mp4'), workers, crf: height > 2000 ? 16 : 14 });
+  log(`Frames done in ${rv.seconds.toFixed(1)}s`);
+
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  run('ffmpeg', ['-y', '-v', 'error', '-i', 'video.mp4', '-i', 'audio.wav', '-vf', 'scale=out_range=tv,format=yuv420p',
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', height > 2000 ? '20' : '17', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-color_range', 'tv', '-r', String(fps),
+    '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2', '-t', duration.toFixed(3), '-movflags', '+faststart', outFile], { cwd: workDir });
+  run('ffmpeg', ['-y', '-v', 'error', '-ss', (duration * 0.8).toFixed(2), '-i', outFile, '-frames:v', '1', '-vf', 'scale=540:-2', outFile.replace(/\.mp4$/, '.jpg')]);
+
+  const report = verifyVideo(outFile, { duration, lines: [] }, { width, height, fps, master: decodeAudio(audioFile, 48000) });
+  // music tracks are stereo and mastered loud: measure the true stereo peak instead of the mono fold-down
+  const vd = run('ffmpeg', ['-v', 'info', '-i', outFile, '-af', 'volumedetect', '-vn', '-f', 'null', '-']).stderr;
+  const peakDb = Number(/max_volume: (-?[\d.]+) dB/.exec(vd)?.[1] ?? 0), meanDb = Number(/mean_volume: (-?[\d.]+) dB/.exec(vd)?.[1] ?? -99);
+  const peakCheck = report.checks.find((c) => c.name.startsWith('audio is not silent'));
+  if (peakCheck) Object.assign(peakCheck, { pass: peakDb < 0 && meanDb > -40, detail: `stereo peak ${peakDb} dBFS, mean ${meanDb} dBFS` });
+  report.pass = report.checks.every((c) => c.pass);
+  report.render = { width, height, fps, workers, frameSeconds: rv.seconds, motionBlur: timeline.motionBlur, music: opt.music ? path.basename(opt.music) : 'procedural' };
+  fs.writeFileSync(outFile.replace(/\.mp4$/, '.report.json'), JSON.stringify(report, null, 2));
+  for (const c of report.checks) log(`  ${c.pass ? 'PASS' : 'FAIL'}  ${c.name} – ${c.detail}`);
+  log(report.pass ? `✅ Video ready: ${outFile} (${(report.size / 1e6).toFixed(1)} MB)` : '❌ Verification failed');
+  if (!report.pass) process.exitCode = 1;
+}
+
 async function main() {
+  if (opt.film) {
+    for (const tool of ['ffmpeg', 'ffprobe']) if (!have(tool)) throw new Error(`${tool} is not installed (see docs/SETUP.md)`);
+    const [width, height] = RES[opt.res] || RES['1080p'];
+    const outFile = path.resolve(opt.out);
+    const workDir = outFile.replace(/\.mp4$/, '') + '_work';
+    fs.rmSync(workDir, { recursive: true, force: true });
+    fs.mkdirSync(workDir, { recursive: true });
+    return renderFilm({ width, height, fps: Number(opt.fps), outFile, workDir });
+  }
   for (const tool of ['ffmpeg', 'ffprobe', 'espeak-ng']) if (!have(tool)) throw new Error(`${tool} is not installed (see docs/SETUP.md)`);
   const [width, height] = RES[opt.res] || RES['1080p'];
   const fps = Number(opt.fps);

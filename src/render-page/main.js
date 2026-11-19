@@ -1,6 +1,8 @@
 // Headless render page. The Node renderer (render/frames.js) opens this page
 // in Chromium, loads a timeline and asks for frames one at a time.
+// A timeline with a `film` field is played by the FilmPlayer instead.
 import { StoryPlayer } from '../engine/player.js';
+import { FilmPlayer } from '../engine/film.js';
 
 let player = null;
 
@@ -10,9 +12,10 @@ window.__studio = {
     const canvas = document.getElementById('c');
     canvas.width = width; canvas.height = height;
     canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
-    player = new StoryPlayer(canvas, timeline, { width, height, preserveDrawingBuffer: true });
+    const Player = timeline.film ? FilmPlayer : StoryPlayer;
+    player = new Player(canvas, timeline, { width, height, preserveDrawingBuffer: true });
     player.warmup();
-    return { ok: true, scenes: timeline.scenes.length };
+    return { ok: true, scenes: timeline.scenes?.length ?? 0 };
   },
   frame(t, quality = 0.92) {
     player.renderFrame(t);

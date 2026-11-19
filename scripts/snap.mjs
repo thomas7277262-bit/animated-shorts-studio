@@ -1,5 +1,6 @@
 // Render still frames of the demo for quick visual checks:
 //   npx vite build && node scripts/snap.mjs out-dir 1 5 10
+//   FILM=run-your-race MB=4 node scripts/snap.mjs out-dir 3 12 20   (hand-directed film)
 // quick visual check: render a few frames of the demo to PNGs
 import { chromium } from 'playwright';
 import http from 'node:http';
@@ -8,6 +9,7 @@ import path from 'node:path';
 import { buildTimeline } from '../src/story/timeline.js';
 import { DEMO_STORYBOARD } from '../src/story/demo.js';
 import { DEMO_GIANT } from '../src/story/demo-giant.js';
+import { FILM_INFO } from '../src/films/index.js';
 const dist = new URL('../dist', import.meta.url).pathname;
 const out = process.argv[2];
 const times = process.argv.slice(3).map(Number);
@@ -15,9 +17,12 @@ fs.mkdirSync(out, { recursive: true });
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
 const srv = http.createServer((q, r) => { const f = path.join(dist, decodeURIComponent(q.url.split('?')[0])); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': types[path.extname(f)] || 'application/octet-stream' }); r.end(d); }); }).listen(0);
 const port = srv.address().port;
-const W = 540, H = 960;
-const tl = buildTimeline(process.env.DEMO === 'stickman' ? DEMO_STORYBOARD : DEMO_GIANT, { width: W, height: H });
-console.log('duration', tl.duration.toFixed(2), 'scenes', tl.scenes.map((s) => s.start.toFixed(2)).join(' '));
+const W = Number(process.env.W || 540), H = Math.round(W * 16 / 9);
+const FILM = process.env.FILM;
+const tl = FILM
+  ? { film: FILM, duration: FILM_INFO[FILM].duration, fps: 30, width: W, height: H, motionBlur: Number(process.env.MB || 1) }
+  : buildTimeline(process.env.DEMO === 'stickman' ? DEMO_STORYBOARD : DEMO_GIANT, { width: W, height: H });
+console.log('duration', tl.duration.toFixed(2), FILM ? 'film ' + FILM : 'scenes ' + tl.scenes.map((s) => s.start.toFixed(2)).join(' '));
 const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const p = await b.newPage({ viewport: { width: W, height: H } });
 p.on('console', (m) => console.log('[page]', m.text()));

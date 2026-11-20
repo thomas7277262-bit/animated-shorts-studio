@@ -58,7 +58,7 @@ const { values: opt } = parseArgs({
   },
 });
 
-const RES = { '720p': [720, 1280], '1080p': [1080, 1920], '1440p': [1440, 2560], '4k': [2160, 3840] };
+const RES = { '720p': [720, 1280], '1080p': [1080, 1920], '1440p': [1440, 2560], '4k': [2160, 3840], '3x4': [1080, 1440] };
 
 // Hand-directed film (src/films/): no TTS or subtitles; optional external music track.
 async function renderFilm({ width, height, fps, outFile, workDir }) {

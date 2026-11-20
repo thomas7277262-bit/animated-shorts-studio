@@ -22,7 +22,7 @@ export function verifyVideo(file, timeline, { width, height, fps, speechPcm, voi
     ok('video codec is H.264', v.codec_name === 'h264', v.codec_name);
     ok('pixel format yuv420p (plays everywhere)', v.pix_fmt === 'yuv420p', v.pix_fmt);
     ok('resolution', v.width === width && v.height === height, `${v.width}x${v.height} (wanted ${width}x${height})`);
-    ok('vertical 9:16', Math.abs(v.width / v.height - 9 / 16) < 0.01, (v.width / v.height).toFixed(4));
+    ok('vertical (portrait) frame', v.width < v.height, (v.width / v.height).toFixed(4));
     const [n, d] = v.avg_frame_rate.split('/').map(Number);
     ok('frame rate', Math.abs(n / d - fps) < 0.01, `${(n / d).toFixed(2)} fps`);
     const frames = Number(v.nb_read_frames);

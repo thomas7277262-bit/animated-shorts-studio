@@ -17,7 +17,7 @@ fs.mkdirSync(out, { recursive: true });
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
 const srv = http.createServer((q, r) => { const f = path.join(dist, decodeURIComponent(q.url.split('?')[0])); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': types[path.extname(f)] || 'application/octet-stream' }); r.end(d); }); }).listen(0);
 const port = srv.address().port;
-const W = Number(process.env.W || 540), H = Math.round(W * 16 / 9);
+const W = Number(process.env.W || 540), H = Number(process.env.H || Math.round(W * 16 / 9));
 const FILM = process.env.FILM;
 const tl = FILM
   ? { film: FILM, duration: FILM_INFO[FILM].duration, fps: 30, width: W, height: H, motionBlur: Number(process.env.MB || 1) }

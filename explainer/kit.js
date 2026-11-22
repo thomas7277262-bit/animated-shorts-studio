@@ -54,7 +54,8 @@ export function stick(x, y, o = {}) {
   // body
   line(0, shY - 8, 0, hipY, { w, seed: sd + 4, color });
   // tie
-  if (tie) path([[0, shY - 4], [-9, shY + 6], [0, shY + 52], [9, shY + 6]], { w: 3, fill: tie, close: true, seed: sd + 5, color });
+  const tw = o.tieW || 9;
+  if (tie) path([[0, shY - 4], [-tw, shY + 8], [0, shY + 58], [tw, shY + 8]], { w: 3, fill: tie, close: true, seed: sd + 5, color });
   // arms
   const hands = {};
   for (const [key, side] of [['la', -1], ['ra', 1]]) {
@@ -88,6 +89,7 @@ export function stick(x, y, o = {}) {
     circle(hx + 8, hy - 74, 22, { w: 4, fill: hairColor, seed: sd + 11 });
     ctx.save(); ctx.beginPath(); ctx.arc(hx, hy, 63, Math.PI * 1.0, Math.PI * 2.0); ctx.quadraticCurveTo(hx, hy - 36, hx - 63, hy); ctx.closePath(); ctx.fillStyle = hairColor; ctx.fill(); ctx.restore();
   }
+  if (o.sideburns) { line(hx - 58, hy - 26, hx - 56, hy + 16, { w: 11, seed: sd + 30, color: hairColor }); line(hx + 58, hy - 26, hx + 56, hy + 16, { w: 11, seed: sd + 31, color: hairColor }); }
   // face
   const lx = look * 10;
   const blink = hash(seed, Math.floor(t * 1.3)) < 0.18 && (t * 1.3) % 1 < 0.12;

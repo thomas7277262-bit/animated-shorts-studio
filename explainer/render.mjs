@@ -31,22 +31,26 @@ function decode(file) {
   return new Float32Array(buf.buffer, buf.byteOffset, buf.length / 4);
 }
 
+const beatsFile = path.join(dir, 'beats.json');
+const beats = fs.existsSync(beatsFile) ? JSON.parse(fs.readFileSync(beatsFile, 'utf8')) : null;
+const voiceFile = ['voice.wav', 'voice.mp3'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f));
+
 async function openPage(srv, env) {
   const browser = await chromium.launch({ args: CHROME_ARGS });
-  const page = await browser.newPage({ viewport: { width: 540, height: 960 } });
+  const page = await browser.newPage({ viewport: { width: 960, height: 960 } });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   await page.goto(`http://127.0.0.1:${srv.address().port}/explainer/page.html`);
   await page.waitForFunction(() => window.__studio && window.__studio.ready);
-  const info = await page.evaluate((a) => window.__studio.load(a), { project: opt.project, words, env, fps });
+  const info = await page.evaluate((a) => window.__studio.load(a), { project: opt.project, words, beats, env, fps });
   if (errors.length) throw new Error(errors.join('\n'));
   return { browser, page, info, errors };
 }
 
 async function main() {
   const OFFSET = (await import(path.join(dir, 'scenes.js'))).OFFSET;
-  const voice = decode(path.join(dir, 'voice.mp3'));
+  const voice = decode(voiceFile);
   // per-frame voice loudness (drives lip-sync)
   const spf = SR / fps;
   const env = [];
@@ -75,7 +79,8 @@ async function main() {
     const work = outFile.replace(/\.mp4$/, '') + '_work';
     fs.rmSync(work, { recursive: true, force: true }); fs.mkdirSync(work, { recursive: true });
     const probe = await openPage(srv, env);
-    const { duration, sfx } = probe.info;
+    const { duration, sfx, subtitles } = probe.info;
+    if (subtitles) fs.writeFileSync(outFile.replace(/\.mp4$/, '.srt'), subtitles);
     await probe.browser.close();
     const total = Math.round(duration * fps);
     const from = opt.from ? Math.round(Number(opt.from) * fps) : 0, to = opt.to ? Math.round(Number(opt.to) * fps) : total;
@@ -85,7 +90,7 @@ async function main() {
     const clips = [{ pcm: voice, at: OFFSET, gain: 1, voice: true }];
     for (const c of sfx) clips.push({ pcm: makeSfx(c.name), at: c.t, gain: c.gain, duck: true });
     let music = null;
-    const musicFile = path.join(dir, 'music.mp3');
+    const musicFile = ['music.wav', 'music.mp3'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f)) || '';
     if (fs.existsSync(musicFile)) {
       const m = decode(musicFile);
       const n = Math.floor(duration * SR);

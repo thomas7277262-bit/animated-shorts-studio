@@ -3,7 +3,8 @@
 // frames the slightly alive look of hand-drawn animation. Everything is
 // deterministic: the same time always produces the same frame.
 
-export const W = 1080, H = 1920;
+export let W = 1080, H = 1920;
+export function setSize(w, h) { W = w; H = h; paperTex = null; }
 export const C = {
   ink: '#1f1d1a', paper: '#fbf7ee', red: '#d62828', skin: '#f7d6b0', board: '#2f7a4b', wood: '#6b3f1d',
   beige: '#f1e4c6', bar: '#d8bf8c', gold: '#e8b422', green: '#3e9b52', grey: '#c9c5bd', chalk: '#f4f1e6',

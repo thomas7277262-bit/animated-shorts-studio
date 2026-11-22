@@ -33,7 +33,7 @@ function decode(file) {
 
 const beatsFile = path.join(dir, 'beats.json');
 const beats = fs.existsSync(beatsFile) ? JSON.parse(fs.readFileSync(beatsFile, 'utf8')) : null;
-const voiceFile = ['voice.wav', 'voice.mp3'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f));
+const voiceFile = ['voice.mp3', 'voice.wav'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f));
 
 async function openPage(srv, env) {
   const browser = await chromium.launch({ args: CHROME_ARGS });
@@ -90,7 +90,7 @@ async function main() {
     const clips = [{ pcm: voice, at: OFFSET, gain: 1, voice: true }];
     for (const c of sfx) clips.push({ pcm: makeSfx(c.name), at: c.t, gain: c.gain, duck: true });
     let music = null;
-    const musicFile = ['music.wav', 'music.mp3'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f)) || '';
+    const musicFile = ['music.mp3', 'music.wav'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f)) || '';
     if (fs.existsSync(musicFile)) {
       const m = decode(musicFile);
       const n = Math.floor(duration * SR);

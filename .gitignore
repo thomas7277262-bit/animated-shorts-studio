@@ -3,3 +3,4 @@ dist/
 output/*
 !output/.gitkeep
 *.log
+explainer/projects/*/*.wav

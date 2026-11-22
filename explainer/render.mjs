@@ -33,7 +33,8 @@ function decode(file) {
 
 const beatsFile = path.join(dir, 'beats.json');
 const beats = fs.existsSync(beatsFile) ? JSON.parse(fs.readFileSync(beatsFile, 'utf8')) : null;
-const voiceFile = ['voice.mp3', 'voice.wav'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f));
+const newest = (names) => names.map((f) => path.join(dir, f)).filter((f) => fs.existsSync(f)).sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0];
+const voiceFile = newest(['voice.mp3', 'voice.wav']);
 
 async function openPage(srv, env) {
   const browser = await chromium.launch({ args: CHROME_ARGS });
@@ -90,7 +91,7 @@ async function main() {
     const clips = [{ pcm: voice, at: OFFSET, gain: 1, voice: true }];
     for (const c of sfx) clips.push({ pcm: makeSfx(c.name), at: c.t, gain: c.gain, duck: true });
     let music = null;
-    const musicFile = ['music.mp3', 'music.wav'].map((f) => path.join(dir, f)).find((f) => fs.existsSync(f)) || '';
+    const musicFile = newest(['music.mp3', 'music.wav']) || '';
     if (fs.existsSync(musicFile)) {
       const m = decode(musicFile);
       const n = Math.floor(duration * SR);

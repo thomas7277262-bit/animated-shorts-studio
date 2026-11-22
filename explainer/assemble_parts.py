@@ -9,7 +9,7 @@ beats at the pause before each beat's first word (faster-whisper word times),
 then the narration is reassembled with the script's gaps and pads, exactly as
 narrate_kokoro.py does. Writes voice.wav, beats.json and words.json.
 """
-import json, re, subprocess, sys, wave
+import json, os, re, subprocess, sys, wave
 import numpy as np
 from faster_whisper import WhisperModel
 
@@ -36,15 +36,28 @@ def trim(a):
     return a[max(0, idx[0] - 480): idx[-1] + 4800] if len(idx) else a
 
 parts = []
-for b in S["beats"]:
-    if not parts or parts[-1][0] != b["part"]: parts.append((b["part"], []))
-    parts[-1][1].append(b)
+if os.path.exists(f"{pdir}/all.mp3"):
+    parts = [("all", list(S["beats"]))]  # one recording that reads every beat in order
+else:
+    for b in S["beats"]:
+        if not parts or parts[-1][0] != b["part"]: parts.append((b["part"], []))
+        parts[-1][1].append(b)
+SPEED = float(S.get("speed", 1.0))
+
+def source(name):
+    """The recording for a part, sped up (pitch preserved) when the script asks for it."""
+    src = f"{pdir}/{name}.mp3"
+    if SPEED == 1.0: return src
+    out = f"{pdir}/{name}.x{SPEED}.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-af", f"atempo={SPEED}", "-ar", str(SR), "-ac", "1", out], check=True)
+    return out
 
 pieces, beats, t = [np.zeros(int(0.6 * SR), np.float32)], [], 0.6
 prev_part = None
 for name, bs in parts:
-    a = load(f"{pdir}/{name}.mp3")
-    ws = words_of(f"{pdir}/{name}.mp3")
+    src = source(name)
+    a = load(src)
+    ws = words_of(src)
     total_chars = sum(len(b["text"]) for b in bs)
     cuts, wi, acc = [0.0], 0, 0
     for k in range(1, len(bs)):

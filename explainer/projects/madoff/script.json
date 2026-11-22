@@ -1,0 +1,22 @@
+{
+ "title": "Bernie Madoff: The $65 Billion Lie",
+ "speed": 1.2,
+ "gapSentence": 0.25,
+ "gapBeat": 0.35,
+ "gapPart": 0.6,
+ "beats": [
+  {"id": "B01", "part": "cold", "text": "His clients' statements added up to sixty-five billion dollars. Almost none of it was real."},
+  {"id": "B02", "part": "cold", "text": "This is the story of Bernie Madoff, and the biggest Ponzi scheme in history.", "padAfter": 0.6},
+  {"id": "B03", "part": "p1", "text": "Madoff wasn't a stranger on the internet. He was a Wall Street insider, a former chairman of the Nasdaq stock market."},
+  {"id": "B04", "part": "p1", "text": "And his pitch wasn't greedy. It was boring. About one percent a month, year after year. Almost never a losing month."},
+  {"id": "B05", "part": "p1", "text": "That steadiness was the trick. It looked safe."},
+  {"id": "B06", "part": "p2", "text": "Here's how it really worked. Madoff said he was trading stocks and options. Investigators found he wasn't. When old investors wanted money out, he paid them with new investors' money. That's a Ponzi scheme."},
+  {"id": "B07", "part": "p3", "text": "So why did wealthy, smart people trust him? You couldn't just invest. You needed an introduction, at the right club or the right charity board. Being turned away made people want in even more. Big funds fed him billions, and collected fees."},
+  {"id": "B08", "part": "p3", "text": "There were warnings. An analyst named Harry Markopolos told the SEC for years that the returns were impossible. Madoff's auditor was a tiny firm in a suburban strip mall. The SEC still missed it."},
+  {"id": "B09", "part": "p4", "text": "Then came the 2008 financial crisis. Investors rushed to pull their money out, and there was nothing to pay them with."},
+  {"id": "B10", "part": "p4", "text": "On December tenth, Madoff told his sons the truth. It was all one big lie. They turned him in. The next day, the FBI arrested him.", "padAfter": 0.6},
+  {"id": "B11", "part": "p5", "text": "Here's what most people get wrong. The sixty-five billion was mostly fake profits on paper. The cash investors actually lost was about seventeen and a half billion. A court-appointed trustee has since recovered more than fifteen billion."},
+  {"id": "B12", "part": "end", "text": "Madoff was sentenced to one hundred fifty years in prison, and died there in 2021."},
+  {"id": "B13", "part": "end", "text": "The lesson? When returns look too smooth to be true, ask who is checking the books."}
+ ]
+}

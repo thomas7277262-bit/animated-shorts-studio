@@ -20,7 +20,10 @@ def part_start(p):
     return next(b["s"] for b in beats if b["part"] == p)
 
 # section boundaries (start a little before the first beat of each part)
-bounds = [("cold", 0.0)] + [(p, part_start(p) - 1.0) for p in ["p1", "p2", "p3", "p4", "p5", "p6", "end"]]
+present = []
+for b in beats:
+    if b["part"] not in present: present.append(b["part"])
+bounds = [(present[0], 0.0)] + [(p, part_start(p) - 1.0) for p in present[1:]]
 bounds.append(("_", DUR))
 
 def midi(m): return 440.0 * 2 ** ((m - 69) / 12)

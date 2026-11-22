@@ -1,0 +1,93 @@
+[
+ {
+  "id": "B01",
+  "part": "cold",
+  "s": 0.6,
+  "e": 5.696,
+  "text": "His clients' statements added up to sixty-five billion dollars. Almost none of it was real."
+ },
+ {
+  "id": "B02",
+  "part": "cold",
+  "s": 6.046,
+  "e": 10.034,
+  "text": "This is the story of Bernie Madoff, and the biggest Ponzi scheme in history."
+ },
+ {
+  "id": "B03",
+  "part": "p1",
+  "s": 11.234,
+  "e": 16.876,
+  "text": "Madoff wasn't a stranger on the internet. He was a Wall Street insider, a former chairman of the Nasdaq stock market."
+ },
+ {
+  "id": "B04",
+  "part": "p1",
+  "s": 17.226,
+  "e": 23.595,
+  "text": "And his pitch wasn't greedy. It was boring. About one percent a month, year after year. Almost never a losing month."
+ },
+ {
+  "id": "B05",
+  "part": "p1",
+  "s": 23.945,
+  "e": 26.411,
+  "text": "That steadiness was the trick. It looked safe."
+ },
+ {
+  "id": "B06",
+  "part": "p2",
+  "s": 27.011,
+  "e": 37.337,
+  "text": "Here's how it really worked. Madoff said he was trading stocks and options. Investigators found he wasn't. When old investors wanted money out, he paid them with new investors' money. That's a Ponzi scheme."
+ },
+ {
+  "id": "B07",
+  "part": "p3",
+  "s": 37.937,
+  "e": 50.913,
+  "text": "So why did wealthy, smart people trust him? You couldn't just invest. You needed an introduction, at the right club or the right charity board. Being turned away made people want in even more. Big funds fed him billions, and collected fees."
+ },
+ {
+  "id": "B08",
+  "part": "p3",
+  "s": 51.263,
+  "e": 62.021,
+  "text": "There were warnings. An analyst named Harry Markopolos told the SEC for years that the returns were impossible. Madoff's auditor was a tiny firm in a suburban strip mall. The SEC still missed it."
+ },
+ {
+  "id": "B09",
+  "part": "p4",
+  "s": 62.621,
+  "e": 68.242,
+  "text": "Then came the 2008 financial crisis. Investors rushed to pull their money out, and there was nothing to pay them with."
+ },
+ {
+  "id": "B10",
+  "part": "p4",
+  "s": 68.592,
+  "e": 76.154,
+  "text": "On December tenth, Madoff told his sons the truth. It was all one big lie. They turned him in. The next day, the FBI arrested him."
+ },
+ {
+  "id": "B11",
+  "part": "p5",
+  "s": 77.354,
+  "e": 88.65,
+  "text": "Here's what most people get wrong. The sixty-five billion was mostly fake profits on paper. The cash investors actually lost was about seventeen and a half billion. A court-appointed trustee has since recovered more than fifteen billion."
+ },
+ {
+  "id": "B12",
+  "part": "end",
+  "s": 89.25,
+  "e": 93.816,
+  "text": "Madoff was sentenced to one hundred fifty years in prison, and died there in 2021."
+ },
+ {
+  "id": "B13",
+  "part": "end",
+  "s": 94.166,
+  "e": 98.213,
+  "text": "The lesson? When returns look too smooth to be true, ask who is checking the books."
+ }
+]

@@ -60,3 +60,17 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how it works.
 MIT. Uses Three.js (MIT), React (MIT), eSpeak NG (GPL-3, run as a separate program),
 FFmpeg (LGPL/GPL, separate program), Playwright/Chromium, and the Inter font
 (SIL Open Font License, in `assets/fonts`).
+
+## Finance explainer mode (hand-drawn, 9:16)
+
+`explainer/` renders hand-drawn stick-figure finance explainers (chalkboard charts,
+bar/pie charts, newspapers, word-highlighted captions) as vertical 1080×1920 MP4s.
+
+```bash
+node explainer/render.mjs --project nifty-fifty --out output/nifty-fifty.mp4
+node explainer/render.mjs --project nifty-fifty --stills 5,30,60   # preview frames
+```
+
+A project folder (`explainer/projects/<name>/`) holds `scenes.js` (the choreography),
+`voice.mp3` (narration, e.g. from ElevenLabs), `words.json` (word timestamps) and an
+optional `music.mp3`. Fonts Kalam, Patrick Hand and Permanent Marker are SIL OFL.

@@ -6,8 +6,10 @@ export const OFFSET = 0;
 export function build() {
   return { duration: 2, sfx: [], shakes: [], flashes: [], paperAt: () => P.sepia, scenes: [{ start: 0, label: null, tr: 'cut', draw: () => {
     // left: the locked briefcase, the key flying away
-    briefcase(330, 470, 1.05, { locked: true });
-    key(560, 210, 0.9, -0.6);
+    line(40, 690, 620, 690, { w: 5, color: P.grey });
+    stick(170, 690, { sideburns: true, tie: '#2f6fb3', tieW: 14, hair: 'neat', hairColor: '#3b2a1e', seed: 5, s: 1.0, pose: 'panic', face: 'shock', bob: 0 });
+    briefcase(450, 600, 0.62, { locked: true });
+    key(560, 300, 0.85, -0.6);
     // the drained Polaroid certificate behind the title
     certificate(1000, 590, 0.95, { name: 'Polaroid', fill: 0.09, rot: -0.06 });
     text('-91%', 1010, 415, { size: 120, color: P.red, font: 'Permanent Marker', weight: 'normal', rot: -0.1, wobble: false });

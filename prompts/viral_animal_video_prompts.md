@@ -59,6 +59,8 @@ All four source videos were under 28 seconds:
 > SHOT 10 [NEW] (25–28s): Cut to the checkout lane. The man carries the big gray dog bed in his arms with the Chihuahua sitting proudly inside it like royalty, head held high, while he shakes his head with a defeated smile.
 > SHOT 11 [NEW] (28–30s): Final close-up of the Chihuahua's smug face looking at the camera, then a slow blink. Text overlay: "He said NO… she said YES."
 >
+> CAMERA & STYLE DETAILS: The camera stays at shelf height, close to the dog, so the tiny Chihuahua fills the frame next to the huge bed and the size difference reads as funny. Keep reflections of the ceiling lights visible on the glossy floor and keep the plush texture of the bed sharp. The dog's acting is the star: quick head tilts, ears snapping forward, and wide, offended eyes.
+>
 > SOUND: Store ambience, sneakers on tile, the Chihuahua's high-pitched barks and howls, the man's deep laughter. Photorealistic, natural animal behavior, accurate Chihuahua anatomy, no warped limbs, no extra legs, no text glitches.
 
 ---
@@ -82,7 +84,9 @@ All four source videos were under 28 seconds:
 > SHOT 7 [NEW] (21–25s): She places the treat down and keeps stroking. The puppy slowly pulls its face out of the pillow, eats the treat, then looks up at the camera with big, sad, guilt-trip eyes.
 > SHOT 8 [NEW] (25–30s): The owner scoops the puppy into a hug; it melts against her chest and rests its head on her shoulder, tail giving a slow wag. Caption changes to: "Okay okay… you're just fluffy 🤍".
 >
-> SOUND: Quiet room tone, soft fabric rustles, the puppy's little sighs and huffs, a gentle woman's laugh off-camera. Photorealistic, natural puppy movement, accurate anatomy, no extra paws, no warped hands, no distorted text.
+> CAMERA & STYLE DETAILS: Keep the camera at sofa-cushion height, close to the puppy, with slow, gentle handheld drift and no fast cuts until the hug. Light should feel like a quiet late-morning: soft, diffused, no harsh shadows, with a faint warm glow on the cream fur so every individual soft strand catches the light. The puppy's body language must sell the emotion: head down, ears flat, shoulders hunched, completely still except for slow breathing and the occasional dramatic sigh. Keep the background softly blurred with neutral beige and gray tones so the cream puppy stands out.
+>
+> SOUND: Quiet room tone, soft fabric rustles, the puppy's little sighs and huffs, a gentle woman's laugh off-camera saying "I'm sorry, baby." Photorealistic, natural puppy movement, accurate anatomy, no extra paws, no warped hands, no distorted text.
 
 ---
 
